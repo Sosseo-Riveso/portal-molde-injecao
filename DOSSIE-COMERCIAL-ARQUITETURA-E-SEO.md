@@ -76,7 +76,7 @@ Destacar os processos nobres de ferramentaria: fresamento de alta velocidade (HS
 2. `terceirização de injeção plástica`
 3. `injeção de peças plásticas sob encomenda`
 4. `empresa de injeção de plásticos técnicos`
-5. `injeção termoplástica de 50t a 650t`
+5. `injeção termoplástica de 80t a 350t`
 6. `injeção de poliamida com fibra de vidro PA66 FV`
 7. `injeção plástica automotiva e industrial`
 
@@ -147,7 +147,7 @@ O site possui duas ferramentas interativas proprietárias que atraem compradores
 | :--- | :--- | :--- | :--- | :--- |
 | **Home (`/`)** | `fabricação de moldes de injeção` | `ferramentaria de moldes`, `injeção plástica industrial`, `manutenção de moldes` | Diretores, CEOs e Gerentes Industriais | R$ 30k a R$ 500k+ |
 | **Fabricação (`fabricacao...`)** | `fabricação de moldes de injeção plástica` | `matrizaria CNC 5 eixos`, `molde câmara quente`, `aços para moldes P20 H13` | Gerentes de Ferramentaria e Engenharia | R$ 35k a R$ 380k |
-| **Injeção Técnica (`servicos...`)** | `serviços de injeção plástica` | `terceirização injeção plástica`, `injeção peças técnicas`, `injetoras 50t a 650t` | Gerentes de Compras e Suprimentos | R$ 15k a R$ 150k/mês |
+| **Injeção Técnica (`servicos...`)** | `serviços de injeção plástica` | `terceirização injeção plástica`, `injeção peças técnicas`, `injetoras 80t a 350t` | Gerentes de Compras e Suprimentos | R$ 15k a R$ 150k/mês |
 | **Engenharia (`engenharia...`)** | `desenvolvimento de moldes de injeção` | `projeto de molde 3D`, `simulação Moldflow`, `análise reológica de cavidades` | Projetistas e Engenheiros de P&D | Porta de entrada para novos moldes |
 | **Manutenção (`manutencao...`)** | `manutenção de moldes de injeção` | `ajuste de fechamento de matrizes`, `polimento espelhado`, `solda a laser molde` | Gerentes de Produção e Manutenção Fabril | R$ 5k a R$ 45k |
 | **Calc. Tonelagem (`calculadora-ton...`)** | `calculadora tonelagem injetora` | `cálculo força de fechamento molde`, `área projetada cm2 injeção` | Compradores Técnicos e Orçamentistas | Lead altamente qualificado |

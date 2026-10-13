@@ -159,7 +159,7 @@
               </div>
               <div class="flex justify-between">
                 <span>Compatibilidade de maquinário:</span>
-                <strong class="text-emerald-700">✓ Disponível na Derplast (50t a 650t)</strong>
+                <strong class="text-emerald-700" id="statusCompatibilidade">✓ Disponível na Derplast (80t a 350t)</strong>
               </div>
             </div>
           </div>
@@ -191,18 +191,28 @@
       const fatorFinal = fatorPolimero * fatorEspessura;
       const forcaToneladas = areaTotal * fatorFinal * 1.15;
       const tonMinima = Math.ceil(forcaToneladas);
-      let maquinaRecomendada = "";
+      let statusComp = "";
 
-      if (tonMinima <= 80) maquinaRecomendada = "Injetora de 80t a 100t";
-      else if (tonMinima <= 120) maquinaRecomendada = "Injetora de 120t a 150t";
-      else if (tonMinima <= 180) maquinaRecomendada = "Injetora de 160t a 200t";
-      else if (tonMinima <= 260) maquinaRecomendada = "Injetora de 220t a 280t";
-      else if (tonMinima <= 380) maquinaRecomendada = "Injetora de 320t a 400t";
-      else if (tonMinima <= 550) maquinaRecomendada = "Injetora de 450t a 600t";
-      else maquinaRecomendada = "Injetora pesada acima de 650t";
+      if (tonMinima <= 80) {
+        maquinaRecomendada = "Injetora de 80 Toneladas";
+        statusComp = "✓ Disponível na Derplast (80t)";
+      } else if (tonMinima <= 150) {
+        maquinaRecomendada = "Injetora de 120t a 150 Toneladas";
+        statusComp = "✓ Disponível na Derplast (150t)";
+      } else if (tonMinima <= 250) {
+        maquinaRecomendada = "Injetora de 200t a 250 Toneladas";
+        statusComp = "✓ Disponível na Derplast (250t)";
+      } else if (tonMinima <= 350) {
+        maquinaRecomendada = "Injetora de 300t a 350 Toneladas";
+        statusComp = "✓ Disponível na Derplast (350t)";
+      } else {
+        maquinaRecomendada = "Injetora de grande porte (acima de 350t)";
+        statusComp = "Sob consulta técnica / projeto especial";
+      }
 
       document.getElementById('tonCalculada').innerText = `${tonMinima} Toneladas`;
       document.getElementById('faixaMaquina').innerText = `Porte de máquina indicado: ${maquinaRecomendada}`;
+      document.getElementById('statusCompatibilidade').innerText = statusComp;
       document.getElementById('areaTotalCm').innerText = `${Math.round(areaTotal)} cm²`;
       document.getElementById('fatorPressao').innerText = `${fatorFinal.toFixed(2)} t/cm²`;
     }
