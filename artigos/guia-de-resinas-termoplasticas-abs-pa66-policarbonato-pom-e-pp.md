@@ -2,7 +2,7 @@
 
 ## Dominar o comportamento das principais resinas termoplásticas para injeção plástica — da taxa de contração linear à desumidificação — assegura estabilidade dimensional e desempenho mecânico.
 
-*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 13/10/2026 - Atualizado em 13/10/2026*
+*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 12/08/2026 - Atualizado em 13/10/2026*
 
 ![Engenharia avaliando resinas termoplásticas para injeção plástica industrial ABS, PA66, PC, POM e PP](imagens/processamento-resinas-termoplasticas-engenharia-injecao.webp)
 *Seleção de polímeros de engenharia e commodities determina contração da cavidade e parâmetros de transformação.*
@@ -19,8 +19,8 @@ A distinção estrutural entre termoplásticos **amorfos** (ABS, Policarbonato, 
 
 Por outro lado, os polímeros semicristalinos organizam suas cadeias em estruturas cristalinas densas durante o resfriamento no molde. Isso resulta em **elevada resistência química, baixo coeficiente de atrito e alta resistência térmica**, porém exige compensação rigorosa para taxas de contração mais altas (**1,2% a 2,5%**) e controle térmico estrito da cavidade para evitar pós-contração e empenamento.
 
-1. **Higroscopia e Desumidificação Molecular:** Resinas higroscópicas como PA66, PC, ABS e PBT absorvem umidade para dentro do grânulo; injetá-las sem secagem prévia em funil desumidificador com ponto de orvalho de $-40^\circ\text{C}$ provoca **degradação hidrolítica**, perda de impacto e manchas prateadas.
-2. **Temperatura de Molde Termorregulada:** Polímeros de engenharia (PC, PA66, POM) exigem aquecimento ativo das placas do molde entre **$80^\circ\text{C}$ e $110^\circ\text{C}$** via termorreguladores para garantir cristalinidade uniforme e alívio de tensões internas.
+1. **Higroscopia e Desumidificação Molecular:** Resinas higroscópicas como PA66, PC, ABS e PBT absorvem umidade para dentro do grânulo; injetá-las sem secagem prévia em funil desumidificador com ponto de orvalho de -40 °C provoca **degradação hidrolítica**, perda de impacto e manchas prateadas.
+2. **Temperatura de Molde Termorregulada:** Polímeros de engenharia (PC, PA66, POM) exigem aquecimento ativo das placas do molde entre **80 °C e 110 °C** via termorreguladores para garantir cristalinidade uniforme e alívio de tensões internas.
 3. **Abrasão e Corrosão na Cavidade:** Compostos reforçados com **20% a 50% de fibra de vidro** exigem cavidades e bicos de câmara quente temperados acima de **50 HRC** com revestimento anti-desgaste.
 
 ## Tabela Técnica de Resinas Termoplásticas: Contração, Secagem e Aplicação
@@ -28,17 +28,17 @@ Por outro lado, os polímeros semicristalinos organizam suas cadeias em estrutur
 | Resina Termoplástica | Taxa de Contração Linear (%) | Secagem Prévia e Temp. Molde | Aplicação Industrial Principal |
 | :--- | :--- | :--- | :--- |
 | **Polipropileno (PP Homopolímero/Copo)** | 1,2% a 2,2% (Semicristalino) | Não higroscópico \| Molde: $20^\circ\text{C}$–$50^\circ\text{C}$ | Embalagens, tampas com dobradiça viva (living hinge), autopeças |
-| **ABS (Acrilonitrila Butadieno Estireno)** | 0,4% a 0,7% (Amorfo) | $80^\circ\text{C}$ por 3h \| Molde: $50^\circ\text{C}$–$70^\circ\text{C}$ | Gabinetes eletrônicos, painéis automotivos, linha branca, cromação |
-| **Poliamida 6.6 (PA66 Natural / 30% FV)** | 1,3% a 1,8% (Sem FV) \| 0,3% a 0,8% (GF30) | $80^\circ\text{C}$ por 4h \| Molde: $70^\circ\text{C}$–$100^\circ\text{C}$ | Componentes de cofre de motor, conectores elétricos, buchas de carga |
-| **Policarbonato (PC)** | 0,5% a 0,7% (Amorfo) | $120^\circ\text{C}$ por 4h \| Molde: $80^\circ\text{C}$–$110^\circ\text{C}$ | Lentes ópticas, visores de alta resistência ao impacto, dispositivos médicos |
-| **Poliacetal (POM Homopolímero/Copo)** | 1,8% a 2,3% (Semicristalino) | $90^\circ\text{C}$ por 2h \| Molde: $80^\circ\text{C}$–$105^\circ\text{C}$ | Engrenagens de precisão, roldanas, válvulas hidráulicas e fechos |
+| **ABS (Acrilonitrila Butadieno Estireno)** | 0,4% a 0,7% (Amorfo) | 80 °C por 3h \| Molde: $50^\circ\text{C}$–$70^\circ\text{C}$ | Gabinetes eletrônicos, painéis automotivos, linha branca, cromação |
+| **Poliamida 6.6 (PA66 Natural / 30% FV)** | 1,3% a 1,8% (Sem FV) \| 0,3% a 0,8% (GF30) | 80 °C por 4h \| Molde: $70^\circ\text{C}$–$100^\circ\text{C}$ | Componentes de cofre de motor, conectores elétricos, buchas de carga |
+| **Policarbonato (PC)** | 0,5% a 0,7% (Amorfo) | 120 °C por 4h \| Molde: 80 °C–110 °C | Lentes ópticas, visores de alta resistência ao impacto, dispositivos médicos |
+| **Poliacetal (POM Homopolímero/Copo)** | 1,8% a 2,3% (Semicristalino) | 90 °C por 2h \| Molde: 80 °C–$105^\circ\text{C}$ | Engrenagens de precisão, roldanas, válvulas hidráulicas e fechos |
 
 ![Controle dimensional de peças técnicas injetadas em resinas de engenharia PA66, ABS e Policarbonato](imagens/controle-qualidade-tridimensional-iso9001-parque-fabril.webp)
 *Validação dimensional e controle de processo garantem estabilidade geométrica após a estabilização cristalina do polímero.*
 
 ## Atenção Crítica à Troca de Resina em Moldes Já Construídos
 
-Um erro frequente na indústria é tentar injetar **Polipropileno (contração de 1,8%)** em uma cavidade originalmente usinada para **ABS (contração de 0,5%)** sem modificar o ferramental. Para uma peça de $200\text{ mm}$ de comprimento, essa substituição gera uma redução dimensional de **$2,6\text{ mm}$** no produto final, inviabilizando o encaixe em linhas de montagem.
+Um erro frequente na indústria é tentar injetar **Polipropileno (contração de 1,8%)** em uma cavidade originalmente usinada para **ABS (contração de 0,5%)** sem modificar o ferramental. Para uma peça de 200 mm de comprimento, essa substituição gera uma redução dimensional de **2,6 mm** no produto final, inviabilizando o encaixe em linhas de montagem.
 
 Por isso, a definição definitiva da resina termoplástica e do percentual de carga mineral ou fibra de vidro deve ocorrer **obrigatoriamente antes da liberação da usinagem final** das cavidades e machos.
 

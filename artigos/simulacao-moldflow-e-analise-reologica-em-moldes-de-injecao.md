@@ -2,7 +2,7 @@
 
 ## A aplicação da simulação Moldflow em moldes de injeção antecipa o comportamento termo-reológico do polímero em ambiente CAE, eliminando retrabalhos de bancada e reduzindo o ciclo produtivo.
 
-*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 13/10/2026 - Atualizado em 13/10/2026*
+*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 18/06/2026 - Atualizado em 13/10/2026*
 
 ![Engenheiro executando simulação Moldflow em moldes de injeção e análise reológica CAE](imagens/simulacao-reologica-moldflow-projeto-cad-molde.webp)
 *Estudo reológico mapeia pressão de preenchimento, frente de fluxo e pontos de aprisionamento de gases antes do corte do aço.*
@@ -21,7 +21,7 @@ O estudo reológico divide-se em quatro módulos críticos: **Análise de Preenc
 
 1. **Balanceamento de Canais e Pontos de Injeção:** Ajusta os diâmetros dos canais e a localização do gate para que todas as extremidades da cavidade sejam preenchidas exatamente no mesmo milissegundo.
 2. **Mapeamento de Linhas de Solda (Weld Lines):** Reposiciona o encontro de frentes de fluxo para fora de regiões submetidas a tração mecânica ou exigência estética classe A.
-3. **Otimização de Circuitos de Refrigeração:** Equilibra a extração de calor entre macho e cavidade com número de Reynolds turbulento ($Re > 4.000$), reduzindo o tempo de ciclo em **15% a 28%**.
+3. **Otimização de Circuitos de Refrigeração:** Equilibra a extração de calor entre macho e cavidade com número de Reynolds turbulento (Re > 4.000), reduzindo o tempo de ciclo em **15% a 28%**.
 
 ## Comparativo Técnico: Projeto Empírico vs. Projeto Validado com Moldflow
 
@@ -37,7 +37,7 @@ O estudo reológico divide-se em quatro módulos críticos: **Análise de Preenc
 
 ## Controle de Cisalhamento e Orientação de Fibra de Vidro
 
-Cada polímero possui um limite máximo de **tensão de cisalhamento (shear stress)** e taxa de cisalhamento (tipicamente $40.000\text{ s}^{-1}$ para ABS e PC, até $100.000\text{ s}^{-1}$ para Polipropileno). Quando o ponto de injeção é subdimensionado, o atrito viscoso degrada as cadeias moleculares, gerando manchas prateadas (splay) e fragilidade estrutural na região do ataque.
+Cada polímero possui um limite máximo de **tensão de cisalhamento (shear stress)** e taxa de cisalhamento (tipicamente 40.000 s⁻¹ para ABS e PC, até 100.000 s⁻¹ para Polipropileno). Quando o ponto de injeção é subdimensionado, o atrito viscoso degrada as cadeias moleculares, gerando manchas prateadas (splay) e fragilidade estrutural na região do ataque.
 
 Em resinas técnicas carregadas como **PA66 + 30% FV** ou **PBT + 30% FV**, a simulação mapeia o tensor de orientação das fibras nos três eixos cartesianos. Como a contração transversal às fibras é até **3 vezes maior** que a contração longitudinal, o estudo CAE permite aplicar desvios geométricos compensatórios (anti-warpage) diretamente no modelo matemático da cavidade antes da usinagem CNC.
 

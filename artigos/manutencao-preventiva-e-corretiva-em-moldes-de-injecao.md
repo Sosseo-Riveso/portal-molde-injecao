@@ -2,7 +2,7 @@
 
 ## Implementar um cronograma rigoroso de manutenção preventiva em moldes de injeção a cada 25.000 a 50.000 ciclos evita paradas emergenciais de linha e preserva a precisão centesimal da matriz.
 
-*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 13/10/2026 - Atualizado em 13/10/2026*
+*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 02/10/2026 - Atualizado em 13/10/2026*
 
 ![Ferramenteiro realizando manutenção preventiva em moldes de injeção e ajuste de bancada de precisão](imagens/ajuste-bancada-manutencao-moldes-ferramentaria.webp)
 *Desmontagem técnica em bancada para limpeza ultrassônica, inspeção de extratores e ajuste de linha de fechamento.*
@@ -15,7 +15,7 @@ Já a manutenção corretiva de alta precisão atua na recuperação estrutural 
 
 ## A Estrutura de Manutenção Baseada em Ciclos (Níveis I, II e III)
 
-Matrizes de injeção operam submetidas a carregamentos cíclicos de **80 a mais de 500 toneladas de fechamento**, pressões internas de cavidade superiores a $600\text{ bar}$ e variações térmicas contínuas. Sem um plano estruturado de manutenção preventiva (TPM), o acúmulo de gases condensados dos polímeros obstrui os respiros, o calcário da água industrial isola termicamente os canais de refrigeração e a perda de lubrificação provoca engripamento (galling) em colunas e gavetas.
+Matrizes de injeção operam submetidas a carregamentos cíclicos de **80 a mais de 500 toneladas de fechamento**, pressões internas de cavidade superiores a 600 bar e variações térmicas contínuas. Sem um plano estruturado de manutenção preventiva (TPM), o acúmulo de gases condensados dos polímeros obstrui os respiros, o calcário da água industrial isola termicamente os canais de refrigeração e a perda de lubrificação provoca engripamento (galling) em colunas e gavetas.
 
 As ferramentarias de classe mundial organizam a conservação de matrizes em três níveis escalonados por contador de batidas (shot counter) gravado diretamente no molde.
 
@@ -37,7 +37,7 @@ As ferramentarias de classe mundial organizam a conservação de matrizes em tr�
 
 ## Solda Micro-Laser e Ajuste de Fechamento (Spotting) na Corretiva
 
-Quando uma matriz sofre amassamento na linha de fechamento ou lascamento de borda, a solda TIG convencional sem pré-aquecimento controlado cria uma extensa **Zona Termicamente Afetada (ZTA)**, causando descarbonetação, queda de dureza e fissuras ao redor do cordão. Na ferramentaria de alta precisão, utilizamos **solda micro-laser com adição de fio de mesma liga (H13, P20 ou Inox 420)** de $0,2\text{ mm}$ a $0,4\text{ mm}$.
+Quando uma matriz sofre amassamento na linha de fechamento ou lascamento de borda, a solda TIG convencional sem pré-aquecimento controlado cria uma extensa **Zona Termicamente Afetada (ZTA)**, causando descarbonetação, queda de dureza e fissuras ao redor do cordão. Na ferramentaria de alta precisão, utilizamos **solda micro-laser com adição de fio de mesma liga (H13, P20 ou Inox 420)** de 0,2 mm a 0,4 mm.
 
 O feixe laser funde pontualmente a aresta danificada mantendo a dureza original de **48 a 52 HRC** sem distorcer a cavidade adjacente. Em seguida, o ferramenteiro executa a eletroerosão de penetração ou fresamento HSM, finalizando com o ajuste de bancada em prensa de spotting até obter **mais de 90% de contato uniforme** na fita de marcação.
 

@@ -2,12 +2,12 @@
 
 ## Diagnosticar a causa raiz dos defeitos na injeção plástica — como rebarbas e chupagem — entre o ajuste de bancada do molde e a curva de recalque da injetora elimina refugos na origem.
 
-*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 13/10/2026 - Atualizado em 13/10/2026*
+*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 09/09/2026 - Atualizado em 13/10/2026*
 
 ![Engenheiro de qualidade analisando defeitos na injeção plástica rebarbas e chupagem em laboratório metrológico](imagens/inspecao-defeitos-injecao-plastica-rebarba-chupagem.webp)
 *Inspeção dimensional e visual identifica se a anomalia decorre de desgaste na linha de partição ou desbalanceamento térmico.*
 
-Para corrigir definitivamente os principais <strong>defeitos na injeção plástica, como rebarbas e chupagem</strong>, além do empenamento e efeito Diesel, a engenharia atua em três frentes simultâneas: <strong>rebarbas (flash)</strong> são eliminadas restaurando a vedação da linha de fechamento do molde via solda laser ($\le 0,02\text{ mm}$) e calibrando a força de fechamento; a <strong>chupagem (sink marks)</strong> é corrigida mantendo a espessura de nervuras entre <strong>50% e 60% da parede nominal</strong> e ampliando a janela de recalque; e o <strong>empenamento (warpage)</strong> é controlado equalizando a troca térmica entre macho e cavidade.
+Para corrigir definitivamente os principais <strong>defeitos na injeção plástica, como rebarbas e chupagem</strong>, além do empenamento e efeito Diesel, a engenharia atua em três frentes simultâneas: <strong>rebarbas (flash)</strong> são eliminadas restaurando a vedação da linha de fechamento do molde via solda laser (≤ 0,02 mm) e calibrando a força de fechamento; a <strong>chupagem (sink marks)</strong> é corrigida mantendo a espessura de nervuras entre <strong>50% e 60% da parede nominal</strong> e ampliando a janela de recalque; e o <strong>empenamento (warpage)</strong> é controlado equalizando a troca térmica entre macho e cavidade.
 
 Tentar compensar folgas mecânicas de uma matriz desgastada apenas alterando temperaturas e pressões no painel da injetora estreita a janela de processo e gera lotes instáveis. Na <a href="index.html" class="text-brand-blue font-semibold underline">fabricação de moldes de injeção</a> e manutenção de precisão, cada anomalia é rastreada até sua origem física no aço ou no escoamento reológico do polímero.
 
@@ -19,9 +19,9 @@ No chão de fábrica, tentar mascarar um desgaste de ferramenta alterando os par
 
 Para engenharia de qualidade, todo defeito em peça injetada deve ser diagnosticado pela tríade: **Geometria e Estado do Molde**, **Curva Reológica da Máquina Injetora** e **Preparação da Matéria-Prima**.
 
-1. **Rebarbas (Flash):** Excesso de filme plástico na linha de partição ou pinos extratores. Ocorre quando a pressão na cavidade vence a força de fechamento ou quando há folga no ajuste de bancada superior a $0,03\text{ mm}$ para resinas amorfas e $0,015\text{ mm}$ para poliamidas e PP.
+1. **Rebarbas (Flash):** Excesso de filme plástico na linha de partição ou pinos extratores. Ocorre quando a pressão na cavidade vence a força de fechamento ou quando há folga no ajuste de bancada superior a 0,03 mm para resinas amorfas e 0,015 mm para poliamidas e PP.
 2. **Chupagem (Sink Marks):** Depressão superficial localizada no lado oposto a nervuras (ribs) ou torres de fixação (bosses). É causada pelo acúmulo de massa polimérica quando a espessura da nervura ultrapassa **60% da espessura da parede nominal** ou quando o ponto de injeção congela antes do fim do recalque.
-3. **Empenamento (Warpage):** Distorção tridimensional da peça após a extração devido a tensões residuais de contração diferencial (diferença de temperatura superior a $10^\circ\text{C}$ entre macho e cavidade ou orientação anisotrópica de fibras).
+3. **Empenamento (Warpage):** Distorção tridimensional da peça após a extração devido a tensões residuais de contração diferencial (diferença de temperatura superior a 10 °C entre macho e cavidade ou orientação anisotrópica de fibras).
 
 ## Matriz de Diagnóstico e Solução de Defeitos na Injeção Plástica
 
@@ -30,7 +30,7 @@ Para engenharia de qualidade, todo defeito em peça injetada deve ser diagnostic
 | **Rebarba (Flash) na Partição** | Abertura elástica do molde ou desgaste de borda | Elevar força de fechamento e antecipar comutação V/P | Solda laser em aço H13/P20 e ajuste de fechamento (spotting) |
 | **Chupagem (Sink Marks)** | Contração térmica em parede espessa sem recalque | Aumentar tempo/pressão de recalque e manter colchão (3-6 mm) | Reduzir base de nervuras para 50%-60% da parede e ampliar gate |
 | **Empenamento (Warpage)** | Contração diferencial ou resfriamento assimétrico | Equalizar temperaturas de termorreguladores macho/cavidade | Redesenhar circuito de refrigeração e balancear pontos de injeção |
-| **Queima / Efeito Diesel** | Ar comprimido sem saída entra em autoignição ($>400^\circ\text{C}$) | Reduzir velocidade de injeção no final do preenchimento | Usinar saídas de gases (venting) de 0,015 mm a 0,025 mm |
+| **Queima / Efeito Diesel** | Ar comprimido sem saída entra em autoignição (> 400 °C) | Reduzir velocidade de injeção no final do preenchimento | Usinar saídas de gases (venting) de 0,015 mm a 0,025 mm |
 | **Falha de Preenchimento (Short Shot)** | Congelamento prematuro da frente de fluxo | Aumentar velocidade de injeção e temperatura do molde | Aumentar seção dos canais/ataques e desobstruir respiros |
 | **Manchas Prateadas (Splay)** | Umidade na resina ou degradação por cisalhamento | Desumidificar resina no ponto de orvalho correto e reduzir rosca | Suavizar quinas vivas no ataque (gate) para cortar cisalhamento |
 
@@ -41,7 +41,7 @@ Para engenharia de qualidade, todo defeito em peça injetada deve ser diagnostic
 
 Mais de **70% dos casos crônicos de chupagem** em peças técnicas nascem no desenho 3D do produto e não na regulagem da injetora. Quando uma nervura estrutural é projetada com a mesma espessura da parede externa (relação 1:1), cria-se uma esfera inscrita de massa fundida 40% maior na interseção, que esfria por último e puxa a superfície visível para dentro.
 
-Na engenharia DFM do Portal Molde Injeção, corrigimos a geometria para que a base da nervura tenha entre **50% e 60% da espessura nominal da parede** para resinas amorfas (ABS, PC) e no máximo **50% para polímeros semicristalinos** de alta contração (PP, PA66, POM), com raio de concordância na base de $0,25t$ a $0,40t$.
+Na engenharia DFM do Portal Molde Injeção, corrigimos a geometria para que a base da nervura tenha entre **50% e 60% da espessura nominal da parede** para resinas amorfas (ABS, PC) e no máximo **50% para polímeros semicristalinos** de alta contração (PP, PA66, POM), com raio de concordância na base de 0,25t a 0,40t.
 
 Se sua ferramenta apresenta desgaste de fechamento, rebarbas ou necessidade de alteração de engenharia, conheça nosso serviço de [Manutenção e Modificação de Moldes](manutencao-e-modificacao-de-moldes.html), revise o protocolo completo no guia de [Manutenção Preventiva em Moldes de Injeção](manutencao-preventiva-e-corretiva-em-moldes-de-injecao.html) e confira a tonelagem ideal na [Calculadora de Força de Fechamento](calculadora-tonelagem-injetora.html).
 

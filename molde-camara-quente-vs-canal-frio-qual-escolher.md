@@ -2,7 +2,7 @@
 
 ## A decisão estratégica entre molde câmara quente vs canal frio define a velocidade de ciclo, o desperdício de matéria-prima e o retorno sobre o investimento (payback) da ferramenta.
 
-*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 13/10/2026 - Atualizado em 13/10/2026*
+*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 15/07/2026 - Atualizado em 13/10/2026*
 
 ![Análise técnica de molde câmara quente vs canal frio em ferramentaria de precisão](imagens/fresamento-alta-velocidade-camara-quente-manifold.webp)
 *Projetos com câmara quente eliminam o galho de injeção e reduzem a força de fechamento necessária na máquina.*
@@ -17,7 +17,7 @@ A escolha incorreta do sistema de alimentação distorce o custo unitário da pe
 
 Em um molde de **canal frio (cold runner)**, o polímero fundido percorre a bucha de injeção e os canais de distribuição usinados diretamente nas placas de cavidade, solidificando-se junto com o produto final a cada ciclo. Esse galho sólido precisa ser extraído, separado por robô ou operador e encaminhado para moinhos granuladores, gerando custo de mão de obra, perda energética e potencial contaminação da matéria-prima.
 
-No sistema de **câmara quente (hot runner)**, um bloco coletor aquecido (manifold) e bicos térmicos ou valvulados mantêm a resina em estado fundido sob controle PID de temperatura ($\pm 1^\circ\text{C}$) até o ponto exato de entrada na cavidade. O plástico solidifica exclusivamente dentro da peça, eliminando 100% do galho de alimentação e reduzindo a perda de carga de injeção.
+No sistema de **câmara quente (hot runner)**, um bloco coletor aquecido (manifold) e bicos térmicos ou valvulados mantêm a resina em estado fundido sob controle PID de temperatura (±1 °C) até o ponto exato de entrada na cavidade. O plástico solidifica exclusivamente dentro da peça, eliminando 100% do galho de alimentação e reduzindo a perda de carga de injeção.
 
 1. **Câmara Quente com Bico Aberto (Thermal Gate):** Ideal para polipropileno, PEAD e peças onde uma discreta marca de vestígio no ponto de injeção é aceitável, oferecendo menor investimento de aquisição.
 2. **Câmara Quente Valvulada (Valve Gate):** Utiliza agulhas acionadas por cilindros pneumáticos, hidráulicos ou servomotores que fecham mecanicamente o ponto de injeção, garantindo acabamento cosmético zero-vestígio e ciclos ultrarrápidos.
@@ -37,7 +37,7 @@ No sistema de **câmara quente (hot runner)**, um bloco coletor aquecido (manifo
 
 ## Cálculo do Ponto de Equilíbrio (Payback) pela Economia de Resina e Ciclo
 
-Para calcular o payback do sistema de câmara quente, multiplique o peso do galho frio evitado (ex: $18\text{ g}$ por ciclo) pelo custo por quilo do polímero virgem (ex: Policarbonato ou PA66 a $\text{R\$ } 28,00/\text{kg}$), somando a redução de **4 a 6 segundos no tempo de ciclo** multiplicada pela taxa hora-máquina da injetora.
+Para calcular o payback do sistema de câmara quente, multiplique o peso do galho frio evitado (ex: 18 g por ciclo) pelo custo por quilo do polímero virgem (ex: Policarbonato ou PA66 a R$ 28,00/kg), somando a redução de **4 a 6 segundos no tempo de ciclo** multiplicada pela taxa hora-máquina da injetora.
 
 Em componentes médicos, ópticos ou conectores automotivos de segurança onde as normas técnicas **proíbem o uso de material remoído (regrind)**, o galho frio torna-se sucata direta. Nesses casos, o retorno sobre o investimento adicional do sistema de câmara quente ocorre frequentemente antes dos primeiros **60.000 ciclos produzidos**.
 

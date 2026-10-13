@@ -2,7 +2,7 @@
 
 ## Compreender a diferença entre aço P20 e H13 para moldes de injeção — junto às ligas DIN 1.2738 e Inox 420 — garante a especificação metalúrgica correta para atingir de 100 mil a mais de 1 milhão de ciclos.
 
-*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 13/10/2026 - Atualizado em 13/10/2026*
+*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 06/05/2026 - Atualizado em 13/10/2026*
 
 ![Usinagem CNC 5 eixos em cavidade de molde mostrando a diferença entre aço P20 e H13 para moldes](imagens/usinagem-cnc-5-eixos-cavidade-molde-aco-h13.webp)
 *Fresamento CNC de alta velocidade (Hard Milling) em cavidade de aço ferramenta temperado com tolerância centesimal.*
@@ -19,7 +19,7 @@ A seleção metalúrgica de postiços, cavidades e machos define o custo de usin
 
 Enquanto os aços pré-beneficiados (P20 e DIN 1.2738) são usinados diretamente em seu estado de fornecimento (30 a 34 HRC) sem risco de distorção dimensional pós-têmpera, os aços para trabalho a quente (AISI H13 / DIN 1.2344) e inoxidáveis martensíticos (AISI 420 / DIN 1.2083 / S136) exigem desbaste, têmpera a vácuo, duplo ou triplo revenimento e usinagem final (hard milling e eletroerosão).
 
-1. **AISI P20 (DIN 1.2311) e DIN 1.2738:** Aços cromo-molibdênio pré-endurecidos a **28–34 HRC**. O 1.2738 adiciona aproximadamente **1% de Níquel**, garantindo dureza homogênea do núcleo à superfície em blocos espessos acima de $400\text{ mm}$.
+1. **AISI P20 (DIN 1.2311) e DIN 1.2738:** Aços cromo-molibdênio pré-endurecidos a **28–34 HRC**. O 1.2738 adiciona aproximadamente **1% de Níquel**, garantindo dureza homogênea do núcleo à superfície em blocos espessos acima de 400 mm.
 2. **AISI H13 (DIN 1.2344):** Aço cromo-molibdênio-vanádio para trabalho a quente, temperado a vácuo entre **48 e 52 HRC**. Apresenta altíssima tenacidade, resistência a choques térmicos e resistência à abrasão por fibra de vidro ou carga mineral.
 3. **AISI 420 / DIN 1.2083 (S136 ESR):** Aço inoxidável com **13% a 14% de Cromo**, temperado a **50–54 HRC**. Imune à oxidação por água de refrigeração ácida ou gases corrosivos (PVC) e capaz de atingir polimento óptico espelhado **SPI A-1**.
 

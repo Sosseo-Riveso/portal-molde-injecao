@@ -2,7 +2,7 @@
 
 ## Compreender quanto custa fabricar um molde de injeção plástica a partir da classe SPI, número de cavidades e especificação metalúrgica garante cotações precisas e rápido payback.
 
-*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 13/10/2026 - Atualizado em 13/10/2026*
+*Por [Portal Molde Injeção — Engenharia e Ferramentaria B2B](sobre.html) - Publicado em 27/05/2026 - Atualizado em 13/10/2026*
 
 ![Engenheiro orçamentista calculando quanto custa fabricar um molde de injeção plástica com desenho CAD 3D](imagens/orcamento-tecnico-rfq-fabricacao-molde-injecao.webp)
 *Análise de geometria 3D (STEP/IGES) define horas de usinagem CNC 5 eixos, eletroerosão e seleção de aço ferramenta.*
