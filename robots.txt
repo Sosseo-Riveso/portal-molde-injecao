@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /painel-leads.html
 
 Sitemap: https://portalmoldeinjecao.com.br/sitemap.xml
