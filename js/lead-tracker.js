@@ -12,6 +12,7 @@
   const CONFIG_PHONE_KEY = 'pmi_dest_phone';
   const CONFIG_WEBHOOK_KEY = 'pmi_webhook_url';
   const DEFAULT_PHONE = '5511999999999'; // Pode ser atualizado no Painel de Leads
+  const DEFAULT_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzsK0ZaM1Zh_8Jrm7hdil6NEkZQI2LgBs6524RdWuDyZxAZ_9sz2We82li4EazAh1z2/exec';
   const RETENTION_DAYS = 365; // Retenção máxima de 1 ano
 
   // Obter número de destino atual
@@ -100,7 +101,7 @@
     }
 
     // 2. Disparo para Webhook (se configurado)
-    const webhook = localStorage.getItem(CONFIG_WEBHOOK_KEY) || window.PMI_DEFAULT_WEBHOOK_URL;
+    const webhook = localStorage.getItem(CONFIG_WEBHOOK_KEY) || window.PMI_DEFAULT_WEBHOOK_URL || DEFAULT_WEBHOOK;
     if (webhook) {
       try {
         fetch(webhook, {
