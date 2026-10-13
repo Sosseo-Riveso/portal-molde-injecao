@@ -159,7 +159,7 @@
               <span>💬 Iniciar Conversa no WhatsApp ➔</span>
             </button>
             
-            <span style="font-size:11px;color:#64748b;text-align:center;display:block;">🔒 Dados protegidos. Confidencialidade industrial garantida.</span>
+            <span style="font-size:11px;color:#94a3b8;text-align:center;display:block;">🔒 Dados protegidos pela LGPD. Uso exclusivo para orçamento técnico. Veja nossa <a href="politica-de-privacidade.html" target="_blank" style="color:#38bdf8;text-decoration:underline;">Política de Privacidade</a>.</span>
           </form>
         </div>
       </div>
