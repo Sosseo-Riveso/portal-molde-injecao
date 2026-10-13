@@ -100,7 +100,7 @@
     }
 
     // 2. Disparo para Webhook (se configurado)
-    const webhook = localStorage.getItem(CONFIG_WEBHOOK_KEY);
+    const webhook = localStorage.getItem(CONFIG_WEBHOOK_KEY) || window.PMI_DEFAULT_WEBHOOK_URL;
     if (webhook) {
       try {
         fetch(webhook, {
