@@ -145,28 +145,43 @@
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
-        <a href="fabricacao-de-moldes-de-injecao.html" class="hover:text-blue-700 transition-colors">Fabricação de Moldes</a>
-        <a href="servicos-de-injecao-plastica.html" class="hover:text-blue-700 transition-colors">Injeção Plástica</a>
-        <a href="engenharia-e-desenvolvimento-de-moldes.html" class="hover:text-blue-700 transition-colors">Engenharia & CAD</a>
-        <a href="manutencao-e-modificacao-de-moldes.html" class="hover:text-blue-700 transition-colors">Manutenção</a>
+      <nav class="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-6 text-xs xl:text-sm font-semibold text-slate-700">
+        <a href="fabricacao-de-moldes-de-injecao.html" class="whitespace-nowrap hover:text-blue-700 transition-colors py-2">Fabricação de Moldes</a>
+        <a href="servicos-de-injecao-plastica.html" class="whitespace-nowrap hover:text-blue-700 transition-colors py-2">Injeção Plástica</a>
+        <a href="engenharia-e-desenvolvimento-de-moldes.html" class="whitespace-nowrap hover:text-blue-700 transition-colors py-2">Engenharia & CAD</a>
+        <a href="manutencao-e-modificacao-de-moldes.html" class="whitespace-nowrap hover:text-blue-700 transition-colors py-2">Manutenção</a>
         
-        <!-- Dropdown Calculadoras -->
-        <div class="relative group">
-          <button class="flex items-center gap-1 hover:text-blue-700 text-blue-800 font-bold transition-colors">
+        <!-- Dropdown Calculadoras com ponte contínua de hover e suporte a clique -->
+        <div class="relative group py-2" id="calculadorasDropdownGroup">
+          <button type="button" class="flex items-center gap-1 hover:text-blue-700 text-blue-800 font-bold transition-colors whitespace-nowrap focus:outline-none" id="calcDropdownBtn" aria-expanded="false" aria-haspopup="true">
             <span>Calculadoras</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" id="calcDropdownArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
           </button>
-          <div class="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 p-2 hidden group-hover:block">
-            <a href="calculadora-tonelagem-injetora.html" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg">Calculadora de Tonelagem</a>
-            <a href="calculadora-custo-peca-injetada.html" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg">Calculadora de Custo de Peça</a>
+          <!-- Menu com posicionamento top-full e pt-1.5 (ponte invisível contínua de hit-testing para nunca sumir ao mover o mouse) -->
+          <div class="absolute left-1/2 -translate-x-1/2 top-full pt-1.5 w-64 hidden group-hover:block z-50 transition-all duration-150" id="calcDropdownMenu">
+            <div class="bg-white rounded-xl shadow-2xl border border-slate-200 p-2">
+              <a href="calculadora-tonelagem-injetora.html" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-blue-600 font-bold text-sm leading-none mt-0.5">⚙</span>
+                <div>
+                  <div class="font-bold text-slate-900">Calculadora de Tonelagem</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Força de fechamento da injetora</div>
+                </div>
+              </a>
+              <a href="calculadora-custo-peca-injetada.html" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">💰</span>
+                <div>
+                  <div class="font-bold text-slate-900">Calculadora de Custo de Peça</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Preço unitário e taxa horária</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </nav>
 
-      <!-- CTA Button -->
-      <div class="flex items-center gap-3">
-        <a href="#contato" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-md shadow-blue-700/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
+      <!-- CTA Button totalmente à direita com padding compacto e sem quebra de linha -->
+      <div class="flex items-center ml-auto shrink-0 pl-2 sm:pl-4">
+        <a href="#contato" class="inline-flex items-center justify-center whitespace-nowrap px-3.5 sm:px-4 py-2 rounded-lg text-xs xl:text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-md shadow-blue-700/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
           Cotar Molde ou Injeção
         </a>
       </div>
@@ -838,58 +853,308 @@
     </div>
   </section>
 
-  <!-- Technical Engineering Comparison Table: Aços para Moldes -->
-  <section class="py-16 bg-white border-y border-slate-200">
+  <!-- Hub de Engenharia & Especificações Técnicas (Ancoragem Dupla: Normas Internacionais + Prática Brasileira) -->
+  <section class="py-20 bg-slate-50 border-y border-slate-200" id="normas-engenharia">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-12">
-        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-2">Especificação Metalúrgica B2B</span>
-        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Guia de Seleção de Aços para Moldes de Injeção</h2>
-        <p class="text-slate-600 text-sm mt-2">Compare as propriedades térmicas, dureza de trabalho e vida útil dos principais aços utilizados em nossa matrizaria:</p>
+      
+      <!-- Cabeçalho Principal da Seção -->
+      <div class="max-w-3xl mb-14">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-extrabold uppercase tracking-widest mb-3 border border-blue-200">
+          ⚙ Engenharia de Precisão & Metrologia B2B
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+          Diretrizes Técnicas: Vida Útil, Texturas VDI 3400 e Contração DFM
+        </h2>
+        <p class="text-slate-600 text-base leading-relaxed mt-3">
+          A rentabilidade e a repetibilidade de um produto plástico são decididas no projeto da matriz. Abaixo, correlacionamos as <strong>normas internacionais da indústria (SPI, VDI, DIN)</strong> com os termos práticos utilizados pelos compradores e engenheiros no Brasil, oferecendo total transparência dimensional e metalúrgica.
+        </p>
       </div>
 
-      <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
-        <table class="w-full text-left text-sm text-slate-700">
-          <thead class="bg-slate-100 text-xs uppercase font-extrabold text-slate-800 border-b border-slate-200">
-            <tr>
-              <th class="py-4 px-6">Aço Ferramenta</th>
-              <th class="py-4 px-6">Dureza Típica</th>
-              <th class="py-4 px-6">Polimento / Espelhamento</th>
-              <th class="py-4 px-6">Resinas Recomendadas</th>
-              <th class="py-4 px-6">Vida Útil Estimada</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200">
-            <tr class="hover:bg-slate-50">
-              <td class="py-4 px-6 font-bold text-slate-900">AISI P20 (1.2311)</td>
-              <td class="py-4 px-6">28 a 34 HRC (Pré-tratado)</td>
-              <td class="py-4 px-6">Médio / Padrão Industrial</td>
-              <td class="py-4 px-6">PP, PE, PS, ABS sem carga</td>
-              <td class="py-4 px-6 font-semibold text-blue-700">Até 500.000 ciclos</td>
-            </tr>
-            <tr class="hover:bg-slate-50 bg-blue-50/30">
-              <td class="py-4 px-6 font-bold text-slate-900">W.Nr 1.2738 (P20 + Ni)</td>
-              <td class="py-4 px-6">30 a 34 HRC (Excelente no núcleo)</td>
-              <td class="py-4 px-6">Alto / Texturização uniforme</td>
-              <td class="py-4 px-6">Peças automotivas, eletrodomésticos</td>
-              <td class="py-4 px-6 font-semibold text-blue-700">500.000 a 800.000 ciclos</td>
-            </tr>
-            <tr class="hover:bg-slate-50">
-              <td class="py-4 px-6 font-bold text-slate-900">AISI H13 (1.2344)</td>
-              <td class="py-4 px-6">48 a 52 HRC (Temperado a vácuo)</td>
-              <td class="py-4 px-6">Muito Alto / Óptico</td>
-              <td class="py-4 px-6">PA 6.6 + Fibra de Vidro, PBT, POM</td>
-              <td class="py-4 px-6 font-semibold text-blue-700">+1.000.000 ciclos</td>
-            </tr>
-            <tr class="hover:bg-slate-50">
-              <td class="py-4 px-6 font-bold text-slate-900">Inox 420 (1.2083)</td>
-              <td class="py-4 px-6">48 a 54 HRC (Anti-corrosão)</td>
-              <td class="py-4 px-6">Espelhado Classe A1 (Óptico)</td>
-              <td class="py-4 px-6">PVC, Resinas Retardantes de Chama, Médicos</td>
-              <td class="py-4 px-6 font-semibold text-blue-700">+1.000.000 ciclos</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- 1. Matriz de Vida Útil e Classes de Moldes por Tiragem -->
+      <div class="mb-16">
+        <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black text-slate-900">1. Classificação de Moldes por Volume de Produção (Padrão SPI)</h3>
+            <p class="text-xs sm:text-sm text-slate-500">Seleção do aço e tratamento térmico calibrados para a tiragem planejada do produto</p>
+          </div>
+          <span class="text-xs font-bold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
+            Norma SPI (Society of the Plastics Industry)
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card Alta Tiragem / SPI 101 -->
+          <div class="bg-white rounded-2xl border-2 border-blue-600/30 p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+            <div class="absolute top-4 right-4">
+              <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-blue-600 text-white">SPI Classe 101</span>
+            </div>
+            <div>
+              <span class="text-xs font-black text-blue-700 uppercase tracking-wider block mb-1">Alta Tiragem Industrial</span>
+              <h4 class="text-lg font-black text-slate-900 mb-2">+1.000.000 Ciclos</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Construído para regime contínuo 24/7 sem perda de tolerância micrométrica. Buchas autolubrificantes e refrigeração profunda.
+              </p>
+              <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-1.5 text-xs">
+                <div><strong class="text-slate-800">Aço das Cavidades:</strong> <span class="text-slate-600">AISI H13 (1.2344) ou Inox 420</span></div>
+                <div><strong class="text-slate-800">Dureza de Trabalho:</strong> <span class="text-slate-600">48 a 54 HRC (Vácuo)</span></div>
+                <div><strong class="text-slate-800">Alimentação:</strong> <span class="text-slate-600">Câmara quente balanceada</span></div>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-blue-800">
+              ✓ Montadoras, Linha Branca e Farmacêutica
+            </div>
+          </div>
+
+          <!-- Card Média-Alta Tiragem / SPI 102 -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+            <div class="absolute top-4 right-4">
+              <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-slate-200 text-slate-800">SPI Classe 102</span>
+            </div>
+            <div>
+              <span class="text-xs font-black text-slate-500 uppercase tracking-wider block mb-1">Média-Alta Produção</span>
+              <h4 class="text-lg font-black text-slate-900 mb-2">Até 800.000 Ciclos</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Excelente uniformidade de dureza em grandes blocos, gavetas mecânicas tratadas e alta fidelidade em texturas finas.
+              </p>
+              <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-1.5 text-xs">
+                <div><strong class="text-slate-800">Aço das Cavidades:</strong> <span class="text-slate-600">W.Nr 1.2738 (P20 + Níquel)</span></div>
+                <div><strong class="text-slate-800">Dureza de Trabalho:</strong> <span class="text-slate-600">30 a 34 HRC (Beneficiado)</span></div>
+                <div><strong class="text-slate-800">Alimentação:</strong> <span class="text-slate-600">Bico quente ou canal frio</span></div>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-slate-700">
+              ✓ Painéis automotivos e eletroeletrônicos
+            </div>
+          </div>
+
+          <!-- Card Média Tiragem / SPI 103 -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+            <div class="absolute top-4 right-4">
+              <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-slate-200 text-slate-800">SPI Classe 103</span>
+            </div>
+            <div>
+              <span class="text-xs font-black text-slate-500 uppercase tracking-wider block mb-1">Média Tiragem Comercial</span>
+              <h4 class="text-lg font-black text-slate-900 mb-2">Até 500.000 Ciclos</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                O melhor custo-benefício para demandas industriais padrão. Excelente usinabilidade e fácil soldabilidade para alterações de produto.
+              </p>
+              <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-1.5 text-xs">
+                <div><strong class="text-slate-800">Aço das Cavidades:</strong> <span class="text-slate-600">AISI P20 (1.2311)</span></div>
+                <div><strong class="text-slate-800">Dureza de Trabalho:</strong> <span class="text-slate-600">28 a 32 HRC (Pré-tratado)</span></div>
+                <div><strong class="text-slate-800">Alimentação:</strong> <span class="text-slate-600">Canal frio convencional</span></div>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-slate-700">
+              ✓ Utilidades domésticas, caixas e tampas
+            </div>
+          </div>
+
+          <!-- Card Piloto / SPI 104 -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between">
+            <div class="absolute top-4 right-4">
+              <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase bg-emerald-100 text-emerald-800">SPI Classe 104</span>
+            </div>
+            <div>
+              <span class="text-xs font-black text-emerald-700 uppercase tracking-wider block mb-1">Lotes Piloto & Testes</span>
+              <h4 class="text-lg font-black text-slate-900 mb-2">Até 100.000 Ciclos</h4>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Desenvolvido para rápida introdução de mercado com menor Capex. Cavidades usinadas em aços carbono ou ligas estruturais.
+              </p>
+              <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 space-y-1.5 text-xs">
+                <div><strong class="text-slate-800">Aço das Cavidades:</strong> <span class="text-slate-600">SAE 1045 / Alumínio 7075</span></div>
+                <div><strong class="text-slate-800">Dureza de Trabalho:</strong> <span class="text-slate-600">Natural / 150 a 200 HB</span></div>
+                <div><strong class="text-slate-800">Alimentação:</strong> <span class="text-slate-600">Canal direto simplificado</span></div>
+              </div>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] font-semibold text-emerald-800">
+              ✓ Startups, validação pré-série e eventos
+            </div>
+          </div>
+
+        </div>
       </div>
+
+      <!-- 2. Padrões de Acabamento Superficial: Eletroerosão VDI 3400 vs Polimento Espelhado SPI -->
+      <div class="mb-16">
+        <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black text-slate-900">2. Padrões de Textura e Acabamento (VDI 3400 & Escala SPI)</h3>
+            <p class="text-xs sm:text-sm text-slate-500">Rugosidade superficial, aspecto tátil e regra técnica de ângulo de saída (Draft Angle)</p>
+          </div>
+          <span class="text-xs font-bold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
+            Norma VDI 3400 (Verein Deutscher Ingenieure)
+          </span>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
+          <table class="w-full text-left text-sm text-slate-700">
+            <thead class="bg-slate-100 text-xs uppercase font-extrabold text-slate-800 border-b border-slate-200">
+              <tr>
+                <th class="py-4 px-5">Padrão / Classificação</th>
+                <th class="py-4 px-5">Processo na Matrizaria</th>
+                <th class="py-4 px-5">Rugosidade (Ra)</th>
+                <th class="py-4 px-5">Aspecto Tátil & Visual</th>
+                <th class="py-4 px-5 text-blue-800">Ângulo de Saída Mínimo</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50">
+                <td class="py-4 px-5 font-bold text-slate-900">
+                  <span class="inline-block px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-xs font-black mr-1.5">SPI A1 - A3</span>
+                  Espelhamento Óptico
+                </td>
+                <td class="py-4 px-5 text-xs text-slate-600">Pasta diamantada micrométrica (6 µm a 1 µm)</td>
+                <td class="py-4 px-5 font-mono text-xs font-bold text-slate-800">0,012 a 0,10 µm</td>
+                <td class="py-4 px-5 text-xs text-slate-600">Superfície vítrea de alto brilho para lentes, visores e acrílicos</td>
+                <td class="py-4 px-5 font-bold text-blue-700">0,5° a 1°</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-4 px-5 font-bold text-slate-900">
+                  <span class="inline-block px-2 py-0.5 rounded bg-slate-100 text-slate-800 text-xs font-black mr-1.5">SPI B1 - B3</span>
+                  Semibrilho Lixado
+                </td>
+                <td class="py-4 px-5 text-xs text-slate-600">Lixamento manual sequencial (grãos 320 a 600)</td>
+                <td class="py-4 px-5 font-mono text-xs font-bold text-slate-800">0,10 a 0,32 µm</td>
+                <td class="py-4 px-5 text-xs text-slate-600">Acabamento industrial fosco/semibrilho, sem marcas de corte de fresa</td>
+                <td class="py-4 px-5 font-bold text-blue-700">1°</td>
+              </tr>
+              <tr class="hover:bg-slate-50 bg-blue-50/20">
+                <td class="py-4 px-5 font-bold text-slate-900">
+                  <span class="inline-block px-2 py-0.5 rounded bg-sky-100 text-sky-800 text-xs font-black mr-1.5">VDI 12 a 18</span>
+                  Textura Acetinada Fina
+                </td>
+                <td class="py-4 px-5 text-xs text-slate-600">Eletroerosão por penetração (EDM) com centelhamento fino</td>
+                <td class="py-4 px-5 font-mono text-xs font-bold text-slate-800">0,40 a 0,80 µm</td>
+                <td class="py-4 px-5 text-xs text-slate-600">Toque suave sedoso, reduz reflexos indesejados e disfarça soldas frias</td>
+                <td class="py-4 px-5 font-bold text-blue-700">1° a 1,5°</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-4 px-5 font-bold text-slate-900">
+                  <span class="inline-block px-2 py-0.5 rounded bg-sky-100 text-sky-800 text-xs font-black mr-1.5">VDI 21 a 27</span>
+                  Textura Automotiva Média
+                </td>
+                <td class="py-4 px-5 text-xs text-slate-600">Eletroerosão EDM calibrada ou foto-gravação química</td>
+                <td class="py-4 px-5 font-mono text-xs font-bold text-slate-800">1,12 a 2,24 µm</td>
+                <td class="py-4 px-5 text-xs text-slate-600">Padrão clássico casca de laranja suave para interiores e eletrodomésticos</td>
+                <td class="py-4 px-5 font-bold text-blue-700">1,5° a 2,5°</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-4 px-5 font-bold text-slate-900">
+                  <span class="inline-block px-2 py-0.5 rounded bg-amber-100 text-amber-800 text-xs font-black mr-1.5">VDI 30 a 36</span>
+                  Textura Grossa Antiderrapante
+                </td>
+                <td class="py-4 px-5 text-xs text-slate-600">Eletroerosão pesada ou gravação direta a laser 3D</td>
+                <td class="py-4 px-5 font-mono text-xs font-bold text-slate-800">3,15 a 6,30 µm</td>
+                <td class="py-4 px-5 text-xs text-slate-600">Alta rugosidade, efeito antiderrapante e extrema resistência a riscos visíveis</td>
+                <td class="py-4 px-5 font-bold text-amber-700">3° a 4°</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Destaque de Regra DFM -->
+        <div class="mt-4 p-4 rounded-xl bg-blue-900 text-white flex items-start gap-3 shadow-sm">
+          <div class="text-sky-400 font-extrabold text-lg leading-none mt-0.5">💡</div>
+          <div class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            <strong class="text-white font-bold">Regra de Engenharia DFM (Design for Manufacturing):</strong> Para texturas mais profundas que VDI 24, é mandatório aplicar no mínimo <strong>+1° de inclinação adicional (ângulo de saída)</strong> para cada 10 pontos de rugosidade VDI em paredes verticais, evitando arraste mecânico, esbranquiçamento da peça e marcas no desmolde.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Tabela de Contração de Resinas Industriais (DFM Shrinkage) -->
+      <div>
+        <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-black text-slate-900">3. Contração Volumétrica de Resinas Plásticas & Tolerâncias Dimensionais</h3>
+            <p class="text-xs sm:text-sm text-slate-500">Cálculo de contração no CAD 3D para atendimento à norma dimensional DIN 16742 / ISO 20457</p>
+          </div>
+          <span class="text-xs font-bold text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
+            Norma DIN 16742 / ISO 20457
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Tabela de Resinas (2 colunas no desktop) -->
+          <div class="lg:col-span-2 overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
+            <table class="w-full text-left text-sm text-slate-700">
+              <thead class="bg-slate-100 text-xs uppercase font-extrabold text-slate-800 border-b border-slate-200">
+                <tr>
+                  <th class="py-3.5 px-5">Polímero / Resina</th>
+                  <th class="py-3.5 px-5">Taxa de Contração</th>
+                  <th class="py-3.5 px-5">Espessura de Parede</th>
+                  <th class="py-3.5 px-5">Comportamento DFM</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 text-xs">
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-5 font-bold text-slate-900">PP (Polipropileno)</td>
+                  <td class="py-3.5 px-5 font-mono font-bold text-blue-700">1,2% a 2,2%</td>
+                  <td class="py-3.5 px-5">0,8 a 3,5 mm</td>
+                  <td class="py-3.5 px-5 text-slate-600">Alta contração; requer refrigeração conformal uniforme para evitar empenamento.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-5 font-bold text-slate-900">ABS (Terpolímero)</td>
+                  <td class="py-3.5 px-5 font-mono font-bold text-blue-700">0,4% a 0,7%</td>
+                  <td class="py-3.5 px-5">1,2 a 3,5 mm</td>
+                  <td class="py-3.5 px-5 text-slate-600">Baixa contração e alta estabilidade; perfeito para carcaças com encaixes snap-fit.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-5 font-bold text-slate-900">POM (Poliacetal / Delrin)</td>
+                  <td class="py-3.5 px-5 font-mono font-bold text-blue-700">1,8% a 2,5%</td>
+                  <td class="py-3.5 px-5">0,8 a 3,0 mm</td>
+                  <td class="py-3.5 px-5 text-slate-600">Alta cristalinidade; lubrificação natural ideal para engrenagens e buchas de precisão.</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-5 font-bold text-slate-900">PA 6.6 + 30% FV (Nylon c/ Fibra)</td>
+                  <td class="py-3.5 px-5 font-mono font-bold text-blue-700">0,3% a 0,8%</td>
+                  <td class="py-3.5 px-5">1,0 a 3,2 mm</td>
+                  <td class="py-3.5 px-5 text-slate-600">Contração anisotrópica orientada no fluxo; requer matriz temperada anti-abrasão (H13).</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-5 font-bold text-slate-900">PC (Policarbonato)</td>
+                  <td class="py-3.5 px-5 font-mono font-bold text-blue-700">0,5% a 0,7%</td>
+                  <td class="py-3.5 px-5">1,0 a 3,8 mm</td>
+                  <td class="py-3.5 px-5 text-slate-600">Alta viscosidade de injeção; exige aço inoxidável polido e desumidificação prévia rigorosa.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Card Metrologia & Laudo CMM (1 coluna no desktop) -->
+          <div class="bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-2xl p-6 flex flex-col justify-between shadow-xl border border-slate-800">
+            <div>
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-sky-500/20 text-sky-300 text-[11px] font-bold uppercase tracking-wider mb-4">
+                Metrologia & Homologação
+              </div>
+              <h4 class="text-lg font-black text-white mb-2">Tolerâncias de Usinagem vs Tolerâncias da Peça</h4>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                Distinguimos claramente a precisão mecânica do ferramental da tolerância geométrica admissível no produto final:
+              </p>
+              <div class="space-y-3 text-xs border-t border-slate-800/80 pt-4">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Usinagem CNC da Matriz:</span>
+                  <span class="font-mono font-bold text-sky-400">±0,01 a ±0,02 mm</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Peça Plástica (Precisão DIN):</span>
+                  <span class="font-mono font-bold text-emerald-400">±0,05 a ±0,08 mm</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Peça Comercial Padrão:</span>
+                  <span class="font-mono font-bold text-slate-300">±0,15 a ±0,25 mm</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400">
+              Relatório de medição tridimensional por coordenadas (CMM) e estudos de capacidade de processo (Cp / Cpk) disponíveis para montadoras e indústrias sistemistas.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1203,6 +1468,37 @@
         order.unshift(order.pop());
         applyPositions();
       }, 2800);
+    });
+  })();
+  </script>
+
+  <!-- Script do Dropdown de Calculadoras (Clique & Hover Seguro) -->
+  <script>
+  (function(){
+    var group = document.getElementById('calculadorasDropdownGroup');
+    var btn = document.getElementById('calcDropdownBtn');
+    var menu = document.getElementById('calcDropdownMenu');
+    var arrow = document.getElementById('calcDropdownArrow');
+    if(!btn || !menu || !group) return;
+
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var isOpen = menu.classList.contains('!block');
+      if(isOpen){
+        menu.classList.remove('!block');
+        if(arrow) arrow.style.transform = '';
+      } else {
+        menu.classList.add('!block');
+        if(arrow) arrow.style.transform = 'rotate(180deg)';
+      }
+    });
+
+    document.addEventListener('click', function(e){
+      if(!group.contains(e.target)){
+        menu.classList.remove('!block');
+        if(arrow) arrow.style.transform = '';
+      }
     });
   })();
   </script>
