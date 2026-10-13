@@ -12,7 +12,7 @@
   const CONFIG_PHONE_KEY = 'pmi_dest_phone';
   const CONFIG_WEBHOOK_KEY = 'pmi_webhook_url';
   const DEFAULT_PHONE = '5511999999999'; // Pode ser atualizado no Painel de Leads
-  const DEFAULT_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzsK0ZaM1Zh_8Jrm7hdil6NEkZQI2LgBs6524RdWuDyZxAZ_9sz2We82li4EazAh1z2/exec';
+  const DEFAULT_WEBHOOK = 'https://script.google.com/macros/s/AKfycbww_PlLdhGPoZxgTAtd9bQAB4dY7cjMYOsqwFDwYQQNlR-bJZAFW_Gf2rY3TSTKtIsRYw/exec';
   const RETENTION_DAYS = 365; // Retenção máxima de 1 ano
 
   // Obter número de destino atual
