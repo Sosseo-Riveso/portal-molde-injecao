@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engenharia de Moldes de Injeção | Simulação Moldflow, CAD/CAM 3D e Prototipagem</title>
-  <meta name="description" content="Engenharia de produto e projeto de moldes termoplásticos em CAD 3D e simulação reológica Moldflow. Eliminação de rechupes, empenamentos e linhas de solda antes da usinagem.">
+  <title>Engenharia e Projeto de Moldes de Injeção | CAD 3D, DFM e Simulação Moldflow</title>
+  <meta name="description" content="Engenharia e projeto de moldes de injeção plástica B2B em CAD 3D, análise DFM e simulação reológica Moldflow. Dimensionamento de câmara quente, gavetas, refrigeração conformal e contração antes do aço.">
   <link rel="canonical" href="https://portalmoldeinjecao.com.br/engenharia-e-desenvolvimento-de-moldes.html">
 
   <!-- Favicon Oficial Portal Molde Injeção (PMI 300x300) -->
@@ -14,9 +14,10 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Engenharia de Moldes de Injeção | Simulação Moldflow, CAD/CAM 3D e Prototipagem">
-  <meta property="og:description" content="Projeto de moldes e análise de fluxo termoplástico com otimização reológica e refrigeração conformal.">
+  <meta property="og:title" content="Engenharia e Projeto de Moldes de Injeção | CAD 3D, DFM e Simulação Moldflow">
+  <meta property="og:description" content="Engenharia e projeto de moldes termoplásticos com modelagem paramétrica 3D, análise DFM e simulação reológica Moldflow para aprovação no primeiro try-out (T1).">
   <meta property="og:url" content="https://portalmoldeinjecao.com.br/engenharia-e-desenvolvimento-de-moldes.html">
+  <meta property="og:image" content="https://portalmoldeinjecao.com.br/imagens/engenharia-1-ponto-injecao-balanceamento-moldflow.webp">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -39,15 +40,65 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Engenharia de Moldes e Simulação Moldflow",
-    "provider": {
-      "@type": "Organization",
-      "name": "Portal Molde Injeção",
-      "url": "https://portalmoldeinjecao.com.br/"
-    },
-    "description": "Desenvolvimento técnico de projetos de moldes para injeção plástica com modelagem CAD 3D, Moldflow e prototipagem rápida.",
-    "areaServed": "BR"
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Engenharia e Projeto de Moldes de Injeção Plástica",
+        "serviceType": "Engenharia e Projeto de Moldes, Análise DFM e Simulação Reológica Moldflow",
+        "provider": {
+          "@type": "Organization",
+          "name": "Portal Molde Injeção",
+          "url": "https://portalmoldeinjecao.com.br/"
+        },
+        "description": "Serviço especializado de engenharia e projeto de moldes para injeção termoplástica com modelagem paramétrica CAD 3D, revisão DFM (Design for Manufacturing), cálculo de contração anisotrópica, cinemática de gavetas e simulação reológica CAE/Moldflow.",
+        "areaServed": "BR"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O que compõe o escopo completo de Engenharia e Projeto de Moldes B2B?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O escopo completo de engenharia e projeto de moldes abrange a revisão de manufaturabilidade da peça (DFM), a simulação reológica e térmica em software CAE (Moldflow), o modelamento 3D completo do conjunto porta-molde e cavidades, o dimensionamento cinemático de gavetas e pinças angulares (lifters), os desenhos 2D de fabricação com tolerâncias GD&T e a lista padronizada de materiais (BOM)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Em quais formatos de arquivo posso enviar meu produto para análise e projeto do molde?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aceitamos arquivos 3D nativos de SolidWorks (.sldprt/.sldasm), Siemens NX (.prt), Autodesk Inventor (.ipt) e CATIA (.CATPart), além de geometrias neutras universais em formato STEP (.stp / AP214), Parasolid (.x_t) e IGES (.igs), acompanhadas do desenho técnico 2D em PDF ou DWG indicando cotas críticas e tolerâncias ISO."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como a engenharia de projeto do molde corrige o empenamento em resinas com fibra de vidro?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Polímeros reforçados como PA 6.6 + 30% Fibra de Vidro apresentam contração anisotrópica (0,3% no sentido do fluxo contra até 0,9% no sentido transversal). A engenharia de moldes simula a orientação das fibras no Moldflow, equilibra a troca térmica entre macho e cavidade (ΔT < 3°C) e aplica fatores de escala diferenciados nos eixos X, Y e Z do modelo CAD 3D antes da usinagem CNC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual a diferença entre projetar um molde de câmara quente e um molde de canal frio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O projeto de molde com câmara quente utiliza um manifold aquecido e bicos torpedos ou valvulados que injetam o polímero fundido diretamente na peça, eliminando 100% do desperdício de galho e reduzindo o tempo de ciclo em 18% a 35%. Já o molde de canal frio (2 ou 3 placas) exige o dimensionamento de canais trapezoidais ou circulares balanceados que solidificam a cada ciclo e demandam moagem ou reciclagem."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vocês realizam prototipagem rápida 3D antes da fabricação definitiva do molde de aço?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Antes de liberar o corte do aço P20 ou H13 na matrizaria, executamos a prototipagem funcional por manufatura aditiva de alta resolução (estereolitografia SLA, sinterização seletiva a laser SLS em Nylon ou usinagem CNC em blocos de ABS/POM). Isso permite validar interferências de montagem, ergonomia e encaixes (snap-fits) com risco zero de retrabalho ferramental."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -281,7 +332,7 @@
         <div class="text-[11px] font-bold uppercase tracking-wider text-blue-700 mb-1.5">Blog Técnico</div>
         <div class="pl-2 space-y-1.5 border-l-2 border-blue-100">
           <a href="categoria-projeto-e-engenharia-de-moldes.html" class="block py-1 text-xs font-semibold text-slate-700 hover:text-blue-700">Projeto e Engenharia de Moldes</a>
-          <a href="categoria-ferramentaria-e-acos-para-moldes.html" class="block py-1 text-xs font-semibold text-slate-700 hover:bg-blue-700">Ferramentaria e Aços para Moldes</a>
+          <a href="categoria-ferramentaria-e-acos-para-moldes.html" class="block py-1 text-xs font-semibold text-slate-700 hover:text-blue-700">Ferramentaria e Aços para Moldes</a>
           <a href="categoria-processos-e-custos-de-injecao-plastica.html" class="block py-1 text-xs font-semibold text-slate-700 hover:text-blue-700">Processos e Custos de Injeção</a>
           <a href="categoria-manutencao-e-qualidade-de-matrizes.html" class="block py-1 text-xs font-semibold text-slate-700 hover:text-blue-700">Manutenção e Qualidade de Matrizes</a>
         </div>
@@ -312,20 +363,44 @@
     })();
   </script>
 
-  <!-- Banner -->
+  <!-- Banner Principal (Pirâmide Invertida Radical para GEO/AEO e Decisores B2B) -->
   <section class="bg-gradient-to-b from-brand-navy to-slate-900 text-white py-14">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-4">
         <a href="index.html" class="hover:text-white">Início</a>
         <span>/</span>
-        <span class="text-sky-400">Engenharia & Simulação Moldflow</span>
+        <span class="text-sky-400">Engenharia e Projeto de Moldes</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 leading-tight">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3 leading-tight">
         Engenharia e Projeto de Moldes: Simulação Reológica Moldflow e CAD/CAM 3D
       </h1>
-      <p class="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-        <strong>Mais de 80% dos defeitos graves de injeção plástica (rechupe, empenamento, bolhas e linhas de solda em áreas de esforço mecânico) são originados na geometria da peça e no projeto do molde, e não no operador da máquina</strong>. Nossa equipe de engenharia aplica simulação reológica Moldflow avançada e modelagem CAD 3D paramétrica para blindar seu projeto antes do primeiro corte do bloco de aço.
+      <h2 class="text-lg sm:text-xl font-bold text-sky-400 mb-5 leading-snug">
+        Como a engenharia e projeto de moldes termoplásticos com validação CAE/Moldflow elimina retrabalhos de bancada e garante aprovação dimensional logo no primeiro try-out (T1)
+      </h2>
+      <p class="text-base sm:text-lg text-slate-200 max-w-4xl leading-relaxed mb-4">
+        <strong>A engenharia e projeto de moldes de injeção plástica é a etapa determinante que define a estabilidade dimensional da peça, o tempo de ciclo produtivo e a longevidade da ferramenta antes do primeiro corte do bloco de aço P20 ou H13</strong>. Mais de 80% dos defeitos críticos de injeção — como rechupes severos, empenamentos (<em>warpage</em>), queima por aprisionamento de gás (efeito diesel) e linhas de solda fria em regiões de esforço mecânico — nascem no equívoco construtivo da geometria do produto ou da matriz, sendo solucionados preventivamente pela nossa engenharia através de modelagem paramétrica CAD 3D, análise DFM (<em>Design for Manufacturing</em>) e simulação reológica Moldflow.
       </p>
+      <p class="text-sm sm:text-base text-slate-300 max-w-4xl leading-relaxed mb-8">
+        Diferente do modelo empírico tradicional — onde o ferramenteiro usina o aço por tentativa e erro, gerando múltiplos <em>try-outs</em> corretivos (T2, T3, T4), soldas de reparo prematuras e atrasos de meses no cronograma de lançamento —, o nosso protocolo de <strong>engenharia e projeto de moldes B2B</strong> calcula matematicamente o balanceamento volumétrico de canais quentes ou frios, a contração anisotrópica do polímero (especialmente em resinas técnicas com fibra de vidro), a cinemática de gavetas hidráulicas e pinças angulares (<em>lifters</em>) e a eficiência termodinâmica dos circuitos de refrigeração em regime turbulento (<em>Re</em> &gt; 4.000).
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-slate-800/80 max-w-4xl">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
+          <span class="block text-xs font-bold uppercase tracking-wider text-sky-400">Simulação CAE</span>
+          <span class="text-base sm:text-lg font-black text-white">100% Moldflow 3D</span>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
+          <span class="block text-xs font-bold uppercase tracking-wider text-emerald-400">Precisão Dimensional</span>
+          <span class="text-base sm:text-lg font-black text-white">±0,005 a ±0,02 mm</span>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
+          <span class="block text-xs font-bold uppercase tracking-wider text-amber-400">Redução de Ciclo</span>
+          <span class="text-base sm:text-lg font-black text-white">-20% a -35% (Térmico)</span>
+        </div>
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3">
+          <span class="block text-xs font-bold uppercase tracking-wider text-blue-400">Entrega Técnica</span>
+          <span class="text-base sm:text-lg font-black text-white">STEP + 2D GD&amp;T + BOM</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -334,83 +409,476 @@
     <article class="prose prose-slate max-w-none">
 
       <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-12">
-        <h2 class="text-lg font-bold text-blue-900 mb-2">Takeaway Técnico (Diretriz para Projetistas e Engenheiros de Produto):</h2>
+        <h2 class="text-lg font-bold text-blue-900 mb-2">Takeaway Técnico (Diretriz para Projetistas, Compradores Técnicos e Engenheiros de Produto):</h2>
         <p class="text-sm text-blue-800 leading-relaxed m-0">
-          Alterar uma dimensão ou ângulo de saída em ambiente CAD 3D custa frações de centavos; alterar a cavidade usinada e temperada em aço H13 na ferramentaria custa milhares de reais e atrasa o lançamento em semanas. A simulação Moldflow é o melhor investimento de mitigação de risco para montadoras e indústrias sistemistas.
+          Alterar uma espessura de parede, reposicionar um ponto de injeção ou corrigir um ângulo de saída em ambiente virtual <strong>CAD/CAE 3D</strong> custa frações de centavos e leva poucas horas; modificar uma cavidade já usinada, temperada a 52 HRC e polida em aço H13 na ferramentaria custa dezenas de milhares de reais e atrasa o lançamento do produto em semanas. Contratar uma <strong>engenharia e projeto de moldes</strong> fundamentada em simulação reológica Moldflow é o maior seguro técnico e financeiro para indústrias automotivas, eletroeletrônicas, médicas e de bens de consumo.
         </p>
       </div>
 
-      <h2 class="text-2xl font-black text-slate-900 mb-6">O que a Análise Reológica Moldflow Revela com Antecedência?</h2>
-      <p class="text-base text-slate-700 leading-relaxed mb-6">
-        Ao alimentar o software com a viscosidade exata do polímero selecionado e os parâmetros de injeção da máquina, a simulação computacional calcula:
+      <h2 class="text-2xl font-black text-slate-900 mb-3">O que a Análise Reológica Moldflow e a Engenharia de Moldes Revelam com Antecedência?</h2>
+      <p class="text-base text-slate-700 leading-relaxed mb-8">
+        Ao alimentar a estação CAE com a curva de viscosidade (modelo <em>Cross-WLF</em>), o diagrama <em>pvT</em> (Pressão-Volume-Temperatura) exato do polímero selecionado e a janela de processo da <a href="servicos-de-injecao-plastica.html" class="text-blue-700 font-bold underline hover:text-blue-900">injetora termoplástica</a>, nossa simulação computacional mapeia e corrige preventivamente os 4 fenômenos críticos do projeto do molde:
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">1. Posição e Pressão do Ponto de Injeção</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Identifica a localização ideal da entrada (submarina, capilar, em leque ou câmara quente valvulada) para garantir preenchimento volumétrico homogêneo e balanceamento perfeito em moldes de múltiplas cavidades.
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">2. Linhas de Solda e Emendas Térmicas</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Prevê onde as frentes de fluxo de resina fundida se encontram após contornar furos e rebaixos, permitindo reposicionar os pontos de injeção para afastar as linhas de solda das regiões de maior solicitação mecânica.
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">3. Bolsões de Ar e Saídas de Gases</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Mapeia os pontos exatos onde o ar pode ficar aprisionado causando efeito diesel (queima do plástico), permitindo projetar saídas de gases micrométricas (0,015 a 0,025 mm) nas linhas de partição ou nos próprios extratores.
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">4. Empenamento e Contração Volumétrica</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Simula a deformação geométrica pós-desmoldagem causada por gradientes de temperatura assimétricos entre macho e cavidade, viabilizando a compensação dimensional reversa na usinagem CNC.
-          </p>
-        </div>
-      </div>
+      <!-- Módulo 2 Colunas: Baralho de Engenharia & Moldflow (Esquerda) + Os 4 Cards Sincronizados (Direita) -->
+      <div class="grid lg:grid-cols-12 gap-8 items-center my-8 not-prose">
+        
+        <!-- Coluna Esquerda: Baralho Interativo das 4 Análises de Engenharia e Moldflow (Shuffle Cards) -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div id="shuffle-stage-engenharia-moldes" class="relative w-full max-w-[350px] sm:max-w-[390px] aspect-[3/4] select-none cursor-pointer group" title="Clique para alternar entre as 4 análises de Engenharia e Projeto de Moldes">
+            
+            <!-- Card 1: Posição e Pressão do Ponto de Injeção -->
+            <div data-phase-card-eng="0" class="phase-shuffle-card-eng absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/engenharia-1-ponto-injecao-balanceamento-moldflow.webp" alt="Engenharia e Projeto de Moldes: Simulação de Posição e Pressão do Ponto de Injeção e Balanceamento Multicavidades" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-sky-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                Análise 01 • Ponto de Injeção
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-sky-400 mb-0.5">Reologia de Preenchimento e Gate</p>
+                <h4 class="text-sm font-black text-white leading-snug">1. Posição e Pressão do Ponto de Injeção</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Dimensionamento de entrada submarina, leque ou câmara quente valvulada com 99,6% de simetria.</p>
+              </div>
+            </div>
 
-      <h2 class="text-2xl font-black text-slate-900 mb-6">Regras de Ouro no Design for Manufacturing (DFM) para Plásticos</h2>
-      <ul class="space-y-4 text-slate-700 not-prose mb-12">
-        <li class="bg-white p-4 rounded-xl border border-slate-200 flex items-start gap-4">
-          <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm shrink-0">1</span>
-          <div>
-            <strong class="text-slate-900 block text-sm">Espessura de Parede Uniforme:</strong>
-            <span class="text-xs text-slate-600">Variações bruscas de espessura causam rechupes visíveis na face externa e tensões internas de resfriamento. Transições de espessura devem ter chanfros suaves.</span>
-          </div>
-        </li>
-        <li class="bg-white p-4 rounded-xl border border-slate-200 flex items-start gap-4">
-          <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm shrink-0">2</span>
-          <div>
-            <strong class="text-slate-900 block text-sm">Ângulos de Saída (Draft Angles):</strong>
-            <span class="text-xs text-slate-600">Recomendamos no mínimo 1° a 1,5° por face para superfícies polidas, e no mínimo 3° para áreas com texturização por eletroerosão ou laser (VDI) para evitar riscos na extração.</span>
-          </div>
-        </li>
-        <li class="bg-white p-4 rounded-xl border border-slate-200 flex items-start gap-4">
-          <span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm shrink-0">3</span>
-          <div>
-            <strong class="text-slate-900 block text-sm">Dimensionamento de Nervuras:</strong>
-            <span class="text-xs text-slate-600">A espessura da base da nervura não deve ultrapassar 60% da espessura da parede principal para evitar marcas de rechupe na face estética contrária.</span>
-          </div>
-        </li>
-      </ul>
+            <!-- Card 2: Linhas de Solda e Emendas Térmicas -->
+            <div data-phase-card-eng="1" class="phase-shuffle-card-eng absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/engenharia-2-linhas-solda-emendas-termicas-cae.webp" alt="Engenharia e Projeto de Moldes: Previsão de Linhas de Solda e Emendas Térmicas em Peças Plásticas" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-amber-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                Análise 02 • Linhas de Solda
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-amber-400 mb-0.5">Integridade Estrutural e Fusão</p>
+                <h4 class="text-sm font-black text-white leading-snug">2. Linhas de Solda e Emendas Térmicas</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Deslocamento estratégico de frentes de fluxo para fora de regiões de tração e impacto.</p>
+              </div>
+            </div>
 
-      <!-- FAQs -->
-      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Engenharia de Moldes</h2>
-        <div class="space-y-4">
-          <div class="bg-white p-5 rounded-xl border border-slate-200">
-            <h3 class="text-base font-bold text-slate-900 mb-2">Em quais formatos de arquivo posso enviar meu projeto para análise?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Aceitamos arquivos nativos de SolidWorks, Siemens NX, Inventor, Catia, bem como arquivos neutros universais: STEP (.stp), IGES (.igs), Parasolid (.x_t) e desenhos técnicos dimensionais em PDF ou DWG com tolerâncias indicadas.
+            <!-- Card 3: Bolsões de Ar e Saídas de Gases -->
+            <div data-phase-card-eng="2" class="phase-shuffle-card-eng absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/engenharia-3-bolsoes-ar-saidas-gases-venting.webp" alt="Engenharia e Projeto de Moldes: Mapeamento de Bolsões de Ar e Saídas de Gases Micrométricas contra Efeito Diesel" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-orange-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
+                Análise 03 • Saídas de Gases
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-orange-400 mb-0.5">Prevenção de Efeito Diesel</p>
+                <h4 class="text-sm font-black text-white leading-snug">3. Bolsões de Ar e Saídas de Gases</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Calibração de microcanais de desaeração (0,015 a 0,025 mm) na linha de partição e pinos extratores.</p>
+              </div>
+            </div>
+
+            <!-- Card 4: Empenamento e Contração Volumétrica -->
+            <div data-phase-card-eng="3" class="phase-shuffle-card-eng absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/engenharia-4-empenamento-contracao-volumetrica-cnc.webp" alt="Engenharia e Projeto de Moldes: Simulação de Empenamento, Contração Volumétrica e Compensação CNC" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-emerald-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Análise 04 • Contração e CNC
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 mb-0.5">Estabilidade Dimensional Pós-Extração</p>
+                <h4 class="text-sm font-black text-white leading-snug">4. Empenamento e Contração Volumétrica</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Equilíbrio térmico macho/cavidade e compensação reversa de encolhimento na usinagem CNC.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controles e Indicadores do Baralho de Engenharia -->
+          <div class="mt-7 flex flex-col items-center gap-2.5 w-full">
+            <div class="flex items-center justify-center gap-1.5 flex-wrap">
+              <button type="button" data-phase-btn-eng="0" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-blue-600 text-white shadow-sm cursor-pointer">1. Ponto Injeção</button>
+              <button type="button" data-phase-btn-eng="1" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer">2. Solda Térmica</button>
+              <button type="button" data-phase-btn-eng="2" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer">3. Saída Gases</button>
+              <button type="button" data-phase-btn-eng="3" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer">4. Contração CNC</button>
+            </div>
+            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              Alternância automática • Clique na carta ou selecione a análise CAE
+            </span>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Os 4 Cards de Engenharia e Simulação Moldflow (Sincronizados) -->
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+          <div data-phase-box-eng="0" class="bg-white p-5 rounded-xl border-2 border-blue-600 shadow-md ring-2 ring-blue-600/10 transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Análise CAE 01 • Gate &amp; Fluxo</span>
+              <span class="phase-active-dot-eng w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">1. Posição e Pressão do Ponto de Injeção</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Identifica a localização ideal da entrada (submarina, capilar, em leque, anelar ou <strong>câmara quente valvulada</strong>) para garantir preenchimento volumétrico homogêneo, minimizar a queda de pressão e assegurar balanceamento de <strong>99,6%</strong> em moldes de múltiplas cavidades.
             </p>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-slate-200">
-            <h3 class="text-base font-bold text-slate-900 mb-2">Vocês oferecem prototipagem 3D antes de usinar o molde de aço?</h3>
+
+          <div data-phase-box-eng="1" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Análise CAE 02 • Weld Line</span>
+              <span class="phase-active-dot-eng w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">2. Linhas de Solda e Emendas Térmicas</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Prevê com precisão milimétrica onde as frentes de fluxo de resina fundida se encontram após contornar furos, buchas e rebaixos, permitindo reposicionar os pontos de injeção ou alterar espessuras locais para afastar as <strong>linhas de solda</strong> das regiões de maior solicitação mecânica.
+            </p>
+          </div>
+
+          <div data-phase-box-eng="2" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Análise CAE 03 • Venting</span>
+              <span class="phase-active-dot-eng w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">3. Bolsões de Ar e Saídas de Gases</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Mapeia os pontos exatos de fim de preenchimento onde o ar fica aprisionado causando <strong>efeito diesel</strong> (carbonização do plástico por compressão adiabática), permitindo projetar saídas de gases micrométricas (<strong>0,015 a 0,025 mm</strong>) nas linhas de partição, postiços e pinos extratores.
+            </p>
+          </div>
+
+          <div data-phase-box-eng="3" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Análise CAE 04 • Warpage</span>
+              <span class="phase-active-dot-eng w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">4. Empenamento e Contração Volumétrica</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Simula a deformação geométrica pós-desmoldagem causada por gradientes térmicos assimétricos entre macho e cavidade e pela orientação molecular das fibras, viabilizando a <strong>compensação dimensional reversa no CAD 3D</strong> antes da usinagem CNC.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+        (function() {
+          const stage = document.getElementById('shuffle-stage-engenharia-moldes');
+          if (!stage) return;
+          const cards = Array.from(stage.querySelectorAll('.phase-shuffle-card-eng'));
+          const btns = Array.from(document.querySelectorAll('[data-phase-btn-eng]'));
+          const boxes = Array.from(document.querySelectorAll('[data-phase-box-eng]'));
+          let activeIdx = 0;
+          let timer = null;
+
+          const stackStyles = [
+            { transform: 'translate3d(0px, 0px, 0px) scale(1) rotate(0deg)', zIndex: 40, opacity: '1', filter: 'brightness(1)' },
+            { transform: 'translate3d(14px, 10px, 0px) scale(0.95) rotate(2.5deg)', zIndex: 30, opacity: '0.92', filter: 'brightness(0.78)' },
+            { transform: 'translate3d(-12px, 18px, 0px) scale(0.90) rotate(-2.5deg)', zIndex: 20, opacity: '0.78', filter: 'brightness(0.60)' },
+            { transform: 'translate3d(6px, 26px, 0px) scale(0.85) rotate(1.2deg)', zIndex: 10, opacity: '0.55', filter: 'brightness(0.45)' }
+          ];
+
+          function renderShuffle(idx) {
+            activeIdx = (idx + cards.length) % cards.length;
+            cards.forEach((card, i) => {
+              const offset = (i - activeIdx + cards.length) % cards.length;
+              const st = stackStyles[offset];
+              card.style.transform = st.transform;
+              card.style.zIndex = st.zIndex;
+              card.style.opacity = st.opacity;
+              card.style.filter = st.filter;
+            });
+
+            btns.forEach((btn, i) => {
+              if (i === activeIdx) {
+                btn.className = 'px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-blue-600 text-white shadow-sm cursor-pointer';
+              } else {
+                btn.className = 'px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer';
+              }
+            });
+
+            boxes.forEach((box, i) => {
+              const dot = box.querySelector('.phase-active-dot-eng');
+              if (i === activeIdx) {
+                box.className = 'bg-white p-5 rounded-xl border-2 border-blue-600 shadow-md ring-2 ring-blue-600/10 transition-all duration-300 cursor-pointer';
+                if (dot) dot.className = 'phase-active-dot-eng w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse';
+              } else {
+                box.className = 'bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer';
+                if (dot) dot.className = 'phase-active-dot-eng w-2.5 h-2.5 rounded-full bg-slate-300';
+              }
+            });
+          }
+
+          function nextCard() {
+            renderShuffle(activeIdx + 1);
+          }
+
+          function startAuto() {
+            stopAuto();
+            timer = setInterval(nextCard, 3200);
+          }
+
+          function stopAuto() {
+            if (timer) {
+              clearInterval(timer);
+              timer = null;
+            }
+          }
+
+          stage.addEventListener('click', () => {
+            nextCard();
+            startAuto();
+          });
+          stage.addEventListener('mouseenter', stopAuto);
+          stage.addEventListener('mouseleave', startAuto);
+
+          btns.forEach((btn, idx) => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              renderShuffle(idx);
+              startAuto();
+            });
+          });
+
+          boxes.forEach((box, idx) => {
+            box.addEventListener('click', () => {
+              renderShuffle(idx);
+              startAuto();
+            });
+            box.addEventListener('mouseenter', () => {
+              stopAuto();
+              renderShuffle(idx);
+            });
+            box.addEventListener('mouseleave', startAuto);
+          });
+
+          renderShuffle(0);
+          startAuto();
+        })();
+      </script>
+
+      <!-- Seção Aprofundada 1: Arquitetura Construtiva na Engenharia e Projeto de Moldes -->
+      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
+        <div class="mb-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-1">Dimensionamento de Ferramental B2B</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Arquitetura Construtiva na Engenharia e Projeto de Moldes: Qual Selecionar?</h2>
+        </div>
+        <p class="text-base text-slate-700 leading-relaxed mb-6">
+          A definição da arquitetura construtiva durante a fase de <strong>engenharia e projeto de moldes</strong> governa diretamente o investimento inicial (CAPEX da matriz) e o custo unitário da peça injetada (OPEX de produção seriada). A escolha técnica depende da geometria do produto, da presença de contra-saídas (<em>undercuts</em>), da exigência estética do ponto de injeção e da demanda anual do projeto:
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm mb-10">
+          <table class="w-full text-left text-sm text-slate-700">
+            <thead class="bg-slate-900 text-white text-xs uppercase font-extrabold">
+              <tr>
+                <th class="py-3.5 px-4">Arquitetura do Projeto de Molde</th>
+                <th class="py-3.5 px-4">Sistema de Alimentação</th>
+                <th class="py-3.5 px-4">Separação de Galho / Resíduo</th>
+                <th class="py-3.5 px-4">Redução de Ciclo</th>
+                <th class="py-3.5 px-4">Aplicação Industrial Recomendada</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 bg-white">
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-4 font-bold text-slate-900">Molde de 2 Placas (Canal Frio)</td>
+                <td class="py-3.5 px-4">Entrada direta, lateral (<em>edge gate</em>), leque ou submarina</td>
+                <td class="py-3.5 px-4">Automática (no gate submarino) ou degolagem manual/robô</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-600">Referência base</td>
+                <td class="py-3.5 px-4 text-xs">Lotes pequenos a médios, peças técnicas estruturais e menor investimento inicial de ferramental.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-4 font-bold text-slate-900">Molde de 3 Placas (Pin-Point)</td>
+                <td class="py-3.5 px-4">Entrada capilar (<em>pin-point gate</em>) no topo ou centro da peça</td>
+                <td class="py-3.5 px-4">100% automática na abertura da placa flutuante</td>
+                <td class="py-3.5 px-4 font-semibold text-blue-700">Médio (+placa intermediária)</td>
+                <td class="py-3.5 px-4 text-xs">Peças cilíndricas, engrenagens concêntricas e multicavidades que exigem injeção central sem câmara quente.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-4 font-bold text-slate-900">Molde com Câmara Quente (Valvulada / Aberta)</td>
+                <td class="py-3.5 px-4">Manifold aquecido com bicos térmicos ou pino valvulado</td>
+                <td class="py-3.5 px-4 font-bold text-emerald-700">Zero geração de galho (0% perda de matéria-prima)</td>
+                <td class="py-3.5 px-4 font-bold text-emerald-700">-18% a -35% no tempo de ciclo</td>
+                <td class="py-3.5 px-4 text-xs">Alta tiragem anual, polímeros de engenharia de alto custo (PC, PA66+FV, POM) e peças estéticas automotivas.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-4 font-bold text-slate-900">Molde Complexo (Gavetas, Lifters e Desenroscamento)</td>
+                <td class="py-3.5 px-4">Híbrido ou Câmara Quente balanceada no CAE</td>
+                <td class="py-3.5 px-4">Extração sincronizada com cilindros hidráulicos ou cremalheira</td>
+                <td class="py-3.5 px-4 font-semibold text-blue-700">Otimizado por atuação simultânea</td>
+                <td class="py-3.5 px-4 text-xs">Conexões hidráulicas roscadas, caixas com janelas laterais, travas internas (<em>snap-fits</em>) e carcaças complexas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Seção Aprofundada 2: Os 3 Pilares da Engenharia e Projeto de Moldes de Alta Precisão -->
+      <section class="mt-14 not-prose">
+        <div class="mb-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-1">Metodologia de Projeto CAD/CAE</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Os 3 Pilares Técnicos da Engenharia e Projeto de Moldes de Alta Performance</h2>
+        </div>
+        <p class="text-base text-slate-700 leading-relaxed mb-8">
+          Para que uma matriz opere em regime contínuo 24/7 por mais de <strong>500.000 a 1.000.000 de ciclos (Classe 101/102 SPI)</strong> sem fadiga mecânica ou variação dimensional, nosso departamento de engenharia executa o projeto sobre três disciplinas interdependentes:
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-10">
+          <!-- Pilar 1 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-blue-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-sm">01</div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Modelagem CAD 3D e Contração Anisotrópica</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Polímeros semicristalinos (PP, PA66, POM, PBT) e compostos carregados com fibra de vidro contraem de forma diferente no sentido do fluxo e no sentido transversal. Nossa engenharia aplica <strong>fatores de contração ortotrópicos calculados no Moldflow</strong> diretamente na cavidade e no macho 3D, garantindo que cotas críticas de rolamentos e vedações atinjam tolerâncias de <strong>±0,02 mm</strong> após a estabilização térmica.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-blue-700">
+              <span>Tolerância ISO 20457</span>
+              <span>Escala X/Y/Z Calibrada</span>
+            </div>
+          </div>
+
+          <!-- Pilar 2 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-sky-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-sm">02</div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Cinemática de Gavetas, Lifters e Extração</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Detalhes negativos externos e internos exigem mecanismos móveis de precisão. Projetamos <strong>gavetas acionadas por pino inclinado (15° a 22°)</strong> ou cilindros hidráulicos com placas de desgaste em bronze grafitado e <strong>cunhas de travamento (<em>heel blocks</em>) temperadas</strong> para suportar a pressão de injeção sem abrir rebarba, além de pinças angulares (<em>lifters</em>) e sistemas de desenroscamento rotativo.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-sky-700">
+              <span>Folga H7/g6 Anti-Engripamento</span>
+              <span>Zero Rebarba</span>
+            </div>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white font-black text-base flex items-center justify-center mb-4 shadow-sm">03</div>
+              <h3 class="text-lg font-black text-slate-900 mb-2">Engenharia Térmica e Regime Turbulento (Re &gt; 4.000)</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Como o resfriamento consome até <strong>70% do tempo total do ciclo de injeção</strong>, projetamos circuitos independentes com chicanas (<em>baffles</em>), borbulhadores (<em>bubblers</em>), postiços de alta condutividade térmica em <strong>Cobre-Berílio (CuBe2)</strong> e canais conformais. O dimensionamento hidráulico garante escoamento turbulento (<em>Re</em> entre 4.000 e 8.000), extraindo calor de forma uniforme e eliminando pontos quentes.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-emerald-700">
+              <span>ΔT Superficial &lt; 3°C</span>
+              <span>Ciclo até 35% Menor</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção Aprofundada 3: Regras de Ouro no DFM + Infográficos 16:9 -->
+      <section class="mt-14 not-prose">
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Regras de Ouro no Design for Manufacturing (DFM) para Peças Injetadas</h2>
+        <p class="text-base text-slate-700 leading-relaxed mb-6">
+          Antes de iniciar o detalhamento construtivo do porta-molde na <a href="fabricacao-de-moldes-de-injecao.html" class="text-blue-700 font-bold underline hover:text-blue-900">fabricação de moldes de injeção</a>, emitimos o <strong>Relatório de Análise DFM</strong> auditando a geometria 3D da peça plástica sob 4 diretrizes fundamentais:
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
+            <span class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-black text-sm shrink-0">01</span>
+            <div>
+              <strong class="text-slate-900 block text-sm mb-1">Uniformidade de Espessura Nominal (T):</strong>
+              <span class="text-xs text-slate-600 leading-relaxed block">Variações bruscas de espessura criam acúmulo de massa polimérica, gerando rechupes (<em>sink marks</em>), vazios internos (bolhas de vácuo) e tensões residuais. Projetamos coring (alívio de massa) e transições graduais em rampa de no mínimo <strong>3:1</strong>.</span>
+            </div>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
+            <span class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-black text-sm shrink-0">02</span>
+            <div>
+              <strong class="text-slate-900 block text-sm mb-1">Ângulos de Saída (Draft Angles) vs. Textura VDI:</strong>
+              <span class="text-xs text-slate-600 leading-relaxed block">Recomendamos no mínimo <strong>1° a 1,5° por face</strong> para superfícies polidas (SPI A/B), e acréscimo de <strong>1° para cada 0,025 mm de profundidade de textura (VDI 3400)</strong> ou gravação a laser, impedindo marcas de arraste e esbranquiçamento na extração.</span>
+            </div>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
+            <span class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-black text-sm shrink-0">03</span>
+            <div>
+              <strong class="text-slate-900 block text-sm mb-1">Proporção de Nervuras (0,5T a 0,6T) e Torres (Bosses):</strong>
+              <span class="text-xs text-slate-600 leading-relaxed block">Para elevar o momento de inércia sem marcar a superfície estética oposta, a base da nervura deve ter entre <strong>50% e 60% da parede principal (T)</strong>, altura máxima de 3T e raio de concordância na base de 0,25T a 0,4T para eliminar concentradores de tensão.</span>
+            </div>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
+            <span class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-black text-sm shrink-0">04</span>
+            <div>
+              <strong class="text-slate-900 block text-sm mb-1">Otimização de Linha de Partição e Contra-Saídas:</strong>
+              <span class="text-xs text-slate-600 leading-relaxed block">Redesenho inteligente de janelas laterais e clipes (<em>pass-through shut-offs</em> com inclinação mínima de <strong>3° a 5° aço contra aço</strong>) que permitem formar furos e travas laterais diretamente entre macho e cavidade, eliminando o custo de gavetas desnecessárias.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vitrine Dupla 16:9 de Engenharia CAD/CAE e DFM -->
+        <div class="grid md:grid-cols-2 gap-6 my-8">
+          <figure class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-lg">
+            <img src="imagens/simulacao-reologica-moldflow-projeto-cad-molde.webp" alt="Simulação Reológica Moldflow e Projeto CAD 3D de Molde de Injeção Plástica" width="1200" height="675" loading="lazy" class="w-full h-auto object-cover">
+            <figcaption class="p-4 text-xs text-slate-300 leading-relaxed">
+              <strong class="text-sky-400 block mb-0.5">Integração CAD 3D + CAE Moldflow:</strong> Validação simultânea da geometria do porta-molde, circuitos de refrigeração e perfil de pressão na cavidade.
+            </figcaption>
+          </figure>
+          <figure class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 shadow-lg">
+            <img src="imagens/analise-dfm-cotacao-pecas-tecnicas-injetadas.webp" alt="Análise DFM de Espessura de Parede e Ângulo de Saída no Projeto de Moldes" width="1200" height="675" loading="lazy" class="w-full h-auto object-cover">
+            <figcaption class="p-4 text-xs text-slate-300 leading-relaxed">
+              <strong class="text-emerald-400 block mb-0.5">Auditoria DFM (Design for Manufacturing):</strong> Mapeamento de espessuras nominais, ângulos de saída e zonas de alívio de massa antes da usinagem CNC.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Seção Aprofundada 4: Dossiê Técnico de Entrega de Engenharia (Deliverables B2B) -->
+      <section class="mt-14 bg-gradient-to-br from-slate-900 via-brand-navy to-slate-900 text-white rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl not-prose">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-800">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-sky-400 block mb-1">Propriedade Intelectual e Rastreabilidade</span>
+            <h2 class="text-xl sm:text-2xl font-black text-white">Dossiê Técnico de Entrega na Engenharia e Projeto de Moldes</h2>
+          </div>
+          <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-extrabold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+            ✓ Projeto 100% Documentado (Padrão Montadora)
+          </span>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed mb-6">
+          Ao contratar nossa <strong>engenharia e projeto de moldes</strong> (seja de forma avulsa para a sua ferramentaria interna ou integrada ao nosso pacote <em>Turnkey</em> de fabricação e injeção), sua empresa recebe o pacote completo de engenharia para total autonomia de fabricação e <a href="manutencao-e-modificacao-de-moldes.html" class="text-sky-400 font-bold underline hover:text-sky-300">manutenção futura da matriz</a>:
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+            <span class="text-xs font-extrabold text-sky-400 uppercase block mb-1">1. Conjunto 3D Paramétrico</span>
+            <p class="text-xs text-slate-300 leading-relaxed">Montagem completa do molde em formato nativo e neutro (<strong>STEP AP214 e Parasolid .x_t</strong>) com cavidades, machos, gavetas, postiços e eletrodos de erosão modelados.</p>
+          </div>
+          <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+            <span class="text-xs font-extrabold text-emerald-400 uppercase block mb-1">2. Detalhamento 2D e GD&amp;T</span>
+            <p class="text-xs text-slate-300 leading-relaxed">Desenhos executivos de bancada e usinagem (PDF/DWG) com tolerâncias geométricas <strong>GD&amp;T</strong>, ajustes deslizantes <strong>ISO H7/g6</strong>, durezas HRC e rugosidades SPI/VDI.</p>
+          </div>
+          <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+            <span class="text-xs font-extrabold text-amber-400 uppercase block mb-1">3. Laudo CAE / Moldflow</span>
+            <p class="text-xs text-slate-300 leading-relaxed">Relatório completo de simulação contendo tempo de preenchimento, pressão máxima na bucha, força de fechamento (tonelagem), mapa de soldas e <em>warpage</em>.</p>
+          </div>
+          <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+            <span class="text-xs font-extrabold text-blue-400 uppercase block mb-1">4. Lista de Materiais (BOM)</span>
+            <p class="text-xs text-slate-300 leading-relaxed">Especificação padronizada de aços (P20, 2738, H13, S136) e componentes normalizados (<strong>Polimold, DME ou Hasco</strong>) para reposição imediata de pinos, buchas e molas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs (5 Perguntas Frequentes Estruturadas para SEO/GEO) -->
+      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
+        <h2 class="text-2xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Engenharia e Projeto de Moldes</h2>
+        <div class="space-y-4">
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">1. O que compõe o escopo completo de Engenharia e Projeto de Moldes B2B?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Sim. Realizamos prototipagem rápida aditiva em resinas rígidas (SLA), nylon sintetizado a laser (SLS) ou usinagem de blocos plásticos maciços para testes de encaixe funcional, teste de montagem e validação com o cliente antes de autorizar a fabricação da ferramenta.
+              O escopo completo de engenharia e projeto de moldes abrange a revisão de manufaturabilidade da peça plástica (DFM), a simulação reológica e térmica em software CAE (Moldflow), o modelamento 3D paramétrico do porta-molde e das cavidades, o dimensionamento cinemático de gavetas e pinças angulares (<em>lifters</em>), os desenhos 2D de usinagem com tolerâncias GD&amp;T e a lista padronizada de materiais (BOM).
+            </p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">2. Em quais formatos de arquivo posso enviar meu produto para análise e projeto do molde?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Aceitamos arquivos 3D nativos de SolidWorks (<code>.sldprt</code>/<code>.sldasm</code>), Siemens NX (<code>.prt</code>), Autodesk Inventor (<code>.ipt</code>) e CATIA (<code>.CATPart</code>), além de geometrias neutras universais em formato STEP (<code>.stp</code> / AP214), Parasolid (<code>.x_t</code>) e IGES (<code>.igs</code>), acompanhadas do desenho técnico 2D em PDF ou DWG indicando cotas críticas de montagem e tolerâncias ISO.
+            </p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">3. Como a engenharia de projeto do molde corrige o empenamento em resinas com fibra de vidro?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Polímeros reforçados como PA 6.6 + 30% Fibra de Vidro apresentam contração anisotrópica (0,3% no sentido do fluxo contra até 0,9% no sentido transversal). A engenharia de moldes simula a orientação tensorial das fibras no Moldflow, equilibra a troca térmica entre macho e cavidade (ΔT &lt; 3°C) e aplica fatores de escala diferenciados nos eixos X, Y e Z do modelo CAD 3D antes da usinagem CNC.
+            </p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">4. Qual a diferença entre projetar um molde de câmara quente e um molde de canal frio?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              O projeto de molde com câmara quente utiliza um <em>manifold</em> aquecido e bicos torpedos ou valvulados que injetam o polímero fundido diretamente na peça, eliminando 100% do desperdício de galho e reduzindo o tempo de ciclo em 18% a 35%. Já o molde de canal frio (2 ou 3 placas) exige o dimensionamento de canais trapezoidais ou circulares balanceados que solidificam a cada ciclo e demandam moagem ou reciclagem.
+            </p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">5. Vocês realizam prototipagem rápida 3D antes da fabricação definitiva do molde de aço?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Sim. Antes de liberar o corte do aço P20 ou H13 na matrizaria, executamos a prototipagem funcional por manufatura aditiva de alta resolução (estereolitografia SLA, sinterização seletiva a laser SLS em Nylon ou usinagem CNC em blocos maciços de ABS/POM). Isso permite validar interferências de montagem, ergonomia e encaixes (<em>snap-fits</em>) com risco zero de retrabalho ferramental.
             </p>
           </div>
         </div>
