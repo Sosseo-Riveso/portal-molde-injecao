@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manutenção e Modificação de Moldes de Injeção | Ajuste, Polimento e Recuperação</title>
-  <meta name="description" content="Serviços de ferramentaria em manutenção preventiva, corretiva e modificação de moldes de injeção plástica. Solda a laser micro-TIG, polimento espelhado óptico e eliminação de rebarbas.">
+  <title>Manutenção e Modificação de Moldes de Injeção | Solda a Laser, Polimento SPI e Ajuste</title>
+  <meta name="description" content="Manutenção e Modificação de Moldes de Injeção Plástica: solda a laser Micro-TIG sem ZTA, polimento espelhado óptico SPI Classe A1, ajuste de partição (&lt; 0,015 mm) e novos postiços CNC.">
   <link rel="canonical" href="https://portalmoldeinjecao.com.br/manutencao-e-modificacao-de-moldes.html">
 
   <!-- Favicon Oficial Portal Molde Injeção (PMI 300x300) -->
@@ -14,9 +14,10 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Manutenção e Modificação de Moldes de Injeção | Ajuste, Polimento e Recuperação">
-  <meta property="og:description" content="Recuperação de matrizes termoplásticas, polimento classe A1 e ajustes mecânicos com resposta rápida.">
+  <meta property="og:title" content="Manutenção e Modificação de Moldes de Injeção | Solda a Laser, Polimento SPI e Ajuste">
+  <meta property="og:description" content="Recuperação metalúrgica de matrizes termoplásticas com solda a laser Micro-TIG, polimento óptico classe A-1, eliminação de rebarbas e novos postiços intercambiáveis.">
   <meta property="og:url" content="https://portalmoldeinjecao.com.br/manutencao-e-modificacao-de-moldes.html">
+  <meta property="og:image" content="https://portalmoldeinjecao.com.br/imagens/manutencao-1-solda-laser-micro-tig-reparo-molde.webp">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -39,15 +40,99 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Manutenção e Recuperação de Moldes de Injeção",
-    "provider": {
-      "@type": "Organization",
-      "name": "Portal Molde Injeção",
-      "url": "https://portalmoldeinjecao.com.br/"
-    },
-    "description": "Manutenção preventiva, retífica plana, solda a laser, polimento espelhado e ajuste de gavetas de moldes termoplásticos.",
-    "areaServed": "BR"
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Manutenção e Modificação de Moldes de Injeção Plástica",
+        "serviceType": "Manutenção Preventiva, Corretiva e Modificação de Moldes de Injeção",
+        "provider": {
+          "@type": "Organization",
+          "name": "Portal Molde Injeção",
+          "url": "https://portalmoldeinjecao.com.br/"
+        },
+        "description": "Serviços de ferramentaria B2B em manutenção e modificação de moldes de injeção plástica: solda a laser Micro-TIG sem ZTA, polimento espelhado óptico SPI A-1, ajuste de linha de fechamento em prensa de spotting (< 0,015 mm) e usinagem CNC/EDM de novos postiços.",
+        "areaServed": "BR",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Escopo de Manutenção e Modificação de Matrizes",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Solda a Laser Micro-TIG em Cantos Vivos e Linhas de Fechamento"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Polimento Espelhado Óptico Norma SPI Classe A-1 (Ra < 0,012 µm)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Ajuste de Partição (Spotting), Eliminação de Rebarbas e Revisão de Gavetas"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Modificação Geométrica (ECN/Retrofit) e Fabricação de Novos Postiços CNC/EDM"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual o prazo típico para reparo emergencial de um molde de injeção danificado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para intervenções corretivas pontuais — como solda a laser Micro-TIG em arestas amassadas, substituição de pinos extratores engripados, troca de resistências de câmara quente ou desobstrução de refrigeração — o atendimento na ferramentaria é imediato, com liberação técnica da matriz entre 24 e 72 horas para minimizar o tempo de máquina parada."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual a diferença entre solda a laser e solda TIG convencional na recuperação de moldes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A solda a laser (e Micro-TIG pulsada) concentra a energia em pulsos micrométricos de 0,1 a 0,4 mm sem aquecer o bloco estrutural da cavidade. Isso preserva a dureza original do aço (48 a 52 HRC em H13 ou Inox 420) e elimina a Zona Termicamente Afetada (ZTA), impedindo trincas de borda e afundamentos que ocorrem na solda TIG convencional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como eliminar rebarbas (flash) na linha de fechamento e nas gavetas do molde?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A eliminação definitiva de rebarbas exige a deposição metalúrgica por solda a laser nas bordas desgastadas seguida de retífica plana, eletroerosão de precisão e ajuste de bancada (spotting) com tinta Azul da Prússia em prensa hidráulica. As cunhas de travamento e réguas das gavetas são ajustadas para garantir interferência de vedação com folga residual inferior a 0,015 mm."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "É possível modificar a geometria da peça plástica aproveitando o molde de injeção atual?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Por meio da modificação de engenharia (Retrofit / ECN), realizamos o escaneamento ou modelamento 3D da cavidade existente, alojamos berços retificados e fabricamos novos postiços intercambiáveis em CNC 5 eixos e eletroerosão EDM. Essa solução atualiza o design do produto economizando até 65% do investimento e 70% do prazo em relação a um molde novo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vocês realizam manutenção em moldes importados ou fabricados por outras ferramentarias?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Nossa ferramentaria atende matrizes nacionais e importadas (asiáticas, europeias e norte-americanas) com padrões normalizados Hasco, DME, Polimold ou especiais, incluindo revisão completa de sistemas de câmara quente multimarcas (Yudo, Mold-Masters, Husky, Synventive e Incoe), mesmo quando o cliente não possui o projeto 3D original."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -318,14 +403,38 @@
       <div class="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-4">
         <a href="index.html" class="hover:text-white">Início</a>
         <span>/</span>
-        <span class="text-sky-400">Manutenção e Ajuste de Moldes</span>
+        <span class="text-sky-400">Manutenção e Modificação de Moldes de Injeção</span>
       </div>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 leading-tight">
-        Manutenção e Modificação de Moldes de Injeção: Agilidade e Precisão em Ferramentaria
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3 leading-tight">
+        Manutenção e Modificação de Moldes de Injeção: Solda a Laser, Polimento SPI e Ajuste de Bancada
       </h1>
-      <p class="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-        <strong>Uma hora de injetora parada por travamento de gaveta mecânica ou rebarba na linha de fechamento corrói a margem de lucro de qualquer operação industrial</strong>. Oferecemos serviços especializados de manutenção preventiva, reparo corretivo de urgência com solda a laser e modificação geométrica de matrizes em ferramentaria de suporte integrada ao parque produtivo.
+      <h2 class="text-lg sm:text-xl font-bold text-sky-400 mb-5 leading-snug">
+        Recuperação Metalúrgica de Cavidades, Eliminação Definitiva de Rebarbas e Engenharia de Modificação (Retrofit) com Resposta Rápida para Indústrias B2B
+      </h2>
+      <p class="text-base sm:text-lg text-slate-200 max-w-4xl leading-relaxed mb-4">
+        A <strong>Manutenção e Modificação de Moldes de Injeção</strong> consiste no conjunto de intervenções de ferramentaria de precisão — incluindo <strong>solda a laser Micro-TIG sem Zona Termicamente Afetada (ZTA)</strong>, <strong>polimento óptico diamantado até norma SPI Classe A-1</strong>, <strong>ajuste de partição em prensa de <em>spotting</em> (&lt; 0,015 mm)</strong> e <strong>usinagem CNC/EDM de novos postiços intercambiáveis</strong> — que restaura a geometria original da cavidade e atualiza o produto plástico sem o custo de uma matriz nova. Uma hora de injetora parada por travamento de gaveta ou rebarba na linha de fechamento corrói a margem operacional da fábrica; por isso, nossa ferramentaria executa diagnósticos metrológicos e reparos emergenciais com liberação entre <strong>24 e 72 horas</strong>.
       </p>
+      <p class="text-sm sm:text-base text-slate-300 max-w-4xl leading-relaxed mb-8">
+        Diferente de reparos convencionais com solda TIG de arco aberto — que destemperam o aço ao redor da borda, criam crateras porosas e provocam trincas prematuras sob a pressão de recalque —, aplicamos micro-pulsos a laser de <strong>0,1 a 0,4 mm</strong> com fios de adição homólogos (<strong>AISI P20, DIN 1.2738, H13 e Inox 420 / S136</strong>), preservando a dureza de <strong>48 a 52 HRC</strong> intacta. Aliado ao protocolo de <strong>Manutenção Produtiva Total (TPM Níveis I, II e III)</strong>, desincrustamento ultrassônico de canais de refrigeração e revisão de sistemas de câmara quente, garantimos repetibilidade centesimal por centenas de milhares de ciclos.
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-2 border-t border-slate-800/80">
+        <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5">
+          <span class="block text-xl sm:text-2xl font-black text-sky-400">0,1 a 0,4 mm</span>
+          <span class="text-xs text-slate-300 font-semibold">Pulso Micro-Laser Sem ZTA (48–52 HRC)</span>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5">
+          <span class="block text-xl sm:text-2xl font-black text-emerald-400">&lt; 0,015 mm</span>
+          <span class="text-xs text-slate-300 font-semibold">Ajuste de Partição e Vedação de Gavetas</span>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5">
+          <span class="block text-xl sm:text-2xl font-black text-indigo-400">SPI Classe A-1</span>
+          <span class="text-xs text-slate-300 font-semibold">Polimento Óptico Diamantado (Ra &lt; 0,012 &mu;m)</span>
+        </div>
+        <div class="bg-slate-900/70 border border-slate-800 rounded-xl p-3.5">
+          <span class="block text-xl sm:text-2xl font-black text-amber-400">24h a 72h</span>
+          <span class="text-xs text-slate-300 font-semibold">Liberação Rápida em Reparos Emergenciais</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -336,57 +445,555 @@
       <div class="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-12">
         <h2 class="text-lg font-bold text-blue-900 mb-2">Takeaway Técnico (Diretriz para Diretores Industriais e Gerentes de Manutenção):</h2>
         <p class="text-sm text-blue-800 leading-relaxed m-0">
-          A manutenção preventiva programada a cada 50.000 ou 100.000 ciclos custa menos de 10% do valor de um reparo corretivo emergencial. O desincrustamento químico dos canais de refrigeração e a lubrificação com graxas de alta temperatura (que não contaminam o plástico) evitam o desgaste prematuro de colunas-guia, buchas e gavetas, mantendo o fechamento centesimal sem rebarbas.
+          A <strong>manutenção preventiva programada</strong> a cada <strong>25.000, 50.000 ou 100.000 ciclos</strong> custa menos de <strong>10% do valor de um reparo corretivo emergencial</strong> com parada não planejada de linha. O desincrustamento químico dos canais de refrigeração restaura até <strong>22% da troca térmica original</strong>, enquanto o ajuste de cunhas e a lubrificação com graxas sintéticas de alta temperatura (PTFE/PFPE que não migram para a cavidade) evitam o engripamento de colunas-guia, extratores e gavetas, mantendo o fechamento centesimal sem rebarbas.
         </p>
       </div>
 
-      <h2 class="text-2xl font-black text-slate-900 mb-6">Principais Serviços de Recuperação e Ajuste de Matrizes</h2>
+      <!-- MÓDULO 2 COLUNAS: BARALHO DE FASES (ESQUERDA) + 4 CARDS DE MANUTENÇÃO E MODIFICAÇÃO (DIREITA) -->
+      <div class="mb-6 not-prose">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-blue-100 text-blue-800 mb-2">
+          <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+          Ferramentaria de Precisão &bull; Recuperação e Retrofit de Matrizes
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+          Principais Serviços de Manutenção, Recuperação e Modificação de Matrizes
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2 max-w-3xl leading-relaxed">
+          Interaja com o <strong>Baralho de Fases</strong> à esquerda ou selecione qualquer um dos <strong>4 serviços críticos de bancada e usinagem</strong> à direita para inspecionar os parâmetros metalúrgicos, tolerâncias de ajuste e acabamentos superficiais aplicados em nossa ferramentaria:
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mb-3">⚡</div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Solda a Laser Micro-TIG</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Reparo cirúrgico de cantos vivos amassados, trincas ou desgaste de fechamento. O feixe de laser de alta precisão não aquece o bloco estrutural do molde, preservando a têmpera original do aço e evitando zonas termicamente afetadas (ZTA) frágeis.
-          </p>
+      <style>
+        #shuffle-stage-manutencao-moldes .pmi-shuffle-card {
+          transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease, box-shadow 0.55s ease, filter 0.55s ease;
+          will-change: transform, opacity;
+          user-select: none;
+        }
+        #shuffle-stage-manutencao-moldes .pmi-shuffle-card[data-pos="0"] {
+          transform: translate3d(0px, 0px, 0px) scale(1) rotate(0deg);
+          opacity: 1;
+          z-index: 30;
+          filter: brightness(1);
+          box-shadow: 0 22px 45px -12px rgba(15, 23, 42, 0.45);
+        }
+        #shuffle-stage-manutencao-moldes .pmi-shuffle-card[data-pos="1"] {
+          transform: translate3d(18px, -12px, 0px) scale(0.94) rotate(3.5deg);
+          opacity: 0.88;
+          z-index: 20;
+          filter: brightness(0.82);
+          box-shadow: 0 15px 30px -10px rgba(15, 23, 42, 0.3);
+        }
+        #shuffle-stage-manutencao-moldes .pmi-shuffle-card[data-pos="2"] {
+          transform: translate3d(-18px, -20px, 0px) scale(0.89) rotate(-3.5deg);
+          opacity: 0.72;
+          z-index: 15;
+          filter: brightness(0.68);
+          box-shadow: 0 10px 22px -8px rgba(15, 23, 42, 0.22);
+        }
+        #shuffle-stage-manutencao-moldes .pmi-shuffle-card[data-pos="3"] {
+          transform: translate3d(0px, -28px, 0px) scale(0.84) rotate(1.5deg);
+          opacity: 0.52;
+          z-index: 10;
+          filter: brightness(0.55);
+          box-shadow: 0 6px 15px -6px rgba(15, 23, 42, 0.16);
+        }
+        .pmi-manut-step-card {
+          transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+          cursor: pointer;
+        }
+      </style>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center my-8 not-prose">
+        <!-- COLUNA ESQUERDA: BARALHO DE FASES (4 CARTAS SINCRONIZADAS) -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div id="shuffle-stage-manutencao-moldes" class="relative w-full max-w-[350px] sm:max-w-[390px] aspect-[3/4] mx-auto pt-5 pb-2 px-3 cursor-pointer" title="Clique para alternar entre os serviços de manutenção e modificação">
+
+            <!-- Carta 0: Solda a Laser Micro-TIG -->
+            <figure data-card-index="0" data-pos="0" class="pmi-shuffle-card absolute inset-x-3 top-5 bottom-2 rounded-2xl overflow-hidden bg-slate-900 border-2 border-blue-500/60 m-0">
+              <img src="imagens/manutencao-1-solda-laser-micro-tig-reparo-molde.webp" alt="Solda a Laser Micro-TIG em Cantos Vivos de Molde de Injeção sem Zona Termicamente Afetada (ZTA)" class="w-full h-full object-cover" loading="eager">
+              <div class="absolute top-3 left-3 bg-blue-700/95 backdrop-blur-sm text-white text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-md border border-blue-400/30">
+                1. Solda Laser Micro-TIG
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10 text-white">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-sky-400 block">Reparo Metalúrgico Sem ZTA &bull; 48 a 52 HRC</span>
+                <strong class="text-sm sm:text-base font-black leading-snug block mt-0.5">Solda a Laser Micro-TIG em Cantos Vivos</strong>
+                <span class="text-[11px] text-slate-300 block mt-1 leading-tight">Fusão micrométrica (0,1 a 0,4 mm) sem destemperar o bloco estrutural da matriz.</span>
+              </figcaption>
+            </figure>
+
+            <!-- Carta 1: Polimento Espelhado Óptico (Classe A1) -->
+            <figure data-card-index="1" data-pos="1" class="pmi-shuffle-card absolute inset-x-3 top-5 bottom-2 rounded-2xl overflow-hidden bg-slate-900 border-2 border-sky-500/60 m-0">
+              <img src="imagens/manutencao-2-polimento-espelhado-optico-spi-a1.webp" alt="Polimento Espelhado Óptico Norma SPI Classe A1 com Pasta Diamantada 1 Mícron em Cavidade de Molde" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 left-3 bg-sky-600/95 backdrop-blur-sm text-white text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-md border border-sky-300/30">
+                2. Polimento Óptico A-1
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10 text-white">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-sky-300 block">Norma SPI Classe A-1 &bull; Ra &lt; 0,012 &mu;m</span>
+                <strong class="text-sm sm:text-base font-black leading-snug block mt-0.5">Polimento Espelhado Óptico (1 Mícron)</strong>
+                <span class="text-[11px] text-slate-300 block mt-1 leading-tight">Lapidação diamantada progressiva para lentes em PC, PMMA e peças Black Piano.</span>
+              </figcaption>
+            </figure>
+
+            <!-- Carta 2: Eliminação de Rebarbas e Ajuste de Partição -->
+            <figure data-card-index="2" data-pos="2" class="pmi-shuffle-card absolute inset-x-3 top-5 bottom-2 rounded-2xl overflow-hidden bg-slate-900 border-2 border-indigo-500/60 m-0">
+              <img src="imagens/manutencao-3-eliminacao-rebarbas-ajuste-particao-spotting.webp" alt="Eliminação de Rebarbas e Ajuste de Linha de Partição com Azul da Prússia em Molde de Injeção" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 left-3 bg-indigo-600/95 backdrop-blur-sm text-white text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-md border border-indigo-300/30">
+                3. Ajuste de Partição
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10 text-white">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-indigo-300 block">Spotting com Azul da Prússia &bull; &lt; 0,015 mm</span>
+                <strong class="text-sm sm:text-base font-black leading-snug block mt-0.5">Eliminação de Rebarbas e Ajuste de Gavetas</strong>
+                <span class="text-[11px] text-slate-300 block mt-1 leading-tight">Vedação centesimal de linha de fechamento, cunhas e gavetas móveis em prensa.</span>
+              </figcaption>
+            </figure>
+
+            <!-- Carta 3: Modificação Geométrica e Novos Postiços -->
+            <figure data-card-index="3" data-pos="3" class="pmi-shuffle-card absolute inset-x-3 top-5 bottom-2 rounded-2xl overflow-hidden bg-slate-900 border-2 border-emerald-500/60 m-0">
+              <img src="imagens/manutencao-4-modificacao-geometrica-novos-posticos-cnc.webp" alt="Modificação Geométrica de Molde de Injeção e Fabricação de Novos Postiços Intercambiáveis CNC" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute top-3 left-3 bg-emerald-600/95 backdrop-blur-sm text-white text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-md border border-emerald-300/30">
+                4. Novos Postiços CNC
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10 text-white">
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-300 block">Retrofit de Engenharia &bull; Ajuste H7/h6 (&plusmn;0,005)</span>
+                <strong class="text-sm sm:text-base font-black leading-snug block mt-0.5">Modificação Geométrica e Novos Postiços</strong>
+                <span class="text-[11px] text-slate-300 block mt-1 leading-tight">Atualização de produto com economia de até 65% frente à construção de molde novo.</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <!-- Botões Seletores Rápidos do Baralho -->
+          <div class="flex flex-wrap items-center justify-center gap-1.5 mt-3">
+            <button type="button" data-manut-btn="0" class="px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-blue-700 text-white shadow-sm transition-all">1. Solda Laser</button>
+            <button type="button" data-manut-btn="1" class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-200 text-slate-700 hover:bg-slate-300 transition-all">2. Polimento A1</button>
+            <button type="button" data-manut-btn="2" class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-200 text-slate-700 hover:bg-slate-300 transition-all">3. Fechamento</button>
+            <button type="button" data-manut-btn="3" class="px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-200 text-slate-700 hover:bg-slate-300 transition-all">4. Postiços</button>
+          </div>
+          <span class="text-[11px] text-slate-400 mt-1.5 text-center">Rotação automática a cada 3,2s &bull; Clique na imagem ou nos cards ao lado para inspecionar</span>
         </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <div class="w-10 h-10 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-lg mb-3">✨</div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Polimento Espelhado Óptico (Classe A1)</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Lapidação manual e mecânica com pastas diamantadas progressivas até grão de 1 mícron. Essencial para peças ópticas transparentes em Policarbonato (PC), acrílico ou superfícies de altíssimo brilho (black piano).
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg mb-3">🔧</div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Eliminação de Rebarbas e Ajuste de Partição</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Reusinagem e ajuste de fechamento com azul da prússia em bancada de prensa hidráulica. Correção de folgas mecânicas entre gavetas móveis e o corpo fixo do molde para tolerâncias inferiores a 0,015 mm.
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg mb-3">🔄</div>
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Modificação Geométrica e Novos Postiços</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Engenharia reversa e fabricação de novos postiços intercambiáveis para incorporar atualizações de design no produto, alterações de espessura ou inclusão de novos detalhes funcionais sem precisar construir uma nova matriz.
-          </p>
+
+        <!-- COLUNA DIREITA: 4 CARDS DE CONTEÚDO SINCRONIZADOS -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <!-- Card 0: Solda a Laser Micro-TIG -->
+          <div data-manut-step="0" class="pmi-manut-step-card bg-white p-5 sm:p-6 rounded-xl border-2 border-blue-600 ring-4 ring-blue-600/10 shadow-md relative">
+            <div class="flex items-center justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg">⚡</div>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full">
+                <span data-manut-dot="0" class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                Serviço 01
+              </span>
+            </div>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 mb-2">Solda a Laser Micro-TIG</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              Reparo cirúrgico de <strong>cantos vivos amassados, trincas por fadiga ou desgaste de linha de fechamento</strong> com fio de adição de 0,2 mm. O feixe de laser pulsado não aquece o bloco estrutural do molde, preservando a <strong>têmpera original do aço (48 a 52 HRC)</strong> e evitando zonas termicamente afetadas (ZTA) frágeis.
+            </p>
+            <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+              <span>Pulso: <strong class="text-slate-800">0,1 a 0,4 mm</strong></span>
+              <span class="text-blue-700">Zero Destêmpera</span>
+            </div>
+          </div>
+
+          <!-- Card 1: Polimento Espelhado Óptico (Classe A1) -->
+          <div data-manut-step="1" class="pmi-manut-step-card bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm relative">
+            <div class="flex items-center justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-lg">✨</div>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-full">
+                <span data-manut-dot="1" class="w-2 h-2 rounded-full bg-slate-300"></span>
+                Serviço 02
+              </span>
+            </div>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 mb-2">Polimento Espelhado Óptico (Classe A1)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              Lapidação manual e ultrassônica com <strong>pastas diamantadas progressivas até grão de 1 mícron (Grade #8000)</strong>, atingindo rugosidade <strong>Ra &lt; 0,012 &mu;m</strong> sem efeito casca de laranja. Essencial para peças ópticas transparentes em <strong>Policarbonato (PC), Acrílico (PMMA)</strong> ou superfícies <em>Black Piano</em>.
+            </p>
+            <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+              <span>Padrão: <strong class="text-slate-800">SPI Classe A-1</strong></span>
+              <span class="text-sky-700">Ra &lt; 0,012 &mu;m</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Eliminação de Rebarbas e Ajuste de Partição -->
+          <div data-manut-step="2" class="pmi-manut-step-card bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm relative">
+            <div class="flex items-center justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg">🔧</div>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full">
+                <span data-manut-dot="2" class="w-2 h-2 rounded-full bg-slate-300"></span>
+                Serviço 03
+              </span>
+            </div>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 mb-2">Eliminação de Rebarbas e Ajuste de Partição</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              Reusinagem e <strong>ajuste de fechamento (<em>spotting</em>) com Azul da Prússia</strong> em bancada de prensa hidráulica. Correção de pré-carga em cunhas de travamento e eliminação de folgas mecânicas entre <strong>gavetas móveis e o corpo fixo do molde</strong> para tolerâncias inferiores a <strong>0,015 mm</strong>.
+            </p>
+            <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+              <span>Folga: <strong class="text-slate-800">&lt; 0,015 mm</strong></span>
+              <span class="text-indigo-700">Zero Rebarba</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Modificação Geométrica e Novos Postiços -->
+          <div data-manut-step="3" class="pmi-manut-step-card bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm relative">
+            <div class="flex items-center justify-between mb-3">
+              <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">🔄</div>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">
+                <span data-manut-dot="3" class="w-2 h-2 rounded-full bg-slate-300"></span>
+                Serviço 04
+              </span>
+            </div>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 mb-2">Modificação Geométrica e Novos Postiços</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+              <strong>Engenharia reversa 3D e fabricação de novos postiços intercambiáveis</strong> em CNC 5 eixos e eletroerosão EDM (ajuste <strong>H7/h6 &plusmn;0,005 mm</strong>) para incorporar atualizações de design (ECN), alterações de espessura ou novos detalhes funcionais sem construir uma nova matriz.
+            </p>
+            <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+              <span>Custo: <strong class="text-slate-800">-65% vs Molde Novo</strong></span>
+              <span class="text-emerald-700">Ajuste H7/h6</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- FAQs -->
+      <script>
+        (function(){
+          var stage = document.getElementById('shuffle-stage-manutencao-moldes');
+          if (!stage) return;
+          var cards = Array.prototype.slice.call(stage.querySelectorAll('.pmi-shuffle-card'));
+          var stepCards = Array.prototype.slice.call(document.querySelectorAll('[data-manut-step]'));
+          var btns = Array.prototype.slice.call(document.querySelectorAll('[data-manut-btn]'));
+          var dots = Array.prototype.slice.call(document.querySelectorAll('[data-manut-dot]'));
+          var total = cards.length;
+          var current = 0;
+          var timer = null;
+
+          function render(activeIdx) {
+            current = ((activeIdx % total) + total) % total;
+            cards.forEach(function(c, idx){
+              var rel = (idx - current + total) % total;
+              c.setAttribute('data-pos', String(rel));
+            });
+            stepCards.forEach(function(sc, idx){
+              if (idx === current) {
+                sc.className = 'pmi-manut-step-card bg-white p-5 sm:p-6 rounded-xl border-2 border-blue-600 ring-4 ring-blue-600/10 shadow-md relative';
+              } else {
+                sc.className = 'pmi-manut-step-card bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm relative hover:border-blue-300';
+              }
+            });
+            btns.forEach(function(b, idx){
+              if (idx === current) {
+                b.className = 'px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-blue-700 text-white shadow-sm transition-all';
+              } else {
+                b.className = 'px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-200 text-slate-700 hover:bg-slate-300 transition-all';
+              }
+            });
+            dots.forEach(function(d, idx){
+              if (idx === current) {
+                d.className = 'w-2 h-2 rounded-full bg-blue-600 animate-pulse';
+              } else {
+                d.className = 'w-2 h-2 rounded-full bg-slate-300';
+              }
+            });
+          }
+
+          function next() { render(current + 1); }
+          function start() { stop(); timer = setInterval(next, 3200); }
+          function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+          stage.addEventListener('click', function(){ next(); start(); });
+          stage.addEventListener('mouseenter', stop);
+          stage.addEventListener('mouseleave', start);
+
+          stepCards.forEach(function(sc, idx){
+            sc.addEventListener('click', function(){ render(idx); start(); });
+            sc.addEventListener('mouseenter', function(){ stop(); render(idx); });
+            sc.addEventListener('mouseleave', start);
+          });
+
+          btns.forEach(function(b, idx){
+            b.addEventListener('click', function(e){
+              e.stopPropagation();
+              render(idx);
+              start();
+            });
+          });
+
+          render(0);
+          start();
+        })();
+      </script>
+
+      <!-- SEÇÃO PROFUNDA 1: TABELA DE NÍVEIS DE MANUTENÇÃO E MODIFICAÇÃO -->
       <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Manutenção de Ferramentaria</h2>
-        <div class="space-y-4">
-          <div class="bg-white p-5 rounded-xl border border-slate-200">
-            <h3 class="text-base font-bold text-slate-900 mb-2">Qual o prazo típico para reparo emergencial de um molde danificado?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Para intervenções pontuais de solda a laser, desobstrução de refrigeração ou substituição de pinos extratores quebrados, o atendimento é imediato e a matriz costuma ser liberada entre 24 e 72 horas para minimizar o tempo de máquina parada.
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-1">Engenharia de Confiabilidade &bull; Protocolo TPM</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+          Níveis de Manutenção Preventiva, Corretiva e Modificação de Engenharia (Retrofit)
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 max-w-4xl">
+          A gestão profissional de ativos de ferramentaria divide a <strong>Manutenção e Modificação de Moldes de Injeção</strong> em cinco regimes estruturados por contagem de batidas (ciclos) ou necessidade de engenharia de produto. Compare abaixo o escopo técnico, as tolerâncias de bancada e o prazo de retorno à injetora em cada modalidade:
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="py-3.5 px-4 font-extrabold uppercase tracking-wider text-[11px]">Regime / Nível</th>
+                <th class="py-3.5 px-4 font-extrabold uppercase tracking-wider text-[11px]">Gatilho / Ciclos</th>
+                <th class="py-3.5 px-4 font-extrabold uppercase tracking-wider text-[11px]">Escopo Técnico na Ferramentaria</th>
+                <th class="py-3.5 px-4 font-extrabold uppercase tracking-wider text-[11px]">Critério Metrológico</th>
+                <th class="py-3.5 px-4 font-extrabold uppercase tracking-wider text-[11px]">Lead Time</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700">
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-4 font-bold text-slate-900 whitespace-nowrap">Preventiva Nível I<br><span class="text-[11px] font-semibold text-blue-700">Inspeção e Limpeza Tática</span></td>
+                <td class="py-3.5 px-4 font-semibold">A cada 25.000 a 50.000 ciclos (ou fim de lote)</td>
+                <td class="py-3.5 px-4">Desengraxe químico das cavidades, desobstrução de saídas de gás (<em>vents</em> de 0,015 a 0,03 mm), inspeção de anéis O-ring e relubrificação de colunas e gavetas com graxa PTFE de alta temperatura.</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Saídas de gás 100% livres e estanqueidade hidráulica a 8 bar</td>
+                <td class="py-3.5 px-4 font-bold text-emerald-700 whitespace-nowrap">12h a 24h</td>
+              </tr>
+              <tr class="hover:bg-slate-50 bg-slate-50/60">
+                <td class="py-3.5 px-4 font-bold text-slate-900 whitespace-nowrap">Preventiva Nível II<br><span class="text-[11px] font-semibold text-sky-700">Desmontagem Completa em Bancada</span></td>
+                <td class="py-3.5 px-4 font-semibold">A cada 100.000 a 150.000 ciclos</td>
+                <td class="py-3.5 px-4">Desmontagem total de placas, conjunto extrator e gavetas; limpeza por ultrassom; desincrustamento ácido controlado dos canais de refrigeração; medição de folga de buchas/pinos e repolimento SPI.</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Folga diametral de extratores &le; 0,015 mm e vazão térmica restaurada</td>
+                <td class="py-3.5 px-4 font-bold text-emerald-700 whitespace-nowrap">2 a 4 dias úteis</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-4 font-bold text-slate-900 whitespace-nowrap">Preventiva Nível III<br><span class="text-[11px] font-semibold text-indigo-700">Overhaul / Reforma Geral</span></td>
+                <td class="py-3.5 px-4 font-semibold">A cada 300.000 a 500.000 ciclos</td>
+                <td class="py-3.5 px-4">Substituição preventiva de molas ISO, pinos extratores, réguas de bronze grafitado e buchas; retífica de pré-carga em cunhas de gaveta; revisão completa do manifold e bicos da câmara quente.</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Renovação da vida útil estrutural por mais 300.000+ ciclos</td>
+                <td class="py-3.5 px-4 font-bold text-blue-700 whitespace-nowrap">5 a 10 dias úteis</td>
+              </tr>
+              <tr class="hover:bg-slate-50 bg-slate-50/60">
+                <td class="py-3.5 px-4 font-bold text-slate-900 whitespace-nowrap">Corretiva Emergencial<br><span class="text-[11px] font-semibold text-amber-700">Reparo de Quebra ou Rebarba</span></td>
+                <td class="py-3.5 px-4 font-semibold">Parada imediata por avaria, peça presa ou flash</td>
+                <td class="py-3.5 px-4">Solda a laser Micro-TIG em arestas amassadas ou trincadas, extração de pino quebrado, ajuste de linha de fechamento com Azul da Prússia em prensa de <em>spotting</em> e troca de termopares/resistências.</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Dureza 48–52 HRC preservada sem ZTA e fechamento &lt; 0,015 mm</td>
+                <td class="py-3.5 px-4 font-bold text-amber-700 whitespace-nowrap">24h a 72h (Urgência)</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-4 font-bold text-slate-900 whitespace-nowrap">Modificação / Retrofit<br><span class="text-[11px] font-semibold text-emerald-700">Alteração de Engenharia (ECN)</span></td>
+                <td class="py-3.5 px-4 font-semibold">Atualização de produto, versão ou ganho de ciclo</td>
+                <td class="py-3.5 px-4">Engenharia reversa 3D, abertura de alojamentos para novos postiços intercambiáveis em CNC 5 eixos e eletroerosão EDM, adição de nervuras, logotipos, pinos ou conversão para câmara quente.</td>
+                <td class="py-3.5 px-4 font-semibold text-slate-800">Ajuste H7/h6 (&plusmn;0,005 mm) e aprovação dimensional de amostra (Try-out)</td>
+                <td class="py-3.5 px-4 font-bold text-blue-700 whitespace-nowrap">5 a 15 dias úteis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SEÇÃO PROFUNDA 2: OS 3 PILARES TÉCNICOS DA MANUTENÇÃO E MODIFICAÇÃO -->
+      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-1">Metodologia de Ferramentaria</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+          Os 3 Pilares Técnicos da Manutenção e Modificação de Moldes de Injeção
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-8 max-w-4xl">
+          Para evitar que uma manutenção corretiva se torne um ciclo vicioso de retrabalhos na injetora, nossa matrizaria fundamenta cada intervenção em três pilares de engenharia metalúrgica, mecânica e térmica:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Pilar 1 -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-blue-800 text-xs font-extrabold mb-4">
+                <span>01</span> &bull; <span>Metalurgia de Reparo sem ZTA</span>
+              </div>
+              <h3 class="text-lg font-black text-slate-900 mb-2.5">
+                Solda a Laser Pulsada com Consumíveis Homólogos
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                A recuperação de bordas de cavidade exige compatibilidade química absoluta entre o metal-base e o arame de adição (<strong>Ø 0,15 a 0,40 mm</strong>). Utilizamos varetas específicas para aços <strong>P20, 2738, H13 temperado, S136 (Inox 420) e Cobre-Berílio (CuBe2)</strong> sob proteção de argônio puro.
+              </p>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Como o feixe laser funde apenas uma fração de milímetro por pulso sob microscópio estereoscópico, não há formação de <strong>Zona Termicamente Afetada (ZTA)</strong> nem queda de dureza ao redor do cordão, permitindo texturização química ou polimento óptico sem marcas de halo.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 text-[11px] font-bold text-blue-700">
+              Resultado: Aresta reconstruída com 48–52 HRC sem trincas sob pressão de recalque.
+            </div>
+          </div>
+
+          <!-- Pilar 2 -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-50 text-indigo-800 text-xs font-extrabold mb-4">
+                <span>02</span> &bull; <span>Cinemática e Vedação de Partição</span>
+              </div>
+              <h3 class="text-lg font-black text-slate-900 mb-2.5">
+                Spotting em Prensa, Cunha de Gavetas e Desincrustamento
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                Rebarbas recorrentes em polímeros de baixa viscosidade — como <strong>Poliamida (PA6 / PA66), Polipropileno (PP) e Poliacetal (POM)</strong> — ocorrem quando a linha de fechamento cede acima de <strong>0,02 mm</strong>. Realizamos o <em>spotting</em> com Azul da Prússia para garantir <strong>&ge; 85% de área de contato efetivo</strong> na banda de vedação.
+              </p>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Simultaneamente, retificamos as placas de desgaste das cunhas de travamento (<em>heel blocks</em>) das gavetas móveis com pré-carga centesimal de <strong>0,03 a 0,05 mm</strong> e executamos a limpeza química circulada dos canais de refrigeração para eliminar calcário e ferrugem.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 text-[11px] font-bold text-indigo-700">
+              Resultado: Eliminação de rebarbas (flash) e redução de até 18% no tempo de ciclo.
+            </div>
+          </div>
+
+          <!-- Pilar 3 -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-800 text-xs font-extrabold mb-4">
+                <span>03</span> &bull; <span>Engenharia de Modificação (ECN)</span>
+              </div>
+              <h3 class="text-lg font-black text-slate-900 mb-2.5">
+                Postiços Intercambiáveis e Atualização de Produto
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                Quando o departamento de engenharia do cliente aprova uma <strong>ECN (<em>Engineering Change Notice</em>)</strong> — como mudança de furação, reforço de nervuras estruturais, alteração de parede ou atualização de versão do produto —, não é necessário construir um molde novo.
+              </p>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Projetamos o <strong>postiço intercambiável em CAD 3D</strong>, abrimos o berço de alojamento no bloco existente por fresamento CNC <em>Hard Milling</em> ou eletroerosão de penetração (EDM) e montamos o novo inserto com ajuste deslizante ou interferência controlada <strong>H7/h6 (&plusmn;0,005 mm)</strong>.
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 text-[11px] font-bold text-emerald-700">
+              Resultado: Economia de até 65% em CAPEX e redução de 70% no prazo de lançamento.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO PROFUNDA 3: PADRÕES DE POLIMENTO SPI + VITRINE DUPLA 16:9 -->
+      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-1">Acabamento Superficial &bull; Norma Internacional SPI</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
+          Padrões de Polimento Técnico SPI (A-1 a C-3) na Recuperação de Cavidades
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 max-w-4xl">
+          Além da função estética (transparência óptica ou brilho espelhado), o polimento técnico correto no sentido do fluxo de extração reduz o coeficiente de atrito superficial, eliminando marcas de arraste, esbranquiçamento por tensão nos pinos extratores e aderência de peça no macho:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="text-[11px] font-extrabold uppercase text-sky-700 bg-sky-50 px-2 py-0.5 rounded">SPI A-1 / A-2</span>
+            <h3 class="text-sm font-black text-slate-900 mt-2 mb-1">Espelhado Óptico Diamantado</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Pasta de diamante <strong>1 a 3 mícrons (#8000 a #6000)</strong>. Rugosidade <strong>Ra 0,012 a 0,025 &mu;m</strong>. Aplicado em lentes automotivas, visores médicos em PC/PMMA e acabamentos <em>Black Piano</em>.</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="text-[11px] font-extrabold uppercase text-blue-700 bg-blue-50 px-2 py-0.5 rounded">SPI A-3 / B-1</span>
+            <h3 class="text-sm font-black text-slate-900 mt-2 mb-1">Alto Brilho Comercial e Lixas #600</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Pasta diamantada <strong>6 a 15 mícrons</strong> ou lixa <strong>#600</strong>. Rugosidade <strong>Ra 0,05 a 0,10 &mu;m</strong>. Ideal para gabinetes eletrônicos, embalagens cosméticas e peças técnicas de alto padrão visual.</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="text-[11px] font-extrabold uppercase text-indigo-700 bg-indigo-50 px-2 py-0.5 rounded">SPI B-2 / B-3</span>
+            <h3 class="text-sm font-black text-slate-900 mt-2 mb-1">Acetinado Direcional de Desmoldagem</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Lixas <strong>#400 a #320</strong> aplicadas no sentido longitudinal de extração (<strong>Ra 0,10 a 0,28 &mu;m</strong>). Evita efeito vácuo em paredes profundas e facilita o saque de peças técnicas em PA66 e POM.</p>
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="text-[11px] font-extrabold uppercase text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">SPI C-1 a C-3 / VDI</span>
+            <h3 class="text-sm font-black text-slate-900 mt-2 mb-1">Preparação por Pedra e Textura VDI 3400</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Lapidação com pedras abrasivas <strong>#600 a #320</strong> para remoção total da camada branca refundida da eletroerosão antes da texturização química ou erosão controlada VDI.</p>
+          </div>
+        </div>
+
+        <!-- Vitrine Dupla 16:9 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <figure class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm m-0">
+            <div class="aspect-video bg-slate-900 overflow-hidden">
+              <img src="imagens/ajuste-bancada-manutencao-moldes-ferramentaria.webp" alt="Bancada de Ferramentaria Executando Manutenção Preventiva, Ajuste de Gavetas e Polimento em Molde de Injeção" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <figcaption class="p-4">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-blue-700 block">Ajuste Mecânico e Bancada</span>
+              <strong class="text-sm font-bold text-slate-900 block mt-0.5">Inspeção de Guias, Buchas, Conjunto Extrator e Linha de Fechamento</strong>
+              <p class="text-xs text-slate-600 mt-1 mb-0 leading-relaxed">Verificação centesimal de paralelismo entre placas, pré-carga de cunhas e ajuste manual de postiços e extratores em bancada de ferramentaria.</p>
+            </figcaption>
+          </figure>
+          <figure class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm m-0">
+            <div class="aspect-video bg-slate-900 overflow-hidden">
+              <img src="imagens/inspecao-defeitos-injecao-plastica-rebarba-chupagem.webp" alt="Diagnóstico Técnico de Defeitos em Peças Injetadas como Rebarbas, Chupagem e Marcas de Extração para Correção no Molde" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <figcaption class="p-4">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 block">Engenharia Reversa de Defeitos</span>
+              <strong class="text-sm font-bold text-slate-900 block mt-0.5">Correlação Entre Defeitos na Peça Plástica e Correção Definitiva na Matriz</strong>
+              <p class="text-xs text-slate-600 mt-1 mb-0 leading-relaxed">Mapeamento direto da amostra injetada com rebarba, queima por gás preso (<em>diesel effect</em>) ou marca de pino para intervenção focalizada no aço.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- SEÇÃO PROFUNDA 4: CHECKLIST DE LIBERAÇÃO DE BANCADA (DARK BOX) -->
+      <section class="mt-16 bg-gradient-to-br from-slate-900 via-brand-navy to-slate-900 text-white rounded-2xl p-6 sm:p-10 shadow-xl border border-slate-800 not-prose">
+        <div class="max-w-3xl mb-8">
+          <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-sky-400 mb-2">Garantia de Retorno ao Setup &bull; Zero Surpresa na Máquina</span>
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight mb-3">
+            Protocolo e Laudo Técnico de Liberação de Molde Pós-Manutenção
+          </h2>
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+            Nenhuma matriz sai da nossa ferramentaria sem passar pelos <strong>4 testes obrigatórios de liberação em bancada</strong>, evitando que o preparador de injetora descubra vazamentos de água, curtos elétricos ou travamento de extratores apenas depois de guinchar o molde na máquina:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-sky-400 mb-1">01. Estanqueidade e Vazão Térmica</div>
+            <h3 class="text-base font-bold text-white mb-2">Teste Hidrostático e Fluxometria por Circuito</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Pressurização de todas as linhas de refrigeração a <strong>8 bar por 30 minutos</strong> após a troca dos anéis O-ring em Viton, acompanhada de medição comparativa de vazão (L/min) antes e depois da desincrustação química.
             </p>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-slate-200">
-            <h3 class="text-base font-bold text-slate-900 mb-2">Vocês atendem moldes fabricados por outras ferramentarias?</h3>
+          <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 mb-1">02. Diagnóstico Elétrico de Câmara Quente</div>
+            <h3 class="text-base font-bold text-white mb-2">Teste Ôhmico, Isolação (Megômetro) e Termopares</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Aferição individual de resistência ôhmica (<strong>&Omega;</strong>) e resistência de isolação elétrica (<strong>M&Omega; a 500V</strong>) de todas as zonas do distribuidor (<em>manifold</em>) e buchas quentes, além da calibração de termopares Tipo J/K e tomadas multipolares.
+            </p>
+          </div>
+          <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-indigo-400 mb-1">03. Validação Mecânica e Spotting</div>
+            <h3 class="text-base font-bold text-white mb-2">Registro de Contato em Azul da Prússia e Curso de Extração</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Verificação do avanço suave e retorno total da placa extratora, teste de travamento de fim de curso (micro-switches), nivelamento centesimal de pinos extratores e validação de <strong>contato uniforme na linha de partição</strong>.
+            </p>
+          </div>
+          <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-1">04. Rastreabilidade e Conservação</div>
+            <h3 class="text-base font-bold text-white mb-2">Proteção Anticorrosiva e Relatório de Intervenção</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Purga completa de umidade com ar comprimido seco, aplicação de filme protetivo anticorrosivo ceroso nas cavidades, travamento com barra de segurança e emissão do <strong>Laudo Técnico de Manutenção</strong> com fotos de antes e depois.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQs (5 Desdobramentos Query Fan-out) -->
+      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-1">Dúvidas Técnicas de Engenharia e Manutenção</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6">
+          Perguntas Frequentes sobre Manutenção e Modificação de Moldes de Injeção
+        </h2>
+        <div class="space-y-4">
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">1. Qual o prazo típico para reparo emergencial de um molde de injeção danificado?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Sim. Nossa equipe técnica possui vasta experiência em matrizes nacionais e importadas (inclusive moldes asiáticos e europeus com sistemas de câmara quente Yudo, Mold-Masters, Synventive ou Husky), com ou sem desenhos técnicos originais.
+              Para intervenções corretivas pontuais — como <strong>solda a laser Micro-TIG em arestas amassadas</strong>, substituição de pinos extratores quebrados ou engripados, troca de resistências de câmara quente ou desobstrução de refrigeração —, o atendimento na ferramentaria é imediato, com liberação técnica da matriz entre <strong>24 e 72 horas</strong> para reduzir drasticamente o tempo de injetora parada.
+            </p>
+          </div>
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">2. Qual a diferença entre solda a laser e solda TIG convencional na recuperação de moldes?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              A <strong>solda a laser (e Micro-TIG pulsada)</strong> concentra a energia em pulsos micrométricos de <strong>0,1 a 0,4 mm</strong> sem aquecer o bloco estrutural da cavidade. Isso preserva a têmpera e a dureza original do aço (<strong>48 a 52 HRC em H13 ou Inox 420</strong>) e elimina a Zona Termicamente Afetada (ZTA), impedindo trincas de borda, porosidades e afundamentos ao redor do reparo que ocorrem na solda TIG convencional.
+            </p>
+          </div>
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">3. Como eliminar rebarbas (flash) na linha de fechamento e nas gavetas do molde?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              A eliminação definitiva de rebarbas exige a recomposição metalúrgica por solda a laser nas bordas desgastadas seguida de <strong>retífica plana, eletroerosão EDM e ajuste de bancada (<em>spotting</em>) com tinta Azul da Prússia</strong> em prensa hidráulica. As cunhas de travamento e as réguas de guia das gavetas são ajustadas com pré-carga centesimal para garantir vedação com folga residual inferior a <strong>0,015 mm</strong>.
+            </p>
+          </div>
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">4. É possível modificar a geometria da peça plástica aproveitando o molde de injeção atual?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Sim. Por meio da <strong>modificação de engenharia (Retrofit / ECN)</strong>, realizamos o escaneamento ou modelamento CAD 3D da cavidade existente, abrimos alojamentos retificados no bloco e fabricamos <strong>novos postiços intercambiáveis em CNC 5 eixos e eletroerosão EDM</strong>. Essa solução atualiza o design ou a espessura do produto economizando até <strong>65% do investimento</strong> e <strong>70% do prazo</strong> em comparação a um molde novo.
+            </p>
+          </div>
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">5. Vocês realizam manutenção em moldes importados ou fabricados por outras ferramentarias?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Sim. Nossa ferramentaria atende matrizes nacionais e importadas (asiáticas, europeias e norte-americanas) construídas nos padrões <strong>Hasco, DME, Polimold ou especiais</strong>, incluindo revisão completa de sistemas de <strong>câmara quente multimarcas (Yudo, Mold-Masters, Husky, Synventive e Incoe)</strong> e engenharia reversa completa mesmo quando o cliente não possui o desenho 3D original.
             </p>
           </div>
         </div>
