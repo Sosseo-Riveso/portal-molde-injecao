@@ -158,14 +158,92 @@ METADADOS DE SEO E GEO (ENGENHARIA INDUSTRIAL B2B):
     </div>
   </aside>
   <!-- Navigation Header -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 lg:gap-3">
+  <style id="pmi-sticky-header-css">
+    #pmiMainHeader,
+    #pmiMainHeader .pmi-header-inner,
+    #pmiMainHeader .pmi-logo-img,
+    #pmiMainHeader .pmi-logo-title,
+    #pmiMainHeader .pmi-logo-subtitle,
+    #pmiMainHeader nav,
+    #pmiMainHeader nav > a,
+    #pmiMainHeader nav > div,
+    #pmiMainHeader .pmi-header-cta,
+    #pmiMainHeader .pmi-mobile-toggle {
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #pmiMainHeader.pmi-scrolled {
+      box-shadow: 0 2px 10px -2px rgba(15, 23, 42, 0.08);
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-header-inner {
+      height: 2.375rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-logo-img {
+      height: 1.5rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-logo-title {
+      font-size: 0.72rem !important;
+      line-height: 1.05 !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-logo-subtitle {
+      font-size: 0.5rem !important;
+      line-height: 1 !important;
+      margin-top: 1px !important;
+    }
+    #pmiMainHeader.pmi-scrolled nav {
+      font-size: 0.74rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled nav > a,
+    #pmiMainHeader.pmi-scrolled nav > div {
+      padding-top: 0.15rem !important;
+      padding-bottom: 0.15rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-header-cta {
+      padding: 0.22rem 0.65rem !important;
+      font-size: 0.7rem !important;
+      border-radius: 0.375rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-mobile-toggle {
+      padding: 0.2rem !important;
+    }
+    @media (hover: hover) {
+      #pmiMainHeader.pmi-scrolled:hover .pmi-header-inner {
+        height: 3.75rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-logo-img {
+        height: 2.25rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-logo-title {
+        font-size: 0.94rem !important;
+        line-height: 1.2 !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-logo-subtitle {
+        font-size: 0.65rem !important;
+        line-height: 1.15 !important;
+        margin-top: 2px !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover nav {
+        font-size: 0.8125rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover nav > a,
+      #pmiMainHeader.pmi-scrolled:hover nav > div {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-header-cta {
+        padding: 0.42rem 0.85rem !important;
+        font-size: 0.8125rem !important;
+        border-radius: 0.5rem !important;
+      }
+    }
+  </style>
+  <header id="pmiMainHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="pmi-header-inner max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2 lg:gap-3">
       <!-- Logo -->
       <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-        <img src="Logos/logo-pmi-fundo-branco.webp" alt="Logo Portal Molde Injeção" class="h-9 sm:h-10 w-auto object-contain group-hover:scale-105 transition-transform">
+        <img src="Logos/logo-pmi-fundo-branco.webp" alt="Logo Portal Molde Injeção" class="pmi-logo-img h-8 sm:h-9 w-auto object-contain group-hover:scale-105 transition-transform">
         <div class="flex flex-col justify-center">
-          <span class="text-sm sm:text-base font-black tracking-normal text-slate-900 block leading-tight whitespace-nowrap">PORTAL MOLDE INJEÇÃO</span>
-          <span class="text-[10px] sm:text-[11px] uppercase tracking-normal text-blue-700 font-bold block whitespace-nowrap mt-0.5">Engenharia e Ferramentaria B2B</span>
+          <span class="pmi-logo-title text-sm sm:text-[15px] font-black tracking-normal text-slate-900 block leading-tight whitespace-nowrap">PORTAL MOLDE INJEÇÃO</span>
+          <span class="pmi-logo-subtitle text-[9.5px] sm:text-[10.5px] uppercase tracking-normal text-blue-700 font-bold block whitespace-nowrap mt-0.5">Engenharia e Ferramentaria B2B</span>
         </div>
       </a>
 
@@ -261,10 +339,10 @@ METADADOS DE SEO E GEO (ENGENHARIA INDUSTRIAL B2B):
 
       <!-- CTA Button & Mobile Toggle -->
       <div class="flex items-center gap-2 shrink-0">
-        <a href="contato.html" class="hidden md:inline-flex items-center justify-center whitespace-nowrap px-3 lg:px-3.5 py-2 rounded-lg text-xs lg:text-[13px] font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-md shadow-blue-700/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
+        <a href="contato.html" class="pmi-header-cta hidden md:inline-flex items-center justify-center whitespace-nowrap px-3 lg:px-3.5 py-1.5 rounded-lg text-xs lg:text-[13px] font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-md shadow-blue-700/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
           Cotar Molde ou Injeção
         </a>
-        <button type="button" onclick="var m=document.getElementById('pmiMobileMenu');if(m)m.classList.toggle('hidden');" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Abrir Menu">
+        <button type="button" onclick="var m=document.getElementById('pmiMobileMenu');if(m)m.classList.toggle('hidden');" class="pmi-mobile-toggle md:hidden inline-flex items-center justify-center p-1.5 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Abrir Menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
@@ -304,6 +382,25 @@ METADADOS DE SEO E GEO (ENGENHARIA INDUSTRIAL B2B):
       </div>
     </div>
   </header>
+  <script id="pmi-sticky-header-js">
+    (function(){
+      var h = document.getElementById('pmiMainHeader');
+      if (!h) return;
+      var isScrolled = false;
+      function onScroll() {
+        var y = window.scrollY || window.pageYOffset || 0;
+        if (!isScrolled && y > 48) {
+          isScrolled = true;
+          h.classList.add('pmi-scrolled');
+        } else if (isScrolled && y <= 12) {
+          isScrolled = false;
+          h.classList.remove('pmi-scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 
   <!-- Breadcrumb -->
   <div class="bg-slate-900 text-white py-8 border-b border-slate-800">
