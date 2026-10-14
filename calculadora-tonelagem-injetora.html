@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-bc0f1329"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-bc0f1329');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Tonelagem de Injetora | Dimensionamento Técnico B2B</title>
-  <meta name="description" content="Calcule a força de fechamento necessária (em Toneladas) para moldes de injeção plástica. Evite rebarbas e sobrecarga mecânica na máquina injetora.">
+  <title>Calculadora de Força de Fechamento de Injetoras | Tonelagem B2B</title>
+  <meta name="description" content="Utilize a Calculadora de Força de Fechamento de Injetoras para dimensionar a tonelagem ideal do molde plástico, evitar rebarbas e proteger colunas e placas.">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html">
+  <meta property="og:title" content="Calculadora de Força de Fechamento de Injetoras | Tonelagem B2B">
+  <meta property="og:description" content="Utilize a Calculadora de Força de Fechamento de Injetoras para dimensionar a tonelagem ideal do molde plástico, evitar rebarbas e proteger colunas e placas.">
+  <meta property="og:image" content="https://portalmoldeinjecao.com.br/imagens/calculo-forca-fechamento-tonelagem-injetora-industrial.webp">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Portal Molde Injeção">
 
   <!-- Favicon Oficial Portal Molde Injeção (PMI 300x300) -->
   <link rel="icon" type="image/png" sizes="300x300" href="favicon.png?v=2">
@@ -38,8 +56,95 @@
       --border: #e2e8f0;
     }
   </style>
+
+  <!-- Schema.org WebApplication + FAQPage + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html#app",
+        "name": "Calculadora de Força de Fechamento de Injetoras",
+        "url": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html",
+        "description": "Ferramenta técnica de engenharia para cálculo de força de fechamento e tonelagem de máquinas injetoras termoplásticas a partir da área projetada, número de cavidades e pressão específica do polímero.",
+        "applicationCategory": "EngineeringApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Portal Molde Injeção",
+          "url": "https://portalmoldeinjecao.com.br/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://portalmoldeinjecao.com.br/Logos/logo-pmi-fundo-branco.webp"
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Como medir corretamente a área projetada da peça para inserir na Calculadora de Força de Fechamento de Injetoras?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A área projetada corresponde à sombra bidimensional (2D) da peça projetada sobre o plano da linha de partição do molde, perpendicular ao eixo de abertura da máquina injetora. Furos passantes no sentido de extração devem ser subtraídos da área total, enquanto a altura ou profundidade vertical da peça não altera a área projetada."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Por que a Calculadora de Força de Fechamento de Injetoras adiciona 12% para canais e 15% de margem de segurança?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Em moldes de canal frio, o galho de alimentação e os canais de distribuição sofrem a mesma pressão hidráulica de injeção das cavidades, acrescentando em média 10% a 15% de área projetada. Já a margem operacional de 15% protege os tirantes e o conjunto de joelheiras da injetora contra fadiga mecânica por operação no limite nominal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual o risco de operar um molde compacto aplicando força de fechamento excessiva em uma injetora grande?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aplicar tonelagem excessiva sobre um molde de área reduzida concentra tensão compressiva acima do limite de escoamento do aço na linha de fechamento (coining), esmagando as saídas de gases (venting) de 0,015 mm a 0,025 mm. Isso provoca efeito Diesel (queima por ar comprimido), empenamento das placas da injetora e trincas prematuras em postiços."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como a troca de Polipropileno (PP) por Policarbonato (PC) ou PA66 com fibra de vidro altera a tonelagem na calculadora?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Poliolefinas de alta fluidez como o Polipropileno (PP) exigem fator de pressão específico entre 0,30 e 0,35 t/cm², enquanto polímeros de alta viscosidade como Policarbonato (PC) e Poliamida PA66 com 30% de fibra de vidro demandam de 0,55 a 0,75 t/cm². Na prática, injetar a mesma geometria em PA66-GF30 exige o dobro da força de fechamento."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalmoldeinjecao.com.br/" },
+          { "@type": "ListItem", "position": 2, "name": "Calculadora de Força de Fechamento de Injetoras", "item": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<!-- METADADOS DE SEO E GEO (OCULTOS NA VISUALIZAÇÃO)
+1. Title Tag: Calculadora de Força de Fechamento de Injetoras | Tonelagem B2B
+2. Meta Description: Utilize a Calculadora de Força de Fechamento de Injetoras para dimensionar a tonelagem ideal do molde plástico, evitar rebarbas e proteger colunas e placas.
+3. Palavra-Chave Foco: Calculadora de Força de Fechamento de Injetoras
+4. Palavras-Chave Secundárias: calculadora de tonelagem de injetora, calculo forca de fechamento molde injecao, dimensionamento de maquina injetora, pressao especifica na cavidade t/cm2
+5. URL / Slug Sugerido: calculadora-tonelagem-injetora.html
+6. Categoria / Seção: Ferramentas e Calculadoras de Engenharia B2B
+7. Subtítulo Afirmativo (H2): Dimensione com precisão matemática a força de fechamento ideal para sua matriz termoplástica, eliminando rebarbas e protegendo a integridade mecânica da injetora.
+8. Conclusão Estratégica (Takeaway): Utilizar a Calculadora de Força de Fechamento de Injetoras antes da definição do número de cavidades e do início da usinagem alinha o projeto do molde ao parque de máquinas disponível (80t a 350t), prevenindo refugos por abertura de partição e reduzindo o custo operacional por ciclo.
+-->
 
   <!-- Header -->
     <!-- Top Announcement Bar -->
@@ -303,7 +408,7 @@
           </div>
 
           <div>
-            <a href="index.html#contato" class="block w-full text-center py-3.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold rounded-xl shadow-md transition-all text-sm uppercase tracking-wider mb-2">
+            <a href="contato.html" class="block w-full text-center py-3.5 px-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold rounded-xl shadow-md transition-all text-sm uppercase tracking-wider mb-2">
               Cotar Injeção para Esta Tonelagem
             </a>
             <span class="block text-center text-xs text-slate-500">Cálculo balizado pelas normas técnicas da indústria do plástico.</span>
@@ -311,6 +416,124 @@
         </div>
       </div>
     </div>
+
+    <!-- Documentação Técnica de Engenharia (SEO & GEO Modular) -->
+    <article class="mt-12 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 lg:p-12">
+      <div class="mb-4">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider">
+          Fundamentação de Engenharia e Dimensionamento B2B
+        </span>
+      </div>
+
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight mb-4">
+        Por Que Utilizar a Calculadora de Força de Fechamento de Injetoras no Projeto do Molde?
+      </h2>
+
+      <div style="background-color: #f0f9ff; color: #0284c7; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-bottom: 25px; border-left: 3px solid #0284c7;">
+        Por <a href="sobre.html" style="color: #0284c7; text-decoration: underline;">Portal Molde Injeção — Engenharia e Ferramentaria B2B</a> • Ferramenta de Dimensionamento Industrial
+      </div>
+
+      <div class="prose prose-slate max-w-none space-y-5 text-slate-700 leading-relaxed text-base">
+        <!-- 1º Parágrafo: Pirâmide Invertida Radical -->
+        <p>A <strong>Calculadora de Força de Fechamento de Injetoras</strong> determina com precisão matemática a tonelagem hidráulica ou servoelétrica mínima exigida para manter as metades da matriz vedadas contra a pressão de preenchimento e recalque do polímero fundido (<strong>F<sub>c</sub> = A<sub>p</sub> &times; P<sub>cav</sub> &times; F<sub>s</sub></strong>). Utilizar esta ferramenta antes da liberação do projeto CAD 3D ou do <em>setup</em> de fábrica previne a abertura elástica da linha de partição, elimina a formação de <strong>rebarbas (<em>flash</em>)</strong> e impede o superdimensionamento de máquina que encarece a taxa-hora industrial.</p>
+
+        <!-- 2º Parágrafo: Aprofundamento Técnico e Contraste Operacional -->
+        <p>Na prática de <a href="index.html" class="text-blue-700 font-semibold underline">fabricação de moldes e injeção plástica</a>, alocar uma ferramenta em máquina injetora por estimativa empírica provoca dois prejuízos críticos: o <strong>subdimensionamento de tonelagem</strong> causa deflexão central das placas, perda de controle dimensional no recalque e fadiga prematura das colunas da injetora; já o <strong>superdimensionamento excessivo</strong> esmaga os canais de saída de gases (<em>venting</em>) de 0,015 mm a 0,025 mm, gerando queima por efeito Diesel e elevando o consumo energético por peça.</p>
+
+        <!-- Pull Quote -->
+        <blockquote class="border-l-4 border-sky-500 bg-slate-50 p-5 rounded-r-xl my-6 italic text-slate-900 font-medium text-base">
+          "O cálculo de força de fechamento é o elo de engenharia que conecta a geometria da peça plástica ao parque de máquinas disponível: um molde bem dimensionado opera entre 60% e 85% da capacidade nominal da injetora com estabilidade centesimal."
+        </blockquote>
+
+        <!-- H2: Objetivos dos Cálculos integrados à Justificativa -->
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-3">
+          Objetivos Técnicos do Cálculo na Calculadora de Força de Fechamento de Injetoras
+        </h2>
+        <p>Integrar a <strong>Calculadora de Força de Fechamento de Injetoras</strong> à rotina de engenharia de produto, orçamentação (RFQ) e planejamento de produção cumpre quatro objetivos técnicos essenciais na indústria de transformação termoplástica:</p>
+
+        <ol class="list-decimal pl-6 space-y-3 my-4 text-slate-700">
+          <li><strong>Definição do Número Ótimo de Cavidades vs. Porte de Máquina:</strong> Permite simular instantaneamente se o aumento de 2 para 4 ou 8 cavidades manterá o molde compatível com injetoras de médio porte (150t a 250t) ou se exigirá máquinas acima de 350 toneladas, impactando diretamente o CAPEX da ferramenta e o custo do ciclo.</li>
+          <li><strong>Prevenção de Rebarbas e Proteção da Linha de Fechamento:</strong> Garante que a força de travamento supere o pico de pressão hidráulica na transição Velocidade/Pressão (comutação V/P), preservando o ajuste de bancada centesimal (&le; 0,02 mm) em aços P20, 2738 e H13.</li>
+          <li><strong>Compensação Reológica para Paredes Finas (L/t):</strong> Ajusta automaticamente a tonelagem em <strong>+20% para paredes abaixo de 1,8 mm</strong>, onde o congelamento rápido da camada sólida (<em>frozen layer</em>) exige alta velocidade e maior pressão específica de injeção para evitar falha de preenchimento (<em>short shot</em>).</li>
+          <li><strong>Enquadramento Preciso da Taxa-Hora de Injeção B2B:</strong> Direciona o projeto para a faixa exata de tonelagem (80t, 150t, 250t ou 350t), evitando que o comprador industrial pague a hora-máquina de um equipamento de grande porte para injetar componentes que caberiam em uma célula compacta.</li>
+        </ol>
+
+        <!-- H2: Tabela Técnica de Pressão Específica -->
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-3">
+          Parâmetros de Pressão Específica na Cavidade por Família Polimérica
+        </h2>
+        <p>A tabela abaixo detalha os coeficientes de engenharia aplicados pela <strong>Calculadora de Força de Fechamento de Injetoras</strong> conforme a viscosidade do polímero fundido e o comportamento de recalque:</p>
+
+        <div class="overflow-x-auto my-6">
+          <table class="min-w-full bg-white border border-slate-200 rounded-xl overflow-hidden text-sm">
+            <thead class="bg-slate-900 text-white">
+              <tr>
+                <th class="py-3 px-4 text-left font-bold">Família de Resina Termoplástica</th>
+                <th class="py-3 px-4 text-left font-bold">Fator Específico (t/cm²)</th>
+                <th class="py-3 px-4 text-left font-bold">Pressão Média na Cavidade (bar)</th>
+                <th class="py-3 px-4 text-left font-bold">Objetivo de Controle no Processo</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="py-3 px-4 font-semibold">Poliolefinas (PP, PEAD, PEBD)</td>
+                <td class="py-3 px-4">0,30 a 0,35 t/cm²</td>
+                <td class="py-3 px-4">300 a 350 bar</td>
+                <td class="py-3 px-4">Evitar rebarbas por altíssima fluidez em folgas acima de 0,015 mm</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="py-3 px-4 font-semibold">Estirênicos e Acrílicos (ABS, PS, SAN, PMMA)</td>
+                <td class="py-3 px-4">0,40 a 0,45 t/cm²</td>
+                <td class="py-3 px-4">400 a 450 bar</td>
+                <td class="py-3 px-4">Estabilidade dimensional e brilho superficial sem marcas de chupagem</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-semibold">Polímeros de Engenharia (PA6, POM, PC, PBT)</td>
+                <td class="py-3 px-4">0,50 a 0,60 t/cm²</td>
+                <td class="py-3 px-4">500 a 600 bar</td>
+                <td class="py-3 px-4">Vencer a alta viscosidade do Policarbonato e sustentar recalque cristalino</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="py-3 px-4 font-semibold">Compostos Reforçados (PA66 + 30% FV, PPA)</td>
+                <td class="py-3 px-4">0,65 a 0,75 t/cm²</td>
+                <td class="py-3 px-4">650 a 750 bar</td>
+                <td class="py-3 px-4">Garantir compactação estrutural sob solidificação rápida com carga mineral/fibra</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bloco Contextual de Silo / Linkagem Interna -->
+        <div class="bg-blue-50/70 border-l-4 border-blue-700 p-5 rounded-r-xl my-8 text-slate-800 text-sm sm:text-base">
+          <p>Após identificar a tonelagem recomendada na <strong>Calculadora de Força de Fechamento de Injetoras</strong>, avance na validação técnica e financeira do seu projeto: simule o preço por unidade na <a href="calculadora-custo-peca-injetada.html" class="text-blue-700 font-bold underline">Calculadora de Custo de Peça Injetada</a>, conheça nossa estrutura de <a href="servicos-de-injecao-plastica.html" class="text-blue-700 font-bold underline">Serviços de Injeção Plástica de 80t a 350t</a> e de <a href="fabricacao-de-moldes-de-injecao.html" class="text-blue-700 font-bold underline">Fabricação de Moldes de Precisão</a>, ou aprofunde a teoria matemática no guia sobre <a href="como-calcular-forca-de-fechamento-e-tonelagem-da-injetora.html" class="text-blue-700 font-bold underline">Como Calcular Força de Fechamento e Relação L/t</a>.</p>
+        </div>
+
+        <!-- FAQ Estruturado -->
+        <section class="mt-10 pt-8 border-t border-slate-200">
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-6">
+            Perguntas Frequentes sobre a Calculadora de Força de Fechamento de Injetoras
+          </h2>
+          <div class="space-y-4">
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Como medir corretamente a área projetada da peça para inserir na Calculadora de Força de Fechamento de Injetoras?</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">A área projetada corresponde à sombra bidimensional (2D) da peça projetada sobre o plano da linha de partição do molde, perpendicular ao eixo de abertura da máquina injetora. Furos passantes no sentido de extração devem ser subtraídos da área total, enquanto a altura ou profundidade vertical da peça não altera a área projetada.</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Por que a Calculadora de Força de Fechamento de Injetoras adiciona 12% para canais e 15% de margem de segurança?</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">Em moldes de canal frio, o galho de alimentação e os canais de distribuição sofrem a mesma pressão hidráulica de injeção das cavidades, acrescentando em média 10% a 15% de área projetada. Já a margem operacional de 15% protege os tirantes e o conjunto de joelheiras da injetora contra fadiga mecânica por operação no limite nominal.</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Qual o risco de operar um molde compacto aplicando força de fechamento excessiva em uma injetora grande?</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">Aplicar tonelagem excessiva sobre um molde de área reduzida concentra tensão compressiva acima do limite de escoamento do aço na linha de fechamento (<em>coining</em>), esmagando as saídas de gases (<em>venting</em>) de 0,015 mm a 0,025 mm. Isso provoca efeito Diesel (queima por ar comprimido), empenamento das placas da injetora e trincas prematuras em postiços.</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2">Como a troca de Polipropileno (PP) por Policarbonato (PC) ou PA66 com fibra de vidro altera a tonelagem na calculadora?</h3>
+              <p class="text-slate-700 text-sm leading-relaxed">Poliolefinas de alta fluidez como o Polipropileno (PP) exigem fator de pressão específico entre 0,30 e 0,35 t/cm², enquanto polímeros de alta viscosidade como Policarbonato (PC) e Poliamida PA66 com 30% de fibra de vidro demandam de 0,55 a 0,75 t/cm². Na prática, injetar a mesma geometria em PA66-GF30 exige o dobro da força de fechamento.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
   </main>
 
     <!-- REVERSE-SILO-CLUSTER -->

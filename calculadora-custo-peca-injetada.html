@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-bc0f1329"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-bc0f1329');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Custo de Peça Injetada | Estimativa de Produção B2B</title>
-  <meta name="description" content="Simule o custo unitário de peças plásticas injetadas calculando consumo de resina termoplástica, hora-máquina de injeção e tamanho de lote industrial.">
+  <title>Calculadora de Custo de Peça Injetada | Orçamento de Injeção B2B</title>
+  <meta name="description" content="Calculadora de Custo de Peça Injetada: simule online o custo unitário de peças plásticas calculando consumo de resina, tempo de ciclo, cavidades e hora-máquina.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada.html">
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculadora de Custo de Peça Injetada | Orçamento de Injeção B2B">
+  <meta property="og:description" content="Ferramenta de engenharia econômica para calcular o custo unitário de peças plásticas injetadas por peso em gramas, resina, número de cavidades e tempo de ciclo.">
+  <meta property="og:url" content="https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada.html">
+  <meta property="og:site_name" content="Portal Molde Injeção">
+  <meta property="og:image" content="https://portalmoldeinjecao.com.br/images/custo-fabricacao-molde-injecao-plastica-capa.webp">
 
   <!-- Favicon Oficial Portal Molde Injeção (PMI 300x300) -->
   <link rel="icon" type="image/png" sizes="300x300" href="favicon.png?v=2">
@@ -29,8 +47,100 @@
       }
     }
   </script>
+
+  <!-- Schema.org JSON-LD: WebApplication + FAQPage + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Calculadora de Custo de Peça Injetada",
+        "url": "https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada.html",
+        "applicationCategory": "EngineeringApplication",
+        "operatingSystem": "All",
+        "description": "Calculadora online de engenharia econômica para estimar o custo unitário de peças plásticas injetadas combinando custo de matéria-prima termoplástica, taxa de perda técnica e rateio de hora-máquina por tempo de ciclo e cavidades.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "BRL"
+        },
+        "provider": {
+          "@type": "Organization",
+          "name": "Portal Molde Injeção",
+          "url": "https://portalmoldeinjecao.com.br/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual é a fórmula exata utilizada na Calculadora de Custo de Peça Injetada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Calculadora de Custo de Peça Injetada aplica a equação C_unit = [(M_p / 1000) × (1 + i_perda) × P_kg] + [C_hm / ((3600 / t_ciclo) × N_cav)], somando o custo da massa polimérica com 3% de perda operacional ao custo da hora-máquina dividido pela produtividade horária do molde."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como o número de cavidades do molde impacta o custo unitário da peça plástica?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O aumento do número de cavidades multiplica a produção horária sem elevar proporcionalmente a hora-máquina da injetora. Passar de 1 para 4 cavidades reduz em até 75% a parcela de custo de transformação por peça, diluindo rapidamente o investimento adicional na matriz para lotes acima de 50.000 unidades."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Por que o cálculo inclui 3% de perda técnica sobre o peso líquido da peça?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A margem de 3% de perda técnica compensa o polímero consumido na purga de canhão durante setups, estabilização térmica dos primeiros ciclos (start-up) e eventuais perdas de moagem de canais frios, garantindo que o orçamento industrial reflita o consumo real de matéria-prima no chão de fábrica."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quando compensa investir em câmara quente para reduzir o custo da peça injetada?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O investimento em câmara quente compensa quando a peça utiliza resinas de engenharia de alto valor (PA66+FV, PC, POM) ou quando o galho representa mais de 15% do peso da injetada em tiragens recorrentes, eliminando o desperdício de material e reduzindo o tempo de ciclo entre 15% e 30%."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://portalmoldeinjecao.com.br/index.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Calculadora de Custo de Peça Injetada",
+            "item": "https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<!--
+METADADOS DE SEO E GEO (ENGENHARIA INDUSTRIAL B2B):
+1. Palavra-Chave Foco: Calculadora de Custo de Peça Injetada
+2. Palavras-Chave Secundárias / LSI: como calcular custo de injeção plástica, custo hora máquina injetora, orçamento de peça plástica injetada, cálculo de matéria-prima e ciclo de injeção, formação de preço injeção termoplástica.
+3. Título de SEO (Meta Title): Calculadora de Custo de Peça Injetada | Orçamento de Injeção B2B
+4. Meta Description: Calculadora de Custo de Peça Injetada: simule online o custo unitário de peças plásticas calculando consumo de resina, tempo de ciclo, cavidades e hora-máquina.
+5. Slug / URL: calculadora-custo-peca-injetada.html
+6. Categoria Principal: Processos e Custos de Injeção Plástica
+7. Intenção de Busca: Transacional / Ferramenta Interativa e Informacional Técnica (Engenharia de Custos, Compras B2B e P&D)
+8. Conclusão Estratégica (Takeaway): A utilização da Calculadora de Custo de Peça Injetada permite decompor com exatidão matemática o peso da matéria-prima termoplástica e o rateio da hora-máquina em função do tempo de ciclo e do número de cavidades, capacitando engenheiros e compradores B2B a definir a configuração ótima do molde e negociar contratos de fornecimento com transparência técnica.
+-->
 
   <!-- Header -->
     <!-- Top Announcement Bar -->
@@ -308,7 +418,7 @@
           </div>
 
           <div>
-            <a href="index.html#contato" class="block w-full text-center py-3.5 px-4 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-xl shadow-md transition-all text-sm uppercase tracking-wider mb-2">
+            <a href="contato.html" class="block w-full text-center py-3.5 px-4 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-xl shadow-md transition-all text-sm uppercase tracking-wider mb-2">
               Solicitar Cotação Formal de Injeção B2B
             </a>
             <span class="block text-center text-xs text-slate-500">Valores referenciais. Não inclui o custo inicial de fabricação do molde.</span>
@@ -316,6 +426,231 @@
         </div>
       </div>
     </div>
+
+    <!-- Conteúdo Técnico SEO/GEO: Justificativa de Utilização e Objetivos dos Cálculos -->
+    <article class="mt-12 bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-10 lg:p-12">
+      <div class="border-b border-slate-200 pb-6 mb-8">
+        <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-extrabold rounded-full uppercase tracking-wider mb-3">Documentação Técnica de Engenharia Econômica</span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">
+          Por Que Utilizar a Calculadora de Custo de Peça Injetada: Justificativa Técnica e Objetivos Econômicos na Manufatura B2B
+        </h2>
+        <div class="mt-4 bg-sky-50 text-sky-800 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-semibold border-l-4 border-sky-600">
+          Por Engenharia Portal Molde Injeção &bull; Diretrizes de Orçamentação Industrial e Engenharia de Valor (Should-Cost Analysis)
+        </div>
+      </div>
+
+      <!-- Pirâmide Invertida Radical (1º e 2º Parágrafos) -->
+      <div class="space-y-5 text-slate-700 leading-relaxed text-base">
+        <p>
+          A utilização da <strong>Calculadora de Custo de Peça Injetada</strong> é indispensável na fase de viabilidade econômica e desenvolvimento de produto porque determina, com precisão paramétrica imediata, o custo unitário real de produção ao integrar o consumo de resina termoplástica (com margem de perda técnica operacional) ao rateio da hora-máquina por tempo de ciclo e número de cavidades. Em projetos de <a href="index.html" class="text-blue-700 font-bold hover:underline">moldes de injeção plástica</a> e contratos de <a href="injecao-plastica-terceirizada.html" class="text-blue-700 font-bold hover:underline">injeção plástica terceirizada</a>, essa ferramenta elimina orçamentos empíricos e permite que engenheiros de produto, gestores de compras B2B e projetistas validem a rentabilidade do lote antes de autorizar a usinagem do ferramental.
+        </p>
+
+        <p>
+          Tecnicamente, a <strong>Calculadora de Custo de Peça Injetada</strong> processa a equação fundamental de formação de preço industrial (<strong>C<sub>unit</sub> = C<sub>MP</sub> + C<sub>Maq</sub></strong>), na qual o custo de matéria-prima (<strong>C<sub>MP</sub></strong>) converte a massa líquida da peça em quilogramas acrescida de <strong>3% de perda técnica de processo</strong> (purga de canhão, partida de máquina e moagem), enquanto o custo de transformação (<strong>C<sub>Maq</sub></strong>) divide a taxa horária da injetora pela produtividade horária efetiva do molde (<strong>3.600 &divide; Tempo de Ciclo &times; Nº de Cavidades</strong>). Ao substituir estimativas subjetivas por variáveis físicas auditáveis, o cálculo previne dois erros graves na indústria de transformação: subdimensionar o número de cavidades do molde (gerando peças caras em lotes seriados) ou especificar resinas de engenharia sem avaliar o impacto do tempo de resfriamento na tarifa de máquina.
+        </p>
+
+        <!-- Pull Quote -->
+        <blockquote class="my-6 bg-slate-900 text-slate-100 p-6 rounded-xl border-l-4 border-emerald-500 shadow-md">
+          <p class="text-sm sm:text-base font-medium italic leading-relaxed">
+            "Na engenharia de custos de termoplásticos, o preço por quilo da resina explica apenas metade da equação: uma redução de 4 segundos no tempo de ciclo ou a duplicação do número de cavidades no molde reduz drasticamente a parcela de hora-máquina por peça, viabilizando o retorno sobre o investimento (ROI) em tiragens contínuas."
+          </p>
+        </blockquote>
+      </div>
+
+      <!-- Seção 1: Objetivos dos Cálculos -->
+      <div class="mt-10">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-4">
+          4 Objetivos Estratégicos dos Cálculos na Calculadora de Custo de Peça Injetada
+        </h3>
+        <p class="text-slate-700 leading-relaxed mb-6">
+          A aplicação estruturada da <strong>Calculadora de Custo de Peça Injetada</strong> conecta a justificativa de engenharia do molde diretamente às metas financeiras de suprimentos e manufatura através de quatro objetivos centrais:
+        </p>
+
+        <ol class="space-y-4 list-decimal list-inside text-slate-700">
+          <li class="bg-slate-50 p-5 rounded-xl border border-slate-200 leading-relaxed">
+            <strong class="text-slate-900">Determinação do Ponto de Equilíbrio (Break-Even) entre Número de Cavidades e Custo Unitário:</strong> O cálculo permite simular instantaneamente o efeito multiplicador de moldes de 1, 2, 4 ou 8 cavidades sobre a produtividade horária (peças/hora). Embora um molde multicavidades exija maior investimento inicial na matrizaria, a diluição proporcional da hora-máquina reduz o custo unitário de transformação em até <strong>75%</strong> ou <strong>87,5%</strong>, revelando o lote exato em que a ferramenta se paga.
+          </li>
+          <li class="bg-slate-50 p-5 rounded-xl border border-slate-200 leading-relaxed">
+            <strong class="text-slate-900">Auditoria Técnica de Cotações B2B (Engenharia Should-Cost):</strong> Compradores técnicos e engenheiros de suprimentos utilizam a <strong>Calculadora de Custo de Peça Injetada</strong> para decompor propostas comerciais em duas frentes transparentes: peso de polímero e custo de transformação. Essa separação analítica permite negociar reajustes de resina (vinculados às tabelas petroquímicas de PP, ABS, PA6 ou PC) de forma independente da taxa de hora-máquina da planta fabril.
+          </li>
+          <li class="bg-slate-50 p-5 rounded-xl border border-slate-200 leading-relaxed">
+            <strong class="text-slate-900">Análise de Sensibilidade do Tempo de Ciclo e Eficiência Térmica:</strong> O tempo de resfriamento representa de <strong>60% a 75% do ciclo total de injeção</strong>. Ao simular variações de segundos na calculadora, a engenharia comprova financeiramente como circuitos de refrigeração otimizados, insertos de alta condutividade térmica (cobre-berílio) ou sistemas de câmara quente reduzem o custo final de cada peça injetada.
+          </li>
+          <li class="bg-slate-50 p-5 rounded-xl border border-slate-200 leading-relaxed">
+            <strong class="text-slate-900">Previsão de Consumo Global de Polímero e Planejamento de Compras (MRP):</strong> Além do custo unitário, o algoritmo calcula automaticamente a massa total de resina necessária para cumprir o lote (em quilogramas, já incorporando os <strong>3% de perda técnica</strong>). Esse dado orienta a compra de pacotes fechados de matéria-prima virgem e masterbatch, evitando paradas de injetora por falta de insumo no chão de fábrica.
+          </li>
+        </ol>
+      </div>
+
+      <!-- Seção 2: Equação Matemática e Tabela de Parâmetros -->
+      <div class="mt-10">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-4">
+          Equação Matemática e Parâmetros de Referência por Resina Termoplástica
+        </h3>
+        <p class="text-slate-700 leading-relaxed mb-5">
+          Para garantir precisão nos estudos de viabilidade industrial, a <strong>Calculadora de Custo de Peça Injetada</strong> executa simultaneamente a formulação de massa polimérica e a equação de produtividade horária de injeção:
+        </p>
+
+        <div class="bg-slate-900 text-white p-6 rounded-xl mb-6 font-mono text-xs sm:text-sm overflow-x-auto">
+          <div class="text-sky-400 font-bold mb-2">// Equação Paramétrica de Formação de Custo Unitário de Injeção B2B</div>
+          <div class="text-base sm:text-lg font-extrabold text-white mb-3">
+            C<sub>unit</sub> = [ (M<sub>p</sub> &divide; 1000) &times; (1 + i<sub>perda</sub>) &times; P<sub>kg</sub> ] + [ C<sub>hm</sub> &divide; ( (3600 &divide; t<sub>ciclo</sub>) &times; N<sub>cav</sub> ) ]
+          </div>
+          <ul class="space-y-1 text-slate-300 text-xs font-sans">
+            <li>&bull; <strong>C<sub>unit</sub></strong> = Custo unitário estimado da peça plástica injetada pronta (R$/peça).</li>
+            <li>&bull; <strong>M<sub>p</sub></strong> = Massa líquida da peça injetada em gramas (obtida via volume 3D CAD &times; densidade do polímero).</li>
+            <li>&bull; <strong>i<sub>perda</sub></strong> = Índice de perda técnica operacional (fixado em <strong>0,03</strong> ou <strong>3%</strong> para purga e estabilização de processo).</li>
+            <li>&bull; <strong>P<sub>kg</sub></strong> = Preço de aquisição da resina termoplástica por quilograma (R$/kg).</li>
+            <li>&bull; <strong>C<sub>hm</sub></strong> = Taxa de hora-máquina da injetora (referência base de <strong>R$ 85,00/h</strong> para máquinas de pequeno/médio porte).</li>
+            <li>&bull; <strong>t<sub>ciclo</sub></strong> = Tempo total de ciclo de injeção em segundos (fechamento + injeção + recalque + resfriamento + extração).</li>
+            <li>&bull; <strong>N<sub>cav</sub></strong> = Número de cavidades produtivas simultâneas do molde de injeção.</li>
+          </ul>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="p-3.5 font-bold border-b border-slate-700">Polímero Termoplástico</th>
+                <th class="p-3.5 font-bold border-b border-slate-700">Densidade Sólida (g/cm&sup3;)</th>
+                <th class="p-3.5 font-bold border-b border-slate-700">Faixa Referencial (R$/kg)</th>
+                <th class="p-3.5 font-bold border-b border-slate-700">Temp. de Molde (&deg;C)</th>
+                <th class="p-3.5 font-bold border-b border-slate-700">Impacto Técnico no Custo de Ciclo</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-slate-900">PP (Polipropileno)</td>
+                <td class="p-3.5">0,90 – 0,91 g/cm&sup3;</td>
+                <td class="p-3.5">R$ 10,80 – R$ 13,50</td>
+                <td class="p-3.5">20 &deg;C a 50 &deg;C</td>
+                <td class="p-3.5">Baixa densidade (maior número de peças por kg) e ciclos rápidos em paredes finas.</td>
+              </tr>
+              <tr class="hover:bg-slate-50 bg-slate-50/60">
+                <td class="p-3.5 font-bold text-slate-900">PEAD (Polietileno Alta Densidade)</td>
+                <td class="p-3.5">0,94 – 0,96 g/cm&sup3;</td>
+                <td class="p-3.5">R$ 11,20 – R$ 14,00</td>
+                <td class="p-3.5">20 &deg;C a 45 &deg;C</td>
+                <td class="p-3.5">Alta contração cristalina; exige controle de recalque e refrigeração intensa para evitar empenamento.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-slate-900">ABS (Grau Injeção Técnica)</td>
+                <td class="p-3.5">1,04 – 1,07 g/cm&sup3;</td>
+                <td class="p-3.5">R$ 16,50 – R$ 21,00</td>
+                <td class="p-3.5">50 &deg;C a 80 &deg;C</td>
+                <td class="p-3.5">Polímero amorfo com excelente estabilidade dimensional e ciclo intermediário para gabinetes técnicos.</td>
+              </tr>
+              <tr class="hover:bg-slate-50 bg-slate-50/60">
+                <td class="p-3.5 font-bold text-slate-900">PA 6 / PA 6.6 (Nylon Natural)</td>
+                <td class="p-3.5">1,13 – 1,15 g/cm&sup3;</td>
+                <td class="p-3.5">R$ 24,00 – R$ 31,00</td>
+                <td class="p-3.5">60 &deg;C a 90 &deg;C</td>
+                <td class="p-3.5">Requer estufagem prévia obrigatória (4h a 80 &deg;C), impactando o consumo energético periférico.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-slate-900">PA 6.6 + 30% Fibra de Vidro</td>
+                <td class="p-3.5">1,35 – 1,38 g/cm&sup3;</td>
+                <td class="p-3.5">R$ 35,00 – R$ 44,00</td>
+                <td class="p-3.5">80 &deg;C a 110 &deg;C</td>
+                <td class="p-3.5">Alta densidade específica e solidificação rápida, mas exige injetora com rosca bimetálica e molde temperado.</td>
+              </tr>
+              <tr class="hover:bg-slate-50 bg-slate-50/60">
+                <td class="p-3.5 font-bold text-slate-900">POM (Poliacetal Copolímero)</td>
+                <td class="p-3.5">1,41 – 1,42 g/cm&sup3;</td>
+                <td class="p-3.5">R$ 25,00 – R$ 32,00</td>
+                <td class="p-3.5">80 &deg;C a 105 &deg;C</td>
+                <td class="p-3.5">Elevado peso específico (41% mais denso que o PP), elevando a fração de matéria-prima por volume de peça.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-slate-900">PC (Policarbonato Óptico/Técnico)</td>
+                <td class="p-3.5">1,20 g/cm&sup3;</td>
+                <td class="p-3.5">R$ 29,00 – R$ 38,00</td>
+                <td class="p-3.5">80 &deg;C a 120 &deg;C</td>
+                <td class="p-3.5">Alta viscosidade e temperatura de processo; demanda termorreguladores pressurizados e maior força de fechamento.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Seção 3: Integração com Engenharia de Moldes e Silo Contextual -->
+      <div class="mt-10">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-4">
+          Como Integrar o Custo da Peça Injetada ao Projeto do Molde e à Seleção de Máquina
+        </h3>
+        <div class="space-y-4 text-slate-700 leading-relaxed">
+          <p>
+            O resultado obtido na <strong>Calculadora de Custo de Peça Injetada</strong> está diretamente subordinado às decisões tomadas na etapa de projeto da ferramenta. Antes de fixar a taxa de hora-máquina na planilha de custos, o engenheiro deve verificar o porte da injetora exigida utilizando nossa <a href="calculadora-tonelagem-injetora.html" class="text-blue-700 font-bold hover:underline">Calculadora de Força de Fechamento de Injetoras</a>: um molde de 8 cavidades multiplica a produção horária, mas também multiplica a área projetada total, podendo deslocar o processo de uma máquina de 120 toneladas para uma de 300 toneladas (cuja hora-máquina é superior).
+          </p>
+          <p>
+            Além disso, a escolha do sistema de alimentação durante a <a href="fabricacao-de-moldes-de-injecao.html" class="text-blue-700 font-bold hover:underline">fabricação de moldes de injeção</a> altera significativamente tanto o consumo de resina quanto o tempo de ciclo. Confira em nosso estudo sobre <a href="molde-camara-quente-vs-canal-frio-qual-escolher.html" class="text-blue-700 font-bold hover:underline">molde câmara quente vs. canal frio</a> como a eliminação do galho sólido reduz o desperdício de polímero e acelera a abertura do molde, complementando a análise financeira detalhada no guia sobre <a href="custo-fabricacao-molde-injecao-plastica.html" class="text-blue-700 font-bold hover:underline">quanto custa fabricar um molde de injeção plástica</a> e as diretrizes de <a href="engenharia-de-produto-e-dfm.html" class="text-blue-700 font-bold hover:underline">engenharia de produto e DFM</a> para uniformização de espessura de parede.
+          </p>
+        </div>
+      </div>
+
+      <!-- Seção 4: FAQ Estruturado -->
+      <div class="mt-10 pt-8 border-t border-slate-200">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-6">
+          Perguntas Frequentes sobre a Calculadora de Custo de Peça Injetada
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-2">
+              1. Qual é a fórmula exata utilizada na Calculadora de Custo de Peça Injetada?
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              A <strong>Calculadora de Custo de Peça Injetada</strong> aplica a equação <strong>C<sub>unit</sub> = [(M<sub>p</sub> &divide; 1000) &times; (1 + i<sub>perda</sub>) &times; P<sub>kg</sub>] + [C<sub>hm</sub> &divide; ((3600 &divide; t<sub>ciclo</sub>) &times; N<sub>cav</sub>)]</strong>, somando o custo da massa polimérica com 3% de perda operacional ao custo da hora-máquina dividido pela produtividade horária do molde.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-2">
+              2. Como o número de cavidades do molde impacta o custo unitário da peça plástica?
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              O aumento do número de cavidades multiplica a produção horária sem elevar proporcionalmente a hora-máquina da injetora. Passar de 1 para 4 cavidades reduz em até 75% a parcela de custo de transformação por peça, diluindo rapidamente o investimento adicional na matriz para lotes acima de 50.000 unidades.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-2">
+              3. Por que o cálculo inclui 3% de perda técnica sobre o peso líquido da peça?
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              A margem de 3% de perda técnica compensa o polímero consumido na purga de canhão durante setups, estabilização térmica dos primeiros ciclos (start-up) e eventuais perdas de moagem de canais frios, garantindo que o orçamento industrial reflita o consumo real de matéria-prima no chão de fábrica.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-5 rounded-xl border border-slate-200">
+            <h4 class="text-sm sm:text-base font-bold text-slate-900 mb-2">
+              4. Quando compensa investir em câmara quente para reduzir o custo da peça injetada?
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              O investimento em câmara quente compensa quando a peça utiliza resinas de engenharia de alto valor (PA66+FV, PC, POM) ou quando o galho representa mais de 15% do peso da injetada em tiragens recorrentes, eliminando o desperdício de material e reduzindo o tempo de ciclo entre 15% e 30%.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusão Estratégica / Callout Final -->
+      <div class="mt-10 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-6 sm:p-8 rounded-2xl shadow-lg">
+        <span class="text-xs font-extrabold uppercase tracking-widest text-sky-400 block mb-2">Conclusão Estratégica de Engenharia</span>
+        <h3 class="text-lg sm:text-xl font-black mb-3">
+          Da Simulação Paramétrica à Cotação Oficial de Ferramentaria e Injeção Seriada
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+          Utilizar a <strong>Calculadora de Custo de Peça Injetada</strong> em conjunto com a análise de DFM garante que a arquitetura do molde (número de cavidades, tipo de bico injetor e circuito de refrigeração) seja projetada sob medida para atingir o custo-alvo (<em>target cost</em>) do seu produto. Para receber uma proposta técnica formal com estudo de ciclo real a partir do seu arquivo 3D (STEP/IGES), acione nossa engenharia.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="contato.html" class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-extrabold rounded-xl uppercase tracking-wider transition-all shadow-md">
+            Enviar Arquivo 3D para Cotação Formal &rarr;
+          </a>
+          <a href="calculadora-tonelagem-injetora.html" class="inline-flex items-center justify-center px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold rounded-xl border border-slate-700 transition-all">
+            Simular Força de Fechamento (Tonelagem)
+          </a>
+        </div>
+      </div>
+    </article>
   </main>
 
     <!-- REVERSE-SILO-CLUSTER -->
