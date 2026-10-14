@@ -51,6 +51,46 @@
     "areaServed": "BR"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Já possuo os moldes, vocês aceitam apenas o serviço de injeção plástica (transferência de ferramental)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Executamos a transferência segura de ferramental com auditoria dimensional de recebimento: checagem do anel de centragem, altura de molde (mínima/máxima), furação de fixação ou garras nas placas, circuitos hidrotérmicos e integridade de gavetas ou câmara quente. Após o try-out de homologação e emissão do laudo dimensional e Carta de Processo, iniciamos a produção seriada contínua."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vocês fornecem a matéria-prima (Full Service) ou o cliente pode enviar a resina (Facon / Industrialização)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Operamos em ambas as modalidades B2B: (1) Full Service (Fornecimento Turnkey), em que adquirimos polímeros virgens homologados, masterbatches e insertos metálicos diretamente de petroquímicas e distribuidores oficiais com Certificado de Análise (CoA); ou (2) Facon (Industrialização por Encomenda via CFOP 5.124/5.902), onde o cliente envia sua resina e cobramos exclusivamente a taxa de transformação (hora-máquina e mão de obra)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual é o lote mínimo para terceirização de injeção plástica e como funciona o atendimento Kanban?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dimensionamos o lote econômico de produção (MOQ) de acordo com o tempo de setup da matriz, consumo de purga de canhão e necessidade de desumidificação prévia (em média 4 horas para PA66, PC e PBT). Atendemos desde lotes técnicos recorrentes a partir de 500 a 1.000 peças até contratos anuais de alto volume com entregas programadas Just-in-Time (JIT) e estoque pulmão Kanban."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quem realiza a manutenção preventiva do molde do cliente durante o contrato de injeção?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Todos os moldes sob nossa guarda contam com manutenção preventiva de rotina inclusa a cada fim de lote produtivo: limpeza química da linha de fechamento e saídas de gases (vents), lubrificação de colunas, pinos extratores e gavetas com graxa sintética de alta temperatura (PTFE), desmagnetização e aplicação de película protetiva anticorrosiva antes do armazenamento em porta-paletes."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
@@ -397,40 +437,463 @@
         </table>
       </div>
 
-      <h2 class="text-2xl font-black text-slate-900 mb-6">Parque Fabril Homologado: Infraestrutura e Capacidade Industrial</h2>
-      <p class="text-base text-slate-700 leading-relaxed mb-6">
-        Nossa planta produtiva homologada está preparada para atender tanto a pedidos pontuais de alta complexidade quanto a contratos de fornecimento contínuo anual:
+      <h2 class="text-2xl font-black text-slate-900 mb-3">Parque Fabril Homologado: As 4 Classes de Injetoras Mais Utilizadas (80t a 350t)</h2>
+      <p class="text-base text-slate-700 leading-relaxed mb-8">
+        Nossa planta produtiva homologada opera com 4 famílias complementares de máquinas injetoras horizontais — selecionadas de acordo com a área projetada da peça, pressão de cavidade, exigência de ciclo e tolerância dimensional:
       </p>
 
-      <ul class="space-y-3 text-slate-700 not-prose mb-10">
-        <li class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-          <span><strong>Parque de Injetoras Hidráulicas e Elétricas:</strong> Máquinas modernas de 80 a 350 toneladas com monitoramento eletrônico de injeção, comutação por pressão de cavidade e servo-acionamento de alta eficiência energética.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-          <span><strong>Periféricos e Desumidificação:</strong> Secadores de ar comprimido e desumidificadores moleculares que eliminam a umidade residual de polímeros higroscópicos antes da fusão no canhão.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</span>
-          <span><strong>Ferramentaria de Apoio Interna:</strong> Qualquer necessidade de manutenção corretiva, desentupimento de câmara quente ou ajuste em extratores é resolvida imediatamente dentro da fábrica, sem paralisar o cronograma de entrega do cliente.</span>
-        </li>
-      </ul>
+      <!-- Módulo 2 Colunas: Baralho de Injetoras (Esquerda) + Cards Sincronizados das 4 Classes de Máquinas (Direita) -->
+      <div class="grid lg:grid-cols-12 gap-8 items-center my-8 not-prose">
+        
+        <!-- Coluna Esquerda: Baralho Interativo das 4 Injetoras (Shuffle Cards) -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div id="shuffle-stage-injetoras" class="relative w-full max-w-[330px] sm:max-w-[360px] aspect-[3/4] select-none cursor-pointer group" title="Clique para alternar entre as 4 classes de injetoras">
+            
+            <!-- Card 1: Injetora Servo-Hidráulica (80t a 150t) -->
+            <div data-phase-card="0" class="phase-shuffle-card-inj absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/injetora-1-servo-hidraulica-80t-150t-precisao.webp" alt="Injetora Servo-Hidráulica de Precisão de 80t a 150t para Peças Técnicas e Engrenagens" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-blue-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                Classe 01 • 80t a 150t
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-blue-400 mb-0.5">Servo-Hidráulica de Precisão</p>
+                <h4 class="text-sm font-black text-white leading-snug">Peças Técnicas, Buchas, Conectores e Multicavidades</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Bomba servo-acionada de baixo consumo e controle PID de zona térmica.</p>
+              </div>
+            </div>
+
+            <!-- Card 2: Injetora Híbrida de Médio Porte (160t a 250t) -->
+            <div data-phase-card="1" class="phase-shuffle-card-inj absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/injetora-2-hibrida-medio-porte-160t-250t-ciclo-rapido.webp" alt="Injetora Híbrida de Médio Porte de 160t a 250t para Ciclo Rápido e Gabinetes Industriais" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-sky-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                Classe 02 • 160t a 250t
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-sky-400 mb-0.5">Híbrida de Médio Porte e Ciclo Rápido</p>
+                <h4 class="text-sm font-black text-white leading-snug">Gabinetes Eletrônicos, Caixas Técnicas e Automotivo</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Dosagem simultânea e extração robotizada para alta produtividade 24/7.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: Injetora de Alta Tonelagem (260t a 350t) -->
+            <div data-phase-card="2" class="phase-shuffle-card-inj absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/injetora-3-alta-tonelagem-260t-350t-automacao.webp" alt="Injetora de Alta Tonelagem de 260t a 350t com Automação e Câmara Quente" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-amber-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                Classe 03 • 260t a 350t
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-amber-400 mb-0.5">Alta Força de Fechamento</p>
+                <h4 class="text-sm font-black text-white leading-snug">Peças Estruturais, Painéis e Moldes de Grande Porte</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Amplo vão entre colunas, circuito hidráulico para gavetas (core-pull) e câmara quente.</p>
+              </div>
+            </div>
+
+            <!-- Card 4: Injetora Servo-Elétrica de Alta Repetibilidade -->
+            <div data-phase-card="3" class="phase-shuffle-card-inj absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/80 bg-slate-900 transition-all duration-700 ease-out">
+              <img src="imagens/injetora-4-eletrica-alta-repetibilidade-precisao.webp" alt="Injetora Servo-Elétrica de Alta Repetibilidade para Componentes Ópticos e Médicos" width="900" height="1200" loading="lazy" class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 flex items-center gap-2 bg-slate-950/90 backdrop-blur-md text-white text-[11px] font-extrabold uppercase tracking-wider px-3 py-1.5 rounded-full border border-emerald-400/40 shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Classe 04 • Servo-Elétrica
+              </div>
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 pt-10">
+                <p class="text-xs font-extrabold uppercase tracking-widest text-emerald-400 mb-0.5">Servo-Elétrica de Alta Repetibilidade</p>
+                <h4 class="text-sm font-black text-white leading-snug">Lentes em PC, Dispositivos Médicos e Tolerância ±0,02 mm</h4>
+                <p class="text-[11px] text-slate-300 mt-1">Fusos de esferas recirculantes e comutação V/P em 98% do volume da cavidade.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controles e Indicadores do Baralho de Injetoras -->
+          <div class="mt-7 flex flex-col items-center gap-2.5 w-full">
+            <div class="flex items-center justify-center gap-1.5 flex-wrap">
+              <button type="button" data-phase-btn-inj="0" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-blue-600 text-white shadow-sm cursor-pointer">80t–150t</button>
+              <button type="button" data-phase-btn-inj="1" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer">160t–250t</button>
+              <button type="button" data-phase-btn-inj="2" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer">260t–350t</button>
+              <button type="button" data-phase-btn-inj="3" class="px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer">Elétrica</button>
+            </div>
+            <span class="text-[11px] text-slate-500 font-medium flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+              Alternância automática • Clique na carta ou selecione a injetora
+            </span>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Os 4 Cards de Especificação das Injetoras (Sincronizados) -->
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+          <div data-phase-box-inj="0" class="bg-white p-5 rounded-xl border-2 border-blue-600 shadow-md transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Injetora 01 • 80t a 150t</span>
+              <span class="phase-active-dot-inj w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Servo-Hidráulica de Precisão</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Ideal para componentes técnicos de pequeno e médio porte, buchas, engrenagens em POM/PA66 e moldes multicavidades (4 a 32 cavidades). Equipada com servomotor acoplado à bomba hidráulica, garante repetibilidade de pressão de recalque superior a <strong>99,5%</strong> e partida rápida.
+            </p>
+          </div>
+
+          <div data-phase-box-inj="1" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Injetora 02 • 160t a 250t</span>
+              <span class="phase-active-dot-inj w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Híbrida de Médio Porte e Ciclo Rápido</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Projetada para gabinetes eletrônicos em ABS/PC, carenagens industriais e peças automotivas com parede fina ou média. Combina fechamento por joelheira (<em>toggle</em>) de alta velocidade com dosagem elétrica simultânea e <strong>manipulador cartesiano (robô)</strong> para extração sem marcas.
+            </p>
+          </div>
+
+          <div data-phase-box-inj="2" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Injetora 03 • 260t a 350t</span>
+              <span class="phase-active-dot-inj w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Alta Tonelagem e Automação Pesada</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Dedicada a peças de grande área projetada (até 1.150 cm²), caixas estruturais, grades frontais e polímeros carregados com <strong>30% a 50% de Fibra de Vidro</strong>. Possui amplo espaço entre colunas (até 710 × 710 mm), múltiplos circuitos hidráulicos para gavetas (<em>core-pull</em>) e controle integrado de câmara quente.
+            </p>
+          </div>
+
+          <div data-phase-box-inj="3" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200">Injetora 04 • Servo-Elétrica</span>
+              <span class="phase-active-dot-inj w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Alta Repetibilidade (Peças Ópticas e Médicas)</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Acionamento por fusos de esferas recirculantes (precisão de posição de <strong>0,01 mm</strong>) e operação isenta de névoa de óleo hidráulico. Essencial para visores e lentes em Policarbonato (PC) cristal, microengrenagens e dispositivos médicos com tolerância centesimal de <strong>±0,02 mm</strong>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <script>
+        (function() {
+          const stage = document.getElementById('shuffle-stage-injetoras');
+          if (!stage) return;
+          const cards = Array.from(stage.querySelectorAll('.phase-shuffle-card-inj'));
+          const btns = Array.from(document.querySelectorAll('[data-phase-btn-inj]'));
+          const boxes = Array.from(document.querySelectorAll('[data-phase-box-inj]'));
+          let activeIdx = 0;
+          let timer = null;
+
+          const stackStyles = [
+            { transform: 'translate3d(0px, 0px, 0px) scale(1) rotate(0deg)', zIndex: 40, opacity: '1', filter: 'brightness(1)' },
+            { transform: 'translate3d(14px, 10px, 0px) scale(0.95) rotate(2.5deg)', zIndex: 30, opacity: '0.92', filter: 'brightness(0.78)' },
+            { transform: 'translate3d(-12px, 18px, 0px) scale(0.90) rotate(-2.5deg)', zIndex: 20, opacity: '0.78', filter: 'brightness(0.60)' },
+            { transform: 'translate3d(6px, 26px, 0px) scale(0.85) rotate(1.2deg)', zIndex: 10, opacity: '0.55', filter: 'brightness(0.45)' }
+          ];
+
+          function renderShuffle(idx) {
+            activeIdx = (idx + cards.length) % cards.length;
+            cards.forEach((card, i) => {
+              const offset = (i - activeIdx + cards.length) % cards.length;
+              const st = stackStyles[offset];
+              card.style.transform = st.transform;
+              card.style.zIndex = st.zIndex;
+              card.style.opacity = st.opacity;
+              card.style.filter = st.filter;
+            });
+
+            btns.forEach((btn, i) => {
+              if (i === activeIdx) {
+                btn.className = 'px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-blue-600 text-white shadow-sm cursor-pointer';
+              } else {
+                btn.className = 'px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-slate-200 text-slate-700 hover:bg-slate-300 cursor-pointer';
+              }
+            });
+
+            boxes.forEach((box, i) => {
+              const dot = box.querySelector('.phase-active-dot-inj');
+              if (i === activeIdx) {
+                box.className = 'bg-white p-5 rounded-xl border-2 border-blue-600 shadow-md ring-2 ring-blue-600/10 transition-all duration-300 cursor-pointer';
+                if (dot) dot.className = 'phase-active-dot-inj w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse';
+              } else {
+                box.className = 'bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:border-blue-400 transition-all duration-300 cursor-pointer';
+                if (dot) dot.className = 'phase-active-dot-inj w-2.5 h-2.5 rounded-full bg-slate-300';
+              }
+            });
+          }
+
+          function startAuto() {
+            stopAuto();
+            timer = setInterval(() => {
+              renderShuffle(activeIdx + 1);
+            }, 3200);
+          }
+
+          function stopAuto() {
+            if (timer) clearInterval(timer);
+          }
+
+          stage.addEventListener('click', () => {
+            renderShuffle(activeIdx + 1);
+            startAuto();
+          });
+
+          stage.addEventListener('mouseenter', stopAuto);
+          stage.addEventListener('mouseleave', startAuto);
+
+          btns.forEach((btn, i) => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              renderShuffle(i);
+              startAuto();
+            });
+          });
+
+          boxes.forEach((box, i) => {
+            box.addEventListener('click', () => {
+              renderShuffle(i);
+              startAuto();
+            });
+            box.addEventListener('mouseenter', () => {
+              stopAuto();
+              renderShuffle(i);
+            });
+            box.addEventListener('mouseleave', startAuto);
+          });
+
+          renderShuffle(0);
+          startAuto();
+        })();
+      </script>
+
+      <!-- Tabela Técnica de Dimensionamento de Parque de Injetoras (80t a 350t) -->
+      <div class="my-10 overflow-x-auto not-prose">
+        <div class="mb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <h3 class="text-lg font-black text-slate-900">Tabela de Capacidade e Dimensionamento de Injetoras (80t a 350t)</h3>
+          <span class="text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Parâmetros Reais de Máquina</span>
+        </div>
+        <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+          <thead>
+            <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+              <th class="py-3.5 px-4 font-bold">Classe / Força de Fechamento</th>
+              <th class="py-3.5 px-4 font-bold">Volume / Peso Máx. Injetado (PS)</th>
+              <th class="py-3.5 px-4 font-bold">Espaço Entre Colunas (H × V)</th>
+              <th class="py-3.5 px-4 font-bold">Área Projetada Máx.</th>
+              <th class="py-3.5 px-4 font-bold">Peças e Lotes Recomendados</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-xs sm:text-sm text-slate-700">
+            <tr class="hover:bg-slate-50">
+              <td class="py-3.5 px-4 font-bold text-slate-900">Classe 01: 80t a 150t<br><span class="text-[11px] font-semibold text-blue-700">Servo-Hidráulica</span></td>
+              <td class="py-3.5 px-4">95 g a 280 g</td>
+              <td class="py-3.5 px-4 font-mono text-xs">360 × 360 mm a 470 × 470 mm</td>
+              <td class="py-3.5 px-4">Até 380 cm²</td>
+              <td class="py-3.5 px-4">Conectores, buchas, engrenagens POM, tampas e moldes multicavidades</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3.5 px-4 font-bold text-slate-900">Classe 02: 160t a 250t<br><span class="text-[11px] font-semibold text-sky-700">Híbrida Ciclo Rápido</span></td>
+              <td class="py-3.5 px-4">310 g a 620 g</td>
+              <td class="py-3.5 px-4 font-mono text-xs">510 × 510 mm a 580 × 580 mm</td>
+              <td class="py-3.5 px-4">Até 720 cm²</td>
+              <td class="py-3.5 px-4">Gabinetes eletrônicos ABS/PC, caixas de passagem, peças automotivas</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3.5 px-4 font-bold text-slate-900">Classe 03: 260t a 350t<br><span class="text-[11px] font-semibold text-amber-700">Alta Tonelagem + Gavetas</span></td>
+              <td class="py-3.5 px-4">680 g a 1.150 g</td>
+              <td class="py-3.5 px-4 font-mono text-xs">620 × 620 mm a 710 × 710 mm</td>
+              <td class="py-3.5 px-4">Até 1.150 cm²</td>
+              <td class="py-3.5 px-4">Carenagens estruturais, PA66+FV, painéis frontais e moldes com câmara quente</td>
+            </tr>
+            <tr class="hover:bg-slate-50">
+              <td class="py-3.5 px-4 font-bold text-slate-900">Classe 04: 100t a 220t<br><span class="text-[11px] font-semibold text-emerald-700">Servo-Elétrica Dedicada</span></td>
+              <td class="py-3.5 px-4">110 g a 450 g</td>
+              <td class="py-3.5 px-4 font-mono text-xs">420 × 420 mm a 560 × 560 mm</td>
+              <td class="py-3.5 px-4">Até 600 cm²</td>
+              <td class="py-3.5 px-4">Visores e lentes ópticas em PC, componentes médicos e tolerância ±0,02 mm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Aprofundamento Técnico: Engenharia de Processo Científico, Periféricos e Sobreinjeção -->
+      <section class="mt-14 pt-12 border-t border-slate-200 not-prose">
+        <div class="mb-8">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-blue-700 block mb-2">Engenharia de Processo Científico (Scientific Molding)</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">Controle de Variáveis Reológicas, Periféricos em Malha Fechada e Sobreinjeção</h2>
+          <p class="text-base text-slate-600 mt-3 leading-relaxed">
+            A estabilidade dimensional e a resistência mecânica de uma peça injetada não dependem apenas da máquina injetora: <strong>mais de 70% das falhas estruturais em plásticos de engenharia</strong> (como hidrólise, fragilização por degradação térmica, empenamento diferencial e linhas de solda frias) são causadas pela ausência de periféricos de precisão e pelo ajuste empírico de máquina. Na <strong>Portal Molde Injeção</strong>, aplicamos os 3 pilares da Injeção Científica:
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 mb-10">
+          
+          <!-- Pilar 1: Tratamento Higroscópico -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-slate-900 text-white">Pilar 01 • Preparação</span>
+                <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded border border-blue-200">Dew Point -40°C</span>
+              </div>
+              <h3 class="text-lg font-black text-slate-900 mb-3">Desumidificação Molecular em Malha Fechada</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Polímeros higroscópicos como <strong>PA66, Policarbonato (PC), PBT, PET e ABS</strong> absorvem umidade atmosférica para o interior do grânulo. Se injetados em funis estufa comuns (que apenas aquecem o ar úmido ambiente), sofrem <strong>hidrólise no canhão</strong>: as cadeias moleculares se rompem, gerando estrias prateadas (<em>splay</em>) e queda de até 45% na resistência ao impacto.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-3">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Peneiras Moleculares (Zeólita):</strong> Ar seco com ponto de orvalho de <strong>-40°C</strong> para umidade residual <strong>&lt; 0,02%</strong>.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Alimentadores a Vácuo:</strong> Transporte pneumático hermético que impede a reabsorção de umidade até a rosca plastificadora.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Dosadores Gravimétricos:</strong> Homogeneização exata de <em>masterbatch</em> ou aditivo UV entre <strong>1,0% e 3,0%</strong> sem variação de cor entre lotes.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+              <span>CONTROLE DE UMIDADE</span>
+              <span class="text-emerald-700">Zero Hidrólise Estrutural</span>
+            </div>
+          </div>
+
+          <!-- Pilar 2: Injeção Científica Desacoplada -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-blue-700 text-white">Pilar 02 • Reologia</span>
+                <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded border border-blue-200">Comutação V/P 98%</span>
+              </div>
+              <h3 class="text-lg font-black text-slate-900 mb-3">Injeção Desacoplada e Termorregulação Pressurizada</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Em vez de parâmetros empíricos, utilizamos o método de <strong>Injeção Desacoplada (Decoupled Molding)</strong>: separamos rigorosamente a fase de preenchimento volumétrico por velocidade (para estabilizar a viscosidade aparente do polímero) da fase de compactação e recalque por pressão escalonada até o congelamento do ponto de injeção (<em>gate seal</em>).
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-3">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Termorreguladores (15°C a 140°C):</strong> Controle independente entre placa fixa e móvel para cristalização uniforme de PA66 e POM.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Regime Turbulento (Re &gt; 4.000):</strong> Vazão calibrada nos manifolds que elimina o empenamento diferencial pós-extração.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Monitoramento de Colchão (Cushion):</strong> Supervisão ciclo a ciclo da almofada residual (3 mm a 6 mm) com alarme automático de refugo.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+              <span>ESTABILIDADE ESTATÍSTICA</span>
+              <span class="text-emerald-700">Capabilidade Cpk ≥ 1,33</span>
+            </div>
+          </div>
+
+          <!-- Pilar 3: Sobreinjeção de Insertos e Pós-Processamento -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase tracking-wider bg-slate-900 text-white">Pilar 03 • Agregação</span>
+                <span class="text-xs font-mono font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded border border-blue-200">Insert &amp; Overmolding</span>
+              </div>
+              <h3 class="text-lg font-black text-slate-900 mb-3">Sobreinjeção de Insertos Metálicos e Operações Secundárias</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Entregamos componentes prontos para a linha de montagem final do cliente. Executamos tanto a <strong>sobreinjeção direta (Insert Molding)</strong> de buchas roscadas em latão/aço inox, pinos elétricos e rolamentos dentro da cavidade do molde quanto a inserção térmica/ultrassônica pós-moldagem e submontagem de kits.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-700 border-t border-slate-100 pt-3">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Sobreinjeção de Buchas e Terminais:</strong> Ancoragem mecânica de alto torque sem trincas por tensão residual no polímero.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Overmolding (Bicomponente / TPE):</strong> Sobremoldagem de elastômero termoplástico (TPE/TPU) sobre substrato rígido (PP/ABS/PA).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold">▸</span>
+                  <span><strong>Ferramentaria de Apoio 24h:</strong> Manutenção preventiva e corretiva imediata em extratores, bicos de câmara quente e gavetas.</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-slate-500">
+              <span>COMPONENTE PRONTO</span>
+              <span class="text-emerald-700">Redução de Etapas Internas</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Protocolo de Terceirização B2B: Transferência de Ferramental & Modalidades -->
+        <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl border border-slate-800">
+          <div class="max-w-3xl mb-8">
+            <span class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs font-extrabold uppercase tracking-widest mb-3">Governança e Transferência Segura de Ferramental</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white leading-snug">Como Funciona a Migração dos Seus Moldes e a Contratação de Injeção Terceirizada</h3>
+            <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+              Muitas indústrias sofrem com atrasos recorrentes, refugo elevado ou falta de atenção do seu injetor atual, mas temem o risco de transferir suas matrizes. Nosso protocolo de <strong>Onboarding de Ferramental B2B</strong> garante transição em até 5 dias úteis sem interrupção do seu estoque de segurança:
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80">
+              <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-black text-sm flex items-center justify-center mb-3">01</div>
+              <h4 class="text-sm font-bold text-white mb-2">Check-list de Recebimento de Matriz</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Inspeção física na chegada do molde: medição de altura de fechamento, anel de centragem, olhais, teste de estanqueidade e vazão das linhas d'água e resistência ôhmica da câmara quente.
+              </p>
+            </div>
+
+            <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80">
+              <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-black text-sm flex items-center justify-center mb-3">02</div>
+              <h4 class="text-sm font-bold text-white mb-2">Try-out e Carta de Processo</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Execução do lote piloto de homologação, definição da janela científica de processo (temperatura, pressão V/P, recalque e ciclo) e envio de amostras com <strong>Laudo Dimensional</strong> para aprovação da sua Qualidade.
+              </p>
+            </div>
+
+            <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80">
+              <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-black text-sm flex items-center justify-center mb-3">03</div>
+              <h4 class="text-sm font-bold text-white mb-2">Full Service ou Industrialização (Facon)</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Flexibilidade fiscal e operacional: fornecemos a peça completa com resina homologada e certificado de matéria-prima (<strong>Full Service</strong>) ou industrializamos a resina enviada pela sua empresa via remessa (<strong>CFOP 5.901 / 5.124</strong>).
+              </p>
+            </div>
+
+            <div class="bg-slate-800/80 rounded-2xl p-5 border border-slate-700/80">
+              <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-black text-sm flex items-center justify-center mb-3">04</div>
+              <h4 class="text-sm font-bold text-white mb-2">Entregas Kanban e Rastreabilidade</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Programação de entregas <strong>Just-in-Time (JIT)</strong> ou manutenção de estoque pulmão dedicado em nossa planta. Cada caixa ou palete sai identificado com lote de resina, data/turno, operador e laudo de inspeção.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- FAQs -->
       <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Injeção Terceirizada</h2>
+        <h2 class="text-2xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Serviços de Injeção Plástica</h2>
         <div class="space-y-4">
           <div class="bg-white p-5 rounded-xl border border-slate-200">
-            <h3 class="text-base font-bold text-slate-900 mb-2">Já possuo os moldes, vocês aceitam apenas o serviço de injeção?</h3>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Já possuo os moldes, vocês aceitam apenas o serviço de injeção plástica (transferência de ferramental)?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Sim. Realizamos o processo de recepção técnica da sua matriz, checagem dimensional da placa de fixação, furação dos tirantes da máquina e canais de refrigeração. Após aprovação no try-out inicial, iniciamos a produção seriada com total garantia de integridade do seu molde.
+              Sim. Executamos a transferência segura de ferramental com auditoria dimensional de recebimento: checagem do anel de centragem, altura de molde (mínima/máxima), furação de fixação ou garras nas placas, circuitos hidrotérmicos e integridade de gavetas ou câmara quente. Após o try-out de homologação e emissão do laudo dimensional e Carta de Processo, iniciamos a produção seriada contínua.
             </p>
           </div>
           <div class="bg-white p-5 rounded-xl border border-slate-200">
-            <h3 class="text-base font-bold text-slate-900 mb-2">Vocês fornecem a matéria-prima ou o cliente pode enviar a resina?</h3>
+            <h3 class="text-base font-bold text-slate-900 mb-2">Vocês fornecem a matéria-prima (Full Service) ou o cliente pode enviar a resina (Facon / Industrialização)?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Operamos nos dois modelos: (1) <em>Full Service</em>, onde adquirimos os polímeros homologados diretamente dos principais petroquímicos e compostadores com laudo de qualidade; ou (2) <em>Facon</em>, onde o cliente fornece a resina ou masterbatch e cobra-se apenas a hora-máquina de injeção.
+              Operamos em ambas as modalidades B2B: (1) <strong>Full Service (Fornecimento Turnkey)</strong>, em que adquirimos polímeros virgens homologados, masterbatches e insertos metálicos diretamente de petroquímicas e distribuidores oficiais com Certificado de Análise (CoA); ou (2) <strong>Facon (Industrialização por Encomenda via CFOP 5.124/5.902)</strong>, onde o cliente envia sua resina e cobramos exclusivamente a taxa de transformação (hora-máquina e mão de obra).
+            </p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200">
+            <h3 class="text-base font-bold text-slate-900 mb-2">Qual é o lote mínimo para terceirização de injeção plástica e como funciona o atendimento Kanban?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Dimensionamos o lote econômico de produção (MOQ) de acordo com o tempo de setup da matriz, consumo de purga de canhão e necessidade de desumidificação prévia (em média 4 horas para PA66, PC e PBT). Atendemos desde lotes técnicos recorrentes a partir de 500 a 1.000 peças até contratos anuais de alto volume com entregas programadas Just-in-Time (JIT) e estoque pulmão Kanban.
+            </p>
+          </div>
+          <div class="bg-white p-5 rounded-xl border border-slate-200">
+            <h3 class="text-base font-bold text-slate-900 mb-2">Quem realiza a manutenção preventiva do molde do cliente durante o contrato de injeção?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Todos os moldes sob nossa guarda contam com manutenção preventiva de rotina inclusa a cada fim de lote produtivo: limpeza química da linha de fechamento e saídas de gases (<em>vents</em>), lubrificação de colunas, pinos extratores e gavetas com graxa sintética de alta temperatura (PTFE), desmagnetização e aplicação de película protetiva anticorrosiva antes do armazenamento em porta-paletes.
             </p>
           </div>
         </div>
