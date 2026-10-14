@@ -354,41 +354,142 @@
         </p>
       </div>
 
-      <h2 class="text-2xl font-black text-slate-900 mb-6">Etapas Construtivas de uma Matriz Termoplástica de Classe Mundial</h2>
+      <h2 class="text-2xl font-black text-slate-900 mb-4">Etapas Construtivas de uma Matriz Termoplástica de Classe Mundial</h2>
       
-      <p class="text-base text-slate-700 leading-relaxed mb-6">
+      <p class="text-base text-slate-700 leading-relaxed mb-8">
         Diferente da usinagem convencional de peças isoladas, um molde de injeção é uma máquina térmica e mecânica de alta complexidade. Ele opera sob pressões internas de injeção que variam de 500 a 1.800 bar e forças de fechamento de 80 a 350 toneladas. Cada etapa do seu fluxo de manufatura precisa seguir um protocolo rigoroso:
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10 not-prose">
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <span class="text-blue-600 font-extrabold text-sm uppercase">Fase 1</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1 mb-2">Engenharia Reológica & Simulação Moldflow</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Antes de cortar a primeira placa de aço, submetemos o arquivo 3D à análise de fluxo de preenchimento, prevendo pontos de solda fria, orientação de fibras de vidro e linhas de fechamento para dimensionar a força de travamento ideal da injetora.
-          </p>
+      <!-- Módulo de Duas Colunas: Leque de Cartas Interativo (Esquerda) + Fases 1 a 4 Sincronizadas (Direita) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center my-10 not-prose bg-slate-50/80 p-5 sm:p-8 rounded-3xl border border-slate-200/90 shadow-sm">
+        
+        <!-- Coluna da Esquerda: Leque / Baralho Flutuante de Imagens (Fases 1, 2, 3 e 4) -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          <div class="relative w-full max-w-[300px] sm:max-w-[330px] aspect-[3/4] min-h-[400px] sm:min-h-[440px] cursor-pointer select-none mx-auto my-3" id="shuffle-stage-fases-molde" title="Clique para avançar entre as Fases 1, 2, 3 e 4">
+            
+            <!-- Carta Fase 1: Engenharia Reológica & Simulação Moldflow -->
+            <div class="pmi-fase-card absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/90 bg-slate-900 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-phase="0">
+              <img src="imagens/fase-1-engenharia-reologica-simulacao-moldflow.webp" 
+                   alt="Fase 1 da fabricação de moldes de injeção: Engenharia Reológica, projeto CAD 3D e simulação CAE Moldflow de preenchimento e refrigeração" 
+                   title="Fase 1: Engenharia Reológica e Simulação CAE Moldflow 3D"
+                   width="900" height="1200" loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/90 backdrop-blur-md border border-sky-400/60 text-[11px] font-extrabold text-sky-400 uppercase tracking-wider shadow-lg">
+                Fase 1 &bull; CAE &amp; Moldflow 3D
+              </div>
+              <div class="absolute inset-x-0 bottom-0 p-4 pt-10 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent">
+                <p class="text-sm font-extrabold text-white leading-tight">Engenharia Reológica &amp; Simulação</p>
+                <p class="text-[11px] text-slate-300 mt-0.5">Análise de fluxo 3D, linhas de solda e força de travamento</p>
+              </div>
+            </div>
+
+            <!-- Carta Fase 2: Desbaste e Acabamento CNC de 5 Eixos -->
+            <div class="pmi-fase-card absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/90 bg-slate-900 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-phase="1">
+              <img src="imagens/fase-2-usinagem-cnc-5-eixos-matrizaria.webp" 
+                   alt="Fase 2 da fabricação de moldes de injeção: Centro de usinagem CNC de 5 eixos fresando cavidade em aço H13 e 2738 com alta velocidade HSM" 
+                   title="Fase 2: Desbaste e Acabamento CNC de 5 Eixos (HSM)"
+                   width="900" height="1200" loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/90 backdrop-blur-md border border-sky-400/60 text-[11px] font-extrabold text-sky-400 uppercase tracking-wider shadow-lg">
+                Fase 2 &bull; Usinagem CNC 5 Eixos
+              </div>
+              <div class="absolute inset-x-0 bottom-0 p-4 pt-10 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent">
+                <p class="text-sm font-extrabold text-white leading-tight">Desbaste e Acabamento CNC 5 Eixos</p>
+                <p class="text-[11px] text-slate-300 mt-0.5">Fresamento HSM em aço H13/2738 com precisão de ±0,005 mm</p>
+              </div>
+            </div>
+
+            <!-- Carta Fase 3: Eletroerosão por Penetração (EDM) -->
+            <div class="pmi-fase-card absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/90 bg-slate-900 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-phase="2">
+              <img src="imagens/fase-3-eletroerosao-penetracao-edm-moldes.webp" 
+                   alt="Fase 3 da fabricação de moldes de injeção: Eletroerosão por penetração EDM para cantos vivos, nervuras profundas e textura VDI 3400" 
+                   title="Fase 3: Eletroerosão por Penetração (EDM) e Textura VDI 3400"
+                   width="900" height="1200" loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/90 backdrop-blur-md border border-amber-400/60 text-[11px] font-extrabold text-amber-400 uppercase tracking-wider shadow-lg">
+                Fase 3 &bull; Eletroerosão (EDM)
+              </div>
+              <div class="absolute inset-x-0 bottom-0 p-4 pt-10 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent">
+                <p class="text-sm font-extrabold text-white leading-tight">Eletroerosão por Penetração (EDM)</p>
+                <p class="text-[11px] text-slate-300 mt-0.5">Eletrodos de cobre e grafite com rugosidade VDI 3400</p>
+              </div>
+            </div>
+
+            <!-- Carta Fase 4: Ajuste de Bancada, Montagem e Try-out -->
+            <div class="pmi-fase-card absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border border-slate-700/90 bg-slate-900 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]" data-phase="3">
+              <img src="imagens/fase-4-ajuste-bancada-montagem-tryout-molde.webp" 
+                   alt="Fase 4 da fabricação de moldes de injeção: Ajuste de bancada à azul da prússia, montagem final de gavetas e validação Try-out T0 e T1 em injetora" 
+                   title="Fase 4: Ajuste de Bancada, Montagem Final e Try-out T0/T1"
+                   width="900" height="1200" loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/90 backdrop-blur-md border border-emerald-400/60 text-[11px] font-extrabold text-emerald-400 uppercase tracking-wider shadow-lg">
+                Fase 4 &bull; Bancada &amp; Try-out
+              </div>
+              <div class="absolute inset-x-0 bottom-0 p-4 pt-10 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent">
+                <p class="text-sm font-extrabold text-white leading-tight">Ajuste de Bancada, Montagem e Try-out</p>
+                <p class="text-[11px] text-slate-300 mt-0.5">Vedação à azul da prússia, teste T0/T1 e relatório CMM</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Seletor Rápido das 4 Cartas abaixo do Baralho -->
+          <div class="flex items-center justify-center gap-2 mt-4">
+            <button type="button" class="pmi-fase-dot px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-blue-600 text-white shadow-sm" data-target="0">Fase 1</button>
+            <button type="button" class="pmi-fase-dot px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-white text-slate-600 border border-slate-200 hover:border-blue-400" data-target="1">Fase 2</button>
+            <button type="button" class="pmi-fase-dot px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-white text-slate-600 border border-slate-200 hover:border-blue-400" data-target="2">Fase 3</button>
+            <button type="button" class="pmi-fase-dot px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-white text-slate-600 border border-slate-200 hover:border-blue-400" data-target="3">Fase 4</button>
+          </div>
+          <span class="text-[11px] text-slate-400 mt-1.5 text-center">Clique na carta ou selecione a fase para inspecionar</span>
         </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <span class="text-blue-600 font-extrabold text-sm uppercase">Fase 2</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1 mb-2">Desbaste e Acabamento CNC de 5 Eixos</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Centros de usinagem com comando numérico de alta velocidade (HSM) usinam as cavidades e machos com estratégias de corte em curvas suaves, assegurando rugosidade superficial mínima e encaixes micrométricos nas superfícies de partição.
-          </p>
+
+        <!-- Coluna da Direita: Cards Técnicos das Fases 1, 2, 3 e 4 -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div class="pmi-fase-info bg-white p-5 sm:p-6 rounded-2xl border-2 border-blue-600 ring-4 ring-blue-600/10 shadow-md transition-all duration-300 cursor-pointer" data-target="0">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-blue-600 font-extrabold text-xs uppercase tracking-wider">Fase 1</span>
+              <span class="w-2 h-2 rounded-full bg-blue-600 pmi-fase-indicator"></span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 leading-snug">Engenharia Reológica &amp; Simulação Moldflow</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Antes de cortar a primeira placa de aço, submetemos o arquivo 3D à análise de fluxo de preenchimento, prevendo pontos de solda fria, orientação de fibras de vidro e linhas de fechamento para dimensionar a força de travamento ideal da injetora.
+            </p>
+          </div>
+
+          <div class="pmi-fase-info bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-300 transition-all duration-300 cursor-pointer" data-target="1">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-blue-600 font-extrabold text-xs uppercase tracking-wider">Fase 2</span>
+              <span class="w-2 h-2 rounded-full bg-slate-200 pmi-fase-indicator"></span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 leading-snug">Desbaste e Acabamento CNC de 5 Eixos</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Centros de usinagem com comando numérico de alta velocidade (HSM) usinam as cavidades e machos com estratégias de corte em curvas suaves, assegurando rugosidade superficial mínima e encaixes micrométricos nas superfícies de partição.
+            </p>
+          </div>
+
+          <div class="pmi-fase-info bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-300 transition-all duration-300 cursor-pointer" data-target="2">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-blue-600 font-extrabold text-xs uppercase tracking-wider">Fase 3</span>
+              <span class="w-2 h-2 rounded-full bg-slate-200 pmi-fase-indicator"></span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 leading-snug">Eletroerosão por Penetração (EDM)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Para cantos vivos, ranhuras profundas, nervuras estreitas ou geometrias onde a fresa mecânica não alcança, utilizamos eletrodos usinados de cobre ou grafite de alta densidade, atingindo rugosidade controlada (VDI 3400).
+            </p>
+          </div>
+
+          <div class="pmi-fase-info bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-300 transition-all duration-300 cursor-pointer" data-target="3">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-blue-600 font-extrabold text-xs uppercase tracking-wider">Fase 4</span>
+              <span class="w-2 h-2 rounded-full bg-slate-200 pmi-fase-indicator"></span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-2 leading-snug">Ajuste de Bancada, Montagem e Try-out</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Ajuste manual com azul da prússia por mestres ferramenteiros, verificação do curso das gavetas mecânicas, sincronismo dos extratores e validação imediata em máquina injetora (Try-out T0 e T1) para emissão de relatório CMM.
+            </p>
+          </div>
         </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <span class="text-blue-600 font-extrabold text-sm uppercase">Fase 3</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1 mb-2">Eletroerosão por Penetração (EDM)</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Para cantos vivos, ranhuras profundas, nervuras estreitas ou geometrias onde a fresa mecânica não alcança, utilizamos eletrodos usinados de cobre ou grafite de alta densidade, atingindo rugosidade controlada (VDI 3400).
-          </p>
-        </div>
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <span class="text-blue-600 font-extrabold text-sm uppercase">Fase 4</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-1 mb-2">Ajuste de Bancada, Montagem e Try-out</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Ajuste manual com azul da prússia por mestres ferramenteiros, verificação do curso das gavetas mecânicas, sincronismo dos extratores e validação imediata em máquina injetora (Try-out T0 e T1) para emissão de relatório CMM.
-          </p>
-        </div>
+
       </div>
 
       <h2 class="text-2xl font-black text-slate-900 mb-6">Sistemas de Injeção: Canal Frio vs Câmara Quente (Hot Runner)</h2>
@@ -559,6 +660,111 @@
       &copy; 2026 Portal Molde Injeção. Todos os direitos reservados. &bull; Polo Operacional: São Paulo / SP &bull; Atendimento em Todo o Brasil &bull; <a href="sobre.html" class="underline hover:text-slate-400">Sobre Nós</a> &bull; <a href="contato.html" class="underline hover:text-slate-400">Contato</a> &bull; <a href="politica-de-privacidade.html" class="underline hover:text-slate-400">Política de Privacidade</a> &bull; <a href="termos-de-uso.html" class="underline hover:text-slate-400">Termos de Uso</a>
     </div>
   </footer>
+
+  <!-- Script do Leque / Baralho Flutuante das Fases 1, 2, 3 e 4 -->
+  <script>
+  (function(){
+    var stage = document.getElementById('shuffle-stage-fases-molde');
+    if(!stage) return;
+    var cards = Array.prototype.slice.call(stage.querySelectorAll('.pmi-fase-card'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.pmi-fase-dot'));
+    var infos = Array.prototype.slice.call(document.querySelectorAll('.pmi-fase-info'));
+    if(cards.length < 4) return;
+
+    var positions = [
+      { transform: 'translate(0px, 0px) scale(1) rotate(0deg)', z: 4, opacity: 1 },
+      { transform: 'translate(22px, 12px) scale(0.95) rotate(5deg)', z: 3, opacity: 0.90 },
+      { transform: 'translate(-20px, 10px) scale(0.93) rotate(-4.5deg)', z: 2, opacity: 0.85 },
+      { transform: 'translate(10px, -10px) scale(0.90) rotate(2deg)', z: 1, opacity: 0.72 }
+    ];
+
+    var activeIndex = 0;
+    var total = cards.length;
+
+    function applyState(){
+      cards.forEach(function(card, i){
+        var rel = (i - activeIndex + total) % total;
+        var pos = positions[rel];
+        card.style.transform = pos.transform;
+        card.style.zIndex = pos.z;
+        card.style.opacity = pos.opacity;
+      });
+
+      dots.forEach(function(dot, i){
+        if(i === activeIndex){
+          dot.className = 'pmi-fase-dot px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-blue-600 text-white shadow-sm';
+        } else {
+          dot.className = 'pmi-fase-dot px-2.5 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider transition-all bg-white text-slate-600 border border-slate-200 hover:border-blue-400';
+        }
+      });
+
+      infos.forEach(function(info, i){
+        var ind = info.querySelector('.pmi-fase-indicator');
+        if(i === activeIndex){
+          info.className = 'pmi-fase-info bg-white p-5 sm:p-6 rounded-2xl border-2 border-blue-600 ring-4 ring-blue-600/10 shadow-md transition-all duration-300 cursor-pointer';
+          if(ind) ind.className = 'w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse pmi-fase-indicator';
+        } else {
+          info.className = 'pmi-fase-info bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-300 transition-all duration-300 cursor-pointer';
+          if(ind) ind.className = 'w-2 h-2 rounded-full bg-slate-200 pmi-fase-indicator';
+        }
+      });
+    }
+
+    applyState();
+
+    var interval = null;
+    function startAuto(){
+      clearInterval(interval);
+      interval = setInterval(function(){
+        activeIndex = (activeIndex + 1) % total;
+        applyState();
+      }, 3200);
+    }
+    startAuto();
+
+    stage.addEventListener('click', function(){
+      activeIndex = (activeIndex + 1) % total;
+      applyState();
+      startAuto();
+    });
+
+    stage.addEventListener('mouseenter', function(){ clearInterval(interval); });
+    stage.addEventListener('mouseleave', function(){ startAuto(); });
+
+    dots.forEach(function(dot){
+      dot.addEventListener('click', function(){
+        var idx = parseInt(dot.getAttribute('data-target'), 10);
+        if(!isNaN(idx)){
+          activeIndex = idx;
+          applyState();
+          startAuto();
+        }
+      });
+    });
+
+    infos.forEach(function(info){
+      info.addEventListener('click', function(){
+        var idx = parseInt(info.getAttribute('data-target'), 10);
+        if(!isNaN(idx)){
+          activeIndex = idx;
+          applyState();
+          startAuto();
+        }
+      });
+      info.addEventListener('mouseenter', function(){
+        var idx = parseInt(info.getAttribute('data-target'), 10);
+        if(!isNaN(idx)){
+          clearInterval(interval);
+          activeIndex = idx;
+          applyState();
+        }
+      });
+      info.addEventListener('mouseleave', function(){
+        startAuto();
+      });
+    });
+  })();
+  </script>
 
   <!-- Lead Tracker & Micro CRM Engine -->
   <script src="js/lead-tracker.js"></script>
