@@ -64,6 +64,48 @@
     }
   }
   </script>
+
+  <!-- Schema.org FAQPage (GEO / AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quanto tempo dura a vida útil de uma matriz de injeção plástica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A vida útil de um molde de injeção varia conforme a classe normativa da matriz (SPI Class 101 a 104). Moldes confeccionados em aço P20 ou DIN 1.2738 suportam de 300.000 a 500.000 ciclos. Já matrizes temperadas a vácuo em aço AISI H13 ou Inox 420 (48 a 52 HRC) ultrapassam 1.000.000 de ciclos mantendo estabilidade centesimal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qual o prazo médio para a fabricação de um molde de injeção até o Try-out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O cronograma médio de fabricação varia entre 35 e 75 dias corridos até o primeiro teste prático em injetora (Try-out T0). Matrizes de geometria simples levam de 35 a 45 dias, enquanto moldes multicavidades complexos com câmara quente valvulada, gavetas hidráulicas e tratamentos térmicos exigem de 55 a 75 dias."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "É possível realizar alterações de produto no molde após usinado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Em projetos concebidos com postiços intercambiáveis, alterações dimensionais, versões de produto ou gravações de datadores são feitas substituindo apenas os insertos. Para modificações em cavidade fechada, executamos aporte por solda a laser micro-TIG seguida de retífica CNC e eletroerosão sem afetar a estrutura térmica do aço."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Posso fabricar o molde e já injetar minhas peças seriadas na mesma planta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Operamos no modelo verticalizado de ferramentaria integrada ao parque de injeção plástica (máquinas de 80 a 350 toneladas). Essa integração elimina custos de frete pesado, agiliza ajustes imediatos de bancada durante o Try-out e garante manutenção preventiva contínua da sua matriz sem interromper o fornecimento de lotes."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
@@ -492,59 +534,208 @@
 
       </div>
 
-      <h2 class="text-2xl font-black text-slate-900 mb-6">Sistemas de Injeção: Canal Frio vs Câmara Quente (Hot Runner)</h2>
+      <h2 class="text-2xl font-black text-slate-900 mb-4">Sistemas de Injeção: Canal Frio vs Câmara Quente (Hot Runner)</h2>
       <p class="text-base text-slate-700 leading-relaxed mb-6">
-        A decisão entre canal frio e câmara quente é um dos pontos que mais impactam o custo total da peça ao longo do ano:
+        Na <strong>fabricação de moldes de injeção plástica</strong>, o dimensionamento do sistema de alimentação define o equilíbrio reológico entre cavidades, o consumo de matéria-prima e a velocidade horária de produção. A escolha técnica entre canal frio e câmara quente impacta diretamente o custo total de propriedade (TCO) da ferramenta ao longo do ano:
       </p>
 
-      <div class="overflow-x-auto not-prose rounded-xl border border-slate-200 shadow-sm mb-12">
+      <div class="overflow-x-auto not-prose rounded-2xl border border-slate-200 shadow-sm mb-8">
         <table class="w-full text-left text-sm text-slate-700">
           <thead class="bg-slate-100 text-xs uppercase font-extrabold text-slate-800 border-b border-slate-200">
             <tr>
-              <th class="py-3 px-5">Característica</th>
-              <th class="py-3 px-5">Sistema Canal Frio</th>
-              <th class="py-3 px-5">Câmara Quente (Valvulada)</th>
+              <th class="py-3.5 px-5">Característica de Engenharia</th>
+              <th class="py-3.5 px-5">Sistema Canal Frio (2 ou 3 Placas)</th>
+              <th class="py-3.5 px-5">Câmara Quente (Aberta ou Valvulada)</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-200">
+          <tbody class="divide-y divide-slate-200 bg-white">
             <tr>
-              <td class="py-3 px-5 font-bold">Investimento Inicial</td>
-              <td class="py-3 px-5 text-emerald-700 font-semibold">Mais econômico</td>
-              <td class="py-3 px-5 text-amber-700 font-semibold">25% a 45% maior</td>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Investimento Inicial (Capex)</td>
+              <td class="py-3.5 px-5 text-emerald-700 font-semibold">Mais econômico e menor prazo construtivo</td>
+              <td class="py-3.5 px-5 text-amber-700 font-semibold">25% a 45% superior (manifold + controlador)</td>
             </tr>
             <tr>
-              <td class="py-3 px-5 font-bold">Geração de Resíduo (Galho)</td>
-              <td class="py-3 px-5 text-rose-700">Gera galho (necessita moagem)</td>
-              <td class="py-3 px-5 text-emerald-700 font-semibold">Zero galho (100% da resina na peça)</td>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Geração de Resíduo (Galho)</td>
+              <td class="py-3.5 px-5 text-rose-700">Gera galho (requer moagem ou descarte)</td>
+              <td class="py-3.5 px-5 text-emerald-700 font-semibold">Zero galho (100% da resina fundida na peça)</td>
             </tr>
             <tr>
-              <td class="py-3 px-5 font-bold">Tempo de Ciclo</td>
-              <td class="py-3 px-5">Mais longo (resfriamento do galho)</td>
-              <td class="py-3 px-5 text-emerald-700 font-semibold">Até 30% mais rápido</td>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Tempo Total de Ciclo</td>
+              <td class="py-3.5 px-5">Mais longo (limitado pela solidificação do canal)</td>
+              <td class="py-3.5 px-5 text-emerald-700 font-semibold">Até 30% mais rápido (sem resfriamento de galho)</td>
             </tr>
             <tr>
-              <td class="py-3 px-5 font-bold">Recomendação de Tiragem</td>
-              <td class="py-3 px-5">Lotes pequenos e médios</td>
-              <td class="py-3 px-5 text-blue-700 font-semibold">Lotes médios a altíssimos (Automotivo/Médico)</td>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Qualidade do Ponto de Injeção (Gate)</td>
+              <td class="py-3.5 px-5">Corte automático (submarino) ou degolagem manual</td>
+              <td class="py-3.5 px-5 text-emerald-700 font-semibold">Vestígio estético zero com pino valvulado</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Perda de Pressão de Recalque</td>
+              <td class="py-3.5 px-5">Moderada a alta ao longo dos canais frios</td>
+              <td class="py-3.5 px-5 text-blue-700 font-semibold">Mínima (injeção direta no ponto da cavidade)</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-5 font-bold text-slate-900">Recomendação de Tiragem</td>
+              <td class="py-3.5 px-5">Lotes pequenos, médios ou trocas frequentes de cor</td>
+              <td class="py-3.5 px-5 text-blue-700 font-semibold">Médios a altíssimos (Automotivo, Médico, Embalagens)</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- FAQ Section -->
-      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
-        <h2 class="text-2xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Fabricação de Moldes</h2>
-        <div class="space-y-4">
-          <div class="bg-white p-5 rounded-xl border border-slate-200">
-            <h3 class="text-base font-bold text-slate-900 mb-2">Quanto tempo dura a vida útil de uma matriz de injeção?</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              A vida útil varia conforme a classe da matriz (SPI Class 101 a 105). Moldes em aço P20 suportam de 300.000 a 500.000 ciclos. Matrizes temperadas em aço H13 ou Inox 420 ultrapassam com facilidade 1.000.000 de ciclos mantendo tolerâncias centesimais quando submetidas a manutenções preventivas programadas.
+      <!-- Cards Complementares de Entradas de Injeção (Gates) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14 not-prose">
+        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/90">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded bg-slate-200 text-slate-800 text-[11px] font-extrabold uppercase tracking-wider">Canal Frio Otimizado</span>
+            <h3 class="text-sm font-extrabold text-slate-900">Injeção Submarina, Capilar (3 Placas) e Banana</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Para projetos que exigem menor investimento inicial sem abrir mão de automação, projetamos entradas submarinas (<em>tunnel gate</em>) ou em <em>cashew</em> (banana) que separam automaticamente o galho da peça durante a abertura do molde, eliminando mão de obra de rebarbação manual.
+          </p>
+        </div>
+        <div class="bg-blue-50/50 p-5 rounded-2xl border border-blue-200/80">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="px-2.5 py-0.5 rounded bg-blue-600 text-white text-[11px] font-extrabold uppercase tracking-wider">Alta Produtividade</span>
+            <h3 class="text-sm font-extrabold text-slate-900">Manifolds Balanceados e Bicos Valvulados</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Em polímeros de engenharia de alto custo (PC, PA66+FV, POM, PBT) ou tiragens contínuas 24/7, a câmara quente se paga rapidamente pela economia de resina virgem e pela redução de até 30% no tempo de ciclo, mantendo pressão de recalque idêntica em todas as cavidades.
+          </p>
+        </div>
+      </div>
+
+      <!-- Nova Seção de Aprofundamento: Engenharia Metalúrgica, Refrigeração e Mecanismos -->
+      <h2 class="text-2xl font-black text-slate-900 mb-4">Engenharia Metalúrgica, Refrigeração de Alta Eficiência e Mecanismos de Desmolde</h2>
+      <p class="text-base text-slate-700 leading-relaxed mb-8">
+        O diferencial entre uma ferramenta comum e a <strong>fabricação de moldes de injeção plástica de classe mundial (Padrão SPI 101 a 103)</strong> reside na precisão dos subsistemas internos da matriz. Projetamos cada conjunto mecânico e térmico para suportar milhões de ciclos sem fadiga estrutural, empenamento ou variação dimensional:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 not-prose">
+        <!-- Pilar Técnico 1: Metalurgia e Tratamento Térmico -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-black text-sm mb-4">01</div>
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-blue-600 block mb-1">Metalurgia Certificada</span>
+            <h3 class="text-base font-extrabold text-slate-900 mb-2.5 leading-snug">Aços Ferramenta P20, 2738, H13 e Inox 420</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Selecionamos a liga metálica conforme a tiragem e a agressividade química ou abrasiva do polímero. Utilizamos blocos certificados com ensaio de ultrassom contra microtrincas internas e têmpera a vácuo controlada.
             </p>
           </div>
-          <div class="bg-white p-5 rounded-xl border border-slate-200">
+          <ul class="text-xs text-slate-700 space-y-1.5 pt-3 border-t border-slate-100 font-medium">
+            <li><strong class="text-slate-900">P20 / 2738 (30–34 HRC):</strong> Ciclos médios e alta usinabilidade</li>
+            <li><strong class="text-slate-900">AISI H13 (48–52 HRC):</strong> Alta tiragem e resinas com fibra de vidro</li>
+            <li><strong class="text-slate-900">Inox 420 / Stavax:</strong> Polimento óptico SPI A-1 e PVC/médico</li>
+          </ul>
+        </div>
+
+        <!-- Pilar Técnico 2: Engenharia Térmica e Refrigeração -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center font-black text-sm mb-4">02</div>
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-sky-600 block mb-1">Troca Térmica Acelerada</span>
+            <h3 class="text-base font-extrabold text-slate-900 mb-2.5 leading-snug">Circuitos Independentes e Insertos de Cobre-Berílio</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Como o resfriamento representa mais de 65% do ciclo de injeção, dimensionamos linhas de água em regime turbulento (Número de Reynolds &gt; 4.000) próximas à parede da peça para dissipação rápida e uniforme de calor.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-700 space-y-1.5 pt-3 border-t border-slate-100 font-medium">
+            <li><strong class="text-slate-900">Cobre-Berílio / Ampcoloy:</strong> Postiços em núcleos profundos</li>
+            <li><strong class="text-slate-900">Cascata &amp; Bubblers:</strong> Resfriamento interno de machos finos</li>
+            <li><strong class="text-slate-900">Estabilidade Dimensional:</strong> Eliminação de chupagens e torções</li>
+          </ul>
+        </div>
+
+        <!-- Pilar Técnico 3: Cinemática de Gavetas e Extração -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-sm mb-4">03</div>
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-emerald-600 block mb-1">Cinemática de Precisão</span>
+            <h3 class="text-base font-extrabold text-slate-900 mb-2.5 leading-snug">Gavetas Mecânicas, Lifters e Núcleos Rotativos</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Peças técnicas com detalhes negativos (<em>undercuts</em>), furos laterais, clips de travamento ou roscas internas recebem mecanismos sincronizados com pistas de desgaste retificadas e autolubrificantes.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-700 space-y-1.5 pt-3 border-t border-slate-100 font-medium">
+            <li><strong class="text-slate-900">Gavetas e Cunhas:</strong> Guias temperadas e cilindros hidráulicos</li>
+            <li><strong class="text-slate-900">Pinças Angulares (Lifters):</strong> Extração limpa de travas internas</li>
+            <li><strong class="text-slate-900">Saída de Gases (Venting):</strong> Microcanais calibrados de 0,015 mm</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Protocolo de Entrega Turnkey (Dossiê de Homologação B2B) -->
+      <div class="not-prose bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800 my-12">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-800">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/30 text-sky-300 text-[11px] font-extrabold uppercase tracking-wider mb-2">
+              Protocolo de Entrega Turnkey B2B
+            </span>
+            <h3 class="text-xl sm:text-2xl font-black text-white">O Que Acompanha a Entrega Oficial do Seu Molde de Injeção</h3>
+          </div>
+          <span class="text-xs font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-700/60 px-3.5 py-2 rounded-xl shrink-0 self-start md:self-center">
+            ✓ 100% Pronto para Produção em Linha
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-slate-800/70 rounded-2xl p-4 border border-slate-700/80">
+            <span class="text-sky-400 font-black text-xs uppercase block mb-1">1. Engenharia &amp; CAD</span>
+            <h4 class="text-sm font-bold text-white mb-1.5">Dossiê Construtivo 3D / 2D</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Entrega integral dos arquivos 3D (STEP/Parasolid), desenhos 2D de montagem e lista completa de peças (BOM) com componentes padronizados (Polimold, DME ou Hasco).
+            </p>
+          </div>
+          <div class="bg-slate-800/70 rounded-2xl p-4 border border-slate-700/80">
+            <span class="text-sky-400 font-black text-xs uppercase block mb-1">2. Rastreabilidade</span>
+            <h4 class="text-sm font-bold text-white mb-1.5">Certificados de Aço e Dureza</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Laudo químico de usina dos blocos de aço utilizados nas cavidades/machos e certificado de tratamento térmico comprovando a dureza em Rockwell C (HRC).
+            </p>
+          </div>
+          <div class="bg-slate-800/70 rounded-2xl p-4 border border-slate-700/80">
+            <span class="text-sky-400 font-black text-xs uppercase block mb-1">3. Padronização de Setup</span>
+            <h4 class="text-sm font-bold text-white mb-1.5">Identificação e Engates Rápidos</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Matriz entregue com plaqueta técnica patrimonial, olhais de içamento, trava de segurança de transporte, circuito de água numerado (Entrada/Saída) e tomada elétrica padrão.
+            </p>
+          </div>
+          <div class="bg-slate-800/70 rounded-2xl p-4 border border-slate-700/80">
+            <span class="text-emerald-400 font-black text-xs uppercase block mb-1">4. Homologação Prática</span>
+            <h4 class="text-sm font-bold text-white mb-1.5">Amostras T1, Carta de Ciclo e CMM</h4>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Lote de peças injetadas no Try-out de aprovação, folha de parâmetros de injeção (temperaturas, pressões e tempos) e relatório dimensional tridimensional (FAI/CMM).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <section class="mt-16 pt-12 border-t border-slate-200 not-prose">
+        <h2 class="text-2xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Fabricação de Moldes de Injeção Plástica</h2>
+        <div class="space-y-4">
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">Quanto tempo dura a vida útil de uma matriz de injeção plástica?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              A vida útil de um molde de injeção varia conforme a classe normativa da matriz (SPI Class 101 a 104). Moldes confeccionados em aço P20 ou DIN 1.2738 suportam de 300.000 a 500.000 ciclos. Já matrizes temperadas a vácuo em aço AISI H13 ou Inox 420 (48 a 52 HRC) ultrapassam 1.000.000 de ciclos mantendo estabilidade centesimal.
+            </p>
+          </div>
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">Qual o prazo médio para a fabricação de um molde de injeção até o Try-out?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              O cronograma médio de fabricação varia entre 35 e 75 dias corridos até o primeiro teste prático em injetora (Try-out T0). Matrizes de geometria simples levam de 35 a 45 dias, enquanto moldes multicavidades complexos com câmara quente valvulada, gavetas hidráulicas e tratamentos térmicos exigem de 55 a 75 dias.
+            </p>
+          </div>
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
             <h3 class="text-base font-bold text-slate-900 mb-2">É possível realizar alterações de produto no molde após usinado?</h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Sim. Em projetos com posticos intercambiáveis, pequenas modificações dimensionais ou gravações de logotipo podem ser feitas trocando apenas os insertos. Para alterações em cavidade fechada, realizamos solda a laser micro-TIG seguida de retífica ou eletroerosão sem comprometer o núcleo térmico do aço.
+              Sim. Em projetos concebidos com postiços intercambiáveis, alterações dimensionais, versões de produto ou gravações de datadores são feitas substituindo apenas os insertos. Para modificações em cavidade fechada, executamos aporte por solda a laser micro-TIG seguida de retífica CNC e eletroerosão sem afetar a estrutura térmica do aço.
+            </p>
+          </div>
+          <div class="bg-white p-5 sm:p-6 rounded-xl border border-slate-200 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-2">Posso fabricar o molde e já injetar minhas peças seriadas na mesma planta?</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Sim. Operamos no modelo verticalizado de ferramentaria integrada ao parque de injeção plástica (máquinas de 80 a 350 toneladas). Essa integração elimina custos de frete pesado, agiliza ajustes imediatos de bancada durante o Try-out e garante manutenção preventiva contínua da sua matriz sem interromper o fornecimento de lotes.
             </p>
           </div>
         </div>
