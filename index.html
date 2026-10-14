@@ -111,10 +111,11 @@
       background-size: 24px 24px;
     }
     @keyframes pmiBadgeSpin {
-      to { transform: rotate(360deg); }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
     }
     .pmi-badge-spin {
-      animation: pmiBadgeSpin 18s linear infinite;
+      animation: pmiBadgeSpin 20s linear infinite;
     }
   </style>
 </head>
@@ -723,8 +724,8 @@
         <div class="lg:col-span-5 relative">
 
           <!-- Selo Circular Giratório Oficial: Rigor Metrológico & ISO 9001 -->
-          <div class="absolute -top-7 -right-7 sm:-top-9 sm:-right-9 z-30 drop-shadow-2xl pointer-events-none select-none">
-            <svg class="w-28 h-28 sm:w-32 sm:h-32" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="relative mx-auto mb-6 lg:mb-0 lg:absolute lg:-top-56 lg:-left-6 z-30 drop-shadow-2xl pointer-events-none select-none w-36 h-36 sm:w-40 sm:h-40">
+            <svg class="w-full h-full" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g class="pmi-badge-spin" style="transform-origin: 70px 70px;">
                 <!-- Anel Circular Escuro de Fundo -->
                 <circle cx="70" cy="70" r="66" fill="#09182a" stroke="#0284c7" stroke-width="2.2" />
@@ -732,9 +733,9 @@
                 <!-- Caminho circular invisível (trajetória do texto) -->
                 <path id="pmi-iso-badge-path" d="M70,18 a52,52 0 1 1 -0.1,0" fill="none" />
                 <!-- Texto Gravado no Anel Giratório -->
-                <text font-size="8.8" font-weight="800" letter-spacing="1.7" fill="#f0f9ff">
-                  <textPath href="#pmi-iso-badge-path" startOffset="0">
-                    ★ PADRÃO ABNT NBR ISO 9001:2015 ★ RIGOR METROLÓGICO ★
+                <text font-size="8.1" font-weight="800" letter-spacing="1.05" fill="#f0f9ff">
+                  <textPath href="#pmi-iso-badge-path" startOffset="2%" textLength="312" lengthAdjust="spacing">
+                    ★ PADRÃO ABNT NBR ISO 9001:2015 ★ RIGOR METROLÓGICO
                   </textPath>
                 </text>
               </g>
