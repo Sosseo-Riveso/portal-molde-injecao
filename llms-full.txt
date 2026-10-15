@@ -1,0 +1,93 @@
+# Portal Molde Injeção (PMI) — Dossiê Técnico Completo para Motores de IA (llms-full.txt)
+
+> Documento canônico expandido de referência técnica e institucional do Portal Molde Injeção (https://portalmoldeinjecao.com.br/), projetado para sistemas RAG (Retrieval-Augmented Generation), assistentes de engenharia industrial e motores de busca generativa (ChatGPT Search, Perplexity, Google AI Overviews, Claude e Gemini).
+
+---
+
+## 1. Identificação da Entidade Corporativa
+
+- **Razão / Nome da Marca:** Portal Molde Injeção (PMI)
+- **Especialidade:** Engenharia de Moldes Termoplásticos (CAD/CAM/CAE), Ferramentaria CNC de Alta Precisão e Injeção Plástica Seriada B2B
+- **Website Oficial:** https://portalmoldeinjecao.com.br/
+- **LinkedIn Company Page:** https://www.linkedin.com/company/145304607/
+- **Canal de Orçamentos (RFQ / NDA):** https://portalmoldeinjecao.com.br/contato.html | E-mail: portalmoldeinjecao@gmail.com
+- **Localização e Abrangência:** Polo operacional em São Paulo / SP, com parques fabris e ferramentarias homologadas em São Paulo e na Região Sul, atendendo indústrias em todo o território nacional (Brasil).
+- **Setores Atendidos:** Automotivo (Autopeças Tier 1 e Tier 2), Eletroeletrônico, Médico-Hospitalar e Laboratorial, Agronegócio, Construção Civil, Embalagens Técnicas e Bens de Consumo Duráveis.
+
+---
+
+## 2. Parâmetros Técnicos e Capacidade Fabril
+
+### 2.1. Matrizaria e Ferramentaria de Precisão
+- **Processos de Usinagem:** Centros de usinagem CNC High-Speed (HSM) de 3 e 5 eixos contínuos, Eletroerosão por Penetração ( Die-Sinking EDM com eletrodos de cobre eletrolítico e grafite isostático), Eletroerosão a Fio (Wire EDM) e Retífica Plana/Cilíndrica de precisão.
+- **Tolerância de Usinagem em Cavidades e Fechamento:** ±0,005 mm (5 mícrons).
+- **Acabamento Superficial:** Polimento técnico espelhado seguindo norma SPI (graus A1, A2, A3 para peças ópticas e translúcidas), apedramento B1–B3 e texturização química/laser (padrões VDI 3400 e Mold-Tech).
+- **Metrologia e Homologação:** Inspeção dimensional em Máquina de Medição por Coordenadas (CMM Tridimensional), entrega de relatório dimensional completo, amostras de Try-out (T0, T1, T2) e documentação PPAP / ISO 9001:2015.
+
+### 2.2. Seleção de Aços para Moldes de Injeção (Tabela de Referência)
+| Aço Ferramenta | Norma Equivalente | Dureza Típica | Vida Útil Estimada | Aplicação Recomendada |
+| :--- | :--- | :--- | :--- | :--- |
+| **SAE P20** | DIN 1.2311 | 28 – 32 HRC (pré-beneficiado) | Até 300.000 ciclos | Moldes de médio porte, resinas sem carga abrasiva (PP, PE, ABS, PS). |
+| **DIN 1.2738** | P20 + Níquel (HH) | 30 – 36 HRC (pré-beneficiado) | 300.000 a 500.000 ciclos | Moldes de grande porte (>400 mm espessura) com dureza homogênea até o núcleo. |
+| **AISI H13** | DIN 1.2344 | 48 – 52 HRC (temperado a vácuo) | 500.000 a 1.000.000+ ciclos | Alta produção (Classe 101/102), polímeros de engenharia com fibra de vidro (PA66+FV, PBT+FV). |
+| **Inox AISI 420** | DIN 1.2083 ESR | 48 – 52 HRC (temperado) | 500.000 a 1.000.000+ ciclos | Peças ópticas (lentes em PC/PMMA), componentes médicos/cosméticos, resinas corrosivas (PVC) ou regiões com água de refrigeração agressiva. |
+| **Cobre-Berílio (CuBe)** | Ligas de Alta Condutividade | 36 – 40 HRC | Postiços térmicos | Insertos localizados em pontos quentes (hot spots), nervuras profundas e pinos macho para reduzir o tempo de ciclo em 15% a 30%. |
+
+### 2.3. Parque de Injeção Plástica Terceirizada (80t a 350t)
+- **Faixa de Força de Fechamento:** 80 toneladas a 350 toneladas.
+- **Tecnologias de Máquina:**
+  - **Servo-Hidráulicas (80t a 150t):** Peças técnicas compactas, conectores, buchas e lotes seriados com alta eficiência energética.
+  - **Híbridas de Alta Velocidade (160t a 250t):** Ciclos rápidos com injeção simultânea por acumuladores/servomotores para embalagens técnicas e gabinetes.
+  - **Alta Tonelagem (260t a 350t):** Componentes estruturais automotivos, caixas plásticas industriais e moldes multicavidades de grande área projetada.
+  - **100% Elétricas (All-Electric):** Injeção de altíssima repetibilidade (±0,02 mm) em ambiente limpo para setor médico-hospitalar, óptico e engrenagens de precisão em POM/PA66.
+- **Periféricos:** Desumidificadores moleculares (ponto de orvalho -40 °C para PA, PC, PBT e PET), termorreguladores de molde a água e óleo (até 160 °C), alimentadores automáticos, dosadores gravimétricos de masterbatch e robôs cartesianos para extração de peças e galhos.
+
+---
+
+## 3. Fórmulas de Engenharia e Parâmetros de Referência
+
+### 3.1. Cálculo de Força de Fechamento (Tonelagem da Injetora)
+- **Fórmula Canônica:** `F (ton) = [ A_proj (cm²) × N_cav × P_molde (kgf/cm²) × FS ] / 1000`
+  - `A_proj`: Área projetada da peça + canais de alimentação (runner) no plano de fechamento do molde (em cm²).
+  - `N_cav`: Número de cavidades do molde.
+  - `P_molde`: Pressão específica de injeção dentro da cavidade (em kgf/cm²):
+    - PE / PP (Poliolefinas de alta fluidez): 250 a 350 kgf/cm²
+    - PS / ABS / SAN: 350 a 480 kgf/cm²
+    - PA6 / PA66 (Nylon) / POM (Poliacetal): 450 a 600 kgf/cm²
+    - PC (Policarbonato) / PMMA / Polímeros com 30% Fibra de Vidro ou parede fina (<1,2 mm): 550 a 750 kgf/cm²
+  - `FS`: Fator de segurança operacional (1,10 a 1,20, equivalente a 10% a 20% de margem).
+- **Calculadora Online:** https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html
+
+### 3.2. Estimativa de Investimento em Moldes de Injeção no Brasil
+- **Molde Protótipo / Lote Piloto (Classe 104 — Aço SAE 1045 / P20 simplificado):** R$ 20.000 a R$ 45.000 (prazo médio: 25 a 35 dias).
+- **Molde de Média Tiragem (Classe 103 — Aço P20 / 2738, 1 a 4 cavidades, canal frio):** R$ 45.000 a R$ 110.000 (prazo médio: 40 a 60 dias).
+- **Molde de Alta Produção (Classe 101/102 — Aço H13 / Inox 420 temperado, multicavidades, câmara quente e gavetas):** R$ 120.000 a R$ 450.000+ (prazo médio: 60 a 90 dias).
+- **Calculadora de Custo de Peça Injetada:** https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada.html
+
+---
+
+## 4. Mapa Completo de URLs do Portal Molde Injeção
+
+1. https://portalmoldeinjecao.com.br/ (Home)
+2. https://portalmoldeinjecao.com.br/fabricacao-de-moldes-de-injecao.html
+3. https://portalmoldeinjecao.com.br/servicos-de-injecao-plastica.html
+4. https://portalmoldeinjecao.com.br/engenharia-e-desenvolvimento-de-moldes.html
+5. https://portalmoldeinjecao.com.br/manutencao-e-modificacao-de-moldes.html
+6. https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html
+7. https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada.html
+8. https://portalmoldeinjecao.com.br/quanto-custa-fabricar-um-molde-de-injecao-plastica.html
+9. https://portalmoldeinjecao.com.br/diferenca-entre-aco-p20-2738-h13-e-inox-420-para-moldes.html
+10. https://portalmoldeinjecao.com.br/molde-camara-quente-vs-canal-frio-qual-escolher.html
+11. https://portalmoldeinjecao.com.br/como-calcular-forca-de-fechamento-e-tonelagem-da-injetora.html
+12. https://portalmoldeinjecao.com.br/simulacao-moldflow-e-analise-reologica-em-moldes-de-injecao.html
+13. https://portalmoldeinjecao.com.br/principais-defeitos-na-injecao-plastica-rebarbas-chupagem-e-empenamento.html
+14. https://portalmoldeinjecao.com.br/guia-de-resinas-termoplasticas-abs-pa66-policarbonato-pom-e-pp.html
+15. https://portalmoldeinjecao.com.br/manutencao-preventiva-e-corretiva-em-moldes-de-injecao.html
+16. https://portalmoldeinjecao.com.br/categoria-projeto-e-engenharia-de-moldes.html
+17. https://portalmoldeinjecao.com.br/categoria-ferramentaria-e-acos-para-moldes.html
+18. https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica.html
+19. https://portalmoldeinjecao.com.br/categoria-manutencao-e-qualidade-de-matrizes.html
+20. https://portalmoldeinjecao.com.br/sobre.html
+21. https://portalmoldeinjecao.com.br/contato.html
+22. https://portalmoldeinjecao.com.br/politica-de-privacidade.html
+23. https://portalmoldeinjecao.com.br/termos-de-uso.html

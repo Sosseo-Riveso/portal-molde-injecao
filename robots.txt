@@ -1,5 +1,45 @@
+# Robots.txt — Portal Molde Injeção (https://portalmoldeinjecao.com.br/)
+
 User-agent: *
 Allow: /
 Disallow: /painel-leads.html
 
+# Motores de Busca Tradicionais
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Motores de IA Generativa e Busca Semântica (GEO / AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap e Arquivos LLMs (GEO)
 Sitemap: https://portalmoldeinjecao.com.br/sitemap.xml
+# LLMs: https://portalmoldeinjecao.com.br/llms.txt
+# LLMs-Full: https://portalmoldeinjecao.com.br/llms-full.txt
