@@ -119,6 +119,10 @@
     }
     .pmi-badge-spin {
       animation: pmiBadgeSpin 20s linear infinite;
+      transform-origin: 50% 50%;
+      will-change: transform;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
   </style>
 </head>
@@ -727,29 +731,30 @@
         <div class="lg:col-span-5 relative">
 
           <!-- Selo Circular Giratório Oficial: Rigor Metrológico & ISO 9001 -->
-          <div class="relative mx-auto mb-6 lg:mb-0 lg:absolute lg:-top-56 lg:-left-6 z-30 drop-shadow-2xl pointer-events-none select-none w-36 h-36 sm:w-40 sm:h-40">
-            <svg class="w-full h-full" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g class="pmi-badge-spin" style="transform-origin: 70px 70px;">
-                <!-- Anel Circular Escuro de Fundo -->
-                <circle cx="70" cy="70" r="66" fill="#09182a" stroke="#0284c7" stroke-width="2.2" />
-                <circle cx="70" cy="70" r="44" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="3 3" />
-                <!-- Caminho circular invisível (trajetória do texto) -->
-                <path id="pmi-iso-badge-path" d="M70,18 a52,52 0 1 1 -0.1,0" fill="none" />
-                <!-- Texto Gravado no Anel Giratório -->
-                <text font-size="8.1" font-weight="800" letter-spacing="1.05" fill="#f0f9ff">
-                  <textPath href="#pmi-iso-badge-path" startOffset="2%" textLength="312" lengthAdjust="spacing">
-                    ★ PADRÃO ABNT NBR ISO 9001:2015 ★ RIGOR METROLÓGICO
-                  </textPath>
-                </text>
-              </g>
-              <!-- Miolo Central Estático: Selo de Alta Precisão -->
-              <circle cx="70" cy="70" r="25" fill="url(#pmiBadgeCoreGrad)" stroke="#38bdf8" stroke-width="2" />
+          <div class="relative mx-auto mb-6 lg:mb-0 lg:absolute lg:-top-56 lg:-left-6 z-30 rounded-full shadow-2xl pointer-events-none select-none w-36 h-36 sm:w-40 sm:h-40">
+            <!-- Camada 1: Anel Giratório em camada própria da GPU -->
+            <svg class="w-full h-full pmi-badge-spin" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Anel Circular Escuro de Fundo -->
+              <circle cx="70" cy="70" r="66" fill="#09182a" stroke="#0284c7" stroke-width="2.2" />
+              <circle cx="70" cy="70" r="44" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="3 3" />
+              <!-- Caminho circular invisível (trajetória do texto) -->
+              <path id="pmi-iso-badge-path" d="M70,18 a52,52 0 1 1 -0.1,0" fill="none" />
+              <!-- Texto Gravado no Anel Giratório -->
+              <text font-size="8.1" font-weight="800" letter-spacing="1.35" fill="#f0f9ff">
+                <textPath href="#pmi-iso-badge-path" startOffset="2%">
+                  ★ PADRÃO ABNT NBR ISO 9001:2015 ★ RIGOR METROLÓGICO
+                </textPath>
+              </text>
+            </svg>
+            <!-- Camada 2: Miolo Central Estático: Selo de Alta Precisão -->
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <linearGradient id="pmiBadgeCoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="#0284c7" />
                   <stop offset="100%" stop-color="#0f172a" />
                 </linearGradient>
               </defs>
+              <circle cx="70" cy="70" r="25" fill="url(#pmiBadgeCoreGrad)" stroke="#38bdf8" stroke-width="2" />
               <!-- Checkmark & Precisão Centesimal Central -->
               <path d="M62 68 l5 5 l12 -13" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
               <text x="70" y="84" text-anchor="middle" font-family="sans-serif" font-size="7.5" font-weight="900" fill="#fde047" letter-spacing="0.5">±0,02mm</text>
@@ -762,7 +767,7 @@
 
             <!-- Desenho Técnico em SVG de Alta Precisão -->
             <div class="relative z-10 flex flex-col items-center">
-              <svg class="w-full max-w-[380px] h-auto drop-shadow-md" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-full max-w-[380px] h-auto" viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <!-- Gradientes -->
                   <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -780,16 +785,12 @@
                     <stop offset="50%" stop-color="#10b981" />
                     <stop offset="100%" stop-color="#047857" />
                   </linearGradient>
-                  <radialGradient id="sealGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15" />
-                    <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
-                  </radialGradient>
                 </defs>
 
                 <!-- Círculos de Calibração Metrológica e Mira CNC (Background) -->
+                <circle cx="200" cy="170" r="155" fill="#e0f2fe" fill-opacity="0.35" />
                 <circle cx="200" cy="170" r="145" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4" />
                 <circle cx="200" cy="170" r="125" stroke="#cbd5e1" stroke-width="1" />
-                <circle cx="200" cy="170" r="160" fill="url(#sealGlow)" />
 
                 <!-- Linhas de Eixo Coordenado CNC Metrologia -->
                 <line x1="200" y1="10" x2="200" y2="330" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 3" opacity="0.4" />
