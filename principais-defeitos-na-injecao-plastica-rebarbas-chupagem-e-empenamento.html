@@ -134,6 +134,11 @@
       ]
     }
     </script>
+    <style id="pmi-mobile-overflow-fix">
+        html, body { max-width: 100%; overflow-x: hidden; }
+        main, article, .prose { max-width: 100%; min-width: 0; box-sizing: border-box; }
+        @media (max-width: 767px) { article table { display: block; width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; } }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue selection:text-white flex flex-col min-h-screen overflow-x-hidden">
 <!-- METADADOS DE SEO E GEO (OCULTOS NA VISUALIZAÇÃO)
