@@ -1,0 +1,5 @@
+https://www.portalmoldeinjecao.com.br/* https://portalmoldeinjecao.com.br/:splat 301!
+http://www.portalmoldeinjecao.com.br/* https://portalmoldeinjecao.com.br/:splat 301!
+https://portal-molde-injecao.pages.dev/* https://portalmoldeinjecao.com.br/:splat 301!
+http://portal-molde-injecao.pages.dev/* https://portalmoldeinjecao.com.br/:splat 301!
+/artigos/:slug https://portalmoldeinjecao.com.br/:slug 301!

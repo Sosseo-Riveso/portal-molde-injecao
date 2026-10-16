@@ -20,37 +20,37 @@
 ## Serviços Industriais B2B (Landing Pages Técnicas)
 
 - [Página Inicial — Hub de Moldes e Injeção Plástica B2B](https://portalmoldeinjecao.com.br/): Visão executiva da capacidade de matrizaria CNC, parque de injetoras de 80t a 350t, comparativo de aços e especificações de engenharia.
-- [Fabricação de Moldes de Injeção Plástica](https://portalmoldeinjecao.com.br/fabricacao-de-moldes-de-injecao.html): Construção de moldes protótipos (Classe 104), média tiragem (Classe 103 em P20/2738) e alta produção até 1.000.000+ ciclos (Classe 101/102 em H13 e Inox 420), com câmara quente ou canal frio.
-- [Serviços de Injeção Plástica Terceirizada (80t a 350t)](https://portalmoldeinjecao.com.br/servicos-de-injecao-plastica.html): Produção seriada B2B de componentes técnicos termoplásticos, transferência de moldes existentes, sobreinjeção de insertos metálicos e montagem de subconjuntos.
-- [Engenharia, Projeto CAD 3D e Simulação Reológica (Moldflow)](https://portalmoldeinjecao.com.br/engenharia-e-desenvolvimento-de-moldes.html): Análise DFM (Design for Manufacturing), estudo de preenchimento reológico CAE, localização de pontos de injeção, linhas de solda, saídas de gás (venting) e controle de empenamento.
-- [Manutenção Preventiva, Corretiva e Modificação de Moldes](https://portalmoldeinjecao.com.br/manutencao-e-modificacao-de-moldes.html): Recuperação de arestas de fechamento por solda a laser/Micro-TIG, polimento espelhado SPI A1/A2, ajuste de linha de partição em prensa de spotting, desobstrução de refrigeração e fabricação de postiços intercambiáveis.
+- [Fabricação de Moldes de Injeção Plástica](https://portalmoldeinjecao.com.br/fabricacao-de-moldes-de-injecao): Construção de moldes protótipos (Classe 104), média tiragem (Classe 103 em P20/2738) e alta produção até 1.000.000+ ciclos (Classe 101/102 em H13 e Inox 420), com câmara quente ou canal frio.
+- [Serviços de Injeção Plástica Terceirizada (80t a 350t)](https://portalmoldeinjecao.com.br/servicos-de-injecao-plastica): Produção seriada B2B de componentes técnicos termoplásticos, transferência de moldes existentes, sobreinjeção de insertos metálicos e montagem de subconjuntos.
+- [Engenharia, Projeto CAD 3D e Simulação Reológica (Moldflow)](https://portalmoldeinjecao.com.br/engenharia-e-desenvolvimento-de-moldes): Análise DFM (Design for Manufacturing), estudo de preenchimento reológico CAE, localização de pontos de injeção, linhas de solda, saídas de gás (venting) e controle de empenamento.
+- [Manutenção Preventiva, Corretiva e Modificação de Moldes](https://portalmoldeinjecao.com.br/manutencao-e-modificacao-de-moldes): Recuperação de arestas de fechamento por solda a laser/Micro-TIG, polimento espelhado SPI A1/A2, ajuste de linha de partição em prensa de spotting, desobstrução de refrigeração e fabricação de postiços intercambiáveis.
 
 ## Calculadoras Gratuitas de Engenharia de Injeção
 
-- [Calculadora de Tonelagem e Força de Fechamento de Injetora](https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora.html): Ferramenta interativa para dimensionar a força de fechamento necessária (em toneladas) com base na área projetada da peça (cm²), número de cavidades, pressão específica do polímero (kgf/cm²) e fator de segurança.
-- [Calculadora de Custo de Peça Injetada e Ciclo de Injeção](https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada.html): Simulador industrial de custo unitário de peças plásticas considerando peso de matéria-prima, percentual de galho/refile, tempo de ciclo (s), número de cavidades, taxa horária da injetora e amortização do molde.
+- [Calculadora de Tonelagem e Força de Fechamento de Injetora](https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora): Ferramenta interativa para dimensionar a força de fechamento necessária (em toneladas) com base na área projetada da peça (cm²), número de cavidades, pressão específica do polímero (kgf/cm²) e fator de segurança.
+- [Calculadora de Custo de Peça Injetada e Ciclo de Injeção](https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada): Simulador industrial de custo unitário de peças plásticas considerando peso de matéria-prima, percentual de galho/refile, tempo de ciclo (s), número de cavidades, taxa horária da injetora e amortização do molde.
 
 ## Guias Técnicos de Engenharia (Blog B2B)
 
-- [Quanto Custa Fabricar um Molde de Injeção Plástica no Brasil](https://portalmoldeinjecao.com.br/quanto-custa-fabricar-um-molde-de-injecao-plastica.html): Faixas de investimento por classe de molde (R$ 25 mil a R$ 450 mil+), variáveis de custo (cavidades, gavetas hidráulicas/mecânicas, câmara quente, aço) e cálculo de ROI/amortização.
-- [Diferença entre Aço P20, 2738, H13 e Inox 420 para Moldes](https://portalmoldeinjecao.com.br/diferenca-entre-aco-p20-2738-h13-e-inox-420-para-moldes.html): Comparativo metalúrgico de dureza (HRC), usinabilidade, condutividade térmica, resistência à abrasão por fibra de vidro e vida útil esperada em ciclos.
-- [Molde com Câmara Quente vs. Canal Frio: Qual Escolher?](https://portalmoldeinjecao.com.br/molde-camara-quente-vs-canal-frio-qual-escolher.html): Análise técnica e financeira de economia de matéria-prima (eliminação do galho), redução de tempo de ciclo e ponto de equilíbrio (payback) por volume anual de peças.
-- [Como Calcular a Força de Fechamento e Tonelagem da Injetora](https://portalmoldeinjecao.com.br/como-calcular-forca-de-fechamento-e-tonelagem-da-injetora.html): Metodologia de engenharia para cálculo de área projetada, tabela de constantes de pressão no molde por polímero e prevenção de rebarbas e abertura de placa.
-- [Simulação Moldflow e Análise Reológica em Moldes de Injeção](https://portalmoldeinjecao.com.br/simulacao-moldflow-e-analise-reologica-em-moldes-de-injecao.html): Como a simulação CAE 3D antecipa linhas de solda fria, aprisionamento de gases (efeito diesel), chupagens e empenamento antes do corte do aço.
-- [Principais Defeitos na Injeção Plástica: Rebarbas, Chupagem e Empenamento](https://portalmoldeinjecao.com.br/principais-defeitos-na-injecao-plastica-rebarbas-chupagem-e-empenamento.html): Diagnóstico de causa raiz no processo e no projeto da ferramenta para eliminar falhas de injeção, marcas de recalque e variação dimensional.
-- [Guia de Resinas Termoplásticas: ABS, PA66, Policarbonato, POM e PP](https://portalmoldeinjecao.com.br/guia-de-resinas-termoplasticas-abs-pa66-policarbonato-pom-e-pp.html): Parâmetros de contração linear (%), temperatura de fusão e molde, higroscopia, secagem e aplicações estruturais de polímeros de engenharia e commodities.
-- [Manutenção Preventiva e Corretiva em Moldes de Injeção](https://portalmoldeinjecao.com.br/manutencao-preventiva-e-corretiva-em-moldes-de-injecao.html): Plano de manutenção por número de batidas, limpeza ultrassônica, lubrificação de colunas/extratores e recuperação dimensional de cavidades.
+- [Quanto Custa Fabricar um Molde de Injeção Plástica no Brasil](https://portalmoldeinjecao.com.br/quanto-custa-fabricar-um-molde-de-injecao-plastica): Faixas de investimento por classe de molde (R$ 25 mil a R$ 450 mil+), variáveis de custo (cavidades, gavetas hidráulicas/mecânicas, câmara quente, aço) e cálculo de ROI/amortização.
+- [Diferença entre Aço P20, 2738, H13 e Inox 420 para Moldes](https://portalmoldeinjecao.com.br/diferenca-entre-aco-p20-2738-h13-e-inox-420-para-moldes): Comparativo metalúrgico de dureza (HRC), usinabilidade, condutividade térmica, resistência à abrasão por fibra de vidro e vida útil esperada em ciclos.
+- [Molde com Câmara Quente vs. Canal Frio: Qual Escolher?](https://portalmoldeinjecao.com.br/molde-camara-quente-vs-canal-frio-qual-escolher): Análise técnica e financeira de economia de matéria-prima (eliminação do galho), redução de tempo de ciclo e ponto de equilíbrio (payback) por volume anual de peças.
+- [Como Calcular a Força de Fechamento e Tonelagem da Injetora](https://portalmoldeinjecao.com.br/como-calcular-forca-de-fechamento-e-tonelagem-da-injetora): Metodologia de engenharia para cálculo de área projetada, tabela de constantes de pressão no molde por polímero e prevenção de rebarbas e abertura de placa.
+- [Simulação Moldflow e Análise Reológica em Moldes de Injeção](https://portalmoldeinjecao.com.br/simulacao-moldflow-e-analise-reologica-em-moldes-de-injecao): Como a simulação CAE 3D antecipa linhas de solda fria, aprisionamento de gases (efeito diesel), chupagens e empenamento antes do corte do aço.
+- [Principais Defeitos na Injeção Plástica: Rebarbas, Chupagem e Empenamento](https://portalmoldeinjecao.com.br/principais-defeitos-na-injecao-plastica-rebarbas-chupagem-e-empenamento): Diagnóstico de causa raiz no processo e no projeto da ferramenta para eliminar falhas de injeção, marcas de recalque e variação dimensional.
+- [Guia de Resinas Termoplásticas: ABS, PA66, Policarbonato, POM e PP](https://portalmoldeinjecao.com.br/guia-de-resinas-termoplasticas-abs-pa66-policarbonato-pom-e-pp): Parâmetros de contração linear (%), temperatura de fusão e molde, higroscopia, secagem e aplicações estruturais de polímeros de engenharia e commodities.
+- [Manutenção Preventiva e Corretiva em Moldes de Injeção](https://portalmoldeinjecao.com.br/manutencao-preventiva-e-corretiva-em-moldes-de-injecao): Plano de manutenção por número de batidas, limpeza ultrassônica, lubrificação de colunas/extratores e recuperação dimensional de cavidades.
 
 ## Categorias Temáticas do Acervo
 
-- [Categoria: Projeto e Engenharia de Moldes](https://portalmoldeinjecao.com.br/categoria-projeto-e-engenharia-de-moldes.html)
-- [Categoria: Ferramentaria e Aços para Moldes](https://portalmoldeinjecao.com.br/categoria-ferramentaria-e-acos-para-moldes.html)
-- [Categoria: Processos e Custos de Injeção Plástica](https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica.html)
-- [Categoria: Manutenção e Qualidade de Matrizes](https://portalmoldeinjecao.com.br/categoria-manutencao-e-qualidade-de-matrizes.html)
+- [Categoria: Projeto e Engenharia de Moldes](https://portalmoldeinjecao.com.br/categoria-projeto-e-engenharia-de-moldes)
+- [Categoria: Ferramentaria e Aços para Moldes](https://portalmoldeinjecao.com.br/categoria-ferramentaria-e-acos-para-moldes)
+- [Categoria: Processos e Custos de Injeção Plástica](https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica)
+- [Categoria: Manutenção e Qualidade de Matrizes](https://portalmoldeinjecao.com.br/categoria-manutencao-e-qualidade-de-matrizes)
 
 ## Institucional, Cotação RFQ e Governança
 
-- [Sobre o Portal Molde Injeção](https://portalmoldeinjecao.com.br/sobre.html): Infraestrutura fabril, matrizaria 5 eixos, metrologia tridimensional CMM e diretrizes de qualidade ISO 9001:2015.
-- [Central de Cotação B2B e Submissão de Projetos (Contato / RFQ)](https://portalmoldeinjecao.com.br/contato.html): Canal oficial para envio de arquivos 3D (STEP, IGES, Parasolid, SolidWorks) sob acordo de confidencialidade (NDA).
-- [Política de Privacidade e Proteção Industrial LGPD](https://portalmoldeinjecao.com.br/politica-de-privacidade.html)
-- [Termos de Uso](https://portalmoldeinjecao.com.br/termos-de-uso.html)
+- [Sobre o Portal Molde Injeção](https://portalmoldeinjecao.com.br/sobre): Infraestrutura fabril, matrizaria 5 eixos, metrologia tridimensional CMM e diretrizes de qualidade ISO 9001:2015.
+- [Central de Cotação B2B e Submissão de Projetos (Contato / RFQ)](https://portalmoldeinjecao.com.br/contato): Canal oficial para envio de arquivos 3D (STEP, IGES, Parasolid, SolidWorks) sob acordo de confidencialidade (NDA).
+- [Política de Privacidade e Proteção Industrial LGPD](https://portalmoldeinjecao.com.br/politica-de-privacidade)
+- [Termos de Uso](https://portalmoldeinjecao.com.br/termos-de-uso)

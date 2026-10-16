@@ -1,3 +1,8 @@
+// Redirecionamento imediato de domínios alternativos (www / .pages.dev / .github.io) para o domínio canônico oficial
+if (typeof window !== 'undefined' && (window.location.hostname.endsWith('.pages.dev') || window.location.hostname.endsWith('.github.io') || window.location.hostname === 'www.portalmoldeinjecao.com.br')) {
+  window.location.replace('https://portalmoldeinjecao.com.br' + window.location.pathname.replace(/\.html$/i, '').replace(/^\/index$/i, '/') + window.location.search + window.location.hash);
+}
+
 /**
  * Portal Molde Injeção - Lead Tracker & CRM Engine
  * Captura automática de oportunidades (WhatsApp, Formulários Hero e RFQ)
