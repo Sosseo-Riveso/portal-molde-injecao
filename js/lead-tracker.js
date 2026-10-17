@@ -101,6 +101,7 @@ if (typeof window !== 'undefined' && (window.location.hostname.endsWith('.pages.
       leads.unshift(lead);
       leads = pruneExpiredLeads(leads);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+      try { fetch("/api/triagem", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lead) }).catch(function(){}); } catch(e) {}
     } catch (err) {
       console.error('Falha ao salvar lead localmente:', err);
     }

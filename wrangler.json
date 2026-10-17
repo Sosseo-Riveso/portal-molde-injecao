@@ -1,0 +1,20 @@
+{
+  "name": "portal-molde-injecao",
+  "main": "worker.js",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "."
+  },
+  "kv_namespaces": [
+    {
+      "binding": "LEADS_KV",
+      "id": "2cbc209828db4822a3f351d9faa92dba"
+    }
+  ],
+  "send_email": [
+    {
+      "name": "SEND_EMAIL",
+      "destination_address": "riveso@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+.git
+.gitignore
+.assetsignore
+_redirects
+_headers
+worker.js
+wrangler.json
