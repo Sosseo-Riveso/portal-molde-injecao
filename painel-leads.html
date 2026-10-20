@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -812,6 +812,70 @@
     const CONFIG_WEBHOOK_KEY = 'pmi_webhook_url';
     const DEFAULT_WEBHOOK = 'https://script.google.com/macros/s/AKfycbww_PlLdhGPoZxgTAtd9bQAB4dY7cjMYOsqwFDwYQQNlR-bJZAFW_Gf2rY3TSTKtIsRYw/exec';
     const RETENTION_DAYS = 365; // Retenção máxima de 1 ano
+    const DELETED_SIGS_KEY = STORAGE_KEY + '_deleted_sigs';
+    const CLEARED_AT_KEY = STORAGE_KEY + '_cleared_at';
+
+    function getLeadSig(l) {
+      if (!l) return '';
+      const tel = String(l.telefone || l.whatsapp || '').replace(/\D/g, '');
+      const d = String(l.data || '').trim();
+      const h = String(l.hora || '').trim();
+      return `${tel}_${d}_${h}`;
+    }
+
+    function getDeletedSet() {
+      try {
+        return new Set(JSON.parse(localStorage.getItem(DELETED_SIGS_KEY) || '[]'));
+      } catch (e) {
+        return new Set();
+      }
+    }
+
+    function addDeletedLeads(leadsArr) {
+      const set = getDeletedSet();
+      const sigs = [];
+      (leadsArr || []).forEach(l => {
+        if (!l) return;
+        if (l.id) { set.add(String(l.id)); sigs.push(String(l.id)); }
+        const sig = getLeadSig(l);
+        if (sig) { set.add(sig); sigs.push(sig); }
+      });
+      localStorage.setItem(DELETED_SIGS_KEY, JSON.stringify(Array.from(set).slice(-2000)));
+      return sigs;
+    }
+
+    function isLeadDeleted(l, delSet, clearedAt) {
+      if (!l) return true;
+      if (l.id && delSet.has(String(l.id))) return true;
+      const sig = getLeadSig(l);
+      if (sig && delSet.has(sig)) return true;
+      if (clearedAt > 0) {
+        const ts = Number(l.timestamp) || parseDateToTimestamp(l.data, l.hora);
+        if (ts <= clearedAt) return true;
+      }
+      return false;
+    }
+
+    async function syncRemoteAction(payload) {
+      const webhookUrl = localStorage.getItem(CONFIG_WEBHOOK_KEY) || DEFAULT_WEBHOOK;
+      try {
+        await fetch('/api/triagem', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {}
+      if (webhookUrl) {
+        try {
+          fetch(webhookUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          }).catch(() => {});
+        } catch (e) {}
+      }
+    }
 
     // 1. Checagem de Autenticação Inicial
     document.addEventListener('DOMContentLoaded', () => {
@@ -849,61 +913,91 @@
       loadRemoteLeads();
     }
 
-    // Sincronização Remota com Google Sheets
+    // Sincronização Remota com Cloudflare KV + Google Sheets
     async function loadRemoteLeads() {
       const webhookUrl = localStorage.getItem(CONFIG_WEBHOOK_KEY) || DEFAULT_WEBHOOK;
       const syncStatus = document.getElementById('cloudSyncStatus');
-      if (!webhookUrl) {
-        if (syncStatus) syncStatus.innerHTML = '<span style="color:#94a3b8;">⚪ Armazenamento Local Ativo (Sem Nuvem)</span>';
-        return;
-      }
-      if (syncStatus) syncStatus.innerHTML = '<span style="color:#38bdf8;">🔄 Sincronizando com Google Sheets...</span>';
+      if (syncStatus) syncStatus.innerHTML = '<span style="color:#38bdf8;">🔄 Sincronizando com a Nuvem...</span>';
 
+      let delSet = getDeletedSet();
+      let clearedAt = Number(localStorage.getItem(CLEARED_AT_KEY) || 0);
+      let combinedRemote = [];
+
+      // 1. Busca do Cloudflare KV (/api/triagem) + metadados de exclusão
       try {
-        const res = await fetch(webhookUrl);
-        if (res.ok) {
-          const data = await res.json();
-          if (Array.isArray(data) && data.length > 0) {
-            let localLeads = getLeads();
-            const existingKeys = new Set(localLeads.map(l => (l.telefone + '_' + l.data + '_' + l.hora)));
-            let hasNew = false;
-            
-            data.forEach(remoteLead => {
-              let formattedDate = remoteLead.data;
-              if (typeof formattedDate === 'string' && formattedDate.includes('T')) {
-                try {
-                  const d = new Date(formattedDate);
-                  formattedDate = d.toLocaleDateString('pt-BR');
-                } catch (e) {}
-              }
-              let formattedHora = remoteLead.hora;
-              if (typeof formattedHora === 'string' && formattedHora.includes('T')) {
-                try {
-                  const d = new Date(formattedHora);
-                  formattedHora = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
-                } catch (e) {}
-              }
-              remoteLead.data = formattedDate || 'Hoje';
-              remoteLead.hora = formattedHora || 'Recente';
-
-              const key = remoteLead.telefone + '_' + remoteLead.data + '_' + remoteLead.hora;
-              if (!existingKeys.has(key)) {
-                localLeads.unshift(remoteLead);
-                existingKeys.add(key);
-                hasNew = true;
-              }
-            });
-
-            if (hasNew) {
-              localLeads = pruneExpiredLeads(localLeads);
-              localStorage.setItem(STORAGE_KEY, JSON.stringify(localLeads));
-              renderLeadsTable(localLeads);
+        const kvRes = await fetch('/api/triagem');
+        if (kvRes.ok) {
+          const kvData = await kvRes.json();
+          if (kvData && kvData.meta) {
+            if (Array.isArray(kvData.meta.deletedSignatures)) {
+              kvData.meta.deletedSignatures.forEach(s => delSet.add(String(s)));
+              localStorage.setItem(DELETED_SIGS_KEY, JSON.stringify(Array.from(delSet).slice(-2000)));
+            }
+            if (Number(kvData.meta.clearedAt) > clearedAt) {
+              clearedAt = Number(kvData.meta.clearedAt);
+              localStorage.setItem(CLEARED_AT_KEY, String(clearedAt));
             }
           }
-          if (syncStatus) syncStatus.innerHTML = '<span style="color:#34d399;">🟢 Google Sheets Conectado & Sincronizado</span>';
-        } else {
-          if (syncStatus) syncStatus.innerHTML = '<span style="color:#f59e0b;">⚠️ Resposta pendente da planilha</span>';
+          if (kvData && Array.isArray(kvData.leads)) {
+            combinedRemote = combinedRemote.concat(kvData.leads);
+          }
         }
+      } catch (e) {}
+
+      // 2. Busca da planilha Google Sheets (se configurada)
+      try {
+        if (webhookUrl) {
+          const res = await fetch(webhookUrl);
+          if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data)) {
+              combinedRemote = combinedRemote.concat(data);
+            }
+          }
+        }
+      } catch (e) {}
+
+      try {
+        let localLeads = getLeads().filter(l => !isLeadDeleted(l, delSet, clearedAt));
+        const existingKeys = new Set(localLeads.map(l => getLeadSig(l)));
+        let changed = false;
+
+        combinedRemote.forEach(remoteLead => {
+          if (!remoteLead) return;
+          let formattedDate = remoteLead.data;
+          if (typeof formattedDate === 'string' && formattedDate.includes('T')) {
+            try {
+              const d = new Date(formattedDate);
+              formattedDate = d.toLocaleDateString('pt-BR');
+            } catch (e) {}
+          }
+          let formattedHora = remoteLead.hora;
+          if (typeof formattedHora === 'string' && formattedHora.includes('T')) {
+            try {
+              const d = new Date(formattedHora);
+              formattedHora = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+            } catch (e) {}
+          }
+          remoteLead.data = formattedDate || 'Hoje';
+          remoteLead.hora = formattedHora || 'Recente';
+          if (!remoteLead.id) {
+            remoteLead.id = 'pmi_' + (remoteLead.timestamp || parseDateToTimestamp(remoteLead.data, remoteLead.hora)) + '_' + String(remoteLead.telefone || '').replace(/\D/g, '').slice(-4);
+          }
+
+          if (isLeadDeleted(remoteLead, delSet, clearedAt)) return;
+
+          const key = getLeadSig(remoteLead);
+          if (!existingKeys.has(key)) {
+            localLeads.unshift(remoteLead);
+            existingKeys.add(key);
+            changed = true;
+          }
+        });
+
+        localLeads = pruneExpiredLeads(localLeads);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(localLeads));
+        renderLeadsTable(localLeads);
+        if (syncStatus) syncStatus.innerHTML = '<span style="color:#34d399;">🟢 Nuvem & Google Sheets Sincronizados</span>';
       } catch (err) {
         if (syncStatus) syncStatus.innerHTML = '<span style="color:#94a3b8;">⚪ Armazenamento Local Ativo</span>';
       }
@@ -1154,9 +1248,20 @@
     function deleteLead(id) {
       if (!confirm('Deseja realmente excluir este registro de lead?')) return;
       let leads = getLeads();
-      leads = leads.filter(l => l.id !== id);
+      const target = leads.find(l => String(l.id) === String(id));
+      const sigs = target ? addDeletedLeads([target]) : [String(id)];
+      leads = leads.filter(l => String(l.id) !== String(id));
       localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
-      renderLeadsTable();
+      renderLeadsTable(leads);
+      syncRemoteAction({
+        action: 'delete',
+        id: id,
+        signature: target ? getLeadSig(target) : '',
+        signatures: sigs,
+        telefone: target ? target.telefone : '',
+        data: target ? target.data : '',
+        hora: target ? target.hora : ''
+      });
     }
 
     // 11. Modal de Limpeza & Expurgo
@@ -1213,38 +1318,45 @@
       if (!confirm(`Tem certeza de que deseja excluir TODOS os leads registrados no período de ${targetMonth}?`)) return;
 
       let leads = getLeads();
-      const initialCount = leads.length;
-      leads = leads.filter(l => {
-        if (!l.data) return true;
-        return !l.data.includes(`/${targetMonth}`);
-      });
+      const toRemove = leads.filter(l => l.data && l.data.includes(`/${targetMonth}`));
+      const sigs = addDeletedLeads(toRemove);
+      leads = leads.filter(l => !l.data || !l.data.includes(`/${targetMonth}`));
 
-      const removedCount = initialCount - leads.length;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
-      alert(`Foram removidos ${removedCount} registros correspondentes a ${targetMonth}.`);
+      syncRemoteAction({ action: 'delete_month', month: targetMonth, signatures: sigs });
+      alert(`Foram removidos ${toRemove.length} registros correspondentes a ${targetMonth}.`);
       populateCleanupMonths();
-      renderLeadsTable();
+      renderLeadsTable(leads);
     }
 
     // Executar expurgo forçado de 1 ano (365 dias)
     function runForcePruneOneYear() {
       let leads = getLeads();
       const initialCount = leads.length;
-      leads = pruneExpiredLeads(leads);
-      const removedCount = initialCount - leads.length;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
-      alert(`Varredura concluída! Registros com mais de 365 dias excluídos: ${removedCount}. Registros ativos preservados: ${leads.length}.`);
+      const kept = pruneExpiredLeads(leads);
+      const keptIds = new Set(kept.map(l => l.id));
+      const removed = leads.filter(l => !keptIds.has(l.id));
+      const sigs = addDeletedLeads(removed);
+      const removedCount = initialCount - kept.length;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(kept));
+      syncRemoteAction({ action: 'prune_year', signatures: sigs });
+      alert(`Varredura concluída! Registros com mais de 365 dias excluídos: ${removedCount}. Registros ativos preservados: ${kept.length}.`);
       populateCleanupMonths();
-      renderLeadsTable();
+      renderLeadsTable(kept);
     }
 
     // Limpar todos os leads
     function clearAllLeads() {
       if (!confirm('ATENÇÃO: Deseja apagar permanentemente TODOS os leads registrados? Essa ação não pode ser desfeita.')) return;
-      localStorage.removeItem(STORAGE_KEY);
-      alert('Todos os registros foram excluídos.');
+      const currentLeads = getLeads();
+      const sigs = addDeletedLeads(currentLeads);
+      const nowTs = Date.now();
+      localStorage.setItem(CLEARED_AT_KEY, String(nowTs));
+      localStorage.setItem(STORAGE_KEY, '[]');
+      syncRemoteAction({ action: 'clear', signatures: sigs, clearedAt: nowTs });
+      alert('Todos os registros foram excluídos permanentemente (no painel e na nuvem).');
       closeCleanupModal();
-      renderLeadsTable();
+      renderLeadsTable([]);
     }
 
     // 12. Inserir Lead de Demonstração (Dados B2B Realistas)

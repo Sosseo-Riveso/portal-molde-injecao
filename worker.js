@@ -1,127 +1,198 @@
 import { EmailMessage } from "cloudflare:email";
 
-function utf8ToBase64(str) {
-  const bytes = new TextEncoder().encode(String(str || ''));
-  let binary = '';
-  for (let i = 0; i < bytes.length; i++) {
-    binary += String.fromCharCode(bytes[i]);
-  }
-  return btoa(binary);
-}
+const KV_KEY = 'leads_portal_molde';
+const KV_META_KEY = 'leads_portal_molde_meta';
 
-function escapeHtml(str) {
-  return String(str || '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+function getLeadSig(l) {
+  if (!l) return '';
+  const tel = String(l.telefone || l.whatsapp || '').replace(/\D/g, '');
+  const d = String(l.data || '').trim();
+  const h = String(l.hora || '').trim();
+  return `${tel}_${d}_${h}`;
 }
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname === '/worker.js' || url.pathname === '/wrangler.json') {
-      return new Response('Not Found', { status: 404 });
+    // 1. Redirecionamento 301 de domínios secundários para o canônico
+    if (
+      url.hostname === 'www.portalmoldeinjecao.com.br' ||
+      url.hostname.endsWith('.workers.dev') ||
+      url.hostname.endsWith('.pages.dev')
+    ) {
+      url.hostname = 'portalmoldeinjecao.com.br';
+      url.protocol = 'https:';
+      return Response.redirect(url.toString(), 301);
     }
 
-    if (url.pathname === '/api/triagem' && request.method === 'POST') {
-      try {
-        const data = await request.json();
-        const siteName = "Portal Molde Injeção";
-        const nome = data.nome || data.contact || 'Cliente via Site';
-        const telefone = data.telefone || data.whatsapp || data.phone || 'Não informado';
-        const veiculo = data.veiculo || data.empresa || data.company || 'Consultoria Técnica';
-        const servico = data.servico || data.cambio || data.sistema || data.escopo || data.tipoCambio || 'Triagem Técnica';
-        const regiao = data.bairro || data.regiao || data.cidade || '';
-        const relato = data.sintoma || data.relato || data.detalhes || data.mensagem || '';
-        const origem = data.paginaOrigem || data.origem || data.pagina || '/';
+    const corsHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Content-Type': 'application/json; charset=utf-8'
+    };
 
-        if (env.LEADS_KV) {
-          try {
-            const stored = (await env.LEADS_KV.get('leads_list', 'json')) || [];
-            stored.unshift({
-              id: 'lead-' + Date.now(),
-              siteName: siteName,
-              company: veiculo + (regiao ? ' (' + regiao + ')' : ''),
-              contact: nome,
-              phone: telefone,
-              email: data.email || '',
-              service: servico,
-              value: 2500,
-              status: 'novo',
-              source: "portalmoldeinjecao.com.br" + ' (' + origem + ')',
-              notes: 'Veículo/Empresa: ' + veiculo + ' | Região: ' + regiao + ' | Relato: ' + relato,
-              createdAt: new Date().toISOString()
-            });
-            await env.LEADS_KV.put('leads_list', JSON.stringify(stored.slice(0, 500)));
-          } catch (kvErr) {}
+    if (url.pathname === '/api/triagem') {
+      if (request.method === 'OPTIONS') {
+        return new Response(null, { status: 204, headers: corsHeaders });
+      }
+
+      if (request.method === 'GET') {
+        try {
+          let list = [];
+          let meta = { clearedAt: 0, deletedSignatures: [] };
+          if (env.LEADS_KV) {
+            list = await env.LEADS_KV.get(KV_KEY, { type: 'json' }) || [];
+            meta = await env.LEADS_KV.get(KV_META_KEY, { type: 'json' }) || { clearedAt: 0, deletedSignatures: [] };
+          }
+          return new Response(JSON.stringify({ ok: true, leads: list, meta }), { status: 200, headers: corsHeaders });
+        } catch (err) {
+          return new Response(JSON.stringify({ ok: false, leads: [], error: err.message }), { status: 500, headers: corsHeaders });
         }
+      }
 
-        if (env.SEND_EMAIL) {
-          const fromEmail = 'contato@sosseo.com.br';
-          const toEmail = 'riveso@gmail.com';
-          const fromDisplayHeader = '=?UTF-8?B?' + utf8ToBase64(siteName) + '?= <' + fromEmail + '>';
-          const subject = '⭐ ' + siteName + ' — ' + nome + ' (' + veiculo + ' / ' + servico + ')';
-          const subjectHeader = '=?UTF-8?B?' + utf8ToBase64(subject) + '?=';
-          const msgId = '<lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 9) + '@sosseo.com.br>';
-          const dateStr = new Date().toUTCString();
-          const brDate = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+      if (request.method === 'POST' || request.method === 'DELETE' || request.method === 'PUT') {
+        try {
+          const dados = await request.json();
 
-          const htmlBody = `<!DOCTYPE html>
-<html lang="pt-BR">
-<head><meta charset="UTF-8"></head>
-<body style="font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 24px; color: #1e293b;">
-  <div style="max-width: 620px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
-    <div style="background: linear-gradient(135deg, #0f172a 0%, #0d9488 100%); color: #ffffff; padding: 22px 28px;">
-      <h2 style="margin: 0; font-size: 20px;">⭐ Novo Lead — ${escapeHtml(siteName)}</h2>
-      <p style="margin: 6px 0 0; font-size: 13px; opacity: 0.9;">Recebido em ${escapeHtml(brDate)} (${escapeHtml(origem)})</p>
-    </div>
-    <div style="padding: 24px 28px;">
-      <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold; width: 160px; color: #475569;">🌐 Portal:</td><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold;">⭐ ${escapeHtml(siteName)}</td></tr>
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #475569;">👤 Cliente:</td><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">${escapeHtml(nome)}</td></tr>
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #475569;">📱 WhatsApp:</td><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold;">${escapeHtml(telefone)}</td></tr>
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #475569;">🚗 Veículo / Empresa:</td><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">${escapeHtml(veiculo)}</td></tr>
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #475569;">🔧 Serviço / Sistema:</td><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; color: #0284c7; font-weight: bold;">${escapeHtml(servico)}</td></tr>
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-weight: bold; color: #475569;">📍 Bairro / Região:</td><td style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">${escapeHtml(regiao || '-')}</td></tr>
-        <tr><td style="padding: 10px 0; font-weight: bold; color: #475569; vertical-align: top;">📝 Sintoma / Relato:</td><td style="padding: 10px 0; line-height: 1.5;">${escapeHtml(relato || '-')}</td></tr>
-      </table>
-      <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid #e2e8f0; text-align: center;">
-        <a href="https://api.whatsapp.com/send?phone=55${String(telefone).replace(/\D/g, '')}" style="display: inline-block; background-color: #16a34a; color: #ffffff; text-decoration: none; font-weight: bold; padding: 12px 24px; border-radius: 8px; font-size: 14px;">💬 Chamar Cliente no WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</body>
-</html>`;
+          // Ações de gerenciamento / exclusão / expurgo no Mini CRM
+          if (dados && dados.action) {
+            let list = [];
+            let meta = { clearedAt: 0, deletedSignatures: [] };
+            if (env.LEADS_KV) {
+              list = await env.LEADS_KV.get(KV_KEY, { type: 'json' }) || [];
+              meta = await env.LEADS_KV.get(KV_META_KEY, { type: 'json' }) || { clearedAt: 0, deletedSignatures: [] };
+            }
+            const delSet = new Set(Array.isArray(meta.deletedSignatures) ? meta.deletedSignatures : []);
+            if (Array.isArray(dados.signatures)) {
+              dados.signatures.forEach(s => { if (s) delSet.add(String(s)); });
+            }
 
-          const bodyB64 = utf8ToBase64(htmlBody).replace(/(.{76})/g, '$1\r\n');
-          const rawMime = [
-            'From: ' + fromDisplayHeader,
-            'To: <' + toEmail + '>',
-            'Subject: ' + subjectHeader,
-            'Message-ID: ' + msgId,
-            'Date: ' + dateStr,
-            'MIME-Version: 1.0',
-            'Content-Type: text/html; charset=UTF-8',
-            'Content-Transfer-Encoding: base64'
-          ].join('\r\n') + '\r\n\r\n' + bodyB64 + '\r\n';
+            if (dados.action === 'clear') {
+              list.forEach(l => {
+                if (l && l.id) delSet.add(String(l.id));
+                const sig = getLeadSig(l);
+                if (sig) delSet.add(sig);
+              });
+              list = [];
+              meta.clearedAt = Number(dados.clearedAt) || Date.now();
+            } else if (dados.action === 'delete') {
+              const targetId = dados.id ? String(dados.id) : '';
+              const targetSig = dados.signature || getLeadSig(dados);
+              if (targetId) delSet.add(targetId);
+              if (targetSig) delSet.add(targetSig);
+              list = list.filter(l => {
+                if (targetId && String(l.id) === targetId) return false;
+                if (targetSig && getLeadSig(l) === targetSig) return false;
+                return true;
+              });
+            } else if (dados.action === 'delete_month' && dados.month) {
+              const targetMonth = String(dados.month);
+              list = list.filter(l => {
+                const d = String(l.data || '');
+                const match = d.includes('/' + targetMonth) || d.includes(targetMonth);
+                if (match) {
+                  if (l.id) delSet.add(String(l.id));
+                  const sig = getLeadSig(l);
+                  if (sig) delSet.add(sig);
+                  return false;
+                }
+                return true;
+              });
+            } else if (dados.action === 'prune_year') {
+              const oneYearAgo = Date.now() - (365 * 24 * 60 * 60 * 1000);
+              list = list.filter(l => {
+                const ts = Number(l.timestamp) || Date.now();
+                if (ts < oneYearAgo) {
+                  if (l.id) delSet.add(String(l.id));
+                  const sig = getLeadSig(l);
+                  if (sig) delSet.add(sig);
+                  return false;
+                }
+                return true;
+              });
+            } else if (dados.action === 'sync_replace' && Array.isArray(dados.leads)) {
+              list = dados.leads;
+            }
 
-          await env.SEND_EMAIL.send(new EmailMessage(fromEmail, toEmail, rawMime));
+            meta.deletedSignatures = Array.from(delSet).slice(-2000);
+            if (env.LEADS_KV) {
+              await env.LEADS_KV.put(KV_KEY, JSON.stringify(list));
+              await env.LEADS_KV.put(KV_META_KEY, JSON.stringify(meta));
+            }
+            return new Response(JSON.stringify({ ok: true, action: dados.action, leads: list, meta }), { status: 200, headers: corsHeaders });
+          }
+
+          // Cadastro normal de novo Lead
+          const nome = dados.nome || 'Não informado';
+          const whatsapp = dados.whatsapp || dados.telefone || 'Não informado';
+          const empresa = dados.empresa || dados.veiculo || 'Não informada';
+          const servico = dados.servico || dados.problema || dados.tipo || 'Cotação B2B / Molde / Injeção';
+          const pagina = dados.pagina || '/';
+          const dataHora = dados.data ? `${dados.data} às ${dados.hora || ''}` : new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+
+          if (env.LEADS_KV) {
+            try {
+              const leadId = dados.id || ('pmi_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7));
+              const leadObj = { ...dados, id: leadId, timestamp: dados.timestamp || Date.now() };
+              let list = await env.LEADS_KV.get(KV_KEY, { type: 'json' }) || [];
+              list.unshift(leadObj);
+              if (list.length > 500) list = list.slice(0, 500);
+              await env.LEADS_KV.put(KV_KEY, JSON.stringify(list));
+            } catch (kvErr) {
+              console.error('Erro ao salvar no KV:', kvErr);
+            }
+          }
+
+          const rawEmail = [
+            `From: "Portal Molde Injecao" <contato@portalmoldeinjecao.com.br>`,
+            `To: riveso@gmail.com`,
+            `Subject: =?UTF-8?B?${btoa(unescape(encodeURIComponent(`🏭 Novo Lead Industrial (Portal Molde Injeção): ${nome}`)))}?=`,
+            `MIME-Version: 1.0`,
+            `Content-Type: text/plain; charset=UTF-8`,
+            `Content-Transfer-Encoding: 8bit`,
+            ``,
+            `NOVO LEAD / RFQ CAPTADO NO SITE - PORTAL MOLDE INJEÇÃO`,
+            `======================================================`,
+            ``,
+            `👤 Nome: ${nome}`,
+            `📱 WhatsApp / Telefone: ${whatsapp}`,
+            `🏢 Empresa / Info: ${empresa}`,
+            `⚙️ Demanda / Serviço: ${servico}`,
+            `📄 Página de Origem: ${pagina}`,
+            `🕒 Data/Hora: ${dataHora}`,
+            ``,
+            `------------------------------------------------------`,
+            `Ação rápida no WhatsApp:`,
+            `https://wa.me/55${whatsapp.replace(/\D/g, '')}`,
+          ].join('\r\n');
+
+          if (env.SEND_EMAIL) {
+            const msg = new EmailMessage(
+              'contato@portalmoldeinjecao.com.br',
+              'riveso@gmail.com',
+              rawEmail
+            );
+            await env.SEND_EMAIL.send(msg);
+          }
+
+          return new Response(JSON.stringify({ ok: true }), { status: 200, headers: corsHeaders });
+        } catch (err) {
+          return new Response(JSON.stringify({ ok: false, error: err.message }), { status: 500, headers: corsHeaders });
         }
-
-        return new Response(JSON.stringify({ ok: true }), {
-          status: 200,
-          headers: { 'Content-Type': 'application/json' }
-        });
-      } catch (err) {
-        return new Response(JSON.stringify({ ok: false }), { status: 200 });
       }
     }
 
-    if (env.ASSETS) {
-      return env.ASSETS.fetch(request);
+    // 3. Servir arquivos estáticos com suporte a clean URLs (.html)
+    let response = await env.ASSETS.fetch(request);
+    if (response.status === 404 && !url.pathname.includes('.')) {
+      const htmlUrl = new URL(url.pathname.replace(/\/$/, '') + '.html', url.origin);
+      const htmlResponse = await env.ASSETS.fetch(new Request(htmlUrl, request));
+      if (htmlResponse.status === 200) {
+        return htmlResponse;
+      }
     }
-    return new Response('Not Found', { status: 404 });
+    return response;
   }
 };
