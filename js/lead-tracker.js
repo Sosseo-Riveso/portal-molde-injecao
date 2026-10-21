@@ -158,7 +158,7 @@ if (typeof window !== 'undefined' && (window.location.hostname.endsWith('.pages.
 
             <div>
               <label style="display:block;font-size:12px;font-weight:600;color:#cbd5e1;margin-bottom:4px;">WhatsApp com DDD:</label>
-              <input type="tel" id="pmiGateTelefone" placeholder="(11) 99999-9999" required maxlength="15" style="width:100%;box-sizing:border-box;background:#070b14;border:1px solid #334155;color:#ffffff;padding:11px 14px;border-radius:8px;font-size:14px;outline:none;">
+              <input type="tel" id="pmiGateTelefone" placeholder="(11) 99999-9999" required maxlength="22" style="width:100%;box-sizing:border-box;background:#070b14;border:1px solid #334155;color:#ffffff;padding:11px 14px;border-radius:8px;font-size:14px;outline:none;">
             </div>
 
             <button type="submit" style="margin-top:6px;background:linear-gradient(135deg,#0284c7 0%,#0369a1 100%);color:#ffffff;border:none;padding:13px;border-radius:10px;font-size:15px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity 0.2s;">
@@ -179,9 +179,9 @@ if (typeof window !== 'undefined' && (window.location.hostname.endsWith('.pages.
     const telInput = document.getElementById('pmiGateTelefone');
 
     // Máscara de telefone
-    if (telInput) {
+    document.querySelectorAll('input[type="tel"], #pmiGateTelefone').forEach((telInput) => { telInput.setAttribute('maxlength', '22');
       telInput.addEventListener('input', (e) => {
-        let v = e.target.value.replace(/\D/g, '');
+        const raw = e.target.value || ''; let v = raw.replace(/\D/g, ''); if ((raw.trim().startsWith('+55') && v.startsWith('55') && v.length >= 12) || ((v.length === 12 || v.length === 13) && v.startsWith('55'))) { v = v.substring(2); } if (v.length > 11 && v.startsWith('0')) { v = v.replace(/^0+/, ''); }
         if (v.length > 11) v = v.substring(0, 11);
         if (v.length > 6) {
           e.target.value = `(${v.substring(0, 2)}) ${v.substring(2, 7)}-${v.substring(7)}`;
@@ -193,7 +193,7 @@ if (typeof window !== 'undefined' && (window.location.hostname.endsWith('.pages.
           e.target.value = '';
         }
       });
-    }
+    });
 
     let defaultMsg = 'Olá! Acessei o Portal Molde Injeção e gostaria de solicitar um orçamento técnico.';
 
