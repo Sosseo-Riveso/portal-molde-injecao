@@ -127,8 +127,12 @@ export default {
           // Cadastro normal de novo Lead
           const nome = dados.nome || 'Não informado';
           const whatsapp = dados.whatsapp || dados.telefone || 'Não informado';
+          const email = dados.email || 'Não informado';
           const empresa = dados.empresa || dados.veiculo || 'Não informada';
+          const cidade = dados.cidade || 'Não informada';
           const servico = dados.servico || dados.problema || dados.tipo || 'Cotação B2B / Molde / Injeção';
+          const tiragem = dados.tiragem || '-';
+          const detalhes = dados.detalhes || '-';
           const pagina = dados.pagina || '/';
           const dataHora = dados.data ? `${dados.data} às ${dados.hora || ''}` : new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
@@ -145,27 +149,84 @@ export default {
             }
           }
 
+          const escapeHtml = (str) => String(str || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+
+          const utf8ToBase64 = (str) => {
+            const bytes = new TextEncoder().encode(String(str || ''));
+            let binary = '';
+            for (let i = 0; i < bytes.length; i++) {
+              binary += String.fromCharCode(bytes[i]);
+            }
+            return btoa(binary);
+          };
+
+          const cleanTel = String(whatsapp).replace(/\D/g, '');
+          const htmlBody = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: Arial, Helvetica, sans-serif; background-color: #f4f6f9; margin: 0; padding: 8px 6px; color: #1e293b; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+  <div style="width: 100%; max-width: 560px; margin: 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; box-sizing: border-box;">
+    <div style="background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%); color: #ffffff; padding: 16px 16px; border-radius: 11px 11px 0 0; box-sizing: border-box;">
+      <h2 style="margin: 0; font-size: 18px; line-height: 1.35; word-break: break-word;">🏭 Novo Lead B2B — Portal Molde Injeção</h2>
+      <p style="margin: 6px 0 0; font-size: 12px; line-height: 1.4; opacity: 0.9; word-break: break-word;">Recebido em ${escapeHtml(dataHora)} • portalmoldeinjecao.com.br</p>
+    </div>
+    <div style="padding: 14px 16px; box-sizing: border-box;">
+      <div style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="font-size: 12px; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px;">👤 Nome / Contato</div>
+        <div style="font-size: 15px; font-weight: bold; color: #0f172a; word-break: break-word; overflow-wrap: anywhere; line-height: 1.4;">${escapeHtml(nome)}</div>
+      </div>
+      <div style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="font-size: 12px; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px;">🏢 Empresa / Indústria</div>
+        <div style="font-size: 15px; color: #0f172a; word-break: break-word; overflow-wrap: anywhere; line-height: 1.4;">${escapeHtml(empresa)}</div>
+      </div>
+      <div style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="font-size: 12px; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px;">📱 WhatsApp / Telefone</div>
+        <div style="font-size: 15px; font-weight: bold; color: #0f172a; word-break: break-word; overflow-wrap: anywhere; line-height: 1.4;">${escapeHtml(whatsapp)}</div>
+      </div>
+      <div style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="font-size: 12px; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px;">📧 E-mail / Cidade</div>
+        <div style="font-size: 15px; color: #0f172a; word-break: break-word; overflow-wrap: anywhere; line-height: 1.4;">${escapeHtml(email)} (${escapeHtml(cidade)})</div>
+      </div>
+      <div style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="font-size: 12px; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px;">⚙️ Demanda / Serviço</div>
+        <div style="font-size: 15px; font-weight: bold; color: #0284c7; word-break: break-word; overflow-wrap: anywhere; line-height: 1.4;">${escapeHtml(servico)}</div>
+      </div>
+      <div style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+        <div style="font-size: 12px; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px;">📦 Tiragem / Detalhes</div>
+        <div style="font-size: 14px; color: #334155; word-break: break-word; overflow-wrap: anywhere; line-height: 1.5;">Tiragem: ${escapeHtml(tiragem)} | Detalhes: ${escapeHtml(detalhes)}</div>
+      </div>
+      <div style="padding: 10px 0;">
+        <div style="font-size: 12px; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 3px;">📄 Página de Origem</div>
+        <div style="font-size: 14px; color: #334155; word-break: break-word; overflow-wrap: anywhere; line-height: 1.4;">${escapeHtml(pagina)}</div>
+      </div>
+      <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid #e2e8f0; text-align: center;">
+        <a href="https://wa.me/55${cleanTel}" style="display: block; box-sizing: border-box; width: 100%; max-width: 340px; margin: 0 auto; background-color: #16a34a; color: #ffffff; text-decoration: none; font-weight: bold; padding: 12px 16px; border-radius: 8px; font-size: 14px; text-align: center; word-break: break-word;">💬 Chamar Cliente no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+
+          const bodyB64 = utf8ToBase64(htmlBody).replace(/(.{76})/g, '$1\r\n');
           const rawEmail = [
             `From: "Portal Molde Injecao" <contato@portalmoldeinjecao.com.br>`,
-            `To: riveso@gmail.com`,
-            `Subject: =?UTF-8?B?${btoa(unescape(encodeURIComponent(`🏭 Novo Lead Industrial (Portal Molde Injeção): ${nome}`)))}?=`,
+            `To: <riveso@gmail.com>`,
+            `Subject: =?UTF-8?B?${utf8ToBase64(`🏭 Novo Lead Industrial (Portal Molde Injeção): ${nome}`)}?=`,
+            `Message-ID: <pmi-${Date.now()}-${Math.random().toString(36).slice(2, 8)}@portalmoldeinjecao.com.br>`,
+            `Date: ${new Date().toUTCString()}`,
             `MIME-Version: 1.0`,
-            `Content-Type: text/plain; charset=UTF-8`,
-            `Content-Transfer-Encoding: 8bit`,
+            `Content-Type: text/html; charset=UTF-8`,
+            `Content-Transfer-Encoding: base64`,
             ``,
-            `NOVO LEAD / RFQ CAPTADO NO SITE - PORTAL MOLDE INJEÇÃO`,
-            `======================================================`,
-            ``,
-            `👤 Nome: ${nome}`,
-            `📱 WhatsApp / Telefone: ${whatsapp}`,
-            `🏢 Empresa / Info: ${empresa}`,
-            `⚙️ Demanda / Serviço: ${servico}`,
-            `📄 Página de Origem: ${pagina}`,
-            `🕒 Data/Hora: ${dataHora}`,
-            ``,
-            `------------------------------------------------------`,
-            `Ação rápida no WhatsApp:`,
-            `https://wa.me/55${whatsapp.replace(/\D/g, '')}`,
+            bodyB64,
+            ``
           ].join('\r\n');
 
           if (env.SEND_EMAIL) {
