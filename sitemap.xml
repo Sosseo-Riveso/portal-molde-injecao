@@ -53,7 +53,7 @@
     <loc>https://portalmoldeinjecao.com.br/sobre</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://portalmoldeinjecao.com.br/contato</loc>
@@ -143,12 +143,12 @@
     <loc>https://portalmoldeinjecao.com.br/politica-de-privacidade</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://portalmoldeinjecao.com.br/termos-de-uso</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.3</priority>
   </url>
 </urlset>
