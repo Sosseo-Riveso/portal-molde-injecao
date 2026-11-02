@@ -1,0 +1,227 @@
+# .clinerules — Portal Molde Injeção (PMI)
+### Governança editorial, SEO técnico, GEO/AEO e deploy — nicho B2B Industrial
+
+> Escopo: hub industrial B2B de **fabricação de moldes de injeção plástica**, **ferramentaria CNC de precisão**, **injeção termoplástica técnica seriada** e **manutenção de matrizes**.
+> Público: diretores industriais, gerentes de engenharia, compradores técnicos (supply chain) e donos de fábrica.
+> Este arquivo é a fonte de verdade para qualquer agente/editor que escreva, revise ou publique neste repositório.
+
+---
+
+## 0. REGRA DE OURO (BLOQUEANTE)
+
+**NUNCA alterar, reescrever, reformatar, "otimizar" ou corrigir artigos e páginas já publicados sem solicitação explícita do responsável pelo projeto.**
+
+| Situação | Ação permitida |
+|---|---|
+| Artigo/página já publicada (existe no `sitemap.xml` ou já está no ar) | ❌ Leitura e diagnóstico apenas. Nenhuma edição de conteúdo, título, meta, schema ou layout. |
+| Correção pedida explicitamente pelo responsável | ✅ Edição pontual, restrita ao escopo pedido e registrada em `PROGRESS.md`. |
+| Conteúdo novo (artigo, pilar, categoria, landing) | ✅ Criar arquivo novo, seguindo `template-post-padrao.html`. |
+| Bug crítico de produção (ex.: formulário de lead quebrado, página fora do ar) | ✅ Correção mínima + registro imediato em `PROGRESS.md`. |
+
+Regras derivadas:
+- Não "consertar" conteúdo antigo de passagem. Se encontrar problema, **relate** e registre em `PROGRESS.md` como pendência.
+- Não renomear arquivos publicados (quebra URL canônica, sitemap e links internos).
+- Não alterar `sitemap.xml`, `robots.txt`, `_redirects`, `worker.js` ou `wrangler.json` sem pedido explícito.
+- `index.html` está em edição por terceiros — não tocar sem autorização.
+
+---
+
+## 1. TOM DE COMUNICAÇÃO (EXECUTIVO / TÉCNICO)
+
+A escrita deve convencer **engenheiro e comprador industrial**, não visitante de blog genérico.
+
+### Deve ter
+- Vocabulário de chão de fábrica e de engenharia: *contra-saída (undercut), linha de partição, força de fechamento, câmara quente valvulada, pós-pressão, ciclo, tiragem, usinagem HSM, eletroerosão por penetração (EDM), retífica plana/cilíndrica, tratamento térmico a vácuo, metrologia CMM, DFM, CAE/Moldflow.*
+- **Dados quantificados**: faixas de preço em R$, ciclos, tonelagens (80t–350t), dureza (HRC), tolerâncias (±0,02 mm), prazos em semanas, percentuais de ganho.
+- Critério de decisão de engenharia e de suprimentos: custo total (TCO), payback, vida útil da ferramenta, risco de parada de linha, homologação de fornecedor.
+- Frases curtas, voz ativa, verbos concretos.
+- Cautela técnica: quando o número variar por região/fornecedor, apresentar **faixa** e a variável que a explica.
+
+### Proibido (bloqueante em revisão)
+- Jargão de IA e buzzword vazia: "no mundo de hoje", "mergulhe", "desvende", "revolucionário", "game changer", "solução disruptiva", "elevar ao próximo nível", "não é apenas… é…", "é importante ressaltar", "vale destacar".
+- Promessa absoluta sem lastro ("o melhor do Brasil", "preço imbatível", "garantia de 0% de falha").
+- Emoji decorativo em título, H1/H2 ou corpo técnico (ícones só em componentes de UI já existentes no site).
+- Primeira pessoa de IA ("como modelo de linguagem", "fui treinado"). Autoria é sempre institucional: **Portal Molde Injeção — Engenharia e Ferramentaria B2B**.
+- Asteriscos de Markdown (`**texto**`) em HTML final. Negrito **somente** com `<strong>`.
+- Texto genérico que serviria para qualquer indústria (usinagem, autopeças, gráfica). Se a frase não cita molde, injeção, aço ou polímero, ela está fraca.
+
+---
+
+## 2. METADADOS OBRIGATÓRIOS — 8 ITENS EM COMENTÁRIO HTML
+
+Todo artigo novo (`.html`) deve abrir o `<body>` com um bloco `<!-- METADADOS ... -->` contendo **os 8 itens abaixo, na ordem abaixo**. O 8º item é **obrigatório e bloqueante**: sem Conclusão Estratégica o arquivo não é publicado.
+
+| # | Metadado | Regra |
+|---|---|---|
+| 1 | **Palavra-chave Principal** | Termo foco exato, sem acento no valor interno quando for convenção do projeto (ex.: `quanto custa fabricar um molde de injecao plastica`). Deve aparecer no H1, no primeiro parágrafo e em pelo menos 1 H2. |
+| 2 | **Título SEO** | Máximo **60 caracteres**, palavra-chave à frente, marca ao final (`| Portal Molde`). |
+| 3 | **Meta Descrição** | Máximo **160 caracteres**, com a palavra-chave e um dado concreto (faixa de preço, norma, ganho). |
+| 4 | **Resumo do Post (Excerpt)** | Máximo **180 caracteres** para listagem de categoria. |
+| 5 | **subtitulo_banner (H2 do Banner)** | H2 afirmativo logo abaixo do H1. **Não repete o H1**: confirma a promessa com segurança técnica, contendo a palavra-chave. |
+| 6 | **Slug Amigável** | URL limpa, minúscula, hifenizada, sem stopword desnecessária. Ex.: `/quanto-custa-fabricar-um-molde-de-injecao-plastica`. |
+| 7 | **Opções de Títulos H1 Extras** | Mínimo **2** alternativas persuasivas, cada uma com a palavra-chave. |
+| 8 | **Conclusão Estratégica (Takeaway)** | **OBRIGATÓRIO E BLOQUEANTE.** Último item da lista. Uma a três frases com: mensagem central + impacto prático (custo, ciclo, vida útil, risco) + decisão estratégica para a fábrica. Deve ser idêntica (ou fiel) ao texto da seção "Conclusão Estratégica" no fim do artigo e ao CTA final. |
+
+Formato exato do bloco:
+
+```html
+<!-- METADADOS DE SEO E GEO (OCULTOS NA VISUALIZAÇÃO)
+1. Palavra-chave Principal: ...
+2. Título SEO (<=60): ...
+3. Meta Descrição (<=160): ...
+4. Resumo do Post (Excerpt, <=180): ...
+5. subtitulo_banner (H2 do Banner): ...
+6. Slug Amigável: ...
+7. Opções de Títulos H1 Extras: (a) ... | (b) ...
+8. Conclusão Estratégica (Takeaway): ...
+-->
+```
+
+Regra de consistência: **Título SEO = `<title>`**, **Meta Descrição = `meta description` = `og:description`**, **subtitulo_banner = H2 imediatamente após o H1**. Divergência entre metadado e tag é falha de auditoria.
+
+---
+
+## 3. SEO TÉCNICO — PADRÃO OBRIGATÓRIO DE PÁGINA
+
+Toda página pública nova deve entregar, no `<head>`:
+
+- `<html lang="pt-BR">` e `<meta charset="UTF-8">` + viewport.
+- `<title>` único no site (≤ 60 caracteres, sem repetir o mesmo título de outra página).
+- `<meta name="description">` única (120–160 caracteres).
+- `<meta name="robots" content="index, follow">` (nunca `noindex` em página pública).
+- `<link rel="canonical" href="https://portalmoldeinjecao.com.br/<slug>">` — canônico **sem `.html`** (o Worker resolve a rota limpa).
+- Open Graph completo: `og:type` (`article` para artigos, `website` para hubs), `og:url`, `og:title`, `og:description`, `og:image` (1200×630, `.webp` em `/imagens/`), `og:locale` (`pt_BR`), `og:site_name` (`Portal Molde Injeção`).
+- JSON-LD em `@graph`, mínimo: `TechArticle` (ou `Article`) + `BreadcrumbList` + `FAQPage` quando houver FAQ. Em hubs/pilares: `Service`/`Organization`.
+- Imagens: nomes descritivos em `.webp`, `alt` técnico (o que a imagem mostra + contexto de engenharia), `width`/`height` ou `aspect-video` para evitar CLS. Capa com `loading="eager"`; imagens internas com `loading="lazy"`.
+- Um único `<h1>` por página. Hierarquia H1 → H2 → H3 sem pular nível.
+- Links internos: **no mínimo 3** por artigo (1 para o pilar de serviço correspondente, 1 para categoria, 1 para artigo correlato ou calculadora).
+- Tabelas: sempre com `<thead>`/`<th scope="col">` e container com scroll horizontal no mobile (`article table { display:block; overflow-x:auto }` em `@media (max-width: 767px)`).
+- Após publicar: atualizar `sitemap.xml` (se aplicável), garantir a rota em `_redirects` quando necessário e checar `llms.txt`/`llms-full.txt` para páginas de topo.
+
+Performance (Core Web Vitals alvo): LCP < 2,5 s, INP < 200 ms, CLS < 0,1. Evitar biblioteca JS nova; o site usa Tailwind via CDN e `js/lead-tracker.js` — não introduzir framework sem pedido.
+
+---
+
+## 4. GEO / AEO — SER CITADO POR IA (ChatGPT, Perplexity, Gemini, Google AI Overviews)
+
+Motores generativos decompõem a consulta em 3–10 subperguntas (**Query Fan-out**). Cada página deve responder, em blocos autocontidos de 40–70 palavras, às ramificações previsíveis:
+
+1. **Definição** — "o que é / como é definido".
+2. **Cálculo / método** — fórmula com variáveis e unidades.
+3. **Comparação** — tabela com 3+ alternativas técnicas.
+4. **Custo / prazo** — faixas em R$ e semanas.
+5. **Risco / falha** — causa raiz e mitigação.
+
+Checklist GEO obrigatório:
+- [ ] Entidades industriais explícitas e consistentes: aços **P20 / 1.2738 / H13 / Inox 420 (S136)**, normas **ISO 9001:2015, ISO 286 (tolerâncias), DIN 1.2311/1.2344, ASTM, NR-12**, classes **SPI 101/102/103/104**, resinas **ABS, PA66 (GF30), PC, POM, PP, PEAD**, índices **MFI, HRC, kgf/cm²**.
+- [ ] Norma citada junto do critério técnico (ex.: "tolerância dimensional conforme ISO 286 IT7").
+- [ ] Pelo menos **3 dados quantitativos próprios ou verificáveis** (faixa de preço, ciclo em segundos, vida útil em ciclos, % de economia).
+- [ ] Parágrafo-resposta curto e direto **imediatamente após cada H2** (o trecho que a IA extrai).
+- [ ] Definição em formato "X é …" / "consiste em …" — sem rodeio.
+- [ ] FAQ estruturado com 4–6 perguntas (Schema `FAQPage`), respostas de 40–70 palavras, autocontidas.
+- [ ] Autoridade: barra de autoria com entidade, data de publicação **e** de atualização; `datePublished`/`dateModified` no JSON-LD; `author` como `Organization`/`Person` com `url`.
+- [ ] Tabela comparativa (aço, resina, câmara quente × frio, classe SPI).
+- [ ] Conclusão Estratégica (Takeaway) — extraível e citável isoladamente.
+- [ ] `robots.txt` segue liberando GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended (não bloquear IA).
+- [ ] Conteúdo é a melhor resposta da categoria: cobrir o fan-out completo, não só a palavra-chave.
+
+Anti-padrões GEO: página sem data, afirmação vaga ("muitas empresas"), número sem fonte/contexto, FAQ raso de 1 linha, conteúdo duplicado entre artigos do próprio portal.
+
+---
+
+## 5. ESCANEABILIDADE E COPYWRITING (PADRÃO DE LEITURA F/Z)
+
+- **Parágrafos de 2 a 4 linhas**, no máximo. Parede de texto é proibida.
+- **Intertítulos descritivos e orientados a decisão**: "Como calcular a força de fechamento por cm² de área projetada", nunca "Introdução" / "Dicas" / "Considerações finais".
+- Um H2 a cada 250–350 palavras.
+- **Negrito estratégico** apenas em: termo técnico central, número decisivo, nome de norma/aço. Se tudo está em negrito, nada está.
+- Listas com marcadores para características e listas numeradas para método/passos (nunca para itens sem ordem).
+- **Tabela comparativa obrigatória** sempre que houver 2+ opções técnicas. Colunas padrão para aços:
+
+| Aço | Dureza típica | Indicação | Vida útil estimada |
+|---|---|---|---|
+| P20 / 1.2311 | 28–34 HRC | Protótipo e lote médio, peças sem abrasão | 100 mil–500 mil ciclos |
+| 1.2738 | 30–36 HRC | Molde de médio/grande porte, alta seção | 500 mil–1 milhão de ciclos |
+| H13 / 1.2344 | 48–52 HRC (temperado) | Alta abrasão, fibras, ligas de engenharia | 1 milhão+ ciclos |
+| Inox 420 / S136 | 50–54 HRC | Resinas corrosivas (PVC, PC, flame retardant) | 1 milhão+ ciclos |
+
+- **Bloco de destaque (pull quote)** no meio do texto, com uma tese técnica em 1–2 frases.
+- **Bloco de duas colunas** (imagem quadrada + H3 + texto) após o 3º/4º parágrafo; empilha em < 768 px.
+- CTA final sempre orientado a **cotação técnica**: pedir arquivo 3D (STEP/IGES), resina, volume anual e tolerância crítica — nunca "clique e saiba mais".
+- Copywriting: PAS (Problema–Agitação–Solução) na abertura; AIDA na jornada; CTA explícito no fim. Sem superlativos vazios.
+
+---
+
+## 6. ESTRUTURA VISUAL OBRIGATÓRIA DO ARTIGO
+
+```
+<article>
+  1. chip da categoria (link para o hub)
+  2. H1 (palavra-chave principal)
+  3. H2 subtitulo-banner (confirma a promessa do H1)
+  4. barra de autoria + data de publicação + data de atualização
+  5. figura de capa 16:9 (aspect-video), eager, alt técnico + figcaption
+  6. introdução direta (pirâmide invertida: resposta e faixa de custo/prazo no 1º parágrafo)
+  7. pull quote técnico
+  8. H2s de desenvolvimento (mínimo 4) + tabela comparativa + lista de método
+  9. bloco 2 colunas (imagem quadrada + H3)
+ 10. interlink pré-FAQ (pilar + categoria + artigo correlato)
+ 11. FAQ estruturado (4–6 Q&A + JSON-LD FAQPage)
+ 12. Conclusão Estratégica (Takeaway) + CTA de cotação
+ 13. "Continue lendo" (3 cards)
+</article>
+```
+
+Paleta e componentes: Tailwind CDN + `brand.navy #0b1329`, `brand.blue #1d4ed8`, `brand.accent #0284c7`, `brand.steel #334155`, tipografia Inter, container `max-w-5xl`. Não inventar design system paralelo.
+
+---
+
+## 7. DEPLOY E PROTEÇÃO DO AMBIENTE
+
+- **Stack:** Cloudflare Worker + Assets (`wrangler.json` → `assets.directory: "."`), deploy automático no `git push` para `main`.
+- **Nunca** versionar ou publicar: `scripts/`, `*.py`, `*.pyc`, `__pycache__/`, arquivos de governança (`.clinerules`, `.clineignore`, `PROJECT_CONTEXT.md`, `PROGRESS.md`) e o `template-post-padrao.html`.
+- `.gitignore` (controle de versão) e `.assetsignore` (o que vai ao CDN) devem manter esses padrões. Validar com `git check-ignore -v <arquivo>` antes de qualquer commit.
+- `worker.js` expõe `/api/triagem` (leads → KV `LEADS_KV` + e-mail). Não alterar contrato de payload sem revisar `js/lead-tracker.js` e `GOOGLE-APPS-SCRIPT-CRM.js`.
+- Nunca inserir credenciais, IDs de KV ou e-mails pessoais em páginas públicas. `.assetsignore` deve excluir tudo que não é ativo estático público.
+- Antes de publicar: `py scripts/seo_checker.py .` e `py scripts/geo_checker.py .` (ambos precisam passar) + revisão humana do texto.
+
+---
+
+## 8. FLUXO DE TRABALHO PARA NOVO CONTEÚDO
+
+1. Ler `PROJECT_CONTEXT.md` (ICP, oferta, restrições) e este `.clinerules`.
+2. Copiar `template-post-padrao.html` → novo arquivo com o slug definitivo.
+3. Preencher os 8 metadados **antes** de escrever o corpo (o Takeaway define a tese).
+4. Redigir com resposta direta no 1º parágrafo, tabela comparativa e FAQ de 4–6 itens.
+5. Atualizar JSON-LD (headline, description, datas, FAQ idêntico ao texto visível).
+6. Interligar: pilar + categoria + 1 artigo correlato + 1 calculadora quando fizer sentido.
+7. Rodar os dois auditores; corrigir tudo que for apontado.
+8. Registrar em `PROGRESS.md`: data, arquivo, palavra-chave, resultado dos auditores, pendências.
+9. Só então commitar/publicar. Conteúdo existente permanece intocado.
+
+---
+
+## 9. COMANDOS DE AUDITORIA
+
+```powershell
+py scripts/seo_checker.py .
+py scripts/geo_checker.py .
+```
+
+Saída em JSON ao final de cada execução; código de saída `0` = aprovado, `1` = pendências. Rascunhos (`*rascunho*`, `*draft*`), templates e o painel interno são ignorados automaticamente.
+
+---
+
+## 10. CHECKLIST FINAL DE PUBLICAÇÃO
+
+- [ ] 8 metadados no comentário HTML, com Takeaway no item 8.
+- [ ] `<title>` ≤ 60 e `description` ≤ 160, ambos iguais aos metadados 2 e 3.
+- [ ] Canonical sem `.html`, OG completo, `lang="pt-BR"`.
+- [ ] JSON-LD válido (`TechArticle` + `BreadcrumbList` + `FAQPage`).
+- [ ] 1 H1, ≥ 4 H2, subtitulo-banner como primeiro H2.
+- [ ] Capa 16:9 com `alt` técnico e autoria datada (publicado + atualizado).
+- [ ] ≥ 1 tabela comparativa (aço, resina ou classe SPI) e ≥ 3 links internos.
+- [ ] FAQ com 4–6 perguntas e schema idêntico ao texto visível.
+- [ ] Takeaway + CTA de cotação no fechamento.
+- [ ] `py scripts/seo_checker.py .` e `py scripts/geo_checker.py .` sem pendências.
+- [ ] Registro em `PROGRESS.md`.

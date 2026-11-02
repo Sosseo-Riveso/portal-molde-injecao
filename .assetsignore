@@ -5,3 +5,16 @@ _redirects
 _headers
 worker.js
 wrangler.json
+
+# ---------------------------------------------------------------
+# Auditoria local e governança: nunca publicar no CDN
+# ---------------------------------------------------------------
+scripts
+*.py
+*.pyc
+__pycache__
+.clinerules
+.clineignore
+PROJECT_CONTEXT.md
+PROGRESS.md
+template-post-padrao.html

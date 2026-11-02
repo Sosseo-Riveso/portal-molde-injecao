@@ -1,0 +1,15 @@
+# .clineignore — Portal Molde Injeção
+# Arquivos que NÃO devem ser carregados no contexto do agente Cline.
+# As auditorias são executadas pelo terminal (py scripts/...), não lidas em contexto.
+
+scripts/
+*.py
+*.pyc
+__pycache__/
+
+# Binários e documentos de planejamento (não são conteúdo do site)
+*.docx
+~$*
+.git/
+imagens/
+Logos/

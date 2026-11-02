@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE PADRÃO DE ARTIGO — PORTAL MOLDE INJEÇÃO (PMI)
+  ------------------------------------------------------
+  USO: copie este arquivo para o slug definitivo (ex.: meu-artigo.html) e substitua
+  todos os marcadores {{...}}. NÃO publique este arquivo (ele está no .assetsignore).
+
+  Ordem obrigatória da página:
+  H1 > H2 subtitulo_banner > barra de autoria/data > capa 16:9 > introdução direta
+  > pull quote técnico > seções H2 com tabela comparativa > bloco 2 colunas
+  > interlink > FAQ (Schema FAQPage) > Conclusão Estratégica + CTA de cotação.
+
+  Antes de publicar: py scripts/seo_checker.py .  |  py scripts/geo_checker.py .
+-->
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITULO_SEO}}</title>
+    <meta name="description" content="{{META_DESCRICAO}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://portalmoldeinjecao.com.br/{{SLUG}}">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portalmoldeinjecao.com.br/{{SLUG}}">
+    <meta property="og:title" content="{{TITULO_SEO}}">
+    <meta property="og:description" content="{{META_DESCRICAO}}">
+    <meta property="og:image" content="https://portalmoldeinjecao.com.br/imagens/{{IMAGEM_CAPA}}">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Portal Molde Injeção">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#0b1329',
+                            dark: '#0f172a',
+                            blue: '#1d4ed8',
+                            accent: '#0284c7',
+                            light: '#f8fafc',
+                            steel: '#334155'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        article table { width: 100%; border-collapse: collapse; }
+        article th, article td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; vertical-align: top; }
+        article thead th { background-color: #0b1329; color: #ffffff; font-weight: 700; font-size: 0.85rem; }
+        article tbody tr:nth-child(even) { background-color: #f8fafc; }
+        @media (max-width: 767px) { article table { display: block; width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; } }
+    </style>
+    <!-- Schema.org TechArticle + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "@id": "https://portalmoldeinjecao.com.br/{{SLUG}}#article",
+          "headline": "{{H1}}",
+          "alternativeHeadline": "{{SUBTITULO_BANNER}}",
+          "description": "{{META_DESCRICAO}}",
+          "inLanguage": "pt-BR",
+          "datePublished": "{{DATA_PUBLICACAO_ISO}}",
+          "dateModified": "{{DATA_ATUALIZACAO_ISO}}",
+          "author": {
+            "@type": "Organization",
+            "name": "Portal Molde Injeção",
+            "url": "https://portalmoldeinjecao.com.br/sobre"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Portal Molde Injeção",
+            "url": "https://portalmoldeinjecao.com.br/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://portalmoldeinjecao.com.br/Logos/logo-pmi-fundo-branco.webp"
+            }
+          },
+          "image": "https://portalmoldeinjecao.com.br/imagens/{{IMAGEM_CAPA}}",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://portalmoldeinjecao.com.br/{{SLUG}}"
+          },
+          "about": [
+            { "@type": "Thing", "name": "Molde de injeção plástica" },
+            { "@type": "Thing", "name": "Ferramentaria de precisão" },
+            { "@type": "Thing", "name": "Injeção termoplástica técnica" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalmoldeinjecao.com.br/" },
+            { "@type": "ListItem", "position": 2, "name": "{{CATEGORIA_NOME}}", "item": "https://portalmoldeinjecao.com.br/{{CATEGORIA_SLUG}}" },
+            { "@type": "ListItem", "position": 3, "name": "{{H1}}", "item": "https://portalmoldeinjecao.com.br/{{SLUG}}" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://portalmoldeinjecao.com.br/{{SLUG}}#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Quais dados técnicos a ferramentaria precisa para cotar o molde?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A cotação técnica exige o arquivo 3D da peça em STEP ou IGES, a resina termoplástica especificada, o volume mensal ou anual previsto, o acabamento superficial desejado e as tolerâncias críticas. Com esses dados a engenharia define classe SPI, aço, número de cavidades e sistema de alimentação em até 48 horas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como o número de cavidades altera o custo do molde e da peça?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Dobrar as cavidades eleva o investimento no ferramental entre 35% e 45%, mas reduz o custo unitário da peça praticamente pela metade, porque o custo de máquina e de ciclo é dividido por mais cavidades. O ponto de equilíbrio depende do lote anual: volumes abaixo de 50 mil peças raramente justificam ferramentas com mais de 4 cavidades."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quando vale a pena especificar câmara quente em vez de canal frio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A câmara quente se paga quando o volume anual supera cerca de 100 mil peças e a resina é de engenharia, pois elimina o galho e reduz o tempo de ciclo entre 10% e 20%. Em lotes curtos ou resinas de baixa estabilidade térmica, o canal frio continua sendo a opção de menor risco e menor investimento inicial."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Qual é o prazo médio de fabricação de um molde de injeção?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Moldes simples de 1 a 2 cavidades em aço P20 levam de 4 a 6 semanas entre projeto, usinagem CNC, eletroerosão e try-out. Ferramentas multicavidades com gavetas, câmara quente valvulada e aço H13 temperado ficam entre 10 e 16 semanas, dependendo da fila de tratamento térmico e da complexidade do desenho."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-blue selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+<!-- METADADOS DE SEO E GEO (OCULTOS NA VISUALIZAÇÃO) — 8 ITENS OBRIGATÓRIOS
+1. Palavra-chave Principal: {{PALAVRA_CHAVE}}
+2. Título SEO: {{TITULO_SEO}}
+3. Meta Descrição: {{META_DESCRICAO}}
+4. Resumo do Post (Excerpt): {{EXCERPT}}
+5. subtitulo_banner (H2 do Banner): {{SUBTITULO_BANNER}}
+6. Slug Amigável: /{{SLUG}}
+7. Opções de Títulos H1 Extras: (a) {{H1_ALTERNATIVO_1}} | (b) {{H1_ALTERNATIVO_2}}
+8. Conclusão Estratégica (Takeaway): {{TAKEAWAY}}
+-->
+
+  <!-- HEADER: manter o mesmo bloco <aside> + <header id="pmiMainHeader"> dos artigos publicados.
+       Copie e cole o header vigente para preservar navegação, logo e CTA de cotação. -->
+
+  <main class="w-full max-w-5xl min-w-0 mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-grow">
+    <article class="w-full min-w-0">
+
+      <!-- 1. Chip da categoria -->
+      <div class="mb-4">
+        <a href="/{{CATEGORIA_SLUG}}" class="inline-block px-3 py-1 rounded-full bg-blue-50 text-brand-blue text-xs font-bold uppercase tracking-wider hover:bg-blue-100 transition-colors">
+          {{CATEGORIA_NOME}}
+        </a>
+      </div>
+
+      <!-- 2. H1 -->
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy leading-tight mb-4">
+        {{H1}}
+      </h1>
+
+      <!-- 3. H2 do banner (confirma a promessa do H1) -->
+      <h2 class="subtitulo-banner text-xl sm:text-2xl font-semibold text-slate-600 leading-snug mb-6">
+        {{SUBTITULO_BANNER}}
+      </h2>
+
+      <!-- 4. Barra de autoria + datas -->
+      <div style="background-color: #f0f9ff; color: #0284c7; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-bottom: 25px; border-left: 3px solid #0284c7;">
+        Por <a href="/sobre" style="color: #0284c7; text-decoration: underline;">Portal Molde Injeção — Engenharia e Ferramentaria B2B</a> - Publicado em {{DATA_PUBLICACAO}} - Atualizado em {{DATA_ATUALIZACAO}}
+      </div>
+
+      <!-- 5. Imagem de capa 16:9 -->
+      <figure class="my-8">
+        <img src="imagens/{{IMAGEM_CAPA}}" alt="{{ALT_CAPA}}" class="w-full aspect-video object-cover rounded-xl shadow-md border border-slate-200" loading="eager">
+        <figcaption class="text-xs text-slate-500 italic mt-2 text-center">{{LEGENDA_CAPA}}</figcaption>
+      </figure>
+
+      <!-- 6. Introdução direta (pirâmide invertida)
+           Use padrão de resposta direta nas 2 primeiras frases:
+           "consiste em", "é definido como", "refere-se a", "em resumo". -->
+      <div class="prose prose-slate w-full min-w-0 max-w-none break-words space-y-5 text-slate-700 leading-relaxed text-base sm:text-lg">
+        <p>{{PARAGRAFO_1_RESPOSTA_DIRETA}}</p>
+        <p>{{PARAGRAFO_2_CONTEXTO_TECNICO}}</p>
+
+        <!-- 7. Pull quote técnico -->
+        <blockquote class="border-l-4 border-brand-accent bg-slate-50 p-5 rounded-r-xl my-6 italic text-brand-navy font-medium text-base">
+          "{{PULL_QUOTE}}"
+        </blockquote>
+
+        <!-- 8. Seções de desenvolvimento com tabela comparativa -->
+        <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">{{H2_SECAO_1}}</h2>
+        <p>{{RESPOSTA_CURTA_H2_1}}</p>
+
+        <table class="my-6 text-sm">
+          <thead>
+            <tr>
+              <th scope="col">Aço</th>
+              <th scope="col">Dureza típica</th>
+              <th scope="col">Indicação</th>
+              <th scope="col">Vida útil estimada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>P20 / 1.2311</strong></td>
+              <td>28–34 HRC</td>
+              <td>Protótipo e lote médio, peças sem carga abrasiva</td>
+              <td>100 mil–500 mil ciclos</td>
+            </tr>
+            <tr>
+              <td><strong>1.2738</strong></td>
+              <td>30–36 HRC</td>
+              <td>Moldes de médio e grande porte com alta seção</td>
+              <td>500 mil–1 milhão de ciclos</td>
+            </tr>
+            <tr>
+              <td><strong>H13 / 1.2344</strong></td>
+              <td>48–52 HRC</td>
+              <td>Alta abrasão, resinas com fibra de vidro</td>
+              <td>1 milhão+ ciclos</td>
+            </tr>
+            <tr>
+              <td><strong>Inox 420 / S136</strong></td>
+              <td>50–54 HRC</td>
+              <td>Resinas corrosivas (PVC, PC, flame retardant)</td>
+              <td>1 milhão+ ciclos</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">{{H2_SECAO_2}}</h2>
+        <p>{{RESPOSTA_CURTA_H2_2}}</p>
+        <ol class="list-decimal pl-6 space-y-2 my-4">
+          <li><strong>{{PASSO_1_TITULO}}:</strong> {{PASSO_1_DESCRICAO}}</li>
+          <li><strong>{{PASSO_2_TITULO}}:</strong> {{PASSO_2_DESCRICAO}}</li>
+          <li><strong>{{PASSO_3_TITULO}}:</strong> {{PASSO_3_DESCRICAO}}</li>
+        </ol>
+
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">{{H2_SECAO_3}}</h2>
+        <p>{{RESPOSTA_CURTA_H2_3}}</p>
+        <ul class="list-disc pl-6 space-y-2 my-4">
+          <li><strong>{{ITEM_1_TITULO}}:</strong> {{ITEM_1_DESCRICAO}}</li>
+          <li><strong>{{ITEM_2_TITULO}}:</strong> {{ITEM_2_DESCRICAO}}</li>
+          <li><strong>{{ITEM_3_TITULO}}:</strong> {{ITEM_3_DESCRICAO}}</li>
+        </ul>
+      </div>
+
+      <!-- 9. Bloco de duas colunas (imagem quadrada + H3) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-10">
+        <figure class="my-0">
+          <img src="imagens/{{IMAGEM_QUADRADA}}" alt="{{ALT_IMAGEM_QUADRADA}}" class="w-full aspect-square object-cover rounded-xl shadow-md border border-slate-200" loading="lazy">
+        </figure>
+        <div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">{{H3_BLOCO_DUAS_COLUNAS}}</h3>
+          <p class="text-slate-700 leading-relaxed text-base">{{TEXTO_BLOCO_DUAS_COLUNAS}}</p>
+        </div>
+      </div>
+
+      <!-- 10. Interlink pré-FAQ -->
+      <div class="bg-blue-50/70 border-l-4 border-brand-blue p-5 rounded-r-xl my-8 text-slate-800 text-base">
+        <p>Compare as opções no pilar de <a href="/fabricacao-de-moldes-de-injecao" class="text-brand-blue font-bold underline">fabricação de moldes de injeção</a>, simule o investimento na <a href="/calculadora-custo-peca-injetada" class="text-brand-blue font-bold underline">Calculadora de Custo de Peça Injetada</a> e aprofunde o tema no guia <a href="/{{ARTIGO_CORRELATO_SLUG}}" class="text-brand-blue font-bold underline">{{ARTIGO_CORRELATO_TITULO}}</a>.</p>
+      </div>
+
+      <!-- 11. FAQ estruturado (idêntico ao Schema FAQPage do head) -->
+      <section class="mt-12 pt-8 border-t border-slate-200">
+        <h2 class="text-2xl font-extrabold text-brand-navy mb-6">Perguntas Frequentes sobre {{PALAVRA_CHAVE_TITULO}}</h2>
+        <div class="space-y-4">
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Quais dados técnicos a ferramentaria precisa para cotar o molde?</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">A cotação técnica exige o arquivo 3D da peça em STEP ou IGES, a resina termoplástica especificada, o volume mensal ou anual previsto, o acabamento superficial desejado e as tolerâncias críticas. Com esses dados a engenharia define classe SPI, aço, número de cavidades e sistema de alimentação em até 48 horas.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Como o número de cavidades altera o custo do molde e da peça?</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Dobrar as cavidades eleva o investimento no ferramental entre 35% e 45%, mas reduz o custo unitário da peça praticamente pela metade, porque o custo de máquina e de ciclo é dividido por mais cavidades. O ponto de equilíbrio depende do lote anual: volumes abaixo de 50 mil peças raramente justificam ferramentas com mais de 4 cavidades.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Quando vale a pena especificar câmara quente em vez de canal frio?</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">A câmara quente se paga quando o volume anual supera cerca de 100 mil peças e a resina é de engenharia, pois elimina o galho e reduz o tempo de ciclo entre 10% e 20%. Em lotes curtos ou resinas de baixa estabilidade térmica, o canal frio continua sendo a opção de menor risco e menor investimento inicial.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+            <h3 class="text-lg font-bold text-brand-navy mb-2">Qual é o prazo médio de fabricação de um molde de injeção?</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Moldes simples de 1 a 2 cavidades em aço P20 levam de 4 a 6 semanas entre projeto, usinagem CNC, eletroerosão e try-out. Ferramentas multicavidades com gavetas, câmara quente valvulada e aço H13 temperado ficam entre 10 e 16 semanas, dependendo da fila de tratamento térmico e da complexidade do desenho.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 12. Conclusão Estratégica (Takeaway) + CTA de cotação técnica -->
+      <section class="mt-10 bg-brand-navy text-white rounded-2xl p-8 shadow-lg">
+        <h2 class="text-2xl font-bold mb-3">Conclusão Estratégica para Engenharia e Suprimentos B2B</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">{{TAKEAWAY}}</p>
+        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">Para receber a cotação técnica, envie o arquivo 3D (STEP ou IGES), a resina especificada, o volume anual previsto e as tolerâncias críticas do componente. A análise de engenharia retorna com classe SPI sugerida, aço indicado, número de cavidades e prazo de try-out.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contato" class="bg-brand-accent hover:bg-sky-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">Solicitar Cotação Técnica</a>
+          <a href="/calculadora-tonelagem-injetora" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-lg text-sm border border-white/20 transition-colors">Calcular Tonelagem da Injetora</a>
+        </div>
+      </section>
+
+      <!-- 13. Continue lendo -->
+      <section class="mt-12 pt-8 border-t border-slate-200">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+          <h3 class="text-xl font-extrabold text-brand-navy">Continue Lendo sobre {{CATEGORIA_NOME}}</h3>
+          <a href="/{{CATEGORIA_SLUG}}" class="text-xs font-bold text-brand-blue hover:underline uppercase tracking-wider">Acessar Hub da Categoria &rarr;</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="/{{CARD_1_SLUG}}" class="group bg-white border border-slate-200 hover:border-brand-accent rounded-xl p-4 transition-all shadow-sm">
+            <span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">{{CARD_1_CATEGORIA}}</span>
+            <h4 class="font-bold text-brand-navy group-hover:text-brand-blue text-sm mt-1 mb-2 leading-snug">{{CARD_1_TITULO}}</h4>
+            <span class="text-xs font-semibold text-brand-blue">Ler estudo técnico &rarr;</span>
+          </a>
+          <a href="/{{CARD_2_SLUG}}" class="group bg-white border border-slate-200 hover:border-brand-accent rounded-xl p-4 transition-all shadow-sm">
+            <span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">{{CARD_2_CATEGORIA}}</span>
+            <h4 class="font-bold text-brand-navy group-hover:text-brand-blue text-sm mt-1 mb-2 leading-snug">{{CARD_2_TITULO}}</h4>
+            <span class="text-xs font-semibold text-brand-blue">Ler estudo técnico &rarr;</span>
+          </a>
+          <a href="/{{CARD_3_SLUG}}" class="group bg-white border border-slate-200 hover:border-brand-accent rounded-xl p-4 transition-all shadow-sm">
+            <span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">{{CARD_3_CATEGORIA}}</span>
+            <h4 class="font-bold text-brand-navy group-hover:text-brand-blue text-sm mt-1 mb-2 leading-snug">{{CARD_3_TITULO}}</h4>
+            <span class="text-xs font-semibold text-brand-blue">Ler estudo técnico &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- FOOTER: manter o mesmo bloco <footer> dos artigos publicados (colunas de soluções,
+       blog, institucional e aviso legal). Copie do artigo vigente para evitar divergência. -->
+
+  <script src="js/lead-tracker.js"></script>
+</body>
+</html>
+
+<!--
+  CHECKLIST DE PUBLICAÇÃO (não remover)
+  [ ] 8 metadados preenchidos, com Takeaway no item 8
+  [ ] title <= 60 e description <= 160 iguais aos metadados 2 e 3
+  [ ] canonical sem .html, OG completo, lang=pt-BR
+  [ ] JSON-LD TechArticle + BreadcrumbList + FAQPage atualizados
+  [ ] 1 H1, >= 4 H2, subtitulo-banner como primeiro H2
+  [ ] capa 16:9 com alt técnico + autoria datada
+  [ ] tabela comparativa + >= 3 links internos
+  [ ] FAQ (4-6) idêntico ao schema
+  [ ] Takeaway + CTA de cotação
+  [ ] py scripts/seo_checker.py . | py scripts/geo_checker.py .
+  [ ] registro em PROGRESS.md e atualização do sitemap
+-->
+
