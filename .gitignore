@@ -14,3 +14,8 @@ __pycache__/
 # Estado local do Wrangler (account id + sourcemap do Worker)
 .wrangler/
 
+# Fontes de imagem dos rascunhos (67 MB): nao versionar, apenas os .webp gerados
+rascunhos/*.jpg
+rascunhos/*.jpeg
+rascunhos/*.png
+
