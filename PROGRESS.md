@@ -154,7 +154,20 @@ Validação estrutural adicional com `html.parser` (não regex) nas 23 páginas:
 
 **Placar GEO:** 20 páginas em 94%, 1 em 100% (`diferenca-entre-aco-...`), `politica-de-privacidade` 50% e `termos-de-uso` 44%. Média global **90%** — meta atingida.
 
-**Pendência declarada:** as 2 páginas legais são as únicas abaixo de 94% e limitam a média. Elas não estavam no escopo autorizado do Lote 4 (que listou pilares, index, sobre, contato e calculadoras). Com uma FAQ curta de privacidade (3–4 perguntas), `datePublished` e takeaway, ambas iriam a ~94% e a média global subiria para ~94%.
+### Refinamento on-page da Home (06/11/2026)
+
+Intervenção restrita a `index.html`, sem tocar em schema, metas ou CLS.
+
+| Item | Implementação |
+|---|---|
+| Reforço transacional (RFQ + CAD) | Parágrafo sob os CTAs do hero: "Cotação técnica e análise DFM ágil via arquivos CAD 3D (formatos STEP, IGES ou Parasolid) com resposta em até 48 horas úteis e garantia de confidencialidade técnica (NDA)." + pedido do modelo 3D, resina e volume anual |
+| Geo-localização industrial | Bloco "Cobertura Técnica Regional" dentro da seção *Parque Fabril Homologado*: Região Metropolitana de Campinas, Grande ABC, Sorocaba, Vale do Paraíba e Polo Industrial de Joinville / Região Sul |
+| Destaque das calculadoras | A faixa de botões foi convertida em **grid de 2 cards** (`id="calculadoras"`), cada um com H3, descrição técnica e link limpo: `/calculadora-tonelagem-injetora` (pressão por resina + área projetada) e `/calculadora-custo-peca-injetada` (ciclo, matéria-prima, custo-hora e amortização) |
+
+Reauditoria: `index.html` **SEO 96%** (0 erros) e **GEO 94%** (0 críticas), subindo de 2.908 para 3.047 palavras visíveis. Placar global preservado: SEO **97%**, GEO **90%**. Estrutura validada: 7 `<script>` abertos/fechados, 1 `<h1>`, 1 bloco `ld+json`, 23 `<h3>`.
+
+`sitemap.xml` não exigiu alteração — o `lastmod` da home já era 2026-11-06.
+
 
 
 
