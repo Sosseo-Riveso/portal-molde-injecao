@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custo Hora-Máquina de Injetora: Como Calcular | Portal Molde</title>
+    <meta name="description" content="Composição da hora-máquina de injetora: energia em kWh, operador, depreciação, manutenção e ocupação real. Fórmula para faixa de R$ 90 a R$ 220 por hora.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://portalmoldeinjecao.com.br/custo-hora-maquina-injetora">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://portalmoldeinjecao.com.br/custo-hora-maquina-injetora">
+    <meta property="og:title" content="Custo Hora-Máquina de Injetora: Como Calcular | Portal Molde">
+    <meta property="og:description" content="Composição da hora-máquina de injetora: energia em kWh, operador, depreciação, manutenção e ocupação real. Fórmula para faixa de R$ 90 a R$ 220 por hora.">
+    <meta property="og:image" content="https://portalmoldeinjecao.com.br/imagens/injetora-1-servo-hidraulica-80t-150t-precisao.webp">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Portal Molde Injeção">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#0b1329',
+                            dark: '#0f172a',
+                            blue: '#1d4ed8',
+                            accent: '#0284c7',
+                            light: '#f8fafc',
+                            steel: '#334155'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        article table { width: 100%; border-collapse: collapse; }
+        article th, article td { border: 1px solid #e2e8f0; padding: 10px 14px; text-align: left; vertical-align: top; }
+        article thead th { background-color: #0b1329; color: #ffffff; font-weight: 700; font-size: 0.85rem; }
+        article tbody tr:nth-child(even) { background-color: #f8fafc; }
+        @media (max-width: 767px) { article table { display: block; width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; } }
+    </style>
+
+    <!-- Schema.org TechArticle + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://portalmoldeinjecao.com.br/custo-hora-maquina-injetora#article",
+      "headline": "Custo Hora-Máquina de Injetora: Como Calcular a Taxa Real",
+      "alternativeHeadline": "Custo hora-máquina de injetora consiste em somar energia, mão de obra, depreciação e manutenção e dividir pela ocupação real, não pela capacidade nominal.",
+      "description": "Composição da hora-máquina de injetora: energia em kWh, operador, depreciação, manutenção e ocupação real. Fórmula para faixa de R$ 90 a R$ 220 por hora.",
+      "inLanguage": "pt-BR",
+      "datePublished": "2026-12-07",
+      "dateModified": "2026-12-07",
+      "author": {
+        "@type": "Organization",
+        "name": "Portal Molde Injeção — Engenharia e Ferramentaria B2B",
+        "url": "https://portalmoldeinjecao.com.br/sobre"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://portalmoldeinjecao.com.br/#organization"
+      },
+      "image": "https://portalmoldeinjecao.com.br/imagens/injetora-1-servo-hidraulica-80t-150t-precisao.webp",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://portalmoldeinjecao.com.br/custo-hora-maquina-injetora"
+      },
+      "articleSection": "Processos e Custos de Injeção Plástica",
+      "keywords": "custo hora maquina injetora"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://portalmoldeinjecao.com.br/custo-hora-maquina-injetora#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como calcular o custo hora-máquina de uma injetora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Somando energia, mão de obra, depreciação e manutenção em base anual e dividindo pelas horas efetivamente produtivas. Uma injetora de 200 t com custo anual de R$ 700 mil e 5.000 horas produtivas custa R$ 140 por hora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o peso da energia elétrica na hora-máquina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Entre 10% e 20% do total. Em injetoras hidráulicas antigas pode chegar a 25%; em máquinas 100% elétricas cai para 8% a 12%. Medir com analisador de energia é o único jeito de não errar a conta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Devo incluir depreciação no custo por hora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A depreciação é custo real de reposição do ativo: uma injetora de R$ 900 mil depreciada em 10 anos e 5.000 horas por ano adiciona R$ 90 por hora, independentemente de a máquina estar produzindo ou parada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que meu fornecedor cobra mais por hora do que a minha planilha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Provavelmente por ocupação menor e custo de capital maior. A taxa depende das horas produtivas reais: quem roda 5.000 horas por ano cobra mais por hora do que quem roda 7.000, mesmo com equipamento equivalente."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://portalmoldeinjecao.com.br/custo-hora-maquina-injetora#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://portalmoldeinjecao.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Processos e Custos de Injeção Plástica",
+          "item": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Custo Hora-Máquina de Injetora",
+          "item": "https://portalmoldeinjecao.com.br/custo-hora-maquina-injetora"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-brand-blue selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+<!-- METADADOS DE SEO E GEO (OCULTOS NA VISUALIZACAO) — 8 ITENS OBRIGATORIOS
+1. Palavra-chave Principal: custo hora maquina injetora
+2. Titulo SEO: Custo Hora-Máquina de Injetora: Como Calcular | Portal Molde
+3. Meta Descricao: Composição da hora-máquina de injetora: energia em kWh, operador, depreciação, manutenção e ocupação real. Fórmula para faixa de R$ 90 a R$ 220 por hora.
+4. Resumo do Post (Excerpt): Fórmula e composição da hora-máquina de injetora: energia, operador, depreciação, manutenção e taxa de ocupação aplicada ao custo por peça.
+5. subtitulo_banner (H2 do Banner): Custo hora-máquina de injetora consiste em somar energia, mão de obra, depreciação e manutenção e dividir pela ocupação real, não pela capacidade nominal.
+6. Slug Amigavel: /custo-hora-maquina-injetora
+7. Opcoes de Titulos H1 Extras: (a) Hora-Máquina de Injeção: Fórmula, kWh e Depreciação | (b) Por Que a Hora da Injetora Custa de R$ 90 a R$ 220
+8. Conclusao Estrategica (Takeaway): A hora-máquina correta divide o custo fixo pela ocupação real da injetora; usar capacidade nominal subestima a taxa em 20% a 35%.
+-->
+
+<aside aria-label="Aviso Institucional" class="bg-brand-navy text-slate-300 text-xs py-2 px-3 sm:px-6 lg:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5 sm:gap-2">
+      <div class="w-full md:w-auto flex items-center justify-center md:justify-start gap-2 text-[11px] sm:text-xs text-center md:text-left">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+        <span><strong>Capacidade Fabril Disponível:</strong> Injetoras de 80t a 350t e Matrizaria CNC de Alta Precisão</span>
+      </div>
+      <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 sm:gap-4 text-slate-400">
+        <span class="text-[11px] sm:text-xs leading-tight text-left"><strong class="text-sky-400 font-bold">ISO 9001:2015</strong> | Tolerâncias Centesimais (±0,02 mm)</span>
+        <a href="/contato" class="md:hidden inline-flex items-center justify-center whitespace-nowrap px-2.5 py-1 rounded-md text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-sm transition-all shrink-0">Cotar Molde ou Injeção</a>
+      </div>
+    </div>
+  </aside>
+  <!-- Navigation Header -->
+  <style id="pmi-sticky-header-css">
+    #pmiMainHeader,
+    #pmiMainHeader .pmi-header-inner,
+    #pmiMainHeader .pmi-logo-img,
+    #pmiMainHeader .pmi-logo-title,
+    #pmiMainHeader .pmi-logo-subtitle,
+    #pmiMainHeader nav,
+    #pmiMainHeader nav > a,
+    #pmiMainHeader nav > div,
+    #pmiMainHeader .pmi-header-cta,
+    #pmiMainHeader .pmi-mobile-toggle {
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #pmiMainHeader.pmi-scrolled {
+      box-shadow: 0 2px 10px -2px rgba(15, 23, 42, 0.08);
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-header-inner {
+      height: 2.375rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-logo-img {
+      height: 1.5rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-logo-title {
+      font-size: 0.72rem !important;
+      line-height: 1.05 !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-logo-subtitle {
+      font-size: 0.5rem !important;
+      line-height: 1 !important;
+      margin-top: 1px !important;
+    }
+    #pmiMainHeader.pmi-scrolled nav {
+      font-size: 0.74rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled nav > a,
+    #pmiMainHeader.pmi-scrolled nav > div {
+      padding-top: 0.15rem !important;
+      padding-bottom: 0.15rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-header-cta {
+      padding: 0.22rem 0.65rem !important;
+      font-size: 0.7rem !important;
+      border-radius: 0.375rem !important;
+    }
+    #pmiMainHeader.pmi-scrolled .pmi-mobile-toggle {
+      padding: 0.2rem !important;
+    }
+    @media (hover: hover) {
+      #pmiMainHeader.pmi-scrolled:hover .pmi-header-inner {
+        height: 3.75rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-logo-img {
+        height: 2.25rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-logo-title {
+        font-size: 0.94rem !important;
+        line-height: 1.2 !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-logo-subtitle {
+        font-size: 0.65rem !important;
+        line-height: 1.15 !important;
+        margin-top: 2px !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover nav {
+        font-size: 0.8125rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover nav > a,
+      #pmiMainHeader.pmi-scrolled:hover nav > div {
+        padding-top: 0.4rem !important;
+        padding-bottom: 0.4rem !important;
+      }
+      #pmiMainHeader.pmi-scrolled:hover .pmi-header-cta {
+        padding: 0.42rem 0.85rem !important;
+        font-size: 0.8125rem !important;
+        border-radius: 0.5rem !important;
+      }
+    }
+  </style>
+  <header id="pmiMainHeader" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="pmi-header-inner max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2 lg:gap-3">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <img src="Logos/logo-pmi-fundo-branco.webp" alt="Logo Portal Molde Injeção" class="pmi-logo-img h-8 sm:h-9 w-auto object-contain group-hover:scale-105 transition-transform">
+        <div class="flex flex-col justify-center">
+          <span class="pmi-logo-title text-sm sm:text-[15px] font-black tracking-normal text-slate-900 block leading-tight whitespace-nowrap">PORTAL MOLDE INJEÇÃO</span>
+          <span class="pmi-logo-subtitle text-[9.5px] sm:text-[10.5px] uppercase tracking-normal text-blue-700 font-bold block whitespace-nowrap mt-0.5">Engenharia e Ferramentaria B2B</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu (Estilo FG Car com Submenu de Serviços) -->
+      <nav class="hidden md:flex items-center gap-2 lg:gap-3 xl:gap-3.5 text-xs lg:text-[13px]" aria-label="Menu Principal">
+        <a href="/" class="whitespace-nowrap transition-colors py-2 text-slate-700 hover:text-blue-700 font-semibold">Início</a>
+
+        <!-- Dropdown Serviços -->
+        <div class="relative group py-2">
+          <button type="button" class="flex items-center gap-1 transition-colors whitespace-nowrap focus:outline-none text-slate-700 hover:text-blue-700 font-semibold" aria-haspopup="true">
+            <span>Serviços</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="absolute left-0 top-full pt-1.5 w-72 hidden group-hover:block z-50 transition-all duration-150">
+            <div class="bg-white rounded-xl shadow-2xl border border-slate-200 p-2 space-y-1">
+              <a href="/fabricacao-de-moldes-de-injecao" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-blue-600 font-bold text-sm leading-none mt-0.5">🔩</span>
+                <div>
+                  <div class="font-bold text-slate-900">Fabricação de Moldes</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Matrizaria CNC 5 eixos em aços P20, H13 e 2738</div>
+                </div>
+              </a>
+              <a href="/servicos-de-injecao-plastica" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-sky-600 font-bold text-sm leading-none mt-0.5">🏭</span>
+                <div>
+                  <div class="font-bold text-slate-900">Injeção Plástica</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Produção seriada em injetoras de 80t a 350t</div>
+                </div>
+              </a>
+              <a href="/engenharia-e-desenvolvimento-de-moldes" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-indigo-600 font-bold text-sm leading-none mt-0.5">📐</span>
+                <div>
+                  <div class="font-bold text-slate-900">Engenharia &amp; CAD</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Projetos 3D, DFM e simulação reológica Moldflow</div>
+                </div>
+              </a>
+              <a href="/manutencao-e-modificacao-de-moldes" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">🛠</span>
+                <div>
+                  <div class="font-bold text-slate-900">Manutenção</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Solda a laser, polimento SPI e ajuste de bancada</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown Calculadoras -->
+        <div class="relative group py-2" id="calculadorasDropdownGroup">
+          <button type="button" class="flex items-center gap-1 transition-colors whitespace-nowrap focus:outline-none text-blue-800 hover:text-blue-700 font-bold" id="calcDropdownBtn" aria-expanded="false" aria-haspopup="true">
+            <span>Calculadoras</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" id="calcDropdownArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full pt-1.5 w-64 hidden group-hover:block z-50 transition-all duration-150" id="calcDropdownMenu">
+            <div class="bg-white rounded-xl shadow-2xl border border-slate-200 p-2 space-y-1">
+              <a href="/calculadora-tonelagem-injetora" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-blue-600 font-bold text-sm leading-none mt-0.5">⚙</span>
+                <div>
+                  <div class="font-bold text-slate-900">Calculadora de Tonelagem</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Força de fechamento da injetora</div>
+                </div>
+              </a>
+              <a href="/calculadora-custo-peca-injetada" class="flex items-start gap-2.5 px-3 py-2.5 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">
+                <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">💰</span>
+                <div>
+                  <div class="font-bold text-slate-900">Calculadora de Custo de Peça</div>
+                  <div class="text-[11px] text-slate-500 font-normal">Preço unitário e taxa horária</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown Blog Técnico -->
+        <div class="relative group py-2">
+          <a href="/categoria-projeto-e-engenharia-de-moldes" class="flex items-center gap-1 transition-colors whitespace-nowrap py-2 text-blue-700 font-bold">
+            <span>Blog Técnico</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full pt-1.5 w-72 hidden group-hover:block z-50 transition-all duration-150">
+            <div class="bg-white rounded-xl shadow-2xl border border-slate-200 p-2 space-y-1">
+              <a href="/categoria-projeto-e-engenharia-de-moldes" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">📐 Projeto e Engenharia de Moldes</a>
+              <a href="/categoria-ferramentaria-e-acos-para-moldes" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">🔩 Ferramentaria e Aços para Moldes</a>
+              <a href="/categoria-processos-e-custos-de-injecao-plastica" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">🏭 Processos e Custos de Injeção</a>
+              <a href="/categoria-manutencao-e-qualidade-de-matrizes" class="block px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-colors">🛠 Manutenção e Qualidade de Matrizes</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="/sobre" class="whitespace-nowrap transition-colors py-2 text-slate-700 hover:text-blue-700 font-semibold">Sobre</a>
+        <a href="/contato" class="whitespace-nowrap transition-colors py-2 text-slate-700 hover:text-blue-700 font-semibold">Contato</a>
+      </nav>
+
+      <!-- CTA Button & Mobile Toggle -->
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="/contato" class="pmi-header-cta hidden md:inline-flex items-center justify-center whitespace-nowrap px-3 lg:px-3.5 py-1.5 rounded-lg text-xs lg:text-[13px] font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-md shadow-blue-700/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          Cotar Molde ou Injeção
+        </a>
+        <button type="button" onclick="var m=document.getElementById('pmiMobileMenu');if(m)m.classList.toggle('hidden');" class="pmi-mobile-toggle md:hidden inline-flex items-center justify-center p-1.5 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Abrir Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="pmiMobileMenu" class="hidden md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-7 space-y-2.5 shadow-xl max-h-[82vh] overflow-y-auto" style="max-height: calc(100dvh - 3.75rem); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;">
+      <a href="/" class="block px-3 py-2.5 rounded-lg text-[15px] font-bold text-slate-800 hover:bg-blue-50" style="font-size:15px">Início</a>
+      <div class="px-3 py-1">
+        <div class="text-[11px] font-bold uppercase tracking-wider text-blue-700 mb-1.5">Serviços</div>
+        <div class="pl-2 space-y-1.5 border-l-2 border-blue-100">
+          <a href="/fabricacao-de-moldes-de-injecao" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Fabricação de Moldes</a>
+          <a href="/servicos-de-injecao-plastica" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Injeção Plástica</a>
+          <a href="/engenharia-e-desenvolvimento-de-moldes" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Engenharia &amp; CAD</a>
+          <a href="/manutencao-e-modificacao-de-moldes" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Manutenção</a>
+        </div>
+      </div>
+      <div class="px-3 py-1">
+        <div class="text-[11px] font-bold uppercase tracking-wider text-blue-700 mb-1.5">Calculadoras</div>
+        <div class="pl-2 space-y-1.5 border-l-2 border-blue-100">
+          <a href="/calculadora-tonelagem-injetora" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Calculadora de Tonelagem</a>
+          <a href="/calculadora-custo-peca-injetada" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Calculadora de Custo de Peça</a>
+        </div>
+      </div>
+      <div class="px-3 py-1">
+        <div class="text-[11px] font-bold uppercase tracking-wider text-blue-700 mb-1.5">Blog Técnico</div>
+        <div class="pl-2 space-y-1.5 border-l-2 border-blue-100">
+          <a href="/categoria-projeto-e-engenharia-de-moldes" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Projeto e Engenharia de Moldes</a>
+          <a href="/categoria-ferramentaria-e-acos-para-moldes" class="block py-1 text-xs font-semibold text-slate-700 hover:bg-blue-700">Ferramentaria e Aços para Moldes</a>
+          <a href="/categoria-processos-e-custos-de-injecao-plastica" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Processos e Custos de Injeção</a>
+          <a href="/categoria-manutencao-e-qualidade-de-matrizes" class="block py-2 px-2 rounded-lg text-[14.5px] font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" style="font-size:14.5px;line-height:1.35">Manutenção e Qualidade de Matrizes</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100">
+        <a href="/sobre" class="text-center py-2 rounded-lg text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200">Sobre Nós</a>
+        <a href="/contato" class="text-center py-2 rounded-lg text-xs font-bold text-white bg-blue-700 hover:bg-blue-800">Contato / RFQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="w-full max-w-5xl min-w-0 mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 flex-grow">
+    <article class="w-full min-w-0">
+
+      <div class="mb-4">
+        <a href="/categoria-processos-e-custos-de-injecao-plastica" class="inline-block px-3 py-1 rounded-full bg-blue-50 text-brand-blue text-xs font-bold uppercase tracking-wider hover:bg-blue-100 transition-colors">Processos e Custos de Injeção Plástica</a>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-brand-navy leading-tight mb-4">Custo Hora-Máquina de Injetora: Como Calcular a Taxa Real</h1>
+
+      <h2 class="subtitulo-banner text-xl sm:text-2xl font-semibold text-slate-600 leading-snug mb-6">Custo hora-máquina de injetora consiste em somar energia, mão de obra, depreciação e manutenção e dividir pela ocupação real, não pela capacidade nominal.</h2>
+
+      <div style="background-color: #f0f9ff; color: #0284c7; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-bottom: 25px; border-left: 3px solid #0284c7;">
+        Por <a rel="author" href="/sobre" style="color: #0284c7; text-decoration: underline;">Portal Molde Injeção — Engenharia e Ferramentaria B2B</a> - Publicado em <time datetime="2026-12-07">07/12/2026</time> - Atualizado em <time datetime="2026-12-07">07/12/2026</time>
+      </div>
+
+      <figure class="my-8">
+        <img src="/imagens/injetora-1-servo-hidraulica-80t-150t-precisao.webp" alt="Injetora servo-hidráulica de 80 a 150 toneladas usada no cálculo de hora-máquina" class="w-full aspect-video object-cover rounded-xl shadow-md border border-slate-200" loading="eager" width="1200" height="675">
+        <figcaption class="text-xs text-slate-500 italic mt-2 text-center">A taxa real por hora depende do regime de ocupação, não apenas da potência instalada.</figcaption>
+      </figure>
+
+      <div class="prose prose-slate w-full min-w-0 max-w-none break-words space-y-5 text-slate-700 leading-relaxed text-base sm:text-lg">
+        <p>Custo hora-máquina de injetora consiste em somar quatro custos — energia, mão de obra, depreciação e manutenção — e dividir pela quantidade de horas efetivamente produtivas, não pela capacidade teórica. É essa divisão que explica por que a mesma máquina aparece a R$ 90 em uma planta e a R$ 220 em outra.</p>
+        <p>A fórmula é simples, o erro é de base. Usar 7.200 horas anuais de capacidade nominal em uma injetora que roda 5.000 horas produtivas subestima a taxa em 30%, e o fornecedor que precifica assim descobre o prejuízo no fechamento do trimestre. A hora-máquina precisa ser recalculada a cada revisão de tarifa de energia e de depreciação.</p>
+
+        <blockquote class="border-l-4 border-brand-accent bg-slate-50 p-5 rounded-r-xl my-6 italic text-brand-navy font-medium text-base">
+          "Hora-máquina não é o que a máquina pode produzir: é o que ela efetivamente produz e o custo fixo que precisa cobrir nesse tempo."
+        </blockquote>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Composição do custo por faixa de tonelagem</h2>
+        <p>A energia elétrica é o item mais volátil e o mais fácil de medir. A depreciação e a manutenção são proporcionais ao investimento, e a mão de obra depende do número de máquinas por operador.</p>
+
+        <div class="overflow-x-auto my-6 not-prose"><table class="text-sm"><thead><tr><th scope="col">Faixa de tonelagem</th><th scope="col">Potência média</th><th scope="col">Energia por hora</th><th scope="col">Custo total estimado</th></tr></thead><tbody><tr><td>80 t a 150 t</td><td>18 a 30 kW</td><td>R$ 11 a R$ 24</td><td>R$ 90 a R$ 130/h</td></tr><tr><td>160 t a 250 t</td><td>30 a 55 kW</td><td>R$ 18 a R$ 44</td><td>R$ 130 a R$ 175/h</td></tr><tr><td>260 t a 350 t</td><td>55 a 90 kW</td><td>R$ 44 a R$ 72</td><td>R$ 175 a R$ 220/h</td></tr><tr><td>350 t+ / elétrica</td><td>40 a 70 kW</td><td>R$ 32 a R$ 56</td><td>R$ 190 a R$ 260/h</td></tr></tbody></table></div><p class="text-xs text-slate-500">Base: tarifa industrial de R$ 0,62 a R$ 0,80 por kWh, operador com encargos, depreciação em 10 anos e manutenção em 3% a 5% do valor da máquina por ano.</p>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">A fórmula em quatro passos</h2>
+        <p>Calcule o custo anual total da máquina, divida pelas horas produtivas reais e aplique ao tempo de ciclo. O resultado é a base para negociar preço por peça com qualquer fornecedor.</p>
+        <ol class="list-decimal pl-6 space-y-2 my-4"><li><strong>Some o custo anual:</strong> energia medida em kWh, mão de obra com encargos, depreciação e manutenção.</li><li><strong>Divida pelas horas produtivas:</strong> horas em que a máquina injeta, não as horas de calendário nem a capacidade nominal.</li><li><strong>Aplique ao ciclo:</strong> multiplique a taxa horária pelo tempo de ciclo em horas e divida pelo número de cavidades.</li><li><strong>Some material e refugo:</strong> resina e perda de partida entram separadas da hora-máquina no custo final.</li></ol>
+
+        <h2 class="text-2xl font-bold text-brand-navy mt-8 mb-3">Erros que distorcem a taxa e o preço</h2>
+        <p>Quatro equívocos aparecem em quase toda planilha de custo de injeção. Todos inflam ou reduzem artificialmente o preço por peça.</p>
+        <ul class="list-disc pl-6 space-y-2 my-4"><li><strong>Capacidade nominal:</strong> usar 24 h por dia, 300 dias por ano, ignora paradas, setup e manutenção.</li><li><strong>Depreciação esquecida:</strong> máquina de R$ 900 mil em 10 anos adiciona R$ 90/h se rodar 5.000 h/ano.</li><li><strong>Energia estimada:</strong> medir o consumo real com analisador evita erro de 20% a 40% em injetoras antigas.</li><li><strong>Ocupação otimista:</strong> taxa de 85% de ocupação quando a real é 55% derruba a margem sem aparecer no orçamento.</li></ul>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-10">
+        <figure class="my-0">
+          <img src="/imagens/calculo-forca-fechamento-tonelagem-injetora-industrial.webp" alt="Cálculo de força de fechamento e tonelagem para seleção de injetora e custo hora-máquina" class="w-full aspect-square object-cover rounded-xl shadow-md border border-slate-200" loading="lazy" width="800" height="800">
+        </figure>
+        <div>
+          <h3 class="text-xl font-bold text-brand-navy mb-3">Tonelagem correta reduz a hora-máquina</h3>
+          <p class="text-slate-700 leading-relaxed text-base">Selecionar injetora superdimensionada é erro de custo silencioso: uma máquina de 350 t rodando molde de 120 t consome mais energia, deprecia mais caro e cobra hora maior. Calcular a força de fechamento antes de escolher a máquina reduz a taxa em 15% a 25%.</p>
+        </div>
+      </div>
+
+      <section class="bg-slate-50 border border-slate-200 rounded-2xl p-6 my-10">
+        <h3 class="text-lg font-extrabold text-brand-navy mb-3">Continue a análise técnica</h3>
+        <ul class="space-y-2 text-sm"><li><a href="/servicos-de-injecao-plastica" class="text-brand-blue font-semibold hover:underline">Terceirização de injeção plástica seriada (pilar)</a></li><li><a href="/categoria-processos-e-custos-de-injecao-plastica" class="text-brand-blue font-semibold hover:underline">Hub: Processos e Custos de Injeção Plástica</a></li><li><a href="/calculadora-custo-peca-injetada" class="text-brand-blue font-semibold hover:underline">Calculadora de custo por peça injetada</a></li></ul>
+      </section>
+
+      <section class="my-10">
+        <h2 class="text-2xl font-bold text-brand-navy mb-4">Perguntas Frequentes</h2>
+        <div class="space-y-5"><div class="bg-white rounded-xl p-6 border border-slate-200"><h3 class="text-base font-bold text-slate-900 mb-2">Como calcular o custo hora-máquina de uma injetora?</h3><p class="text-sm text-slate-600 leading-relaxed">Somando energia, mão de obra, depreciação e manutenção em base anual e dividindo pelas horas efetivamente produtivas. Uma injetora de 200 t com custo anual de R$ 700 mil e 5.000 horas produtivas custa R$ 140 por hora.</p></div><div class="bg-white rounded-xl p-6 border border-slate-200"><h3 class="text-base font-bold text-slate-900 mb-2">Qual o peso da energia elétrica na hora-máquina?</h3><p class="text-sm text-slate-600 leading-relaxed">Entre 10% e 20% do total. Em injetoras hidráulicas antigas pode chegar a 25%; em máquinas 100% elétricas cai para 8% a 12%. Medir com analisador de energia é o único jeito de não errar a conta.</p></div><div class="bg-white rounded-xl p-6 border border-slate-200"><h3 class="text-base font-bold text-slate-900 mb-2">Devo incluir depreciação no custo por hora?</h3><p class="text-sm text-slate-600 leading-relaxed">Sim. A depreciação é custo real de reposição do ativo: uma injetora de R$ 900 mil depreciada em 10 anos e 5.000 horas por ano adiciona R$ 90 por hora, independentemente de a máquina estar produzindo ou parada.</p></div><div class="bg-white rounded-xl p-6 border border-slate-200"><h3 class="text-base font-bold text-slate-900 mb-2">Por que meu fornecedor cobra mais por hora do que a minha planilha?</h3><p class="text-sm text-slate-600 leading-relaxed">Provavelmente por ocupação menor e custo de capital maior. A taxa depende das horas produtivas reais: quem roda 5.000 horas por ano cobra mais por hora do que quem roda 7.000, mesmo com equipamento equivalente.</p></div></div>
+      </section>
+
+      <section class="bg-brand-navy text-white rounded-2xl p-8 my-10">
+        <h2 class="text-2xl font-extrabold mb-3">Conclusão Estratégica</h2>
+        <p class="text-slate-300 leading-relaxed mb-6">A hora-máquina é o número que sustenta ou destrói a margem do fornecedor e a comparação do comprador. Calcular pela ocupação real, medir energia e não esquecer a depreciação transforma a negociação de preço em discussão técnica. A decisão correta consiste em exigir a taxa aberta em composição, nunca apenas o valor final por peça.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contato" class="bg-brand-accent hover:bg-sky-600 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors">Solicitar Cotação Técnica</a>
+          <a href="/calculadora-custo-peca-injetada" class="bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-lg text-sm border border-white/20 transition-colors">Abrir Calculadora de Custo</a>
+        </div>
+      </section>
+
+      <section class="mt-12 pt-8 border-t border-slate-200">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+          <h3 class="text-xl font-extrabold text-brand-navy">Continue Lendo sobre Processos e Custos de Injeção Plástica</h3>
+          <a href="/categoria-processos-e-custos-de-injecao-plastica" class="text-xs font-bold text-brand-blue hover:underline uppercase tracking-wider">Acessar Hub da Categoria &rarr;</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4"><a href="/quanto-custa-fabricar-um-molde-de-injecao-plastica" class="group bg-white border border-slate-200 hover:border-brand-accent rounded-xl p-4 transition-all shadow-sm"><span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">Processos e Custos</span><h4 class="font-bold text-brand-navy group-hover:text-brand-blue text-sm mt-1 mb-2 leading-snug">Quanto Custa Fabricar um Molde de Injeção Plástica</h4><span class="text-xs font-semibold text-brand-blue">Ler estudo tecnico &rarr;</span></a><a href="/como-calcular-forca-de-fechamento-e-tonelagem-da-injetora" class="group bg-white border border-slate-200 hover:border-brand-accent rounded-xl p-4 transition-all shadow-sm"><span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">Projeto e Engenharia</span><h4 class="font-bold text-brand-navy group-hover:text-brand-blue text-sm mt-1 mb-2 leading-snug">Como Calcular Força de Fechamento da Injetora</h4><span class="text-xs font-semibold text-brand-blue">Ler estudo tecnico &rarr;</span></a><a href="/guia-de-resinas-termoplasticas-abs-pa66-policarbonato-pom-e-pp" class="group bg-white border border-slate-200 hover:border-brand-accent rounded-xl p-4 transition-all shadow-sm"><span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">Processos e Custos</span><h4 class="font-bold text-brand-navy group-hover:text-brand-blue text-sm mt-1 mb-2 leading-snug">Guia de Resinas Termoplásticas na Injeção</h4><span class="text-xs font-semibold text-brand-blue">Ler estudo tecnico &rarr;</span></a></div>
+      </section>
+
+    </article>
+  </main>
+
+<footer class="bg-brand-navy text-slate-400 py-12 border-t border-slate-800 text-sm mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="Logos/logo-pmi-fundo-preto.webp" alt="Logo Portal Molde Injeção" class="h-[34px] w-auto object-contain">
+          <div>
+            <span class="text-base font-extrabold text-white block leading-tight">PORTAL MOLDE INJEÇÃO</span>
+            <span class="text-[10px] uppercase tracking-wider text-blue-400 font-bold block">Engenharia e Ferramentaria B2B</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-400 leading-relaxed mb-4 max-w-sm">
+          Hub de engenharia, matrizaria CNC de precisão e injeção termoplástica técnica B2B. Conectando decisores a fábricas e ferramentarias homologadas.
+        </p>
+        <div class="bg-slate-900/90 rounded-xl p-3.5 border border-slate-800 text-xs space-y-2 max-w-sm">
+          <div class="flex items-center gap-2 text-slate-300">
+            <span class="text-sky-400 text-sm">📍</span>
+            <span><strong>Polo Operacional:</strong> São Paulo / SP</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300">
+            <span class="text-emerald-400 text-sm">🌐</span>
+            <span><strong>Abrangência:</strong> Atendimento Técnico em Todo o Brasil</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate-300">
+            <span class="text-blue-400 text-sm">🏭</span>
+            <span><strong>Parques Fabris:</strong> Plantas homologadas em SP e Região Sul</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-200 block mb-3">Soluções Industriais</span>
+        <ul class="text-xs space-y-2">
+          <li><a href="/fabricacao-de-moldes-de-injecao" class="hover:text-white transition-colors">Fabricação de Moldes</a></li>
+          <li><a href="/servicos-de-injecao-plastica" class="hover:text-white transition-colors">Injeção Plástica Seriada</a></li>
+          <li><a href="/engenharia-e-desenvolvimento-de-moldes" class="hover:text-white transition-colors">Engenharia &amp; Simulação 3D</a></li>
+          <li><a href="/manutencao-e-modificacao-de-moldes" class="hover:text-white transition-colors">Manutenção de Matrizes</a></li>
+          <li><a href="/calculadora-tonelagem-injetora" class="hover:text-white transition-colors">Calculadora de Tonelagem</a></li>
+          <li><a href="/calculadora-custo-peca-injetada" class="hover:text-white transition-colors">Calculadora de Custo</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-200 block mb-3">Blog de Engenharia</span>
+        <ul class="text-xs space-y-2">
+          <li><a href="/categoria-projeto-e-engenharia-de-moldes" class="hover:text-white transition-colors">Projeto e Engenharia de Moldes</a></li>
+          <li><a href="/categoria-ferramentaria-e-acos-para-moldes" class="hover:text-white transition-colors">Ferramentaria e Aços</a></li>
+          <li><a href="/categoria-processos-e-custos-de-injecao-plastica" class="hover:text-white transition-colors">Processos e Custos de Injeção</a></li>
+          <li><a href="/categoria-manutencao-e-qualidade-de-matrizes" class="hover:text-white transition-colors">Manutenção e Qualidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-200 block mb-3">Institucional &amp; Jurídico</span>
+        <ul class="text-xs space-y-2">
+          <li><a href="/sobre" class="hover:text-white transition-colors">Sobre o Portal Molde Injeção</a></li>
+          <li><a href="/contato" class="text-white font-semibold hover:text-sky-400 transition-colors">Central de Cotação (Contato)</a></li>
+          <li><a href="/politica-de-privacidade" class="hover:text-white transition-colors">Política de Privacidade (LGPD)</a></li>
+          <li><a href="/termos-de-uso" class="hover:text-white transition-colors">Termos de Uso</a></li>
+          <li><a href="mailto:portalmoldeinjecao@gmail.com" class="hover:text-white transition-colors">portalmoldeinjecao@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/company/145304607/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-400 hover:text-sky-300 font-semibold transition-colors">LinkedIn Oficial (PMI) &#8599;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 mt-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
+      &copy; 2026 Portal Molde Injeção. Todos os direitos reservados. &bull; Polo Operacional: São Paulo / SP &bull; Atendimento em Todo o Brasil &bull; <a href="/sobre" class="underline hover:text-slate-400">Sobre</a> &bull; <a href="/contato" class="underline hover:text-slate-400">Contato</a> &bull; <a href="/politica-de-privacidade" class="underline hover:text-slate-400">Política de Privacidade</a> &bull; <a href="/termos-de-uso" class="underline hover:text-slate-400">Termos de Uso</a>
+    </div>
+  </footer>
+
+    <script src="js/lead-tracker.js"></script>
+</body>
+</html>

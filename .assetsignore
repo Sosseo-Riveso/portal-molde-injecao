@@ -31,6 +31,11 @@ COMO-CONECTAR-GOOGLE-SHEETS.md
 GOOGLE-APPS-SCRIPT-CRM.js
 
 # ---------------------------------------------------------------
+# Rascunhos editoriais (artigos com data futura): nunca publicar
+# ---------------------------------------------------------------
+rascunhos
+
+# ---------------------------------------------------------------
 # Estado local do Wrangler: contém account id e sourcemap do Worker
 # ---------------------------------------------------------------
 .wrangler

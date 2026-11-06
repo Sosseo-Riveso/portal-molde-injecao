@@ -166,7 +166,56 @@ Intervenção restrita a `index.html`, sem tocar em schema, metas ou CLS.
 
 Reauditoria: `index.html` **SEO 96%** (0 erros) e **GEO 94%** (0 críticas), subindo de 2.908 para 3.047 palavras visíveis. Placar global preservado: SEO **97%**, GEO **90%**. Estrutura validada: 7 `<script>` abertos/fechados, 1 `<h1>`, 1 bloco `ld+json`, 23 `<h3>`.
 
-`sitemap.xml` não exigiu alteração — o `lastmod` da home já era 2026-11-06.
+### Retarget comercial + esteira de 10 artigos (06/11/2026)
+
+**a) Retarget do pilar `servicos-de-injecao-plastica.html`** (rota e canonical preservados):
+
+| Campo | Antes | Depois |
+|---|---|---|
+| `<title>` + `og:title` | Serviços de Injeção Plástica Seriada (51) | **Terceirização de Injeção Plástica Seriada \| Portal Molde** (56) |
+| `<h1>` | Serviços de Injeção Plástica Industrial: Terceirização e Produção Seriada Técnica | **Terceirização de Injeção Plástica Seriada e Produção Técnica** |
+| description + `og:description` | 143 | **135** (com "Terceirização" à frente) |
+| `Service.name` | Serviços de Injeção Plástica Técnica Seriada | Terceirização de Injeção Plástica Seriada |
+| `WebPage.name` + breadcrumb (schema e visível) | Serviços de Injeção Plástica Seriada | Terceirização de Injeção Plástica |
+
+**b) Isolamento dos rascunhos** — `rascunhos` adicionado ao `.assetsignore` (nada é servido no CDN) e já constava em `DIRS_IGNORADOS` dos dois auditores, então não entra nas médias de produção.
+
+**c) Esteira de 10 artigos em `/rascunhos/`** — todos com `datePublished`/`dateModified` na data programada, `TechArticle` + `FAQPage` (4 Q) + `BreadcrumbList`, tabela com `thead`/`scope="col"`, 8 metadados, takeaway e 3 links internos (pilar + hub + calculadora).
+
+| # | Publicação | Arquivo | Hub | Palavras |
+|--:|---|---|---|---:|
+| 1 | 09/11 (seg) | `lote-minimo-de-injecao-plastica.html` | processos-e-custos | 1.375 |
+| 2 | 11/11 (qua) | `injecao-plastica-sob-demanda.html` | processos-e-custos | 1.298 |
+| 3 | 16/11 (seg) | `sobreinjecao-de-inserto-metalico.html` | projeto-e-engenharia | 1.210 |
+| 4 | 18/11 (qua) | `nacionalizacao-de-molde-importado.html` | ferramentaria-e-acos | 1.240 |
+| 5 | 23/11 (seg) | `contrato-de-fornecimento-de-pecas-injetadas.html` | processos-e-custos | 1.190 |
+| 6 | 25/11 (qua) | `molde-de-injecao-usado-riscos-e-checklist.html` | ferramentaria-e-acos | 1.276 |
+| 7 | 30/11 (seg) | `molde-com-gaveta-slide-e-contra-saida.html` | ferramentaria-e-acos | 1.259 |
+| 8 | 02/12 (qua) | `refrigeracao-conformal-em-moldes.html` | projeto-e-engenharia | 1.254 |
+| 9 | 07/12 (seg) | `custo-hora-maquina-injetora.html` | processos-e-custos | 1.283 |
+| 10 | 09/12 (qua) | `molde-bicomponente-duas-cores-2k.html` | projeto-e-engenharia | 1.237 |
+
+Pré-check próprio dos 10: 0 pendências (JSON-LD válido, title 50-60, description 130-155, OG espelhado, 1 H1, ≥4 H2, tabela com `scope`, ≥900 palavras, padrão de resposta direta).
+
+**d) Restrições respeitadas** — nenhuma menção a IATF 16949, PPAP, APQP, FMEA ou MSA em todo o site (verificado: 0 ocorrências). Qualidade tratada como gestão ISO 9001:2015, CEP, CMM e rastreabilidade dimensional. Nenhuma promessa de planta fabril própria: sempre "parques homologados".
+
+**e) Procedimento de liberação semanal** (a executar em cada data):
+
+1. mover o `.html` de `/rascunhos/` para a raiz;
+2. adicionar a URL ao `sitemap.xml` com `lastmod` = **data real da liberação** (nunca futura);
+3. inserir o card no hub correspondente, atualizar o `ItemList` do `CollectionPage`, o contador "N Artigos Técnicos" e o `dateModified` do hub;
+4. rodar `py scripts/seo_checker.py .` e `py scripts/geo_checker.py .`;
+5. commit + `npx wrangler deploy` + `npx wrangler versions deploy <ID>@100% --yes`.
+
+**f) Estado do sitemap** — intocado nesta etapa (nenhuma URL nova está pública). As 23 URLs seguem as atuais, todas com `lastmod` 2026-11-06.
+
+**Reauditoria das 23 páginas públicas**
+
+| Auditor | Antes | Depois |
+|---|---|---|
+| SEO técnico | 0 erros / 17 avisos / 97% | **0 erros / 17 avisos / 97%** |
+| GEO/AEO | 0 críticos / 39 avisos / 90% | **0 críticos / 39 avisos / 90%** |
+
 
 
 
