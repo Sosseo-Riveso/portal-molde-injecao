@@ -87,7 +87,49 @@ Também: `og:title`/`og:description` idênticos a `<title>`/description em 7/7; 
 
 Todas as 7 páginas do lote em **96% de SEO**. O único aviso restante em cada uma é `JSON-LD sem tipo Article/TechArticle` (limitação do auditor: pilares usam `Service`, home usa `Organization`+`WebSite`).
 
-Pendências: `politica-de-privacidade` (158) e `termos-de-uso` (157) ficaram na faixa ≤160 do projeto, acima dos 155 do novo padrão; títulos/descriptions dos 8 artigos e dos 4 hubs de categoria ainda fora da faixa; `areaServed` dos pilares ainda como string `"BR"`; `og:image` 1200×630 `.webp` pendente.
+### Lote 3 — GEO/AEO nos 4 hubs + calibragem final (06/11/2026)
+
+**a) Hubs de categoria (4)** — cada um recebeu:
+
+| Item | Implementação |
+|---|---|
+| Metadados | `<title>` 50–53 chars com `\| Portal Molde`; description 137–141; `og:title`/`og:description` espelhados; `og:image` adicionado (inexistia); `robots` já presente |
+| Autoria | Barra `Por Equipe Técnica Portal Molde Injeção • Engenharia B2B` com `rel="author"`, `Publicado em 20/05/2026` e `Atualizado em 06/11/2026` em `<time datetime>` |
+| Tabela | Comparativo técnico distinto por tema: impacto de decisões de projeto no custo (projeto); aços P20/1.2738/H13/Inox 420 com dureza e vida útil (ferramentaria); câmara quente × canal frio com payback (processos); plano preventivo por intervalo de ciclos (manutenção). Todas com `thead`/`th scope="col"` e wrapper `overflow-x-auto` |
+| FAQ | 4 perguntas visíveis (H3 + resposta direta de 50–70 palavras) mapeadas 1:1 no schema `FAQPage` |
+| Schema | `CollectionPage` + `inLanguage` + `datePublished`/`dateModified` + `publisher` por `@id`; `BreadcrumbList` em 3 níveis (Início > Categorias > Hub) com `#categorias` no index como âncora real; `FAQPage` com 4 Q&A idênticas ao texto visível |
+| Conclusão Estratégica | Bloco de takeaway com dado de custo em todos os 4 hubs |
+
+**b) `areaServed` estruturado nos 4 pilares** — string `"BR"` substituída por `Country: Brasil`, `State: São Paulo`, `City: Campinas`, `AdministrativeArea: Região Sul do Brasil`, idêntico ao index.
+
+**c) 8 artigos** — 8 títulos encurtados para 53–60 chars (antes 62–77) e 3 descriptions acima de 160 reduzidas (161→152, 161→153, 165→136), sempre espelhando `og:title`/`og:description`. Corpo editorial intocado.
+
+**d) `sitemap.xml`** — `lastmod` atualizado para 2026-11-06 nas 21 URLs alteradas; as 2 calculadoras (não alteradas) mantêm 2026-10-16.
+
+**Reauditoria**
+
+| Auditor | Antes do lote | Depois |
+|---|---|---|
+| SEO técnico | 0 erros / 39 avisos / 93% | **0 erros / 17 avisos / 97%** |
+| GEO/AEO | 0 críticos / 122 avisos / 70% | **0 críticos / 82 avisos / 80%** |
+
+Hubs de categoria: **39% → 94%** (1.168–1.200 palavras, 16–26 entidades). Oito artigos em 100% de SEO; nenhuma página abaixo de 92%.
+
+Validação estrutural adicional com `html.parser` (não regex) nas 23 páginas: 0 blocos JSON-LD inválidos, 0 `</script>` desbalanceado, tipos declarados = tipos parseados.
+
+**Gap declarado para a meta de 85–90% de GEO**: a média fechou em 80%. Os bloqueios restantes não estavam no escopo deste lote:
+
+| Página | GEO | Falta para ~94% |
+|---|---:|---|
+| 4 pilares | 72% | autoria datada, FAQ visível + `FAQPage`, takeaway (mesmo tratamento dos hubs) |
+| `index.html` | 67% | autoria, `datePublished`, FAQ 3→4+ e tabela comparativa |
+| `sobre.html` | 56% | FAQ + tabela + takeaway + data |
+| `contato.html` | 44% | FAQ + tabela + takeaway + data |
+| `politica-de-privacidade` / `termos-de-uso` | 50% / 44% | FAQ curta + `datePublished` + padrões de resposta direta |
+| 2 calculadoras | 78% | `dateModified`, autoria e takeaway |
+
+Projeção: aplicar o mesmo padrão (autoria + data + FAQ + takeaway) nos 4 pilares eleva a média para ~84%; incluir index, contato, sobre e legais projeta 88–91% — é o escopo natural do Lote 4.
+
 
 
 
