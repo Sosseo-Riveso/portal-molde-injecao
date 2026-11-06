@@ -98,6 +98,49 @@
     ]
   }
   </script>
+
+  <!-- Schema.org FAQPage (RFQ / prazos e sigilo) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://portalmoldeinjecao.com.br/contato#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Em quanto tempo recebo retorno do meu pedido de cotação?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A triagem técnica responde em até 48 horas úteis com análise preliminar de manufaturabilidade (DFM) e faixa de investimento. A proposta formal, com escopo de usinagem, aço especificado, prazo e condições de pagamento, é emitida entre 5 e 10 dias úteis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso assinar NDA antes de enviar o arquivo 3D?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O acordo de confidencialidade (NDA) é assinado antes do envio do arquivo STEP, IGES ou Parasolid, e o material fica restrito à célula de engenharia. Dados pessoais são tratados conforme a LGPD (Lei nº 13.709/2018) e nunca são compartilhados com parques fabris sem autorização escrita."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quais dados técnicos aceleram a cotação de molde ou injeção?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Arquivo 3D em STEP ou IGES, resina especificada (ABS, PA66 GF30, PC, POM ou PP), volume anual, tolerância crítica em mm e acabamento superficial SPI desejado. Com esses cinco dados a engenharia define cavidades, aço e sistema de alimentação sem ida e volta."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O atendimento cobre indústrias fora do estado de São Paulo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. O polo operacional está em São Paulo/SP e o atendimento técnico cobre todo o Brasil, com parques fabris homologados em São Paulo (ABC paulista, Campinas, Sorocaba, São José dos Campos) e na Região Sul. O transporte de moldes ocorre com seguro de carga e rastreabilidade."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
 
@@ -375,6 +418,11 @@
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 leading-tight">
         Contato e Central de Cotação RFQ: Orçamento de Moldes de Injeção e Lotes Seriados
       </h1>
+      <p class="text-xs text-slate-400 mb-2">
+        Por <a rel="author" href="/sobre" class="font-semibold text-sky-400 hover:text-sky-300 underline">Equipe Técnica Portal Molde Injeção</a> &bull; Engenharia B2B
+        <span class="mx-1">&bull;</span> Publicado em <time datetime="2026-05-20">20/05/2026</time>
+        <span class="mx-1">&bull;</span> Atualizado em <time datetime="2026-11-06">06/11/2026</time>
+      </p>
       <h2 class="text-lg sm:text-xl text-slate-300 font-medium leading-relaxed max-w-4xl">
         Submeta seu arquivo CAD 3D (STEP, IGES, Parasolid) ou especificações técnicas de tiragem para receber análise preliminar de manufaturabilidade (DFM) e proposta formal de ferramentaria e injeção plástica.
       </h2>
@@ -511,6 +559,86 @@
       </div>
 
     </div>
+    <!-- Tabela de Referência: Prazos de Resposta por Demanda -->
+    <section class="mt-16">
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Prazo de Resposta por Tipo de Demanda</h2>
+      <p class="text-slate-600 text-sm sm:text-base mb-6 max-w-3xl">O fluxo de cotação consiste em três etapas com prazos distintos, contados a partir do recebimento do arquivo técnico completo e do NDA assinado.</p>
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-sm text-left">
+          <thead class="bg-slate-100 text-slate-700 uppercase text-xs">
+            <tr>
+              <th scope="col" class="px-4 py-3 font-bold">Demanda</th>
+              <th scope="col" class="px-4 py-3 font-bold">Documento necessário</th>
+              <th scope="col" class="px-4 py-3 font-bold">Triagem técnica</th>
+              <th scope="col" class="px-4 py-3 font-bold">Proposta formal</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-600">
+            <tr>
+              <td class="px-4 py-3 font-semibold text-slate-800">Molde novo de 1 a 2 cavidades</td>
+              <td class="px-4 py-3">STEP/IGES + resina + volume anual</td>
+              <td class="px-4 py-3">48 horas úteis</td>
+              <td class="px-4 py-3">5 a 7 dias úteis</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-slate-800">Molde multicavidades com câmara quente</td>
+              <td class="px-4 py-3">STEP + tolerâncias críticas + DFM</td>
+              <td class="px-4 py-3">48 horas úteis</td>
+              <td class="px-4 py-3">7 a 10 dias úteis</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-slate-800">Injeção seriada (transferência de molde)</td>
+              <td class="px-4 py-3">Desenho do molde + ficha de processo</td>
+              <td class="px-4 py-3">24 a 48 horas úteis</td>
+              <td class="px-4 py-3">3 a 5 dias úteis</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-slate-800">Manutenção ou recuperação de matriz</td>
+              <td class="px-4 py-3">Fotos do dano + laudo do defeito</td>
+              <td class="px-4 py-3">24 horas úteis</td>
+              <td class="px-4 py-3">2 a 4 dias úteis</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-slate-800">Revisão DFM e simulação Moldflow</td>
+              <td class="px-4 py-3">STEP + condições de processo</td>
+              <td class="px-4 py-3">48 horas úteis</td>
+              <td class="px-4 py-3">5 a 7 dias úteis</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">Prazos de referência para demanda B2B com documentação completa; peças com contra-saída complexa ou fibra de vidro podem exigir simulação adicional.</p>
+    </section>
+
+    <!-- FAQ de Cotação (AEO) -->
+    <section class="mt-16">
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6">Perguntas Frequentes sobre Cotação e Sigilo</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 mb-2">Em quanto tempo recebo retorno do meu pedido de cotação?</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">A triagem técnica responde em até 48 horas úteis com análise preliminar de manufaturabilidade (DFM) e faixa de investimento. A proposta formal, com escopo de usinagem, aço especificado, prazo e condições de pagamento, é emitida entre 5 e 10 dias úteis.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 mb-2">Preciso assinar NDA antes de enviar o arquivo 3D?</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">O acordo de confidencialidade (NDA) é assinado antes do envio do arquivo STEP, IGES ou Parasolid, e o material fica restrito à célula de engenharia. Dados pessoais são tratados conforme a LGPD (Lei nº 13.709/2018) e nunca são compartilhados com parques fabris sem autorização escrita.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 mb-2">Quais dados técnicos aceleram a cotação de molde ou injeção?</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Arquivo 3D em STEP ou IGES, resina especificada (ABS, PA66 GF30, PC, POM ou PP), volume anual, tolerância crítica em mm e acabamento superficial SPI desejado. Com esses cinco dados a engenharia define cavidades, aço e sistema de alimentação sem ida e volta.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 mb-2">O atendimento cobre indústrias fora do estado de São Paulo?</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Sim. O polo operacional está em São Paulo/SP e o atendimento técnico cobre todo o Brasil, com parques fabris homologados em São Paulo (ABC paulista, Campinas, Sorocaba, São José dos Campos) e na Região Sul. O transporte de moldes ocorre com seguro de carga e rastreabilidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusão Estratégica -->
+    <section class="mt-16 bg-slate-100 border-l-4 border-blue-600 rounded-r-2xl p-6 sm:p-8">
+      <h2 class="text-xl font-black text-slate-900 mb-2">Conclusão Estratégica</h2>
+      <p class="text-slate-700 leading-relaxed">Uma cotação de molde útil consiste em chegar com os cinco dados completos: STEP, resina, volume anual, tolerância crítica e acabamento SPI. É essa combinação que permite comparar propostas pelo custo por peça — e não pelo preço do ferramental isolado, que representa menos da metade do custo total em tiragens acima de 300 mil unidades.</p>
+    </section>
+
   </main>
 
   <!-- Footer -->

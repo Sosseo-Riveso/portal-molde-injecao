@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home Principal -->
   <url>
@@ -8,7 +8,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- 4 Páginas Pilares de Serviços B2B -->
+  <!-- 4 PÃ¡ginas Pilares de ServiÃ§os B2B -->
   <url>
     <loc>https://portalmoldeinjecao.com.br/fabricacao-de-moldes-de-injecao</loc>
     <lastmod>2026-11-06</lastmod>
@@ -37,18 +37,18 @@
   <!-- 2 Calculadoras Interativas de Engenharia -->
   <url>
     <loc>https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Páginas Institucionais E-E-A-T -->
+  <!-- PÃ¡ginas Institucionais E-E-A-T -->
   <url>
     <loc>https://portalmoldeinjecao.com.br/sobre</loc>
     <lastmod>2026-11-06</lastmod>
@@ -62,7 +62,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 4 Hubs de Categorias do Blog Técnico -->
+  <!-- 4 Hubs de Categorias do Blog TÃ©cnico -->
   <url>
     <loc>https://portalmoldeinjecao.com.br/categoria-projeto-e-engenharia-de-moldes</loc>
     <lastmod>2026-11-06</lastmod>
@@ -88,7 +88,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 8 Artigos Técnicos B2B (Moldes e Injeção Plástica) -->
+  <!-- 8 Artigos TÃ©cnicos B2B (Moldes e InjeÃ§Ã£o PlÃ¡stica) -->
   <url>
     <loc>https://portalmoldeinjecao.com.br/como-calcular-forca-de-fechamento-e-tonelagem-da-injetora</loc>
     <lastmod>2026-11-06</lastmod>
@@ -138,7 +138,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Páginas Legais -->
+  <!-- PÃ¡ginas Legais -->
   <url>
     <loc>https://portalmoldeinjecao.com.br/politica-de-privacidade</loc>
     <lastmod>2026-11-06</lastmod>

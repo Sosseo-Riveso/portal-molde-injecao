@@ -128,7 +128,34 @@ Validação estrutural adicional com `html.parser` (não regex) nas 23 páginas:
 | `politica-de-privacidade` / `termos-de-uso` | 50% / 44% | FAQ curta + `datePublished` + padrões de resposta direta |
 | 2 calculadoras | 78% | `dateModified`, autoria e takeaway |
 
-Projeção: aplicar o mesmo padrão (autoria + data + FAQ + takeaway) nos 4 pilares eleva a média para ~84%; incluir index, contato, sobre e legais projeta 88–91% — é o escopo natural do Lote 4.
+### Lote 4 — Fechamento da meta de GEO/AEO (06/11/2026)
+
+**a) 4 pilares de serviço (72% → 94%)** — o diagnóstico mostrou que tabela comparativa, FAQ visível (4–5 perguntas), `FAQPage` e takeaway **já existiam**; faltavam apenas autoria e datas. Aplicado:
+- Barra `Por Equipe Técnica Portal Molde Injeção • Engenharia B2B` com `rel="author"` + `Publicado em` e `Atualizado em` em `<time datetime>` sob o H1.
+- Nó `WebPage` em JSON-LD com `inLanguage`, `datePublished`, `dateModified`, `author`/`publisher` por `@id`, `isPartOf` → `#website`.
+- Uma frase com padrão de resposta direta ("consiste em") no bloco Takeaway existente — sem duplicar tabela nem FAQ.
+
+**b) `index.html` (67% → 94%)** — barra de autoria editorial com data de revisão sob o H1; nó `WebPage` (`#webpage`) no `@graph` com datas e `author` por `@id`; 4ª pergunta adicionada ao `FAQPage` (antes 3 no schema × 4 visíveis — agora sincronizados); novo bloco "Conclusão Estratégica" com padrão de resposta direta. Tabelas SPI/VDI existentes foram mantidas.
+
+**c) `sobre.html` (56% → 94%) e `contato.html` (44% → 94%)** — barra de autoria com datas; `FAQPage` novo com 4 perguntas visíveis (RFQ, NDA, logística, homologação) mapeadas 1:1; takeaway em cada página. Em `contato` foi somada tabela "Prazo de Resposta por Tipo de Demanda" (5 linhas, `thead` + `scope="col"`), que também elevou o volume de 735 para 1.189 palavras.
+
+**d) Calculadoras (78% → 94%)** — arquivos reais do repositório são `calculadora-tonelagem-injetora.html` e `calculadora-custo-peca-injetada.html` (não "forca-de-fechamento"/"custo-hora"). Tabela normativa (VDI 3400 e pressão específica por família polimérica) e FAQ técnica com 4 perguntas **já existiam**; foram adicionadas barra de autoria com datas e, na calculadora de tonelagem, o padrão de resposta direta do método de cálculo.
+
+**e) `sitemap.xml`** — as 23 URLs ficaram com `lastmod` 2026-11-06 (as 2 calculadoras eram as únicas em 2026-10-16).
+
+**f) Incidente evitado** — o mesmo padrão de replace que consome o `</script>` anterior voltou a ocorrer ao inserir o nó `WebPage` nos 4 pilares. Detectado imediatamente pela queda de 94% para 89% com `[X]` (falha crítica de parse) e corrigido nos 4 arquivos antes do commit. Validação final com `html.parser`: 23/23 páginas com `<script>` balanceados, 0 bloats JSON inválidos.
+
+**Reauditoria**
+
+| Auditor | Lote 3 | Lote 4 |
+|---|---|---|
+| SEO técnico | 0 erros / 17 avisos / 97% | **0 erros / 17 avisos / 97%** |
+| GEO/AEO | 0 críticos / 39 avisos / 80% | **0 críticos / 39 avisos / 90%** |
+
+**Placar GEO:** 20 páginas em 94%, 1 em 100% (`diferenca-entre-aco-...`), `politica-de-privacidade` 50% e `termos-de-uso` 44%. Média global **90%** — meta atingida.
+
+**Pendência declarada:** as 2 páginas legais são as únicas abaixo de 94% e limitam a média. Elas não estavam no escopo autorizado do Lote 4 (que listou pilares, index, sobre, contato e calculadoras). Com uma FAQ curta de privacidade (3–4 perguntas), `datePublished` e takeaway, ambas iriam a ~94% e a média global subiria para ~94%.
+
 
 
 
