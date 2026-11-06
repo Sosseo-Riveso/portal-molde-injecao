@@ -29,3 +29,8 @@ ANALISE_PROJETO.md
 DOSSIE-COMERCIAL-ARQUITETURA-E-SEO.md
 COMO-CONECTAR-GOOGLE-SHEETS.md
 GOOGLE-APPS-SCRIPT-CRM.js
+
+# ---------------------------------------------------------------
+# Estado local do Wrangler: contém account id e sourcemap do Worker
+# ---------------------------------------------------------------
+.wrangler

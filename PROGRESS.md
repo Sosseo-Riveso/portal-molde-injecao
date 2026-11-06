@@ -29,11 +29,12 @@ URLs absolutas, breadcrumb, FAQ visível × schema, ativos referenciados e sitem
 | GEO local (address/geo/areaServed) | apenas `areaServed: "BR"`; sem coordenadas; NAP incompleto | Não (gap de citação local) |
 | Títulos / descriptions | 21/23 títulos fora de 50–60; 20/23 descriptions fora de 130–155 | Não |
 
-### Correção aplicada (única)
+### Correções aplicadas em `.assetsignore`
 
 | Data | Arquivo | Motivo | Escopo |
 |---|---|---|---|
 | 06/11/2026 | `.assetsignore` | `assets.directory: "."` publicava `*.md` (8 artigos duplicados + dossiê interno), `*.docx` e `GOOGLE-APPS-SCRIPT-CRM.js` no CDN | Adição de `*.md`, `*.docx` e 4 arquivos nomeados. Nenhuma página HTML alterada. |
+| 06/11/2026 | `.assetsignore` + `.gitignore` | Deploy do Lote 1 revelou `/.wrangler/cache/wrangler-account.json` público (HTTP 200) — expunha **account id** e nome da conta Cloudflare — além do sourcemap do Worker em `/.wrangler/tmp/` | Adição de `.wrangler` ao `.assetsignore` e de `.wrangler/` ao `.gitignore`. Zero impacto em conteúdo. |
 
 Pendências P0/P1/P2 e arquivos a intervir: ver relatório de auditoria entregue em 06/11/2026 (seção 3 deste documento, atualizada).
 

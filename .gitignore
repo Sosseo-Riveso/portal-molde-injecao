@@ -10,3 +10,7 @@ scripts/
 *.py
 *.pyc
 __pycache__/
+
+# Estado local do Wrangler (account id + sourcemap do Worker)
+.wrangler/
+
