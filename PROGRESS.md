@@ -52,10 +52,43 @@ Reauditoria completa após o lote:
 | SEO técnico | 2 erros / 54 avisos / 90% | **0 erros** / 52 avisos / **91%** |
 | GEO/AEO | 2 críticos / 124 avisos / 69% | **0 críticos** / score reauditado |
 
-Pendências do lote:
-- Único aviso restante em cada página: `JSON-LD sem tipo Article/TechArticle` — limitação do auditor; `WebPage` é o tipo correto para página legal.
-- `og:image` reaproveita `imagens/og-portal-molde-injecao.jpg` (1024×631). Regerar em 1200×630 `.webp` (item T4 do backlog).
-- `politica-de-privacidade.html` não tem H3 (apenas H1/H2) — aceitável.
+### Lote 2 — Infra + metadados P1 (06/11/2026)
+
+**a) Infraestrutura (`wrangler.json`)** — adicionado `"binding": "ASSETS"` no bloco `assets`. Causa raiz do HTTP 500 (Cloudflare 1101) em qualquer rota inexistente: o Worker rodava para caminhos sem asset e chamava `env.ASSETS.fetch` com binding não declarado. O fallback de clean URL do `worker.js` volta a funcionar.
+
+**b) Entidade canônica (`index.html`)** — `Organization` com `@id` `#organization`, `name`, `url`, `logo`, `description`, `sameAs`, e `contactPoint` completo (`contactType: "customer service"`, `telephone: "+55-11-99999-9999"`, `email`, `url`, `availableLanguage: ["Portuguese"]`, `areaServed` estruturado com Brasil/São Paulo/Campinas/Região Sul) + `areaServed` no nível da organização.
+
+**c) Referência única de entidade** — os 4 pilares deixaram de redeclarar a Organization em `provider` e agora usam `{"@type": "Organization", "@id": ".../#organization"}`. `contato.html` e `sobre.html` já referenciavam o mesmo `@id` (mantidos).
+
+**d) Metadados P1** (título 50–60 / description 130–155 / OG espelhado / robots):
+
+| Página | `<title>` | chars | description | chars |
+|---|---|---:|---|---:|
+| `index.html` | Moldes de Injeção Plástica B2B \| Portal Molde Injeção | 53 | Hub B2B de fabricação de moldes... ISO 9001. | 149 |
+| `fabricacao-de-moldes-de-injecao.html` | Fabricação de Moldes de Injeção Plástica \| Portal Molde | 55 | Usinagem CNC 5 eixos e eletroerosão... try-out. | 145 |
+| `servicos-de-injecao-plastica.html` | Serviços de Injeção Plástica Seriada \| Portal Molde | 51 | Injeção termoplástica técnica terceirizada... Just-in-Time. | 143 |
+| `engenharia-e-desenvolvimento-de-moldes.html` | Engenharia e Projeto de Moldes de Injeção \| Portal Molde | 56 | Projeto CAD 3D, análise DFM... empenamento. | 133 |
+| `manutencao-e-modificacao-de-moldes.html` | Manutenção e Modificação de Moldes \| Portal Molde Injeção | 57 | Recuperação de moldes por solda a laser... em dias. | 139 |
+| `contato.html` | Contato e Cotação de Moldes RFQ \| Portal Molde Injeção | 54 | Envie o arquivo 3D (STEP/IGES)... até 48h. | 141 |
+| `sobre.html` | Sobre o Portal Molde Injeção \| Ferramentaria CNC B2B | 52 | Central de engenharia, ferramentaria CNC... Região Sul. | 133 |
+
+Também: `og:title`/`og:description` idênticos a `<title>`/description em 7/7; `og:type` corrigido de `article` para `website` nos pilares; `og:image` adicionado em `fabricacao` e `servicos`; `og:image` de `contato` trocado do logo para `imagens/og-portal-molde-injecao.jpg` (1024×631); `meta robots` adicionado onde faltava (index + 4 pilares); `name` adicionado ao `Service` de `servicos-de-injecao-plastica`.
+
+**e) BreadcrumbList 2 níveis** — inserido em 4 pilares, `contato.html` e `sobre.html`.
+
+**f) Correção de defeito introduzido no Lote 1 (crítico)** — ao inserir o JSON-LD antes de `</head>`, o `</script>` do bloco Tailwind (Lote 1) e o último `</script>` de cada página (Lote 2) foram consumidos pelo replace. Resultado: o `<script type="application/ld+json">` ficava **aninhado dentro do script anterior**, ou seja, o JSON-LD não era lido como dado estruturado pelo parser HTML (os auditores, que usam regex, não detectavam). Corrigido nos 8 arquivos e revalidado com parser HTML real (`html.parser`): todos os blocos agora são scripts de topo e parseiam em JSON.
+
+**Reauditoria após o lote**
+
+| Auditor | Baseline (06/11) | Lote 2 |
+|---|---|---|
+| SEO técnico | 0 erros / 54 avisos / 90% (após Lote 1: 52 avisos / 91%) | **0 erros / 39 avisos / 93%** |
+| GEO/AEO | 2 críticos / 124 avisos / 69% | **0 críticos / 122 avisos / 70%** |
+
+Todas as 7 páginas do lote em **96% de SEO**. O único aviso restante em cada uma é `JSON-LD sem tipo Article/TechArticle` (limitação do auditor: pilares usam `Service`, home usa `Organization`+`WebSite`).
+
+Pendências: `politica-de-privacidade` (158) e `termos-de-uso` (157) ficaram na faixa ≤160 do projeto, acima dos 155 do novo padrão; títulos/descriptions dos 8 artigos e dos 4 hubs de categoria ainda fora da faixa; `areaServed` dos pilares ainda como string `"BR"`; `og:image` 1200×630 `.webp` pendente.
+
 
 
 
