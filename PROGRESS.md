@@ -202,6 +202,7 @@ Pré-check próprio dos 10: 0 pendências (JSON-LD válido, title 50-60, descrip
 **e) Procedimento de liberação semanal** (a executar em cada data):
 
 1. mover o `.html` de `/rascunhos/` para a raiz;
+   - **trocar os caminhos relativos**: `../imagens/` → `/imagens/`, `../Logos/` → `Logos/`, `../js/` → `js/` (necessário porque o arquivo sobe um nível);
 2. adicionar a URL ao `sitemap.xml` com `lastmod` = **data real da liberação** (nunca futura);
 3. inserir o card no hub correspondente, atualizar o `ItemList` do `CollectionPage`, o contador "N Artigos Técnicos" e o `dateModified` do hub;
 4. rodar `py scripts/seo_checker.py .` e `py scripts/geo_checker.py .`;
