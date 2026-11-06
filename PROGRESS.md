@@ -199,14 +199,25 @@ Pré-check próprio dos 10: 0 pendências (JSON-LD válido, title 50-60, descrip
 
 **d) Restrições respeitadas** — nenhuma menção a IATF 16949, PPAP, APQP, FMEA ou MSA em todo o site (verificado: 0 ocorrências). Qualidade tratada como gestão ISO 9001:2015, CEP, CMM e rastreabilidade dimensional. Nenhuma promessa de planta fabril própria: sempre "parques homologados".
 
-**e) Procedimento de liberação semanal** (a executar em cada data):
+**e) Procedimento de liberação semanal — automatizado** por `scripts/liberar_post.py` (ferramenta local, fora do git e do CDN conforme `.clinerules`):
 
-1. mover o `.html` de `/rascunhos/` para a raiz;
-   - **trocar os caminhos relativos**: `../imagens/` → `/imagens/`, `../Logos/` → `Logos/`, `../js/` → `js/` (necessário porque o arquivo sobe um nível);
-2. adicionar a URL ao `sitemap.xml` com `lastmod` = **data real da liberação** (nunca futura);
-3. inserir o card no hub correspondente, atualizar o `ItemList` do `CollectionPage`, o contador "N Artigos Técnicos" e o `dateModified` do hub;
-4. rodar `py scripts/seo_checker.py .` e `py scripts/geo_checker.py .`;
-5. commit + `npx wrangler deploy` + `npx wrangler versions deploy <ID>@100% --yes`.
+```powershell
+py scripts/liberar_post.py lote-minimo-de-injecao-plastica --dry-run   # previa, nao grava
+py scripts/liberar_post.py lote-minimo-de-injecao-plastica             # libera (lastmod = hoje)
+```
+
+O script faz, em uma passada:
+
+1. valida rascunho, destino livre e data contra o calendário editorial (avisa se divergir da prevista);
+2. executa o **flip dos caminhos relativos**: `../imagens/` → `/imagens/`, `../Logos/` → `Logos/`, `../js/` → `js/`;
+3. move o `.html` para a raiz e remove de `/rascunhos/`;
+4. insere a URL no `sitemap.xml` com `lastmod` = data real da liberação (nunca futura);
+5. insere o card no hub, incrementa o contador "N Artigos Técnicos", acrescenta o item ao `ItemList` do `CollectionPage` e atualiza o `dateModified` do hub;
+6. imprime os comandos de auditoria, commit e deploy.
+
+Teste executado em cópias (06/11/2026), sem tocar nos arquivos reais: card inserido, `<article>` 2 → 3, `<div>` 78/78 balanceadas, `ItemList` 2 → 3 itens, `dateModified` atualizado, contador 2 → 3 e sitemap 23 → 24 URLs.
+
+Depois do script: `py scripts/seo_checker.py .`, `py scripts/geo_checker.py .`, commit, push, `npx wrangler deploy` e `npx wrangler versions deploy <ID>@100% --yes`.
 
 **f) Estado do sitemap** — intocado nesta etapa (nenhuma URL nova está pública). As 23 URLs seguem as atuais, todas com `lastmod` 2026-11-06.
 
