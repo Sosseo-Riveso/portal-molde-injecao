@@ -18,3 +18,14 @@ __pycache__
 PROJECT_CONTEXT.md
 PROGRESS.md
 template-post-padrao.html
+
+# ---------------------------------------------------------------
+# Documentos internos e rascunhos editoriais: nunca publicar no CDN
+# (o diretório de assets é a raiz ".", então *.md / *.docx vazariam)
+# ---------------------------------------------------------------
+*.md
+*.docx
+ANALISE_PROJETO.md
+DOSSIE-COMERCIAL-ARQUITETURA-E-SEO.md
+COMO-CONECTAR-GOOGLE-SHEETS.md
+GOOGLE-APPS-SCRIPT-CRM.js

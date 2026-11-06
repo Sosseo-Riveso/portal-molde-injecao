@@ -6,7 +6,58 @@
 
 ---
 
-## 1. Marco atual — 02/11/2026 — Framework de governança, template e auditores
+## 0. Auditoria geral de SEO, GEO e Schema.org — 06/11/2026
+
+Auditoria de diagnóstico (sem alteração de páginas publicadas). Scripts executados:
+
+```powershell
+py scripts/seo_checker.py .   # 23 páginas | 2 erros | 54 avisos | score 90% | exit 1
+py scripts/geo_checker.py .   # 23 páginas | 2 críticos | 124 avisos | score 69% | exit 1
+```
+
+Auditor auxiliar (temporário, não versionado) validou JSON-LD com `json.loads`, campos obrigatórios por tipo,
+URLs absolutas, breadcrumb, FAQ visível × schema, ativos referenciados e sitemap × disco.
+
+### Resultado
+
+| Pilar | Situação | Bloqueante de indexação |
+|---|---|---|
+| JSON-LD / Schema.org | 0 erro de parsing, 0 URL relativa, 0 campo vazio; 2 páginas legais sem JSON-LD (**sanado no Lote 1**) | Não |
+| Canonical / robots / sitemap | 23/23 canônicos corretos em rota limpa; sitemap = disco; nenhum `noindex` em página pública | Não |
+| H1 / headings | 1 H1 por página em 23/23 | Não |
+| BreadcrumbList | ausente em 9 páginas (4 pilares + index + contato + sobre + 2 legais) | Não |
+| GEO local (address/geo/areaServed) | apenas `areaServed: "BR"`; sem coordenadas; NAP incompleto | Não (gap de citação local) |
+| Títulos / descriptions | 21/23 títulos fora de 50–60; 20/23 descriptions fora de 130–155 | Não |
+
+### Correção aplicada (única)
+
+| Data | Arquivo | Motivo | Escopo |
+|---|---|---|---|
+| 06/11/2026 | `.assetsignore` | `assets.directory: "."` publicava `*.md` (8 artigos duplicados + dossiê interno), `*.docx` e `GOOGLE-APPS-SCRIPT-CRM.js` no CDN | Adição de `*.md`, `*.docx` e 4 arquivos nomeados. Nenhuma página HTML alterada. |
+
+Pendências P0/P1/P2 e arquivos a intervir: ver relatório de auditoria entregue em 06/11/2026 (seção 3 deste documento, atualizada).
+
+### Lote 1 — P0 concluído (06/11/2026): páginas legais
+
+| Arquivo | Intervenção | SEO antes → depois | GEO antes → depois |
+|---|---|---|---|
+| `politica-de-privacidade.html` | OG completo (`og:type`, `locale`, `site_name`, `title`, `description`, `url`, `image` + dims, Twitter Card); JSON-LD `WebPage` (`name`, `description`, `inLanguage`, `url`, `dateModified`, `isPartOf` → `#website`, `publisher`/`about` → `#organization`) + `BreadcrumbList`; `<title>` 77 → 57 chars; description 164 → 158 (removeu "total") para atingir a faixa ≤160 | 76% → **96%** | 35% → **50%** |
+| `termos-de-uso.html` | OG completo (idem, com `og:title`/`og:description` = `<title>`/description); JSON-LD `WebPage` + `BreadcrumbList`; `<meta robots>` já existia | 84% → **96%** | 29% → **44%** |
+
+Reauditoria completa após o lote:
+
+| Auditor | Antes | Depois |
+|---|---|---|
+| SEO técnico | 2 erros / 54 avisos / 90% | **0 erros** / 52 avisos / **91%** |
+| GEO/AEO | 2 críticos / 124 avisos / 69% | **0 críticos** / score reauditado |
+
+Pendências do lote:
+- Único aviso restante em cada página: `JSON-LD sem tipo Article/TechArticle` — limitação do auditor; `WebPage` é o tipo correto para página legal.
+- `og:image` reaproveita `imagens/og-portal-molde-injecao.jpg` (1024×631). Regerar em 1200×630 `.webp` (item T4 do backlog).
+- `politica-de-privacidade.html` não tem H3 (apenas H1/H2) — aceitável.
+
+
+
 
 ### O que foi entregue
 
@@ -128,7 +179,7 @@ Leitura estratégica: a base editorial está forte (artigos com 14 a 23 entidade
 ## 3. Backlog priorizado (não executado — exige autorização)
 
 ### P0 — Bloqueante de entidade
-1. Adicionar JSON-LD mínimo (`WebPage` + `Organization` + `BreadcrumbList`) em `politica-de-privacidade.html` e `termos-de-uso.html`.
+1. Adicionar JSON-LD mínimo (`WebPage` + `Organization` + `BreadcrumbList`) em `politica-de-privacidade.html` e `termos-de-uso.html`. — ✅ **concluído no Lote 1 (06/11/2026)**
 
 ### P1 — Ganho rápido de SEO/GEO
 2. Encurtar `<title>` das 17 páginas acima de 65 caracteres e as 12 meta descriptions longas.
