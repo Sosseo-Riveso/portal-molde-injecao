@@ -210,3 +210,38 @@ Cada arte precisa conversar com o texto do post e **não** repetir composição 
 - Os 8 artigos publicados, os 4 pilares, os 4 hubs e a home permanecem intactos.
 - O `rascunhos/IMAGENS-A-CRIAR.md` continua válido como registro dos alt texts atuais.
 
+---
+
+## Status da produção — ARTES ENTREGUES (07/11/2026)
+
+As 20 artes foram produzidas e integradas. Alguns nomes finais diferem do briefing original; prevaleceu o nome escolhido na produção.
+
+| # | Nome no briefing | Nome entregue (final) | Peso final | Dimensão |
+|--:|---|---|---:|---|
+| 1 | `lote-minimo-moq-curva-amortizacao-molde` | *(igual)* | 60,2 KB | 1200×675 |
+| 2 | `lote-minimo-setup-corrida-curta-bancada` | `lote-minimo-smed-troca-rapida-molde` | 77,1 KB | 800×800 |
+| 3 | `injecao-sob-demanda-kanban-cartoes-producao` | *(igual)* | 116,7 KB | 1200×675 |
+| 4 | `injecao-sob-demanda-estoque-enxuto-contentores` | `injecao-sob-demanda-setup-inspecao-qualidade` | 77,0 KB | 800×800 |
+| 5 | `sobreinjecao-inserto-bucha-roscada-corte` | *(igual)* | 86,0 KB | 1200×675 |
+| 6 | `sobreinjecao-ensaio-arrancamento-inserto` | `sobreinjecao-teste-inspecao-qualidade-peca` | 79,2 KB | 800×800 |
+| 7 | `nacionalizacao-molde-importado-roscas-npt-bsp` | *(igual)* | 102,7 KB | 1200×675 |
+| 8 | `nacionalizacao-anel-centragem-altura-injetora` | `nacionalizacao-molde-importado-refrigeracao-extracao` | 77,5 KB | 800×800 |
+| 9 | `contrato-fornecimento-comodato-molde-documento` | *(igual)* | 102,1 KB | 1200×675 |
+| 10 | `contrato-sla-otd-entrega-programada-injetados` | `contrato-comodato-auditoria-inventario-molde` | 77,0 KB | 800×800 |
+| 11 | `molde-usado-inspecao-particao-lampada` | *(igual)* | 117,6 KB | 1200×675 |
+| 12 | `molde-usado-durometro-dureza-hrc` | `molde-usado-reforma-ajuste-refrigeracao` | 78,7 KB | 800×800 |
+| 13 | `molde-gaveta-slide-cinematica-cunha` | *(igual)* | 111,9 KB | 1200×675 |
+| 14 | `molde-gaveta-lifter-desmoldagem-detalhe` | `molde-gaveta-slide-ajuste-mecanismo` | 79,9 KB | 800×800 |
+| 15 | `refrigeracao-conformal-inserto-dmls-canais` | *(igual)* | 119,0 KB | 1200×675 |
+| 16 | `refrigeracao-conformal-mapa-termico-ciclo` | `refrigeracao-conformal-inserto-dmls-canais-detalhe` | 74,0 KB | 800×800 |
+| 17 | `custo-hora-maquina-planilha-operador-painel` | *(igual)* | 118,6 KB | 1200×675 |
+| 18 | `custo-hora-maquina-composicao-custo-grafico` | `custo-hora-maquina-painel-tempo-ciclo` | 79,8 KB | 800×800 |
+| 19 | `molde-2k-mesa-giratoria-duas-cavidades` | *(igual)* | 115,8 KB | 1200×675 |
+| 20 | `molde-2k-selagem-pp-tpe-interface` | `molde-2k-index-rotativo-mecanismo` | 78,1 KB | 800×800 |
+
+**Otimização:** 60,67 MB de origem → **1,79 MB** publicados (−97%). Todas as capas ≤120 KB e todos os corpos ≤80 KB, com EXIF mínimo (sem GPS).
+
+**Integração concluída:** `src`, `og:image` e `alt` atualizados nos 10 rascunhos; 0 referências quebradas; `alt` em português com acentuação correta, descrevendo o que cada arte mostra.
+
+> O arquivo `refrigeracao1-conformal-inserto-dmls-canais.webp` foi renomeado para `refrigeracao-conformal-inserto-dmls-canais-detalhe.webp` (o "1" era sufixo de versão).
+

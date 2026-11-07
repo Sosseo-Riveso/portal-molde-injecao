@@ -533,3 +533,25 @@ Fluxo aprovado para quando as artes existirem: salvar em `/imagens/` → trocar 
 
 > Nota de governança: `IMAGENS-A-CRIAR.md` é arquivo interno (`.assetsignore` cobre `*.md`), portanto não é publicado no CDN.
 
+---
+
+## 7. Artes dos rascunhos — entregues e integradas (07/11/2026)
+
+As 20 artes chegaram no formato bruto (WebP 2752×1536 para capas e 2048×2048 para corpos, 60,67 MB no total) e foram otimizadas para a spec antes da integração.
+
+| Item | Resultado |
+|---|---|
+| Otimização | 60,67 MB → **1,79 MB** (−97%), WebP q66–85 adaptativo, EXIF mínimo sem GPS |
+| Capas | 10 arquivos em 1200×675, de 60,2 KB a 119,0 KB (todas ≤120 KB) |
+| Corpos | 10 arquivos em 800×800, de 74,0 KB a 79,9 KB (todos ≤80 KB) |
+| Destino | `imagens/` (pasta pública), reutilizando os nomes definidos na produção |
+| `refrigeracao1-…` | renomeado para `refrigeracao-conformal-inserto-dmls-canais-detalhe.webp` (sufixo de versão) |
+| Rascunhos atualizados | 10 — `src` (`../imagens/…`), `og:image` (URL absoluta) e `alt` em pt-BR |
+| Referências quebradas | **0** |
+| Artigos publicados / pilares / hubs / home | **intactos** |
+| SEO / GEO | 97% / 91% (inalterados) |
+
+Dez nomes finais diferem do briefing original (prevaleceu o nome de produção) e o mapeamento completo está em `IMAGENS-A-CRIAR.md`, seção “Status da produção”.
+
+Os 20 arquivos-fonte em `rascunhos/*.webp` ficaram no `.gitignore` (60 MB de trabalho); apenas as versões otimizadas de `imagens/` são versionadas e publicadas.
+
