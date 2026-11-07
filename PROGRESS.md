@@ -252,6 +252,21 @@ Snippet aplicado (idêntico ao que já existia, com `async` e `gtag('config')`):
 
 Validação: 33/33 com GA4 único e dentro do `<head>`; 0 ocorrências de `GTM-`; 0 `<noscript>`; 1 `<head>`/`</head>`/`<body>` por página; `<script>`/`<div>`/`<a>` balanceados em todos os arquivos; SEO **97%** e GEO **91%** inalterados. `painel-leads.html` e o template seguem sem tag de medição por decisão de projeto.
 
+#### Atualização do ID de medição (06/11/2026)
+
+Substituído o ID antigo `G-bc0f1329` pelo novo `G-76GCJPMSHS` nas 33 páginas — 66 substituições (URL do `gtag.js` + chamada `gtag('config')` em cada arquivo). O bloco permaneceu idêntico em estrutura, apenas com o novo identificador.
+
+| Verificação | Resultado |
+|---|---|
+| `G-bc0f1329` restante | **0** |
+| `G-76GCJPMSHS` presente | **33/33** páginas, 1 script + 1 config cada |
+| GTM / `noscript` | **0** |
+| `gtag.js` com `async` no `<head>` | 33/33 |
+| Desequilíbrio de tags | 0 |
+| SEO / GEO | 97% / 91% (inalterados) |
+
+`PROJECT_CONTEXT.md` atualizado na tabela de infraestrutura.
+
 
 
 ### Google Tag Manager (06/11/2026) — **revertido na mesma data**

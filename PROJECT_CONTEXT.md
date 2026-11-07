@@ -19,7 +19,7 @@ Modelo de negócio: o portal entrega demanda qualificada + autoridade técnica; 
 | Deploy | Automático via `git push` para `main` |
 | Captura de leads | `js/lead-tracker.js` → `POST /api/triagem` → KV `LEADS_KV` + e-mail → webhook Google Sheets (`GOOGLE-APPS-SCRIPT-CRM.js`) |
 | Painel interno | `/painel-leads` (bloqueado no `robots.txt`) |
-| Rastreamento | GA4 `G-bc0f1329` |
+| Rastreamento | GA4 `G-76GCJPMSHS` (gtag.js nativo, sem GTM) |
 | Localização | Polo operacional São Paulo/SP; atendimento técnico em todo o Brasil; parques fabris em SP e Região Sul |
 | Certificações citadas no site | ISO 9001:2015, metrologia CMM, tolerâncias centesimais (±0,02 mm) |
 | Contato comercial | WhatsApp `5511999999999` (configurável via `pmi_dest_phone`) e `portalmoldeinjecao@gmail.com` |
