@@ -19,3 +19,6 @@ rascunhos/*.jpg
 rascunhos/*.jpeg
 rascunhos/*.png
 
+# Pasta de trabalho da producao das artes (transitoria): o destino final e /imagens/
+rascunhos/Imagens/
+
