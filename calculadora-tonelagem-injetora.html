@@ -59,80 +59,93 @@
 
   <!-- Schema.org WebApplication + FAQPage + BreadcrumbList -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora#app",
-        "name": "Calculadora de Força de Fechamento de Injetoras",
-        "url": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora",
-        "description": "Ferramenta técnica de engenharia para cálculo de força de fechamento e tonelagem de máquinas injetoras termoplásticas a partir da área projetada, número de cavidades e pressão específica do polímero.",
-        "applicationCategory": "EngineeringApplication",
-        "operatingSystem": "All",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "BRL"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora#app",
+      "name": "Calculadora de Força de Fechamento de Injetoras",
+      "url": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora",
+      "description": "Ferramenta técnica de engenharia para cálculo de força de fechamento e tonelagem de máquinas injetoras termoplásticas a partir da área projetada, número de cavidades e pressão específica do polímero.",
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Portal Molde Injeção",
+        "url": "https://portalmoldeinjecao.com.br/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://portalmoldeinjecao.com.br/Logos/logo-pmi-fundo-branco.webp"
         },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Portal Molde Injeção",
-          "url": "https://portalmoldeinjecao.com.br/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://portalmoldeinjecao.com.br/Logos/logo-pmi-fundo-branco.webp"
-          }
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Como medir corretamente a área projetada da peça para inserir na Calculadora de Força de Fechamento de Injetoras?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A área projetada corresponde à sombra bidimensional (2D) da peça projetada sobre o plano da linha de partição do molde, perpendicular ao eixo de abertura da máquina injetora. Furos passantes no sentido de extração devem ser subtraídos da área total, enquanto a altura ou profundidade vertical da peça não altera a área projetada."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Por que a Calculadora de Força de Fechamento de Injetoras adiciona 12% para canais e 15% de margem de segurança?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Em moldes de canal frio, o galho de alimentação e os canais de distribuição sofrem a mesma pressão hidráulica de injeção das cavidades, acrescentando em média 10% a 15% de área projetada. Já a margem operacional de 15% protege os tirantes e o conjunto de joelheiras da injetora contra fadiga mecânica por operação no limite nominal."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Qual o risco de operar um molde compacto aplicando força de fechamento excessiva em uma injetora grande?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Aplicar tonelagem excessiva sobre um molde de área reduzida concentra tensão compressiva acima do limite de escoamento do aço na linha de fechamento (coining), esmagando as saídas de gases (venting) de 0,015 mm a 0,025 mm. Isso provoca efeito Diesel (queima por ar comprimido), empenamento das placas da injetora e trincas prematuras em postiços."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Como a troca de Polipropileno (PP) por Policarbonato (PC) ou PA66 com fibra de vidro altera a tonelagem na calculadora?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Poliolefinas de alta fluidez como o Polipropileno (PP) exigem fator de pressão específico entre 0,30 e 0,35 t/cm², enquanto polímeros de alta viscosidade como Policarbonato (PC) e Poliamida PA66 com 30% de fibra de vidro demandam de 0,55 a 0,75 t/cm². Na prática, injetar a mesma geometria em PA66-GF30 exige o dobro da força de fechamento."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalmoldeinjecao.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Calculadora de Força de Fechamento de Injetoras", "item": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora" }
+        "sameAs": [
+          "https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como medir corretamente a área projetada da peça para inserir na Calculadora de Força de Fechamento de Injetoras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A área projetada corresponde à sombra bidimensional (2D) da peça projetada sobre o plano da linha de partição do molde, perpendicular ao eixo de abertura da máquina injetora. Furos passantes no sentido de extração devem ser subtraídos da área total, enquanto a altura ou profundidade vertical da peça não altera a área projetada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que a Calculadora de Força de Fechamento de Injetoras adiciona 12% para canais e 15% de margem de segurança?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em moldes de canal frio, o galho de alimentação e os canais de distribuição sofrem a mesma pressão hidráulica de injeção das cavidades, acrescentando em média 10% a 15% de área projetada. Já a margem operacional de 15% protege os tirantes e o conjunto de joelheiras da injetora contra fadiga mecânica por operação no limite nominal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual o risco de operar um molde compacto aplicando força de fechamento excessiva em uma injetora grande?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aplicar tonelagem excessiva sobre um molde de área reduzida concentra tensão compressiva acima do limite de escoamento do aço na linha de fechamento (coining), esmagando as saídas de gases (venting) de 0,015 mm a 0,025 mm. Isso provoca efeito Diesel (queima por ar comprimido), empenamento das placas da injetora e trincas prematuras em postiços."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como a troca de Polipropileno (PP) por Policarbonato (PC) ou PA66 com fibra de vidro altera a tonelagem na calculadora?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Poliolefinas de alta fluidez como o Polipropileno (PP) exigem fator de pressão específico entre 0,30 e 0,35 t/cm², enquanto polímeros de alta viscosidade como Policarbonato (PC) e Poliamida PA66 com 30% de fibra de vidro demandam de 0,55 a 0,75 t/cm². Na prática, injetar a mesma geometria em PA66-GF30 exige o dobro da força de fechamento."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://portalmoldeinjecao.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculadora de Força de Fechamento de Injetoras",
+          "item": "https://portalmoldeinjecao.com.br/calculadora-tonelagem-injetora"
+        }
+      ]
+    }
+  ]
+}
+    </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
 <!-- METADADOS DE SEO E GEO (OCULTOS NA VISUALIZAÇÃO)
@@ -725,7 +738,7 @@
           <li><a href="/politica-de-privacidade" class="hover:text-white transition-colors">Política de Privacidade (LGPD)</a></li>
           <li><a href="/termos-de-uso" class="hover:text-white transition-colors">Termos de Uso</a></li>
           <li><a href="mailto:portalmoldeinjecao@gmail.com" class="hover:text-white transition-colors">portalmoldeinjecao@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/company/145304607/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-400 hover:text-sky-300 font-semibold transition-colors">LinkedIn Oficial (PMI) &#8599;</a></li>
+          <li><a href="https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/" aria-label="Siga o Portal Molde de Injeção no LinkedIn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-400 hover:text-sky-300 font-semibold transition-colors">LinkedIn Oficial (PMI) &#8599;</a></li>
         </ul>
       </div>
     </div>

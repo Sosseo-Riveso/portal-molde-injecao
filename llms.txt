@@ -6,7 +6,7 @@
 
 - **Nome Oficial:** Portal Molde Injeção (PMI)
 - **URL Canônica:** https://portalmoldeinjecao.com.br/
-- **LinkedIn Oficial (Company Page):** https://www.linkedin.com/company/145304607/
+- **LinkedIn Oficial (Company Page):** https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/
 - **E-mail de Engenharia Comercial (RFQ / NDA):** portalmoldeinjecao@gmail.com
 - **Polo Operacional:** São Paulo / SP (Atendimento técnico B2B em todo o Brasil, com parques fabris homologados em SP e Região Sul)
 - **Certificação de Qualidade:** ISO 9001:2015 com controle dimensional em CMM Tridimensional e relatórios de Try-out (T0, T1, T2) e PPAP

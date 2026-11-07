@@ -50,84 +50,87 @@
 
   <!-- Schema.org JSON-LD: WebApplication + FAQPage + BreadcrumbList -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Calculadora de Custo de Peça Injetada",
-        "url": "https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada",
-        "applicationCategory": "EngineeringApplication",
-        "operatingSystem": "All",
-        "description": "Calculadora online de engenharia econômica para estimar o custo unitário de peças plásticas injetadas combinando custo de matéria-prima termoplástica, taxa de perda técnica e rateio de hora-máquina por tempo de ciclo e cavidades.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "BRL"
-        },
-        "provider": {
-          "@type": "Organization",
-          "name": "Portal Molde Injeção",
-          "url": "https://portalmoldeinjecao.com.br/"
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Calculadora de Custo de Peça Injetada",
+      "url": "https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada",
+      "applicationCategory": "EngineeringApplication",
+      "operatingSystem": "All",
+      "description": "Calculadora online de engenharia econômica para estimar o custo unitário de peças plásticas injetadas combinando custo de matéria-prima termoplástica, taxa de perda técnica e rateio de hora-máquina por tempo de ciclo e cavidades.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "BRL"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Qual é a fórmula exata utilizada na Calculadora de Custo de Peça Injetada?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A Calculadora de Custo de Peça Injetada aplica a equação C_unit = [(M_p / 1000) × (1 + i_perda) × P_kg] + [C_hm / ((3600 / t_ciclo) × N_cav)], somando o custo da massa polimérica com 3% de perda operacional ao custo da hora-máquina dividido pela produtividade horária do molde."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Como o número de cavidades do molde impacta o custo unitário da peça plástica?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "O aumento do número de cavidades multiplica a produção horária sem elevar proporcionalmente a hora-máquina da injetora. Passar de 1 para 4 cavidades reduz em até 75% a parcela de custo de transformação por peça, diluindo rapidamente o investimento adicional na matriz para lotes acima de 50.000 unidades."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Por que o cálculo inclui 3% de perda técnica sobre o peso líquido da peça?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A margem de 3% de perda técnica compensa o polímero consumido na purga de canhão durante setups, estabilização térmica dos primeiros ciclos (start-up) e eventuais perdas de moagem de canais frios, garantindo que o orçamento industrial reflita o consumo real de matéria-prima no chão de fábrica."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Quando compensa investir em câmara quente para reduzir o custo da peça injetada?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "O investimento em câmara quente compensa quando a peça utiliza resinas de engenharia de alto valor (PA66+FV, PC, POM) ou quando o galho representa mais de 15% do peso da injetada em tiragens recorrentes, eliminando o desperdício de material e reduzindo o tempo de ciclo entre 15% e 30%."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Início",
-            "item": "https://portalmoldeinjecao.com.br/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Calculadora de Custo de Peça Injetada",
-            "item": "https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada"
-          }
+      "provider": {
+        "@type": "Organization",
+        "name": "Portal Molde Injeção",
+        "url": "https://portalmoldeinjecao.com.br/",
+        "sameAs": [
+          "https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/"
         ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qual é a fórmula exata utilizada na Calculadora de Custo de Peça Injetada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Calculadora de Custo de Peça Injetada aplica a equação C_unit = [(M_p / 1000) × (1 + i_perda) × P_kg] + [C_hm / ((3600 / t_ciclo) × N_cav)], somando o custo da massa polimérica com 3% de perda operacional ao custo da hora-máquina dividido pela produtividade horária do molde."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como o número de cavidades do molde impacta o custo unitário da peça plástica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O aumento do número de cavidades multiplica a produção horária sem elevar proporcionalmente a hora-máquina da injetora. Passar de 1 para 4 cavidades reduz em até 75% a parcela de custo de transformação por peça, diluindo rapidamente o investimento adicional na matriz para lotes acima de 50.000 unidades."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que o cálculo inclui 3% de perda técnica sobre o peso líquido da peça?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A margem de 3% de perda técnica compensa o polímero consumido na purga de canhão durante setups, estabilização térmica dos primeiros ciclos (start-up) e eventuais perdas de moagem de canais frios, garantindo que o orçamento industrial reflita o consumo real de matéria-prima no chão de fábrica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando compensa investir em câmara quente para reduzir o custo da peça injetada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O investimento em câmara quente compensa quando a peça utiliza resinas de engenharia de alto valor (PA66+FV, PC, POM) ou quando o galho representa mais de 15% do peso da injetada em tiragens recorrentes, eliminando o desperdício de material e reduzindo o tempo de ciclo entre 15% e 30%."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://portalmoldeinjecao.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Calculadora de Custo de Peça Injetada",
+          "item": "https://portalmoldeinjecao.com.br/calculadora-custo-peca-injetada"
+        }
+      ]
+    }
+  ]
+}
+    </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
 <!--
@@ -842,7 +845,7 @@ METADADOS DE SEO E GEO (ENGENHARIA INDUSTRIAL B2B):
           <li><a href="/politica-de-privacidade" class="hover:text-white transition-colors">Política de Privacidade (LGPD)</a></li>
           <li><a href="/termos-de-uso" class="hover:text-white transition-colors">Termos de Uso</a></li>
           <li><a href="mailto:portalmoldeinjecao@gmail.com" class="hover:text-white transition-colors">portalmoldeinjecao@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/company/145304607/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-400 hover:text-sky-300 font-semibold transition-colors">LinkedIn Oficial (PMI) &#8599;</a></li>
+          <li><a href="https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/" aria-label="Siga o Portal Molde de Injeção no LinkedIn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sky-400 hover:text-sky-300 font-semibold transition-colors">LinkedIn Oficial (PMI) &#8599;</a></li>
         </ul>
       </div>
     </div>

@@ -199,6 +199,20 @@ Pré-check próprio dos 10: 0 pendências (JSON-LD válido, title 50-60, descrip
 
 **d) Restrições respeitadas** — nenhuma menção a IATF 16949, PPAP, APQP, FMEA ou MSA em todo o site (verificado: 0 ocorrências). Qualidade tratada como gestão ISO 9001:2015, CEP, CMM e rastreabilidade dimensional. Nenhuma promessa de planta fabril própria: sempre "parques homologados".
 
+### Integração do LinkedIn oficial (06/11/2026)
+
+Substituição da Company Page provisória pela URL oficial `https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/` em todo o ecossistema.
+
+| Item | Antes | Depois |
+|---|---|---|
+| Rodapé (link) | `company/145304607/` em 33 arquivos (23 públicas + 10 rascunhos), sem `aria-label` | URL oficial + `aria-label="Siga o Portal Molde de Injeção no LinkedIn"`, mantendo `target="_blank"` e `rel="noopener noreferrer"` |
+| `sameAs` | 3 nós (index, contato, sobre) com a URL antiga | 3 nós atualizados + **10 nós `publisher`** (8 artigos e 2 calculadoras) passaram a declarar `sameAs` |
+| `llms.txt` / `llms-full.txt` | URL antiga | URL oficial (consistência de entidade para LLMs) |
+
+O nó `author` (que aponta para `/sobre` e representa a autoria editorial, não a empresa) foi mantido sem `sameAs` para não fundir duas entidades distintas.
+
+Reauditoria: SEO **97%** (0 erros) e GEO **91%** (0 críticas, 37 avisos — antes 39). Todos os blocos JSON-LD revalidados por parse: 0 inválidos.
+
 **e) Procedimento de liberação semanal — automatizado** por `scripts/liberar_post.py` (ferramenta local, fora do git e do CDN conforme `.clinerules`):
 
 ```powershell
