@@ -511,3 +511,25 @@ Leitura estratégica: a base editorial está forte (artigos com 14 a 23 entidade
 | Data | Evento |
 |---|---|
 | 02/11/2026 | Criação do framework de governança (`.clinerules`), `PROJECT_CONTEXT.md`, `template-post-padrao.html`, `scripts/seo_checker.py` e `scripts/geo_checker.py`; atualização de `.gitignore`/`.assetsignore`; criação de `.clineignore`; baseline de auditoria das 23 páginas públicas (SEO 90% / GEO 69%). Nenhuma página publicada alterada. |
+
+---
+
+## 6. Inventário visual dos rascunhos — concluído (06/11/2026)
+
+Auditoria de reuso de imagens nas 33 páginas (`<img src>` + `og:image`) concluída e aprovada. **Nenhum HTML foi alterado**: os caminhos `src` e `og:image` dos rascunhos continuam apontando para as imagens atuais, e os artigos publicados seguem intactos.
+
+| Constatação | Número |
+|---|---|
+| Rascunhos aguardando lançamento | 10 |
+| Imagens envolvidas (capa + corpo) | 20 |
+| Imagens com arte própria | **0** |
+| Imagens que também são capa/OG de artigo publicado | 7 |
+| Imagem com maior reuso (`parque-maquinas-injetoras-80t-350t…`) | 5 páginas |
+| Arquivo de briefing criado | `IMAGENS-A-CRIAR.md` (raiz, 20 tabelas + 20 briefings) |
+
+**Status editorial:** os 10 rascunhos (09/11 a 09/12) ficam **bloqueados para lançamento** até a confecção das 20 novas artes. Especificação fixada no briefing: capa 1200×675 (≤120 KB) e corpo 800×800 (≤80 KB), WebP q80–85, alt semântico por imagem.
+
+Fluxo aprovado para quando as artes existirem: salvar em `/imagens/` → trocar `src`, `og:image` e `alt` no rascunho → rodar `seo_checker`/`geo_checker` → registrar aqui → liberar pelo `scripts/liberar_post.py`.
+
+> Nota de governança: `IMAGENS-A-CRIAR.md` é arquivo interno (`.assetsignore` cobre `*.md`), portanto não é publicado no CDN.
+
