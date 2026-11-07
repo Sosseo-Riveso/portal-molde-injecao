@@ -224,7 +224,7 @@ Sem link externo por decisão editorial: `molde-camara-quente-vs-canal-frio`, `p
 
 Validação: 14/14 no `<body>`, atributos completos, 0 `<a>` aninhado, 0 âncora vazia. SEO **97%** (0 erros) e GEO **91%** (0 críticas) preservados.
 
-**Pendência identificada (não corrigida):** `index.html` linha 1801 tem `<a>` do WhatsApp sem `</a>` — pré-existente em HEAD e fora do escopo autorizado (arquivo em edição por terceiros).
+**Correção aplicada (06/11/2026):** `index.html` linha 1801 tinha `<a>` do botão flutuante do WhatsApp sem `</a>`, o que mantinha todo o restante da home aninhado dentro do link. Tag fechada após o `<svg>`; balanço da página conferido: `<a>` 71/71, `<div>` 276/276, `<script>` 7/7, `<svg>` 30/30, 1 `<h1>` e 1 bloco JSON-LD. SEO 97% e GEO 91% preservados.
 
 ### Integração do LinkedIn oficial (06/11/2026)
 
