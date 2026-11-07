@@ -199,6 +199,33 @@ Pré-check próprio dos 10: 0 pendências (JSON-LD válido, title 50-60, descrip
 
 **d) Restrições respeitadas** — nenhuma menção a IATF 16949, PPAP, APQP, FMEA ou MSA em todo o site (verificado: 0 ocorrências). Qualidade tratada como gestão ISO 9001:2015, CEP, CMM e rastreabilidade dimensional. Nenhuma promessa de planta fabril própria: sempre "parques homologados".
 
+### Links externos de autoridade (06/11/2026)
+
+14 outbound links aplicados em 6 artigos publicados e 8 rascunhos — 1 por página, apenas em menção direta a norma/entidade, sempre com `target="_blank" rel="noopener noreferrer external"` e `title` da fonte.
+
+| Página | Âncora | Fonte |
+|---|---|---|
+| `quanto-custa-fabricar-um-molde...` | SPI A-1/A-2 | Plastics Industry Association (SPI) |
+| `diferenca-entre-aco-p20-2738...` | SPI (Society of the Plastics Industry) | Plastics Industry Association (SPI) |
+| `guia-de-resinas-termoplasticas...` | resinas termoplásticas | ABIPLAST |
+| `como-calcular-forca-de-fechamento...` | índice de fluidez (MFI) | ISO 1133 |
+| `simulacao-moldflow-e-analise-reologica...` | simulação Moldflow | Autodesk Moldflow |
+| `manutencao-preventiva-e-corretiva...` | inspeção dimensional CMM | IPT |
+| `molde-de-injecao-usado...` (rascunho) | durômetro portátil | IPT |
+| `nacionalizacao-de-molde-importado` (rascunho) | NPT ou BSP | ISO 228-1 |
+| `refrigeracao-conformal-em-moldes` (rascunho) | manufatura aditiva metálica (DMLS) | ASTM (ISO/ASTM 52900) |
+| `contrato-de-fornecimento...` (rascunho) | ISO 9001:2015 | ABNT Catálogo |
+| `custo-hora-maquina-injetora` (rascunho) | tarifa industrial | ANEEL |
+| `lote-minimo-de-injecao-plastica` (rascunho) | classe SPI 104 | Plastics Industry Association (SPI) |
+| `sobreinjecao-de-inserto-metalico` (rascunho) | ISO 286 IT7 | ISO 286-1 |
+| `molde-bicomponente-duas-cores-2k` (rascunho) | TPE modificado | ABIPLAST |
+
+Sem link externo por decisão editorial: `molde-camara-quente-vs-canal-frio`, `principais-defeitos-na-injecao-plastica`, `injecao-plastica-sob-demanda`, `molde-com-gaveta-slide-e-contra-saida` (não mencionam norma no corpo). Home, pilares, hubs, contato, sobre, calculadoras e legais permaneceram sem outbound no conteúdo.
+
+Validação: 14/14 no `<body>`, atributos completos, 0 `<a>` aninhado, 0 âncora vazia. SEO **97%** (0 erros) e GEO **91%** (0 críticas) preservados.
+
+**Pendência identificada (não corrigida):** `index.html` linha 1801 tem `<a>` do WhatsApp sem `</a>` — pré-existente em HEAD e fora do escopo autorizado (arquivo em edição por terceiros).
+
 ### Integração do LinkedIn oficial (06/11/2026)
 
 Substituição da Company Page provisória pela URL oficial `https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/` em todo o ecossistema.
