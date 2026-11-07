@@ -226,6 +226,22 @@ Validação: 14/14 no `<body>`, atributos completos, 0 `<a>` aninhado, 0 âncora
 
 **Correção aplicada (06/11/2026):** `index.html` linha 1801 tinha `<a>` do botão flutuante do WhatsApp sem `</a>`, o que mantinha todo o restante da home aninhado dentro do link. Tag fechada após o `<svg>`; balanço da página conferido: `<a>` 71/71, `<div>` 276/276, `<script>` 7/7, `<svg>` 30/30, 1 `<h1>` e 1 bloco JSON-LD. SEO 97% e GEO 91% preservados.
 
+### Auditoria de assets — duplicatas (06/11/2026)
+
+Auditoria por MD5 + dHash 64 bits sobre os 39 arquivos de `/imagens` (4,69 MB) e as 166 referências de asset nos 33 HTMLs.
+
+| Achado | Situação | Correção |
+|---|---|---|
+| `orcamento-tecnico-rfq-...webp` havia sido sobrescrita na otimização de 06/11 com a foto do parque (dHash idêntico ao `parque-maquinas-...webp`), perdendo a arte original de composição de custos | Regressão em produção: `og:image` de `quanto-custa` e `calculadora-custo-peca`, card do hub `categoria-processos` e corpo do rascunho `lote-minimo` (que repetia a capa) | Restaurada de `ac25210^` e reencodada a 1200x675 q88: **147,4 KB → 107,5 KB**, dHash `0x2d3d…` (conteúdo original) e 30 bits de distância do `parque` |
+| `Injeção-Plástica-Diretor-Comercial-...jpg` com MD5 idêntico ao `og-portal-molde-injecao.jpg` | duplicata byte a byte, órfã | arquivo removido; `og-portal` mantido (usado em index, contato, política e termos) |
+| `Diretor-Comercial-Analise-Buscas-...jpg` e `ajuste-bancada-...ferramentaria.jpg` | órfãos (0 referências) | removidos |
+
+Total liberado: **836 KB** de arquivos sem uso. `/imagens` agora tem apenas `og-portal-molde-injecao.jpg` como JPG.
+
+Validação pós-correção: 166 referências de asset conferidas, **0 quebradas**; 33 arquivos sem desequilíbrio de `<a>`/`<div>`/`<script>`; SEO **97%** e GEO **91%** preservados.
+
+
+
 ### Integração do LinkedIn oficial (06/11/2026)
 
 Substituição da Company Page provisória pela URL oficial `https://www.linkedin.com/company/portal-molde-inje%C3%A7%C3%A3o/` em todo o ecossistema.
