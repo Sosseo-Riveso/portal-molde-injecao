@@ -226,7 +226,35 @@ Validação: 14/14 no `<body>`, atributos completos, 0 `<a>` aninhado, 0 âncora
 
 **Correção aplicada (06/11/2026):** `index.html` linha 1801 tinha `<a>` do botão flutuante do WhatsApp sem `</a>`, o que mantinha todo o restante da home aninhado dentro do link. Tag fechada após o `<svg>`; balanço da página conferido: `<a>` 71/71, `<div>` 276/276, `<script>` 7/7, `<svg>` 30/30, 1 `<h1>` e 1 bloco JSON-LD. SEO 97% e GEO 91% preservados.
 
-### Google Tag Manager (06/11/2026)
+### GA4 nativo — reversão do GTM (06/11/2026)
+
+O contêiner GTM foi removido e a medição passou a ser 100% direta via `gtag.js`, reduzindo o overhead de uma biblioteca de 533 KB.
+
+| Item | Antes | Depois |
+|---|---|---|
+| GTM `GTM-W78SNGQ6` | script no `<head>` + `noscript` no `<body>` em 33 páginas (66 blocos) | **0** — todos removidos |
+| GA4 `G-bc0f1329` | 14 páginas com tag direta | **33 páginas**, exatamente 1 bloco cada |
+| `<noscript>` de GTM | 33 | 0 |
+| Overhead de medição | GTM (~533 KB) + gtag.js | apenas gtag.js assíncrono |
+
+Snippet aplicado (idêntico ao que já existia, com `async` e `gtag('config')`):
+
+```html
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-bc0f1329"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-bc0f1329');
+</script>
+```
+
+Validação: 33/33 com GA4 único e dentro do `<head>`; 0 ocorrências de `GTM-`; 0 `<noscript>`; 1 `<head>`/`</head>`/`<body>` por página; `<script>`/`<div>`/`<a>` balanceados em todos os arquivos; SEO **97%** e GEO **91%** inalterados. `painel-leads.html` e o template seguem sem tag de medição por decisão de projeto.
+
+
+
+### Google Tag Manager (06/11/2026) — **revertido na mesma data**
 
 Instalado o contêiner **GTM-W78SNGQ6** nas 33 páginas HTML (23 públicas + 10 rascunhos), com o bootstrap canônico no `<head>` (evento `gtm.start` + carregamento assíncrono) e o `noscript` imediatamente após `<body>`.
 
