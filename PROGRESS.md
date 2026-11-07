@@ -226,6 +226,23 @@ Validação: 14/14 no `<body>`, atributos completos, 0 `<a>` aninhado, 0 âncora
 
 **Correção aplicada (06/11/2026):** `index.html` linha 1801 tinha `<a>` do botão flutuante do WhatsApp sem `</a>`, o que mantinha todo o restante da home aninhado dentro do link. Tag fechada após o `<svg>`; balanço da página conferido: `<a>` 71/71, `<div>` 276/276, `<script>` 7/7, `<svg>` 30/30, 1 `<h1>` e 1 bloco JSON-LD. SEO 97% e GEO 91% preservados.
 
+### Google Tag Manager (06/11/2026)
+
+Instalado o contêiner **GTM-W78SNGQ6** nas 33 páginas HTML (23 públicas + 10 rascunhos), com o bootstrap canônico no `<head>` (evento `gtm.start` + carregamento assíncrono) e o `noscript` imediatamente após `<body>`.
+
+| Item | Situação |
+|---|---|
+| GTM nas 33 páginas | ✅ 2 ocorrências por arquivo (script no head + iframe noscript), posicionamento validado |
+| GA4 `G-bc0f1329` (tag direta) | preservada nos 14 arquivos que já a tinham; páginas que não tinham continuam sem gtag direto |
+| `painel-leads.html` e `template-post-padrao.html` | fora do escopo (painel interno `noindex` não deve poluir dados; template não é publicado) |
+| Auditoria | SEO 97% / GEO 91%, 0 erros, 0 desequilíbrio de `<script>`/`<div>`/`<a>` |
+
+**Ajuste de implementação:** o trecho fornecido misturava as duas APIs (carregava `gtm.js?id=GTM-…` e inicializava `gtag()` sem `gtag('config')`, sem o evento `gtm.start`). Foi aplicado o snippet oficial do GTM apontando para o mesmo contêiner.
+
+**Pendência de medição:** se o contêiner `GTM-W78SNGQ6` também dispara GA4 para a propriedade `G-bc0f1329`, as 14 páginas com tag direta passam a contar page_view em duplicidade. Decisão pendente: (a) remover o gtag direto dessas 14 páginas, deixando tudo pelo GTM; ou (b) não configurar GA4 no contêiner e manter as duas medições separadas.
+
+
+
 ### Auditoria de assets — duplicatas (06/11/2026)
 
 Auditoria por MD5 + dHash 64 bits sobre os 39 arquivos de `/imagens` (4,69 MB) e as 166 referências de asset nos 33 HTMLs.
