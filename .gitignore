@@ -23,3 +23,6 @@ rascunhos/*.png
 rascunhos/Imagens/
 rascunhos/*.webp
 
+# Documentos internos (briefings, dossies, instrucoes): nunca versionar
+*.docx
+
