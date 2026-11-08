@@ -555,3 +555,21 @@ Dez nomes finais diferem do briefing original (prevaleceu o nome de produção) 
 
 Os 20 arquivos-fonte em `rascunhos/*.webp` ficaram no `.gitignore` (60 MB de trabalho); apenas as versões otimizadas de `imagens/` são versionadas e publicadas.
 
+---
+
+## 8. Primeira liberação do calendário — post 1 (07/11/2026)
+
+Post liberado com `py scripts/liberar_post.py lote-minimo-de-injecao-plastica`, **antecipado de 09/11 para 07/11** por decisão do responsável.
+
+| Item | Resultado |
+|---|---|
+| Arquivo | `lote-minimo-de-injecao-plastica.html` na raiz (removido de `rascunhos/`) |
+| Caminhos | 5 `src` convertidos de `../` para raiz; 0 resíduos |
+| Sitemap | URL adicionada com `lastmod 2026-11-07` |
+| Hub `categoria-processos-e-custos…` | card inserido, contador 2 → **3 Artigos Técnicos**, `ItemList` 2 → **3 itens**, `dateModified 2026-11-07` |
+| Datas do artigo | `datePublished`/`dateModified` e texto visível ajustados de 09/11 para **07/11/2026** (coerência com sitemap e card do hub) |
+| Auditoria | artigo em **100% SEO / 100% GEO**; global 97% / 91%, 0 erros e 0 falhas críticas |
+| Analytics | GA4 `G-76GCJPMSHS` presente, GTM ausente |
+
+Posts restantes seguem no calendário original (11/11 em diante).
+

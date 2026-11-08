@@ -49,93 +49,114 @@
 
     <!-- Schema.org CollectionPage + ItemList + BreadcrumbList -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "CollectionPage",
+      "@id": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica#collection",
+      "url": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica",
+      "name": "Processos e Custos de Injeção Plástica: Orçamentação, Amortização e Polímeros",
+      "description": "Guias técnicos sobre processos e custos de injeção plástica: quanto custa fabricar um molde de injeção, amortização por peça e guia de resinas ABS, PA66, PC, POM e PP.",
+      "inLanguage": "pt-BR",
+      "datePublished": "2026-05-20",
+      "dateModified": "2026-11-07",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://portalmoldeinjecao.com.br/#organization"
+      },
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Portal Molde Injeção",
+        "url": "https://portalmoldeinjecao.com.br/"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://portalmoldeinjecao.com.br/quanto-custa-fabricar-um-molde-de-injecao-plastica",
+            "name": "Quanto Custa Fabricar um Molde de Injeção Plástica: Guia de Orçamentação e Engenharia B2B"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://portalmoldeinjecao.com.br/guia-de-resinas-termoplasticas-abs-pa66-policarbonato-pom-e-pp",
+            "name": "Guia de Resinas Termoplásticas na Injeção Plástica: ABS, PA66, Policarbonato, POM e PP"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://portalmoldeinjecao.com.br/lote-minimo-de-injecao-plastica",
+            "name": "Lote Mínimo de Injeção Plástica: Como Calcular o MOQ Economicamente Viável"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          "@type": "CollectionPage",
-          "@id": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica#collection",
-          "url": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica",
-          "name": "Processos e Custos de Injeção Plástica: Orçamentação, Amortização e Polímeros",
-          "description": "Guias técnicos sobre processos e custos de injeção plástica: quanto custa fabricar um molde de injeção, amortização por peça e guia de resinas ABS, PA66, PC, POM e PP.",
-          "inLanguage": "pt-BR",
-          "datePublished": "2026-05-20",
-          "dateModified": "2026-11-06",
-          "publisher": {
-            "@type": "Organization",
-            "@id": "https://portalmoldeinjecao.com.br/#organization"
-          },
-          "isPartOf": {
-            "@type": "WebSite",
-            "name": "Portal Molde Injeção",
-            "url": "https://portalmoldeinjecao.com.br/"
-          },
-          "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "url": "https://portalmoldeinjecao.com.br/quanto-custa-fabricar-um-molde-de-injecao-plastica",
-              "name": "Quanto Custa Fabricar um Molde de Injeção Plástica: Guia de Orçamentação e Engenharia B2B"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "url": "https://portalmoldeinjecao.com.br/guia-de-resinas-termoplasticas-abs-pa66-policarbonato-pom-e-pp",
-              "name": "Guia de Resinas Termoplásticas na Injeção Plástica: ABS, PA66, Policarbonato, POM e PP"
-            }
-            ]
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://portalmoldeinjecao.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Categorias",
+          "item": "https://portalmoldeinjecao.com.br/#categorias"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Processos e Custos de Injeção Plástica",
+          "item": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto custa fabricar um molde de injeção plástica no Brasil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A faixa vai de R$ 25.000 a R$ 55.000 para matriz de 1 a 2 cavidades em aço P20 com canal frio, de R$ 60.000 a R$ 180.000 para moldes com gavetas em 1.2738 ou H13, e de R$ 190.000 a mais de R$ 500.000 para multicavidades SPI 101 com câmara quente valvulada. A variável que mais pesa é o número de cavidades."
           }
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://portalmoldeinjecao.com.br/" },
-            { "@type": "ListItem", "position": 2, "name": "Categorias", "item": "https://portalmoldeinjecao.com.br/#categorias" },
-            { "@type": "ListItem", "position": 3, "name": "Processos e Custos de Injeção Plástica", "item": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica" }
-          ]
+          "@type": "Question",
+          "name": "Como amortizar o custo do molde no preço da peça injetada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Divide-se o investimento pelo volume total contratado. Um molde de R$ 100.000 amortizado em 250.000 peças representa R$ 0,40 por unidade; com 1.000.000 de peças, cai para R$ 0,10. Acima de 500 mil peças, a amortização deixa de ser o principal componente do custo unitário."
+          }
         },
         {
-          "@type": "FAQPage",
-          "@id": "https://portalmoldeinjecao.com.br/categoria-processos-e-custos-de-injecao-plastica#faq",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Quanto custa fabricar um molde de injeção plástica no Brasil?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A faixa vai de R$ 25.000 a R$ 55.000 para matriz de 1 a 2 cavidades em aço P20 com canal frio, de R$ 60.000 a R$ 180.000 para moldes com gavetas em 1.2738 ou H13, e de R$ 190.000 a mais de R$ 500.000 para multicavidades SPI 101 com câmara quente valvulada. A variável que mais pesa é o número de cavidades."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Como amortizar o custo do molde no preço da peça injetada?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Divide-se o investimento pelo volume total contratado. Um molde de R$ 100.000 amortizado em 250.000 peças representa R$ 0,40 por unidade; com 1.000.000 de peças, cai para R$ 0,10. Acima de 500 mil peças, a amortização deixa de ser o principal componente do custo unitário."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Qual o impacto do tempo de ciclo no custo unitário da peça?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "O custo por hora da injetora (R$ 90 a R$ 220 por hora entre 80 t e 350 t) é dividido pela produção horária. Reduzir o ciclo de 28 s para 22 s em molde de 4 cavidades eleva a produção de 514 para 654 peças por hora, queda de 21% no custo de máquina por peça."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Por que o preço da resina pesa tanto no custo da peça?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Em peças técnicas, a matéria-prima responde por 45% a 65% do custo unitário. O PA66 GF30 custa de 3 a 5 vezes mais que o PP por quilo, então reduzir 10% do peso do galho com câmara quente ou ajustar espessura no DFM tem impacto maior que negociar a hora-máquina."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "Qual o impacto do tempo de ciclo no custo unitário da peça?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O custo por hora da injetora (R$ 90 a R$ 220 por hora entre 80 t e 350 t) é dividido pela produção horária. Reduzir o ciclo de 28 s para 22 s em molde de 4 cavidades eleva a produção de 514 para 654 peças por hora, queda de 21% no custo de máquina por peça."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que o preço da resina pesa tanto no custo da peça?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em peças técnicas, a matéria-prima responde por 45% a 65% do custo unitário. O PA66 GF30 custa de 3 a 5 vezes mais que o PP por quilo, então reduzir 10% do peso do galho com câmara quente ou ajustar espessura no DFM tem impacto maior que negociar a hora-máquina."
+          }
         }
       ]
     }
+  ]
+}
     </script>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-blue selection:text-white flex flex-col min-h-screen overflow-x-hidden">
@@ -443,7 +464,7 @@
     <main class="w-full max-w-7xl min-w-0 mx-auto px-4 sm:px-6 lg:px-8 py-14 flex-grow">
         <div class="flex items-center justify-between mb-8">
             <h2 class="text-2xl font-extrabold text-brand-navy">Guias e Estudos Técnicos em Processos e Custos de Injeção Plástica</h2>
-            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">2 Artigos Técnicos</span>
+            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">3 Artigos Técnicos</span>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 mb-16">
@@ -667,4 +688,25 @@
 
     <script src="js/lead-tracker.js"></script>
 </body>
-</html>
+</html                <article class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-brand-accent transition-all overflow-hidden flex flex-col">
+                    <a href="/lote-minimo-de-injecao-plastica" class="block overflow-hidden bg-slate-900 aspect-video">
+                        <img src="imagens/lote-minimo-moq-curva-amortizacao-molde.webp" alt="Lote Mínimo de Injeção Plástica: Como Calcular o MOQ Economicamente Viável" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" width="1200" height="675">
+                    </a>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded-full bg-blue-50 text-brand-blue text-[11px] font-bold uppercase tracking-wider mb-3">Processos e Custos de Injeção Plástica</span>
+                            <h2 class="text-xl font-extrabold text-brand-navy mb-3 leading-snug">
+                                <a href="/lote-minimo-de-injecao-plastica" class="hover:text-brand-blue transition-colors">Lote Mínimo de Injeção Plástica: Como Calcular o MOQ Economicamente Viável</a>
+                            </h2>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">Cálculo do lote mínimo viável de uma peça injetada: setup, secagem, purga, refugo de partida e amortização do ferramental.</p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-slate-500 font-medium">Publicado em 07/11/2026 • Leitura Técnica B2B</span>
+                            <a href="/lote-minimo-de-injecao-plastica" class="inline-flex items-center gap-1.5 text-sm font-bold text-brand-blue hover:text-brand-navy">
+                                <span>Ler Estudo Completo</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+>
