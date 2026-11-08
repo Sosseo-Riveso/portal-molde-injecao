@@ -573,3 +573,21 @@ Post liberado com `py scripts/liberar_post.py lote-minimo-de-injecao-plastica`, 
 
 Posts restantes seguem no calendário original (11/11 em diante).
 
+---
+
+## 9. Limpeza de assets sem uso (07/11/2026)
+
+Auditoria de referências reais (resolvendo `src`, `og:image` e `<link href>`, com URL decodificada) antes de remover qualquer arquivo.
+
+| Ação | Volume |
+|---|---|
+| `rascunhos/Imagens/` (duplicata byte a byte dos `.webp` brutos) | 20 arquivos · 60,67 MB — removido pelo responsável |
+| `rascunhos/*.webp` e `rascunhos/*.jpg` (fontes em alta resolução) | 40 arquivos · 127,80 MB — **movidos para backup fora do repositório** (`..\_backup-imagens-pmi`) |
+| `Logos/originais/` (2 JPG 2400×1792) + 7 variantes de logo sem uso | 9 arquivos · ~3,2 MB — removidos e versionados no commit `a176415` |
+
+Mantidos: as 56 imagens de `/imagens/` (todas referenciadas), os 3 logos em uso (`logo-pmi-fundo-branco.webp`, `logo-pmi-fundo-preto.webp`, `manutencao-moldes-ferramentaria-propria.jpg`), `imagens/selo-iso-9001-anel.png`, `imagens/og-portal-molde-injecao.jpg` e `favicon.png` da raiz.
+
+Validação: **200 referências de asset conferidas, 0 quebradas**; SEO 97% e GEO 91% inalterados; em produção os logos mantidos respondem 200 e os removidos 404 (CDN limpo).
+
+> Nenhum HTML apontava para `rascunhos/`: as páginas consomem apenas os WebP otimizados de `/imagens/`.
+
