@@ -612,3 +612,48 @@ Post liberado com `py scripts/liberar_post.py injecao-plastica-sob-demanda`, na 
 
 > Nota de governança: a cópia de trabalho do `PROGRESS.md` estava com as seções 8 e 9 removidas e um `CLOUDFLARE_API_TOKEN` colado ao final do arquivo. A versão do último commit foi restaurada antes deste registro — o token não chegou a ser versionado. Recomenda-se **revogar/rotacionar** esse token no painel da Cloudflare, pois ele ficou exposto em disco.
 
+---
+
+## 11. Busca interna instantânea — topbar e gaveta mobile (11/11/2026)
+
+Campo de busca com lupa na topbar (desktop) e no topo da gaveta mobile, com índice client-side e resultados instantâneos.
+
+### Arquitetura
+
+| Item | Decisão |
+|---|---|
+| Índice | `js/indice_busca.json` — **19,0 KB**, 25 páginas (título, URL, categoria, tipo, resumo e tags) |
+| Gerador | `scripts/gerar_indice_busca.py` (local, fora do git/CDN) — lê `sitemap.xml`, abre o HTML de cada URL e extrai H1, description, chip de categoria, H2 e keywords |
+| Por que não `scripts/indice_busca.json` | `scripts/` está no `.gitignore` e no `.assetsignore` (seção 7 do `.clinerules`). Um JSON ali não seria versionado nem servido pelo CDN. O gerador fica em `scripts/`, o asset em `js/` |
+| Cliente | `js/busca.js` + `js/busca.css`, sem biblioteca nova (fetch + DOM nativos) |
+| Injeção | `scripts/injetar_busca.py`, idempotente, aplicado em **33 arquivos**: 25 páginas públicas + 8 rascunhos. `painel-leads.html` e `template-post-padrao.html` ficaram fora (não têm topbar) |
+
+### Comportamento
+
+- Busca a partir de **2 caracteres**, debounce de 90 ms, normalização NFD (ignora acento e caixa) e empate desfeito pelo título mais curto.
+- Ranking: título (8), tags/H2 (4), resumo e categoria (2) + bônus de frase exata (10 no título, 3 no conjunto). Limite de **8 resultados**.
+- Teclado: ↓/↑ percorrem, Enter abre o item ativo (ou o primeiro), Esc fecha; anel de foco visível no campo e nos itens.
+- ARIA: `role="combobox"` com `aria-expanded`/`aria-controls`/`aria-autocomplete`, `role="listbox"`/`option`, `aria-label="Buscar no site"`, label `sr-only` e região `role="status"` anunciando a contagem.
+- Índice carregado só no primeiro foco (`fetch` same-origin); falha de rede exibe mensagem no dropdown.
+
+### Posicionamento
+
+- **Desktop:** entre "ISO 9001:2015 | Tolerâncias Centesimais (±0,02 mm)" e a borda direita da topbar; fundo escuro translúcido, borda fina, cantos arredondados e placeholder "Buscar artigo ou termo técnico...".
+- **Mobile:** primeiro elemento de `#pmiMobileMenu`, antes de "Início"; lupa à esquerda e campo em largura total com `font-size: 16px` (evita zoom automático no iOS).
+- **Responsivo:** a mensagem institucional da topbar passou a `md:hidden xl:flex`, para a linha ISO + busca caber entre 768 e 1279 px sem quebrar a barra.
+
+### Validação
+
+| Teste | Resultado |
+|---|---|
+| Estrutura dos 33 arquivos | 2 componentes por página, 0 ID duplicado, 0 tag desbalanceada, 0 asset ausente |
+| Sintaxe | `node --check js/busca.js` OK |
+| Algoritmo real (Node sobre o índice publicado) | "aco h13" 4 · "camara quente" 5 · "tonelagem" 4 · "kanban" 3 · "injecao sob demanda" 3 · "inox 420" 3 · "xyzabc" 0 |
+| Render headless (Chrome) | Topbar 1440 px OK; tablet 800 px OK; gaveta mobile com dropdown inline OK; `scrollWidth 485 < innerWidth 500` (sem overflow horizontal) |
+| `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
+| `py scripts/geo_checker.py .` | **0 falhas críticas**, 37 avisos, **91%**, exit 0 |
+
+`scripts/liberar_post.py` passou a regenerar o índice ao final de cada liberação, para o JSON não ficar desatualizado quando um post novo entra no ar.
+
+> Escopo e governança: intervenção pedida explicitamente pelo responsável e restrita ao componente de busca (topbar, gaveta e duas tags no `<head>`). Nenhum texto editorial foi reescrito. A home (`index.html`), que estava em edição por terceiros, recebeu apenas essas inserções.
+

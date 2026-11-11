@@ -148,6 +148,8 @@
     "isPartOf": { "@type": "WebSite", "@id": "https://portalmoldeinjecao.com.br/#website" }
   }
   </script>
+    <link rel="stylesheet" href="js/busca.css">
+    <script src="js/busca.js" defer></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden">
 
@@ -155,12 +157,22 @@
     <!-- Top Announcement Bar -->
   <aside aria-label="Aviso Institucional" class="bg-brand-navy text-slate-300 text-xs py-2 px-3 sm:px-6 lg:px-8 border-b border-slate-800">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5 sm:gap-2">
-      <div class="w-full md:w-auto flex items-center justify-center md:justify-start gap-2 text-[11px] sm:text-xs text-center md:text-left">
+      <div class="w-full md:hidden xl:flex md:w-auto flex items-center justify-center md:justify-start gap-2 text-[11px] sm:text-xs text-center md:text-left">
         <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
         <span><strong>Capacidade Fabril Disponível:</strong> Injetoras de 80t a 350t e Matrizaria CNC de Alta Precisão</span>
       </div>
       <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 sm:gap-4 text-slate-400">
         <span class="text-[11px] sm:text-xs leading-tight text-left"><strong class="text-sky-400 font-bold">ISO 9001:2015</strong> | Tolerâncias Centesimais (±0,02 mm)</span>
+        <!-- Busca interna (desktop) -->
+        <div class="pmi-search hidden md:block" data-pmi-search>
+          <div role="search" class="pmi-search-form">
+            <label for="pmiSearchInput" class="sr-only">Buscar no site</label>
+            <svg class="w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"></path></svg>
+            <input id="pmiSearchInput" type="search" name="q" placeholder="Buscar artigo ou termo técnico..." aria-label="Buscar no site" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="pmiSearchResults" aria-autocomplete="list">
+          </div>
+          <div id="pmiSearchResults" class="pmi-search-results" role="listbox" aria-label="Resultados da busca" hidden></div>
+          <p class="sr-only" role="status" aria-live="polite" data-pmi-search-status></p>
+        </div>
         <a href="/contato" class="md:hidden inline-flex items-center justify-center whitespace-nowrap px-2.5 py-1 rounded-md text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-sm transition-all shrink-0">Cotar Molde ou Injeção</a>
       </div>
     </div>
@@ -358,6 +370,16 @@
 
     <!-- Mobile Menu Drawer -->
     <div id="pmiMobileMenu" class="hidden md:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-7 space-y-2.5 shadow-xl max-h-[82vh] overflow-y-auto" style="max-height: calc(100dvh - 3.75rem); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;">
+      <!-- Busca interna (mobile) -->
+      <div class="pmi-search pmi-search--drawer px-1 pt-1 pb-2" data-pmi-search>
+        <div role="search" class="pmi-search-form">
+          <label for="pmiSearchMobile" class="sr-only">Buscar no site</label>
+          <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"></path></svg>
+          <input id="pmiSearchMobile" type="search" name="q" placeholder="Buscar artigo ou termo técnico..." aria-label="Buscar no site" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="pmiSearchMobileResults" aria-autocomplete="list">
+        </div>
+        <div id="pmiSearchMobileResults" class="pmi-search-results" role="listbox" aria-label="Resultados da busca" hidden></div>
+        <p class="sr-only" role="status" aria-live="polite" data-pmi-search-status></p>
+      </div>
       <a href="/" class="block px-3 py-2.5 rounded-lg text-[15px] font-bold text-slate-800 hover:bg-blue-50" style="font-size:15px">Início</a>
       <div class="px-3 py-1">
         <div class="text-[11px] font-bold uppercase tracking-wider text-blue-700 mb-1.5">Serviços</div>
