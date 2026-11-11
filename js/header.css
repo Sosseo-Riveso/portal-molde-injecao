@@ -1,3 +1,25 @@
+/* Topbar desktop: três blocos em linha única, sem compressão. */
+@media (min-width: 768px) {
+  [data-pmi-topbar] .pmi-topbar-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  [data-pmi-topbar] .pmi-topbar-row > * {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+  }
+
+  [data-pmi-topbar] .pmi-topbar-left-text { white-space: nowrap; }
+}
+
+@media (min-width: 1280px) {
+  [data-pmi-topbar] .pmi-topbar-row { gap: 1.5rem; }
+}
+
 /* Header fixo com redução (shrink) — Portal Molde Injeção.
    Arquivo global carregado por 100% das páginas.
    As regras abaixo reproduzem o bloco que antes era inline em cada HTML. */

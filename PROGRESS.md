@@ -788,3 +788,42 @@ Também medido em 768 px e 500 px na categoria: `scrolled: true`, `top: 0`, `doc
 | `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
 | `py scripts/geo_checker.py .` | **0 falhas críticas**, 37 avisos, **91%**, exit 0 |
 
+
+---
+
+## 15. Topbar: texto, linha única e distribuição dos 3 blocos (11/11/2026)
+
+### Alterações
+
+| Item | Antes | Depois |
+|---|---|---|
+| Texto da esquerda | "Capacidade Fabril **Disponível**: …" | "**Capacidade Fabril:** Injetoras de 80t a 350t e Matrizaria CNC de Alta Precisão" |
+| Quebra de linha | texto podia quebrar em até 3 linhas no tablet | `white-space: nowrap` no desktop + bloco com `flex: 0 0 auto` |
+| Distribuição | grid de 3 colunas iguais (espremia a esquerda) | `justify-content: space-between` com os três blocos em largura natural |
+| Fonte | `sm:text-xs` (12 px desde 640) | **11 px até 1279 px** e **12 px (0,75 rem) em ≥ 1280 px** |
+| Input de busca | 168–200 px | **168 px (≥1024)** e **192 px (≥1280)** |
+| Gaps | fixos | **12 px (≥768)** e **24 px (≥1280)** |
+| Padding da tarja | `lg:px-6` | `lg:px-4` (mais espaço útil em 1024) |
+
+Implementação: classes `pmi-topbar-row` e `pmi-topbar-left-text` com regras em `js/header.css` (flex + `flex: 0 0 auto` + nowrap), evitando conflito com utilitários responsivos do Tailwind. `scripts/ajustar_topbar.py` passou para a topbar **v8** e repropagou as 33 páginas.
+
+### Medições em headless (Chrome, larguras exatas)
+
+| Viewport | Blocos (px) | Soma + gaps | Container | Linhas do texto | Overflow |
+|---|---|---|---|---|---|
+| **1024** | 425 · 298 · 208 | 931 + 24 = 955 | 977 | **1** | não (`docW 1009 < 1024`) |
+| **1280** | 463 · 324 · 232 | 1019 + 48 = 1067 | 1201 | **1** | não (`docW 1265 < 1280`) |
+| **1366** | 463 · 324 · 232 | 1067 | 1280 | **1** | não |
+| **1440** | 463 · 324 · 232 | 1067 | 1280 | **1** | não |
+
+Capturas em 1440 e 1280 confirmam a frase em uma única linha, o ISO deslocado para a direita e a busca alinhada à borda.
+
+### Incidente corrigido durante a execução
+
+Um `Set-Content -Encoding utf8` do PowerShell releu `scripts/ajustar_topbar.py` como ANSI e duplicou a codificação dos acentos (`PrecisÃ£o`, `TolerÃ¢ncias`). O texto foi restaurado no script e as 33 páginas foram regeradas; varredura final: **0 ocorrências de mojibake**, com `Precisão`, `Tolerâncias`, `±` e `técnico` corretos.
+
+| Auditor | Resultado |
+|---|---|
+| `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
+| `py scripts/geo_checker.py .` | **0 falhas críticas**, 37 avisos, **91%**, exit 0 |
+

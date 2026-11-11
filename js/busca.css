@@ -26,6 +26,7 @@
 
 .pmi-search-form input {
   width: 9.5rem;
+  flex: 0 0 auto;
   padding: 0.1rem 0;
   border: 0;
   outline: 0;
@@ -39,15 +40,15 @@
 .pmi-search-form input::-webkit-search-cancel-button { cursor: pointer; }
 
 @media (min-width: 768px) {
-  .pmi-search-form input { width: 8rem; }
+  .pmi-search-form input { width: 7.5rem; }
 }
 
 @media (min-width: 1024px) {
-  .pmi-search-form input { width: 11rem; }
+  .pmi-search-form input { width: 10.5rem; }
 }
 
 @media (min-width: 1280px) {
-  .pmi-search-form input { width: 12.5rem; }
+  .pmi-search-form input { width: 12rem; }
 }
 
 .pmi-search-results {
