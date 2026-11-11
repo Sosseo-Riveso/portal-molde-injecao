@@ -781,6 +781,8 @@ Achados:
 
 Também medido em 768 px e 500 px na categoria: `scrolled: true`, `top: 0`, `docW < innerWidth` em ambos.
 
+**Validação ao vivo em produção** (Chrome DevTools Protocol, `scripts/validar_sticky_live.js`, `scrollY = 474`): **7/7 URLs** com `cls: true`, `top: 0`, altura **39 px** e `docW 749 < vw 764` — resultado `LIVE_OK`.
+
 | Auditor | Resultado |
 |---|---|
 | `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
