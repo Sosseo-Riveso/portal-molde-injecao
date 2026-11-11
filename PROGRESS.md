@@ -591,3 +591,24 @@ Validação: **200 referências de asset conferidas, 0 quebradas**; SEO 97% e GE
 
 > Nenhum HTML apontava para `rascunhos/`: as páginas consomem apenas os WebP otimizados de `/imagens/`.
 
+---
+
+## 10. Liberação do calendário — post 2 (11/11/2026)
+
+Post liberado com `py scripts/liberar_post.py injecao-plastica-sob-demanda`, na data prevista do calendário editorial (11/11/2026).
+
+| Item | Resultado |
+|---|---|
+| Arquivo | `injecao-plastica-sob-demanda.html` na raiz (removido de `rascunhos/`) |
+| Palavra-chave | `injecao plastica sob demanda` |
+| Caminhos | 5 `src` convertidos de `../` para raiz; 0 resíduo de `../` |
+| Sitemap | URL adicionada com `lastmod 2026-11-11` (24 → **25 URLs**) |
+| Hub `categoria-processos-e-custos…` | card inserido, contador 3 → **4 Artigos Técnicos**, `ItemList` 3 → **4 itens**, `dateModified 2026-11-11` |
+| Estrutura | 1 H1, 6 H2, **1.298 palavras**, 1 tabela com 4 `th scope="col"`, FAQ de 4 perguntas + `FAQPage`, 18 links internos, 1 bloco JSON-LD |
+| Metadados | `<title>` 52 chars = `og:title`; description 138 = `og:description`; excerpt, subtítulo-banner e Takeaway preenchidos |
+| Balanço de tags | `<div>` 70/70, `<a>` 61/61, `<script>` 6/6, `<svg>` 4/4 |
+| Assets | capa e imagem de corpo servidas de `/imagens/*.webp`; 0 referência quebrada |
+| Auditoria | artigo em **100% SEO / 100% GEO** (1.298 palavras, 15 entidades); global **97% / 91%**, 0 erros e 0 críticos |
+
+> Nota de governança: a cópia de trabalho do `PROGRESS.md` estava com as seções 8 e 9 removidas e um `CLOUDFLARE_API_TOKEN` colado ao final do arquivo. A versão do último commit foi restaurada antes deste registro — o token não chegou a ser versionado. Recomenda-se **revogar/rotacionar** esse token no painel da Cloudflare, pois ele ficou exposto em disco.
+
