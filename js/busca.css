@@ -38,6 +38,10 @@
 .pmi-search-form input::placeholder { color: #94a3b8; opacity: 1; }
 .pmi-search-form input::-webkit-search-cancel-button { cursor: pointer; }
 
+@media (min-width: 768px) {
+  .pmi-search-form input { width: 8rem; }
+}
+
 @media (min-width: 1024px) {
   .pmi-search-form input { width: 11rem; }
 }

@@ -691,3 +691,43 @@ Estrutura final da faixa: **[esquerda: capacidade fabril + ISO] · [meio-direita
 
 > Nenhum texto institucional ou comercial foi removido ou ocultado. A alteração ficou restrita ao `<aside>` da topbar e à largura do input em `js/busca.css`.
 
+---
+
+## 13. Topbar em 3 colunas + header fixo reduzido padronizado (11/11/2026)
+
+### Diagnóstico
+
+| Achado | Arquivos |
+|---|---|
+| `.pmi-scrolled` presente no CSS e no HTML, mas **sem listener de scroll** | `injecao-plastica-sob-demanda.html`, `lote-minimo-de-injecao-plastica.html` + os 8 rascunhos (10 no total) |
+| Script de scroll **inline duplicado** (mesmo código copiado) | 23 páginas públicas |
+| CTA "Cotar Molde ou Injeção" duplicado entre topbar e header | todas as 33 páginas |
+| Topbar sem distribuição fixa em 3 blocos | todas as 33 páginas |
+
+### Correções
+
+| Item | Antes | Depois |
+|---|---|---|
+| CTA na topbar | presente (duplicava o do header) | **removido** da tarja; permanece apenas no header |
+| Distribuição | flex com blocos variáveis | **grid de 3 colunas** `minmax(0,1fr) auto minmax(0,1fr)`: capacidade à esquerda, ISO centralizado, busca à direita |
+| Header fixo | `sticky top-0` + script inline em 23 páginas; ausente em 10 | **`js/sticky-header.js`** (arquivo único, cacheável) referenciado em **33/33** arquivos; inline removido |
+| Shrink | dependia de script copiado | classe `pmi-scrolled` aplicada em `scrollY > 60` e removida em `scrollY <= 10` (histerese), via handler síncrono com `{ passive: true }` |
+| Estado do header | sem marcação de inicialização | `data-pmi-sticky-ready="1"` + `pmi-sticky-active` (evita listener duplicado) |
+| Input de busca | 9,5–12,5 rem | **8 rem (≥768) · 11 rem (≥1024) · 12,5 rem = 200 px (≥1280)** |
+| Tooling | `injetar_busca.py` com markup próprio | unificado em `scripts/ajustar_topbar.py` (topbar v4 + sticky); `injetar_busca.py` virou wrapper para não divergir |
+
+A busca continua sendo o **primeiro item da gaveta mobile**, antes de "Início", e fica oculta na topbar abaixo de 768 px.
+
+### Validação
+
+| Teste | Resultado |
+|---|---|
+| 33 arquivos | 1 referência a `js/sticky-header.js`, 0 script inline, topbar `data-pmi-topbar="v4"`, 0 CTA na tarja, ordem capacidade → ISO → busca, 0 ID duplicado, 0 tag desbalanceada |
+| Idempotência | `py scripts/ajustar_topbar.py --dry-run` → 33 `topbar-ok` |
+| Teste unitário do handler (Node) | aplica em y=120, mantém em y=30 (histerese), remove em y=5 → `TESTE_OK` |
+| Headless 1440/768/500 px | `headerTop: 0` (fixo), `headerH` **65 → 39 px** após scroll, `scrolled: true`, `scrollWidth < innerWidth` em todos (sem rolagem horizontal) |
+| `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
+| `py scripts/geo_checker.py .` | **0 falhas críticas**, 37 avisos, **91%**, exit 0 |
+
+> Nota técnica: o primeiro teste em headless não aplicava a classe porque `requestAnimationFrame` não executava após o evento sintético. O handler foi simplificado para execução síncrona (apenas duas operações de `classList` por evento), o que também elimina atraso de um frame no shrink real.
+
