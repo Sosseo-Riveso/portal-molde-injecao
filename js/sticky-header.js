@@ -22,7 +22,12 @@
   }
 
   function iniciar() {
-    header = document.getElementById('pmiMainHeader');
+    header = document.getElementById('pmiMainHeader')
+      || document.querySelector('header[data-pmi-sticky]')
+      || document.querySelector('header.pmi-header')
+      || document.querySelector('header.sticky')
+      || document.querySelector('body > header')
+      || document.querySelector('header');
     if (!header || header.getAttribute('data-pmi-sticky-ready') === '1') { return; }
     header.setAttribute('data-pmi-sticky-ready', '1');
     header.classList.add('pmi-sticky-active');

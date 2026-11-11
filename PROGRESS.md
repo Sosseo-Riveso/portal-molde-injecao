@@ -731,3 +731,58 @@ A busca continua sendo o **primeiro item da gaveta mobile**, antes de "Início",
 
 > Nota técnica: o primeiro teste em headless não aplicava a classe porque `requestAnimationFrame` não executava após o evento sintético. O handler foi simplificado para execução síncrona (apenas duas operações de `classList` por evento), o que também elimina atraso de um frame no shrink real.
 
+---
+
+## 14. Correção do shrink do header em categorias, calculadoras e artigos (11/11/2026)
+
+### Causa raiz (não era o seletor)
+
+O `js/sticky-header.js` **encontrava** o header e **aplicava** `.pmi-scrolled` (altura 65 → 39 px). O que falhava era o `position: sticky`: após `scrollY = 394`, o header estava em `top: -346px`, ou seja, saía da tela junto com a página. Sem header visível, o usuário percebe "menu que não recolhe".
+
+| Teste isolado | `overflow` no `<html>` | `top` após scroll | Resultado |
+|---|---|---|---|
+| Estado original de categorias/artigos | `hidden` | **−346 px** | sticky quebrado |
+| Removendo `overflow-x-hidden` do `<html>` | `visible` | **0 px** | correto |
+| Trocando por `overflow-x-clip` no `<html>` | `clip` | −346 px | **não resolve** |
+| Home/legais (só `<body>` com hidden) | `visible` | 0 px | correto |
+
+Achados:
+
+1. **19 páginas públicas + 8 rascunhos** tinham `overflow-x-hidden` na tag `<html>`.
+2. **8 artigos antigos** tinham também a regra inline `html, body { max-width: 100%; overflow-x: hidden; }`, reaplicando o problema ao html.
+3. O CSS de `.pmi-scrolled` estava duplicado em um `<style id="pmi-sticky-header-css">` por página, não em arquivo global.
+
+### Correções aplicadas
+
+| Item | Ação |
+|---|---|
+| `<html>` | removidos `overflow-x-hidden`/`overflow-x-clip` das 27 páginas; **clipping horizontal mantido no `<body>`** |
+| CSS inline dos 8 artigos | `html, body { … overflow-x: hidden }` → `body { … }` |
+| CSS do shrink | extraído para **`js/header.css`** e linkado em **33/33 arquivos**; bloco inline removido |
+| Seletor do JS | fallback tolerante: `#pmiMainHeader` → `header[data-pmi-sticky]` → `header.pmi-header` → `header.sticky` → `body > header` → `header` |
+| Segurança visual | `js/header.css` força `position: sticky; top: 0; z-index: 50` no header mesmo se as classes utilitárias variarem |
+| Injetor | `scripts/ajustar_topbar.py` passou a normalizar o `<html>`, mover o CSS e continuar idempotente |
+
+### Validação headless (scrollY ≈ 394, viewport 1440 px)
+
+| Página | `scrolled` | Altura | `top` | Overflow |
+|---|---|---|---|---|
+| `/calculadora-tonelagem-injetora` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/calculadora-custo-peca-injetada` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/categoria-projeto-e-engenharia-de-moldes` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/categoria-ferramentaria-e-acos-para-moldes` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/categoria-processos-e-custos-de-injecao-plastica` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/categoria-manutencao-e-qualidade-de-matrizes` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/injecao-plastica-sob-demanda` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/lote-minimo-de-injecao-plastica` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/diferenca-entre-aco-p20-2738-h13-e-inox-420-para-moldes` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/termos-de-uso` | ✅ | 39 px | 0 | 1409 < 1424 |
+| `/` | ✅ | 39 px | 0 | 1409 < 1424 |
+
+Também medido em 768 px e 500 px na categoria: `scrolled: true`, `top: 0`, `docW < innerWidth` em ambos.
+
+| Auditor | Resultado |
+|---|---|
+| `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
+| `py scripts/geo_checker.py .` | **0 falhas críticas**, 37 avisos, **91%**, exit 0 |
+
