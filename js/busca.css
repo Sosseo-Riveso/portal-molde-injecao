@@ -25,7 +25,7 @@
 .pmi-search-form:focus-within svg { color: #38bdf8; }
 
 .pmi-search-form input {
-  width: 11rem;
+  width: 9.5rem;
   padding: 0.1rem 0;
   border: 0;
   outline: 0;
@@ -38,8 +38,12 @@
 .pmi-search-form input::placeholder { color: #94a3b8; opacity: 1; }
 .pmi-search-form input::-webkit-search-cancel-button { cursor: pointer; }
 
+@media (min-width: 1024px) {
+  .pmi-search-form input { width: 11rem; }
+}
+
 @media (min-width: 1280px) {
-  .pmi-search-form input { width: 14.5rem; }
+  .pmi-search-form input { width: 12.5rem; }
 }
 
 .pmi-search-results {

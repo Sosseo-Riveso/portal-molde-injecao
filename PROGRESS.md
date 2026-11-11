@@ -657,3 +657,37 @@ Campo de busca com lupa na topbar (desktop) e no topo da gaveta mobile, com índ
 
 > Escopo e governança: intervenção pedida explicitamente pelo responsável e restrita ao componente de busca (topbar, gaveta e duas tags no `<head>`). Nenhum texto editorial foi reescrito. A home (`index.html`), que estava em edição por terceiros, recebeu apenas essas inserções.
 
+---
+
+## 12. Correção da topbar — CTA restaurado e busca reequilibrada (11/11/2026)
+
+### Diagnóstico
+
+O lado direito da tarja antes do commit `1922410` (`git show 43b8be5:index.html`) continha o texto ISO e o link **"Cotar Molde ou Injeção"**. O CTA já existia com `md:hidden`, ou seja, desaparecia em qualquer tela ≥ 768 px — não foi removido pelo commit da busca, mas ficava invisível no desktop. Não houve telefone, WhatsApp ou contato na topbar em nenhum commit do histórico.
+
+### Correção aplicada nas 33 páginas
+
+| Item | Antes | Depois |
+|---|---|---|
+| CTA "Cotar Molde ou Injeção" | `md:hidden` (invisível no desktop) | **Sempre visível**, no extremo direito, com `href` original preservado (`#contato` na home, `/contato` nas demais) |
+| ISO 9001:2015 + tolerância | à direita, depois do aviso de capacidade | integrado ao **bloco institucional da esquerda**, separado do aviso por uma barra vertical apenas em ≥ 1280 px |
+| Aviso "Capacidade Fabril Disponível" | oculto entre 768 e 1279 px (hack `md:hidden xl:flex` da versão anterior) | **sempre visível**, sem `md:hidden` |
+| Busca | no extremo direito | no **bloco comercial**, imediatamente antes do CTA |
+| Padding da topbar | `px-3 sm:px-6 lg:px-8` | `px-3 sm:px-4 lg:px-6 xl:px-8` |
+| Largura do input | 11 rem (até 232 px) | 9,5 rem → 11 rem (lg) → **12,5 rem (200 px, xl)** |
+| Foco do CTA | sem anel visível | `focus-visible:ring-2` em `sky-300` com offset na cor da tarja |
+
+Estrutura final da faixa: **[esquerda: capacidade fabril + ISO] · [meio-direita: busca] · [direita: CTA]**. Em 1024 px o bloco esquerdo quebra em duas linhas e nada é escondido.
+
+### Validação
+
+| Teste | Resultado |
+|---|---|
+| 33 arquivos | topbar `data-pmi-topbar="v3"`, 1 CTA sem `md:hidden`, busca dentro do `<aside>`, 0 ID duplicado, 0 tag desbalanceada, 0 asset ausente |
+| Idempotência | `py scripts/ajustar_topbar.py --dry-run` → 33 `ja-ajustado` |
+| Render headless | 1440 px (3 blocos em 1 linha), 1280 px (1 linha), 1024 px (esquerda em 2 linhas, CTA e busca visíveis), 500 px (mobile com CTA à direita) |
+| `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
+| `py scripts/geo_checker.py .` | **0 falhas críticas**, 37 avisos, **91%**, exit 0 |
+
+> Nenhum texto institucional ou comercial foi removido ou ocultado. A alteração ficou restrita ao `<aside>` da topbar e à largura do input em `js/busca.css`.
+

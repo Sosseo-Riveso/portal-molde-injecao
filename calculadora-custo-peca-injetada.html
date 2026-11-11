@@ -151,15 +151,19 @@ METADADOS DE SEO E GEO (ENGENHARIA INDUSTRIAL B2B):
 
   <!-- Header -->
     <!-- Top Announcement Bar -->
-  <aside aria-label="Aviso Institucional" class="bg-brand-navy text-slate-300 text-xs py-2 px-3 sm:px-6 lg:px-8 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5 sm:gap-2">
-      <div class="w-full md:hidden xl:flex md:w-auto flex items-center justify-center md:justify-start gap-2 text-[11px] sm:text-xs text-center md:text-left">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
-        <span><strong>Capacidade Fabril Disponível:</strong> Injetoras de 80t a 350t e Matrizaria CNC de Alta Precisão</span>
+  <aside aria-label="Aviso Institucional" data-pmi-topbar="v3" class="bg-brand-navy text-slate-300 text-xs py-2 px-3 sm:px-4 lg:px-6 xl:px-8 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 sm:gap-2">
+      <!-- Bloco institucional: capacidade fabril e certificacao -->
+      <div class="w-full md:w-auto flex flex-wrap items-center justify-center md:justify-start gap-x-2.5 gap-y-1 text-[11px] sm:text-xs text-center md:text-left">
+        <span class="inline-flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span><strong>Capacidade Fabril Disponível:</strong> Injetoras de 80t a 350t e Matrizaria CNC de Alta Precisão</span>
+        </span>
+        <span class="hidden xl:inline-block h-3 w-px bg-slate-700 mx-0.5" aria-hidden="true"></span>
+        <span class="inline-flex items-center gap-1.5 whitespace-nowrap"><strong class="text-sky-400 font-bold">ISO 9001:2015</strong><span class="text-slate-600" aria-hidden="true">|</span><span>Tolerâncias Centesimais (±0,02 mm)</span></span>
       </div>
-      <div class="w-full md:w-auto flex items-center justify-between md:justify-end gap-2 sm:gap-4 text-slate-400">
-        <span class="text-[11px] sm:text-xs leading-tight text-left"><strong class="text-sky-400 font-bold">ISO 9001:2015</strong> | Tolerâncias Centesimais (±0,02 mm)</span>
-        <!-- Busca interna (desktop) -->
+      <!-- Bloco comercial: busca interna e CTA de cotacao -->
+      <div class="w-full md:w-auto flex items-center justify-end gap-2 sm:gap-3 text-slate-400">
         <div class="pmi-search hidden md:block" data-pmi-search>
           <div role="search" class="pmi-search-form">
             <label for="pmiSearchInput" class="sr-only">Buscar no site</label>
@@ -169,7 +173,7 @@ METADADOS DE SEO E GEO (ENGENHARIA INDUSTRIAL B2B):
           <div id="pmiSearchResults" class="pmi-search-results" role="listbox" aria-label="Resultados da busca" hidden></div>
           <p class="sr-only" role="status" aria-live="polite" data-pmi-search-status></p>
         </div>
-        <a href="/contato" class="md:hidden inline-flex items-center justify-center whitespace-nowrap px-2.5 py-1 rounded-md text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-sm transition-all shrink-0">Cotar Molde ou Injeção</a>
+        <a href="/contato" class="inline-flex items-center justify-center whitespace-nowrap px-2.5 py-1 rounded-md text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy shadow-sm transition-all shrink-0">Cotar Molde ou Injeção</a>
       </div>
     </div>
   </aside>
