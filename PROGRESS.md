@@ -866,5 +866,7 @@ O conteúdo já publicava canônicas limpas, mas a borda aceitava duplicatas: `/
 | `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, exit 0 |
 | `py scripts/geo_checker.py .` | **0 falhas críticas**, 91%, exit 0 |
 
-Pendências: nenhuma. `index.html` não foi editado (já estava com canonical/`og:url`/JSON-LD no padrão apex sem `.html`).
+Pendências: nenhuma bloqueante. `index.html` não foi editado (já estava com canonical/`og:url`/JSON-LD no padrão apex sem `.html`).
+
+Recomendação de zona (fora do escopo do Worker): `http://portalmoldeinjecao.com.br/<rota>` responde **200**, sem upgrade para `https`, e a resposta não envia `Strict-Transport-Security`. Ativar **SSL/TLS -> Edge Certificates -> Always Use HTTPS** e HSTS no painel da Cloudflare (exige token com permissão de zona; o token OAuth do Wrangler atual tem apenas Workers/KV). O Worker não faz esse redirect de propósito: em ambiente local o Location é reescrito para `http`, o que criaria laço.
 
