@@ -827,3 +827,44 @@ Um `Set-Content -Encoding utf8` do PowerShell releu `scripts/ajustar_topbar.py` 
 | `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, **97%**, exit 0 |
 | `py scripts/geo_checker.py .` | **0 falhas críticas**, 37 avisos, **91%**, exit 0 |
 
+---
+
+## 16. URLs limpas 100% e consolidação www -> apex na borda (11/11/2026)
+
+### Contexto
+
+O conteúdo já publicava canônicas limpas, mas a borda aceitava duplicatas: `/slug.html` e `/slug/` respondiam 200, o Worker redirecionava `*.pages.dev`/`*.workers.dev` para produção (quebrando previews) e o `wrangler.json` não tinha `run_worker_first`/`html_handling`.
+
+### Alterações
+
+| Arquivo | Antes | Depois |
+|---|---|---|
+| `worker.js` | 301 só de `www`, `.pages.dev` e `.workers.dev` (previews quebrados) | 301 único de `www` -> apex **e** normalização de caminho, apenas GET/HEAD, apenas nos hosts `www`/apex |
+| `wrangler.json` | assets sem controle de execução | `run_worker_first: true` + `html_handling: "drop-trailing-slash"` |
+| `_redirects` | `/artigos/:slug /:slug 301` | mantido (rota legada), validado no dev local |
+| `robots.txt` | `Disallow: /painel-leads.html` obsoleto | removido; sitemap inalterado |
+| `sitemap.xml` | regerado (25 URLs, comentários com mojibake) | 25 URLs apex/limpas, sem duplicidade, `lastmod` preservado |
+| `scripts/gerar_indice_busca.py` | URL montada direto do slug | `url_limpa()` defensiva (sem `.html`, sem barra final) |
+| `scripts/gerar_sitemap.py` | não existia | gerador determinístico a partir do canonical de cada página |
+
+### Regras implementadas na borda
+
+1. `www.portalmoldeinjecao.com.br/contato.html?x=1` -> `https://portalmoldeinjecao.com.br/contato?x=1` em **1 salto**.
+2. `/<slug>.html` -> `/<slug>`, `/<slug>/` -> `/<slug>`, `/index(.html|/)` -> `/`.
+3. Query string e fragmento preservados; métodos não-GET e assets (`.css`, `.js`, `.webp`, `.xml`, `.txt`) nunca redirecionam.
+4. `localhost`, `127.0.0.1`, `*.pages.dev` e `*.workers.dev` **não** são redirecionados (preview intacto).
+5. Upgrade `http` -> `https` fica com o *Always Use HTTPS* da Cloudflare; incluí-lo no Worker gerava laço em ambiente local.
+
+### Testes
+
+| Teste | Resultado |
+|---|---|
+| `node scripts/testar_redirecionamento.mjs` | **26 testes, 0 falhas** (www, .html, barra, index, query, assets, POST, previews) |
+| `py scripts/checar_links.py .` (novo) | 25 páginas, **543 links internos**, 0 quebrados, 0 `.html`, 0 não canônicos |
+| `npx wrangler dev` + curl (Host `www`/apex) | 301 correto em 1 salto, assets 200, `/imagens/` 404 sem redirect, sem laço |
+| `py scripts/gerar_sitemap.py` | 25 URLs, 0 pendências, 0 duplicidades |
+| `py scripts/seo_checker.py .` | **0 erros**, 17 avisos, exit 0 |
+| `py scripts/geo_checker.py .` | **0 falhas críticas**, 91%, exit 0 |
+
+Pendências: nenhuma. `index.html` não foi editado (já estava com canonical/`og:url`/JSON-LD no padrão apex sem `.html`).
+

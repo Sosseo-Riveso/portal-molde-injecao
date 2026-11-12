@@ -3,7 +3,6 @@
 User-agent: *
 Allow: /
 Disallow: /painel-leads
-Disallow: /painel-leads.html
 
 # Motores de Busca Tradicionais
 User-agent: Googlebot

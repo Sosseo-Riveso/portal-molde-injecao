@@ -3,6 +3,56 @@ import { EmailMessage } from "cloudflare:email";
 const KV_KEY = 'leads_portal_molde';
 const KV_META_KEY = 'leads_portal_molde_meta';
 
+// ---------------------------------------------------------------------------
+// URL canônica: https://portalmoldeinjecao.com.br/<slug> (apex, sem .html,
+// sem barra final). Toda normalização acontece na borda, antes dos assets,
+// em um único salto HTTP 301.
+// ---------------------------------------------------------------------------
+const HOST_CANONICO = 'portalmoldeinjecao.com.br';
+const HOST_WWW = 'www.portalmoldeinjecao.com.br';
+
+// Hosts de desenvolvimento e pré-visualização: nunca redirecionar.
+// Isolar .pages.dev/.workers.dev evita quebrar deploys de preview.
+const HOSTS_PREVIEW = ['localhost', '127.0.0.1', '[::1]', '0.0.0.0'];
+
+// Diretórios de assets estáticos: barra final não é normalizada neles.
+const DIRS_ESTATICOS = new Set(['imagens', 'logos', 'js', 'assets']);
+
+function ehHostPreview(hostname) {
+  const host = String(hostname || '').toLowerCase();
+  return (
+    HOSTS_PREVIEW.includes(host) ||
+    host.endsWith('.localhost') ||
+    host.endsWith('.pages.dev') ||
+    host.endsWith('.workers.dev')
+  );
+}
+
+// Arquivos com extensão que não seja .html/.htm (css, js, imagens, xml, txt)
+// seguem transparentes: são servidos pelos assets sem redirecionamento.
+function ehAssetEstatico(pathname) {
+  const segmentos = String(pathname || '/').split('/').filter(Boolean);
+  const ultimo = segmentos[segmentos.length - 1] || '';
+  const ponto = ultimo.lastIndexOf('.');
+  if (ponto <= 0) return false;
+  const extensao = ultimo.slice(ponto + 1).toLowerCase();
+  return extensao !== 'html' && extensao !== 'htm';
+}
+
+function ehDiretorioEstatico(pathname) {
+  const segmentos = String(pathname || '/').split('/').filter(Boolean);
+  return segmentos.length === 1 && DIRS_ESTATICOS.has(segmentos[0].toLowerCase());
+}
+
+// /<slug>.html -> /<slug> | /<slug>/ -> /<slug> | /index(.html|/) -> /
+function caminhoLimpo(pathname) {
+  let caminho = pathname || '/';
+  if (caminho !== '/') caminho = caminho.replace(/\/+$/, '');
+  caminho = caminho.replace(/\/index\.html?$/i, '').replace(/\/index$/i, '');
+  caminho = caminho.replace(/\.html?$/i, '');
+  return caminho === '' ? '/' : caminho;
+}
+
 function getLeadSig(l) {
   if (!l) return '';
   const tel = String(l.telefone || l.whatsapp || '').replace(/\D/g, '');
@@ -15,15 +65,31 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // 1. Redirecionamento 301 de domínios secundários para o canônico
-    if (
-      url.hostname === 'www.portalmoldeinjecao.com.br' ||
-      url.hostname.endsWith('.workers.dev') ||
-      url.hostname.endsWith('.pages.dev')
-    ) {
-      url.hostname = 'portalmoldeinjecao.com.br';
-      url.protocol = 'https:';
-      return Response.redirect(url.toString(), 301);
+    // 1. Normalização canônica na borda (HTTP 301, apenas GET/HEAD)
+    //    - www -> apex no mesmo salto, já com caminho limpo e query original
+    //    - /<slug>.html -> /<slug>, /<slug>/ -> /<slug>, /index* -> /
+    //    - assets (css, js, imagens, xml) e hosts de preview seguem intactos
+    const metodo = request.method.toUpperCase();
+    const host = url.hostname.toLowerCase();
+    const redirecionavel =
+      (metodo === 'GET' || metodo === 'HEAD') &&
+      (host === HOST_WWW || host === HOST_CANONICO) &&
+      !ehHostPreview(host) &&
+      !ehAssetEstatico(url.pathname) &&
+      !ehDiretorioEstatico(url.pathname);
+
+    if (redirecionavel) {
+      const caminhoNovo = caminhoLimpo(url.pathname);
+      // Só redireciona quando host ou caminho fogem do padrão canônico.
+      // O upgrade http -> https é responsabilidade do "Always Use HTTPS" da
+      // Cloudflare; incluí-lo aqui poderia gerar laço em ambiente local.
+      if (host !== HOST_CANONICO || caminhoNovo !== url.pathname) {
+        const destino = new URL(url.toString());
+        destino.protocol = 'https:';
+        destino.hostname = HOST_CANONICO;
+        destino.pathname = caminhoNovo;
+        return Response.redirect(destino.toString(), 301);
+      }
     }
 
     const corsHeaders = {
